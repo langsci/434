@@ -1,0 +1,157 @@
+\newcommand*{\orcid}{}
+
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\makeatother
+
+\newcommand{\togglepaper}[1][0]{
+   \bibliography{../localbibliography}
+   \papernote{\scriptsize\normalfont
+     \theauthor.
+     \titleTemp.
+     To appear in:
+     E. Di Tor \& Herr Rausgeberin (ed.).
+     Booktitle in localcommands.tex.
+     Berlin: Language Science Press. [preliminary page numbering]
+   }
+   \pagenumbering{roman}
+   \setcounter{chapter}{#1}
+   \addtocounter{chapter}{-1}
+}
+
+\newbool{bookcompile}
+\booltrue{bookcompile}
+\newcommand{\bookorchapter}[2]{\ifbool{bookcompile}{#1}{#2}}
+
+
+% Cite and cross-reference other chapters
+\newcommand{\crossrefchaptert}[2][]{\citet*[#1]{chapters/#2}, Chapter~\ref{chap-#2} of this volume} 
+\newcommand{\crossrefchapterp}[2][]{(\citealp*[#1]{chapters/#2}, Chapter~\ref{chap-#2} of this volume)}
+\newcommand{\crossrefchapteralt}[2][]{\citealt*[#1]{chapters/#2}, Chapter~\ref{chap-#2} of this volume}
+\newcommand{\crossrefchapteralp}[2][]{\citealp*[#1]{chapters/#2}, Chapter~\ref{chap-#2} of this volume}
+
+\newcommand{\crossrefcitet}[2][]{\citet*[#1]{chapters/#2}} 
+\newcommand{\crossrefcitep}[2][]{\citep*[#1]{chapters/#2}}
+\newcommand{\crossrefcitealt}[2][]{\citealt*[#1]{chapters/#2}}
+\newcommand{\crossrefcitealp}[2][]{\citealp*[#1]{chapters/#2}}
+
+
+
+% 1_intro.tex
+
+% For the block quote:
+
+\usepackage[most]{tcolorbox}
+\definecolor{linequote}{RGB}{224,215,188}
+\definecolor{backquote}{RGB}{249,245,233}
+\newtcolorbox{myquote}[1][]{%
+    enhanced, breakable, 
+    size=minimal,
+    frame hidden, boxrule=0pt,
+    sharp corners,
+    colback=backquote,
+    #1
+}
+
+% 2_gibson.tex
+
+
+% Example(s) Environments
+% 12pt, No new-lines after example number is printed
+
+\newcounter{examplectr}
+\newcounter{fnexamplectr}
+
+% Note: don't use subexamples in footnotes.
+
+% This line is to overcome a bug in cmu-art style: it prints counter
+% values to the aux file using \theaux... rather than using \the...
+\def\theauxexamplectr{\theexamplectr}
+
+\newcounter{subexamplectr}
+\def\theauxsubexamplectr{\thesubexamplectr}
+\def\theauxfnexamplectr{\thefnexamplectr}
+
+\renewcommand{\theexamplectr}{\arabic{examplectr}}
+% This command causes example numbers to appear without following periods
+
+\renewcommand{\thefnexamplectr}{\roman{fnexamplectr}}
+% This command causes example numbers to appear without following periods
+
+\renewcommand{\thesubexamplectr}{\theexamplectr\alph{subexamplectr}}
+% This command gives the number of an example and subexample as e.g. 1a, 2b
+
+\newlength{\wdth}
+\newcommand{\strike}[1]{\settowidth{\wdth}{#1}\rlap{\rule[.5ex]{\wdth}{1pt}}#1}
+
+\newcommand{\exref}[1]{(\ref{#1})}
+% This command puts reference numbers with parentheses
+% surrounding them 
+
+% The environment ``examples'' gives a list of examples, one on each line,
+% numbered with a lower case alphabetic character
+\newenvironment{examples}%
+   { \vspace{-\baselineskip}
+     \begin{list}%
+     \textrm{\alph{subexamplectr}.}%
+     {\usecounter{subexamplectr}
+     \setlength{\topsep}{-\parskip}
+     \setlength{\itemsep}{-2pt}
+     \setlength{\leftmargin}{0.5in}
+     \setlength{\rightmargin}{0in} } }%
+   { \end{list}}
+
+% The environment ``myexample'' outputs an arabic counter ``examplectr''
+% surrounded by parentheses.
+\newenvironment{myexample}
+   { \vspace{20pt}
+     \noindent
+     \begin{minipage}{\textwidth}    % minipage environment disallows
+                 % breaks across pages
+
+     \refstepcounter{examplectr}     % step the counter and cause this
+                 % section to be referenced by the
+                 % counter ``examplectr''
+     (\arabic{examplectr})}%
+   { \vspace{20pt}
+     \end{minipage}}
+
+\newenvironment{myfnexample}
+   { \vspace{2pt}
+     \noindent
+     \begin{minipage}{\textwidth}    % minipage environment disallows
+                 % breaks across pages
+
+     \refstepcounter{fnexamplectr}     % step the counter and cause this
+                 % section to be referenced by the
+                 % counter ``examplectr''
+     (\roman{fnexamplectr})}%
+   { \vspace{2pt}c
+     \end{minipage}}
+    
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+
+
+% 3_pullum.tex
+
+
+% %%%  GKP:  I put in these pointless commands to kill off a bug elsewhere
+% %%%        that tries to \newcommand \it (etc.) as \itshape (etc.), but
+% %%%        fails because they haven't been defined.
+% \newcommand{\it}{\relax}
+% \newcommand{\bf}{\relax}
+% \newcommand{\sc}{\relax}
+% \newcommand{\rm}{\relax}
+
+%%% GKP:  Two additional commands that I need
+\newcommand{\data}[1]{\textit{#1}}
+\newcommand{\blank}{\rule{1.2em}{0.5pt}}
+
+
+
+
+

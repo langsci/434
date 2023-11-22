@@ -1,0 +1,2048 @@
+
+\documentclass[11pt]{article}
+
+
+
+%\usepackage{%fancybox}
+
+\usepackage{lg-macro2}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{xspace}
+\usepackage{bm}
+\usepackage{umoline}
+\usepackage{pifont}
+\usepackage{avm}
+\usepackage{qtree}
+\usepackage{pstricks,pst-node,pst-tree}
+\usepackage{ulem}
+\usepackage{amssymb,amsmath}
+\usepackage{mathrsfs}
+\usepackage{bussproofs}
+%\usepackage{%marvosym}
+
+\usepackage{accents}
+
+
+
+\usepackage{tikz,tikz-qtree}
+
+\usepackage{gb4e0}
+\noautomath
+
+\usepackage[letterpaper,margin=1.2in]{geometry}
+
+\renewcommand{\emph}{\textit}
+\renewcommand{\em}{\it}
+
+\newcommand{\cites}[1]{\citeauthor{#1}'s~\citeyearpar{#1}}
+
+\renewcommand{\SetInfLen}{\setpremisesend{0pt}\setpremisesspace{10pt}\setnamespace{0pt}}
+
+\newcommand{\pt}[1]{\ensuremath{\mathsf{#1}}}
+\newcommand{\ptv}[1]{\ensuremath{\textsf{\textsl{#1}}}}
+
+\newcommand{\sv}[1]{\ensuremath{\bm{\mathcal{#1}}}}
+
+\newcommand{\sX}{\sv{X}}
+\newcommand{\sF}{\sv{F}}
+\newcommand{\sG}{\sv{G}}
+
+\renewcommand{\lex}{\SF}
+\renewcommand{\syncat}[1]{\ensuremath{\mathrm{#1}}}
+\newcommand{\syncatVar}[1]{\ensuremath{\mathit{#1}}}
+
+\newcommand{\RuleName}[1]{\textrm{#1}}
+
+\newcommand{\SemTyp}{\textsf{Sem}}
+
+\newcommand{\something}{\vdots\,\,\,\,\,\,\vdots}
+
+\newcommand{\pb}{\phantom{[}}
+
+\renewcommand{\E}{\ensuremath{\bm{\epsilon}}\xspace}
+
+\newcommand{\greeka}{\upalpha}
+\newcommand{\greekb}{\upbeta}
+\newcommand{\greekd}{\updelta}
+\newcommand{\greekp}{\upvarphi}
+\newcommand{\greekr}{\uprho}
+\newcommand{\greeks}{\upsigma}
+\newcommand{\greekt}{\uptau}
+\newcommand{\greeko}{\upomega}
+\newcommand{\greekz}{\upzeta}
+
+\renewcommand{\labelenumi}{(\roman{enumi})}
+
+\newcommand{\upa}[2]{\ensuremath{\syncat{#1}|\syncat{#2}}}
+\newcommand{\dna}[2]{\upa{#2}{#1}}
+
+\renewcommand{\term}[1]{\textit{#1}}
+
+\newcommand{\Lemma}{\ensuremath{\vdots\hskip.5cm\vdots}\noLine}
+\newcommand{\LemmaAlt}{\ensuremath{\vdots\hskip.5cm\vdots}}
+
+\newcommand{\la}{\ensuremath{\langle}}
+\newcommand{\ra}{\ensuremath{\rangle}}
+
+\renewcommand{\I}{\iota}
+
+\renewcommand{\sem}{\ensuremath}
+
+\newcommand{\LemmaShort}{\ensuremath{\vdots\hskip.2cm\vdots\hskip.2cm\vdots}\noLine}
+\newcommand{\LemmaShortAlt}{\ensuremath{\vdots\hskip.2cm\vdots}}
+
+
+\newcommand{\NoSem}{%
+\renewcommand{\LexEnt}[3]{##1; \syncat{##3}}
+\renewcommand{\LexEntTwoLine}[3]{\renewcommand{\arraystretch}{.8}%
+\begin{array}[b]{l} ##1;  \\ \syncat{##3} \end{array}}
+\renewcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
+\begin{array}[b]{l} ##1; \\ \syncat{##3} \end{array}}}
+
+
+\newcommand{\NoSemVar}{%
+\renewcommand{\LexEnt}[3]{##1; \syncat{##3}}
+\renewcommand{\LexEntTwoLine}[3]{\renewcommand{\arraystretch}{.8}%
+\begin{array}{l} ##1;  \\ \syncat{##3} \end{array}}
+\renewcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
+\begin{array}{l} ##1; \\ \syncat{##3} \end{array}}}
+
+\newcommand{\vs}{\raisebox{.05em}{\ensuremath{\upharpoonright}}}
+
+\newcommand{\AXX}[1]{\raisebox{-7mm}{\ensuremath{#1}}}
+
+\newcommand{\hypml}[2]{\left[\!\!#1\!\!\right]^{#2}}
+
+\newcommand{\alt}[2]{$\left\{\begin{array}{c}
+\hskip-.7ex\textrm{#1}\hskip-.7ex \\
+\hskip-.7ex\textrm{#2}\hskip-.7ex 
+        \end{array}
+\right\}$}
+
+\newcommand{\altalt}[2]{\{#1/#2\}}
+
+
+
+\newcommand{\altt}[3]{$\left\{\begin{array}{c}
+\hskip-.7ex\textrm{#1}\hskip-.7ex \\
+\hskip-.7ex\textrm{#2}\hskip-.7ex \\
+\hskip-.7ex\textrm{#3}\hskip-.7ex 
+\end{array}
+\right\}$}
+
+\newcommand{\alttt}[4]{$\left\{\begin{array}{c}
+\hskip-.7ex\textrm{#1}\hskip-.7ex \\
+\hskip-.7ex\textrm{#2}\hskip-.7ex \\
+\hskip-.7ex\textrm{#3}\hskip-.7ex \\
+\hskip-.7ex\textrm{#4}\hskip-.7ex 
+\end{array}
+\right\}$}
+
+
+%%%%for bussproof
+
+\def\defaultHypSeparation{\hskip0.1in}
+\def\ScoreOverhang{0pt}
+
+
+%%\newcommand{\MultiLine}[1]{\renewcommand{\arraystretch}{.8}%
+%%\ensuremath{\begin{array}{l} #1 \end{array}}}
+
+\newcommand{\MultiLine}[1]{\renewcommand{\arraystretch}{.8}%
+\ensuremath{\begin{array}[b]{l} #1 \end{array}}}
+
+
+
+\newcommand{\MultiLineMod}[1]{%
+\ensuremath{\begin{array}[t]{l} #1 \end{array}}}
+
+
+\bibpunct{(}{)}{;}{a}{}{,}
+
+%%%%%\AFourMargin
+%%\JLSubmissionMargin
+
+%%\setlength\topmargin{-1cm}
+%%\setlength\textheight{23cm}
+%%%%%\setlength\textwidth{13.5cm}
+
+%\setstretch{1.2}
+
+\newcommand{\hyp}[2]{[ #1 ]^{#2}}
+
+\newcommand{\LexEnt}[3]{#1; \ensuremath{#2}; \syncat{#3}}
+
+\newcommand{\LexEntTwoLine}[3]{\renewcommand{\arraystretch}{.8}%
+\begin{array}[b]{l} #1; \\ \ensuremath{#2};  \syncat{#3} \end{array}}
+
+\newcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
+\begin{array}[b]{l} #1; \\ \ensuremath{#2}; \\ \syncat{#3} \end{array}}
+
+
+\newcommand{\LexEntFiveLine}[5]{\renewcommand{\arraystretch}{.8}%
+\begin{array}{l} #1 \\ #2; \\ \ensuremath{#3} \\ \ensuremath{#4}; \\ \syncat{#5} \end{array}}
+
+
+\newcommand{\LexEntFourLine}[4]{\renewcommand{\arraystretch}{.8}%
+\begin{array}{l} \pt{#1} \\ \pt{#2}; \\ \syncat{#4} \end{array}}
+
+\newcommand{\ManySomething}{\renewcommand{\arraystretch}{.8}%
+\raisebox{-3mm}{\begin{array}[b]{c} \vdots \,\,\,\,\,\, \vdots \\
+\vdots \,\,\,\,\,\, \vdots \end{array}}}
+
+
+\newcommand{\lemma}[1]{\renewcommand{\arraystretch}{.8}%
+\begin{array}[b]{c} \vdots \,\,\,\,\,\, \vdots \\ #1 \end{array}}
+
+\newcommand{\lemmarev}[1]{\renewcommand{\arraystretch}{.8}%
+\begin{array}[b]{c} #1 \\ \vdots \,\,\,\,\,\, \vdots \end{array}}
+
+\newcommand{\p}{\ensuremath{\upvarphi}}
+
+\newcommand{\Not}{\leavevmode\llap{\textbf{\smc{NOT:}} }}
+
+\newcommand{\Conj}{\fs{\bsp{\mathit{X}}{\mathit{X}}}{\mathit{X}}}
+\newcommand{\ConjY}{\fs{\bsp{\mathit{Y}}{\mathit{Y}}}{\mathit{Y}}}
+\newcommand{\sameLE}{\dna{(\upa{(\upa{S}{\mathit{X}})}{NP})}{(\upa{S}{\mathit{X}})}}
+
+\newcommand{\derivcenter}[2][1.1]{%
+\SetInfLen
+\attop{\vskip3ex
+\resizebox{#1\linewidth}{!}{\hskip-#1in
+#2}}}
+
+\newcommand{\derivcenterAlt}[2][.98]{%
+\SetInfLen
+\attop{\vskip3ex
+\resizebox{#1\linewidth}{!}{\hskip-#1in \hskip.5in 
+#2}}\vspace{.5ex}}
+
+\setlength{\bibsep}{.2ex}
+
+\renewcommand{\O}{\circ}
+
+\exewidth{(123)}
+
+\newcommand{\derivcenterMod}[2][1.1]{%
+\renewcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
+\raisebox{.4ex}{\ensuremath{\begin{array}{l} ##1; \\ \ensuremath{##2}; \\ \syncat{##3} \end{array}}}}
+\SetInfLen
+\attop{\vskip3ex
+\resizebox{#1\linewidth}{!}{\hskip-#1in
+#2}}}
+
+
+\newcommand{\shortarrow}{\xspace\hskip-1.2ex\scalebox{.5}[1]{\ensuremath{\bm{\rightarrow}}}\hskip-.5ex\xspace}
+
+\newcommand{\SemInt}[1]{\mbox{$[\![ \textrm{#1} ]\!]$}}
+
+\def\maru#1{{\ooalign{\hfil
+  \ifnum#1>999 \resizebox{.25\width}{\height}{#1}\else%
+  \ifnum#1>99 \resizebox{.33\width}{\height}{#1}\else%
+  \ifnum#1>9 \resizebox{.5\width}{\height}{#1}\else #1%
+  \fi\fi\fi%
+\/\hfil\crcr%
+\raise.167ex\hbox{\mathhexbox20D}}}}
+
+\newcommand{\HypSpace}{\hskip-.8ex}
+\newcommand{\RaiseHeight}{\raisebox{2.2ex}}
+\newcommand{\RaiseHeightLess}{\raisebox{1ex}}
+
+\newcommand{\fW}{\ensuremath{\mathfrak{W}}}
+
+\newcommand{\ThreeColHyp}[1]{\RaiseHeight{\Bigg[}\HypSpace#1\HypSpace\RaiseHeight{\Bigg]}}
+\newcommand{\TwoColHyp}[1]{\RaiseHeightLess{\Big[}\HypSpace#1\HypSpace\RaiseHeightLess{\Big]}}
+
+
+%\newcommand{\maskref}[1]{\textsl{\textbf{[reference omitted for refereeing]}}}
+\newcommand{\maskref}[1]{#1}
+
+\newcommand{\DerivSize}{\small}
+\newcommand{\AppDerivSize}{\footnotesize}
+
+\renewcommand{\sem}{\ensuremath}
+
+\begin{document}
+
+%= Title
+\title{A Peircean turn in linguistics: syntactic-semantic
+composition as logical inference\thanks{The analyses and results
+presented in this chapter represent joint work with Yusuke Kubota, with whom I
+have collaborated on research on the theory and empirical application of
+categorial grammar for a decade and a half. My thanks to Andras Kornai
+for carefully reading and correcting an earlier draft of this paper
+and providing me with valuable feedback pointing me to parts of
+the presentation that I needed to compile out a bit more clearly.}}
+
+%This is a template .rdx file. For some instructions for how to write
+%your own definitions for abbreviatory notation for complex LaTeX
+%expressions, see the `postamble' section starting with the line
+%'ABBREVIATORY NOTATIONS'.
+
+%%\author{Yusuke Kubota \\
+%%University of Tsukuba \\
+%%\and
+%%Robert Levine \\
+%%Ohio State University }
+
+\author{Robert Levine \\ 
+Ohio State University }
+
+\maketitle
+
+\section{Abstract}
+In the late 19th century Charles Sanders Peirce proposed what can be seen as a model of natural language in which the combinatoric affinity of lexical items—which he characterizes as their respective valence—drove the composition of sentences. In this paper I argue that Peirce’s conception of valence as the basis of linguistic composition,  ncorporated into a logic of types in which valence is interpreted as implication, finds its formal realization in a species of categorial grammar. I further show the power of this conception in capturing a complex interaction of filler-gap connectivity with ellipsis which has been claimed to be one of the strongest pieces of evidence for covert structure analyses treatment of ellipsis patterns. The type-logical treatment of this supposed pattern of extraction from ellipsis sites undercuts such claims, and reinforces Joachim Lambek’s invocation of Peirce as perhaps the earliest intellectual ancestor of modern type-logical approaches to natural language architecture.
+
+\section{Peirce and valence}
+
+The work of Charles Sanders Peirce---a long-time research focus of Dan
+Everett, whom this festschrift honors---spans a range of interests in,
+and major contributions to, a range of mathematical and scientific
+domains that may well be unique in the history of human
+accomplishent. Pearce's work is widely recognized as seminal in
+mathematics, logic, the philosophy of knowledge, chemistry, astronomy
+and many other fields, but it is not generally recognized that he was
+the source of an analytic concept, \textsl{valence}, which has become
+a foundational tool in linguistic theory. But until quite recently,
+Peirce has not been credited with his identification of the
+combinatorial potential of lexical items as one of the key drivers of
+linguistic form, or for being the first scholar to use the term
+`valence', which he borrowed from chemistry as a close analogue of
+this linguistic concept. It is still common to see linguistic
+applications of valence as having been `founded in 1959 by Lucien
+Tesni\`{e}re' \citet{hollein2022}. There were, as noted in \citet{AdamP-Peirce}, a
+number of earlier invocations of the metaphor referencing the
+electrons needed by atoms of an element in order to attain a stable
+state. But the earliest such appeal to this metaphor, as \citet{askedal91}
+and Przepi\'{o}rkowski document, was \citet{peirce1897}, where the word
+\textit{gives} is explicitly identified as having the same number of
+`unsaturated bonds' as the nitrogen atom, which combines with three
+hydrogen atoms to form the ammonia molecule NH\fb{\,\,{\rm 3}}, and
+Przepi{\'o}rkowski considers it likely that Tesni\`{e}re and the
+others who introduced valence into the parlance of grammarians were
+all influenced by Peirce's original invocation of the
+concept. Przepi{\'o}rkowski notes (155) that `four linguists working
+in four different countries independently came up with the valency
+metaphor', within the space of a single decade, and suggests that the
+common source for their exposure to Peirce's metaphor was not Peirce
+himself, but Roman Jacobson, who was probably the earliest
+grammarian of the modern era to recognize the depth of Peirce's
+insights on natural language, particularly \citet{peirce1897}, and actively
+promoted Peirce's work in conversations and international gatherings,
+such as the 1948 International Congress of Linguists in Paris, among
+other venues.  
+
+It is generally conceded among those who have studied Peirce's work as
+it bears on natural languages that his perspective was primarily
+rooted in their semiotic capabilities, as systems of signs. But as
+N\"{o}th observes, for Peirce, `the key to syntactic structure is the
+predicate and its valency' (2000, p.7)\nocite{nothPeirce}. Peirce
+seems to have regarded the valence of sentences in both a syntactic
+and semantic way: on the one hand, the places in which names can
+appear (whose occupants he called `subjects') and on the other, as the
+parts of propositions which the predicate sets into the relationship
+that the predicate denotes, and which point to particular
+individuals---the referents of the names themselves.
+
+There are a few aspects to this conception of syntax which deserve
+some amplification, because they bear directly on what I believe
+amounts to a specific development of Peirce's ideas. Peirce clearly
+did not adopt the widespread contemporary view that syntactic
+categories are to be regarded as projections of lexical categories;
+that e.g. NPs are in effect just nouns with various other encrusted
+bits---adjectives, determiners and so on that are attached to the Ns
+that are the `head' of the NP. Rather, his perspective appears to have been
+based much more on the conceptual burden of the items corresponding to
+the parts of the proposition conveyed by the sentence. But in
+principle, if there were a one-to-one relationship between the way in
+which syntactic valence is satisfied and the way in which semantic
+meaning is assembled, then the conceptual construal of valence and the
+syntactic combinatorics of language would essentially mirror each
+other.
+
+Contemporary phrase structure approaches, of course, do not adhere to
+the analytic program such a unified view of syntax and semantics
+imposes. Typically, we find a set of lexical (and, in certain
+approaches, morphological) elements that represent the lowest tier of
+syntactic objects, corresponding to the terminal nodes in phrase
+structure trees, and more complex objects that these element compose
+into, which satisfy some set of criteria---typically based heavily on
+distributional possibilities, displaceability chief among them. These
+elements combine by rules which license hierarchical structures that
+represent the syntactic form of a sentence as the record of all the
+combinatorial steps that had to apply to derive that sentence.  But
+there is a alternative approach available, one in which lexical items
+are regarded as inhabitants of different \textsc{types}, representing what
+is in effect the combinatorial `destiny' of the words inhabiting that
+type, and in which the mode of synactic composition and the mode of
+semantic composition are at a more abstract level the same
+operation. Such a theoretical architecture represents, in my view, one
+possible way in which contemporary formal linguistics reflects a
+Peircian turn, although one perhaps rather different from what Peirce
+himself had in mind.
+
+
+In a sense, it seems a bit of truism to describe any particular
+framework as `valence-based'; virtually all major theories or
+`programs' utilize some notion of valence as a central feature in
+licensing sentences. But it is not often appreciated how much mileage
+is possible by driving an approach in which the combinatoric
+possibilities of individual words can determines quite complex
+patterns and effects, including arbitrarily non-local dependencies and
+interactions amongst such dependencies. In the following sections I
+outline a framework based on this architecture---as first envisaged
+and articulated by Peirce---and show how it allows us to formulate
+alternatives to standard phrase structure analyses that do not require
+us to posit elaborate machinery altering the hierarchical arrangement
+of structures that have already been formed, but nonetheless capture a
+particularly intricate relationship between long-distance dependencies
+and ellipsis strictly on the basis of lexical argument structure.
+
+
+
+\section{Argument structure and labeled deductive systems\label{sec:argstruc}}
+
+Theories of syntactic structure of the sort alluded to in the final
+paragraph of the preceding section belong to a family of frameworks
+that represent different versions of type-logical categorial grammar.
+The essential premise shared by the frameworks is that the rules of
+syntactic composition are stated as a deductive calculus formally
+equivalent to at least the implicational fragment of one or another
+standard truth conditional logic, with inference from valid type(s) to
+valid type in place of inference from true premise(s) to true
+premise. In the framework described below, each linguistic sign
+comprises a phonological and semantic annotation which is said to
+\textsl{label} the sign's syntactic type. The compositional rules of
+the grammar are homologous to the implicational subsystem of
+substructural intuitionistic propositional logic (SIPL), i.e.,
+IPL lacking rules of permutation, contraction or weakening, with implication
+corresponding to types of the form \syncat{\textit{Y}/\textit{X}}, \syncat{\textit{X}\bsl{}\textit{Y}} and \syncat{\textit{Y}\vs \textit{X}} The
+first of these can be thought of as something like, `give me a sign of
+type \textit{X} on my right and you'll get back a sign of type  \textit{Y}', and the
+second is the same with `left' in place of `right'. The third is a bit
+more complex: it tells you that, if there is a sign of type it can be
+realized in a certain designated position `within' the sign typed
+\textit{Y}\vs \textit{X}. We refer to inhabitants of slashed types as
+\textsl{functional} terms, in view of their semantics, as we discuss below. 
+
+What are the syntactic types that can instantiate \textit{Y} and \textit{X}? For our
+purposes, we can posit three atomic types, which are in a
+one-to-one relationship with basic semantic types:\footnote{Here and
+in what follows, I used the standard angled bracket notation
+$\langle\tau_1,\tau_2\rangle$ to indicate a function from some object
+of semantic type $\tau_1$ to an object of semantic type $\tau_2$.}
+
+\begin{exe}
+ \ex\label{types}
+\begin{tabular}{clc}
+\textsf{Type} & \textsf{Semantic object} & \textsf{Semantic type} \\
+ & & \\
+S & proposition & $t$\\
+NP & referring expression & $e$ \\
+N  & property & $\langle e,t\rangle$ \\
+\end{tabular}
+\end{exe}
+Clauses then correspond to propositions, and NPs to Peirce's
+`subjects', so that in (\ref{example}a), for example, we would assign \textit{give}
+the type \syncat{(NP\bsl{}S)/NP/NP}:\footnote{We will also take PP to be a basic type,
+although here matters are a bit more complex: typically, inhabitants of
+the type PP have the same semantic type as those typed NP.}
+
+
+\begin{exe}
+ \ex\label{example}
+  \begin{xlist}
+ \ex\label{}
+    John showed Mary the manuscript.
+ \ex\label{}
+    \LexEnt{\pt{ gave}}{\sem{ \trns{give} }}{\syncat{(NP\bsl{}S)/NP/NP }}
+  \end{xlist}
+\end{exe}
+The rules under which (\ref{example}b) composes with its argument terms to
+yield the sentence in (\ref{example}a) are, as noted, the elimination and
+introduction rules for implication of intuitionistic propositional
+logic, where implication takes the three forms noted earlier. There
+are a number of different formats for logical rules; the system I
+introduce here belongs to a subfamily of type-logical frameworks which
+uses the Natural Deduction conventions. In the Prawitz notion followed
+below, the ordinary IPL rule would take the form in (\ref{prawitz}b):
+
+\begin{exe}
+ \ex\label{prawitz}
+\begin{tabular}{cccc}
+{a.    
+\AxiomC{$\phi\supset\psi$}
+\AxiomC{$\phi$}
+\RightLabel{\mbox{\tiny $\scriptstyle \supset\,$}\tiny Elim}  
+\BinaryInfC{$\psi$}
+\DisplayProof
+} & & & 
+{b.
+\AxiomC{$\phi$}
+\noLine  
+\UnaryInfC{$\vdots$}
+\noLine
+\UnaryInfC{$\psi$}
+\RightLabel{\mbox{\tiny $\scriptstyle \supset\,$}\tiny Intro}  
+\UnaryInfC{$\phi \supset \psi$}
+\DisplayProof
+}
+\end{tabular}
+\end{exe}
+(\ref{prawitz}a) is nothing other than the ancient principle of Modus
+Ponens, where there is an antecedent ($\phi$) and a consequent
+($\psi$), such that the truth of $\phi$ is a guarantor of the truth of
+$\psi$. (\ref{prawitz}b) is the slightly less transparent rule of
+hypothetical reasoning: if, in some context of established results
+introducing an hypothesis $phi$ allows us to deduce $\psi$, then in
+that same context, we know that the implication $\phi\supset\psi$
+follows.\footnote{Intuitionistic implication differs from classical
+implication in that Peirce's
+Law---$((\phi\supset\psi)\supset\phi)\supset\phi$---holds for the
+latter but not the former, since on intuitionistic assumptions there
+is no way to deduce the consequent $\phi$ from the antecedent
+$(\phi\supset\psi)\supset\phi$. This is as it should be so far as our
+type logic is concerned, since translation of Peirce's Law into type
+logic results in a generally false prediction about argument
+structure.} In a nutshell, if we assume a certain premise that allows
+us to deduce a certain result, we know that, mutatis mutandis, if that
+premise were true, the result would then follow.
+
+But transating these rules into the type-logical domain requires a
+good deal more than just inference rules for types. Linguistic signs do not just inhabit types;
+they also carry phonological and semantic information. Unlike the
+propositions that combine under intuitionistic rules of inference, the
+word(sequence)s that are the corresponding type-logical objects are
+ordered linearly in sentences---a property we take to be a prosodic,
+not syntactic fact, reflecting our partial adoption of the
+tectogrammatical/phenogrammatical distinction advanced in
+\citet{Curry1961}. Similarly, syntactic composition and inference are
+exactly mirrored in the semantic combinatorics, as will become evident
+from the full statement of the type-logical rules of inference given
+in (\ref{rules}), corresponding to (\ref{prawitz}), assumed throughout this
+paper. In (\ref{rules}) and hereafter, I take a sign to be a tripartite
+object with a prosodic sector, a semantic sector and a type value,
+presented in that order.
+
+\begin{exe}
+ \ex\label{rules}
+\begin{tabular}{ccc}
+\term{Connective} & \term{Introduction} & \term{Elimination} \\
+/ &
+{ 
+\AxiomC{\Lemma}
+\UnaryInfC{\Lemma}
+\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
+\UnaryInfC{\LemmaAlt}
+\AxiomC{\Lemma}
+\UnaryInfC{\Lemma}
+\TrinaryInfC{\LexEnt{\pt{\ptv{b} \O \pt{\ensuremath{\greekp}} }}{\sem{ \sF}}{\syncat{\textit{B}}}}
+\RightLabel{\scalebox{.8}{/I$^n$}}
+\UnaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{B}/\textit{A}}}}
+\DisplayProof}
+&
+{ 
+\AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{B}/\textit{A}}}}
+\AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\LexEnt{\pt{\ptv{b} \O \ptv{a}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
+\DisplayProof}\\
+& & & \\[-1ex]
+\bsl &
+{ 
+\AxiomC{\Lemma}
+\UnaryInfC{\Lemma}
+\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
+\UnaryInfC{\LemmaAlt}
+\AxiomC{\Lemma}
+\UnaryInfC{\Lemma}
+\TrinaryInfC{\LexEnt{\pt{\pt{\ensuremath{\greekp}} \O \ptv{b}}}{\sem{ \sF}}{\syncat{\textit{B}}}}
+\RightLabel{\scalebox{.8}{\bsl I$^n$}}
+\UnaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{A}\bsl{}\textit{B}}}}
+\DisplayProof}
+&
+{ 
+\AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
+\AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{A}\bsl{}\textit{B}}}}
+\RightLabel{\scalebox{.8}{\bsl E}}
+\BinaryInfC{\LexEnt{\pt{\ptv{a} \O \ptv{b}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
+\DisplayProof}\\
+ & & & \\
+{
+\ensuremath{\vs} &
+\AxiomC{\Lemma}
+\UnaryInfC{\Lemma}
+\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
+\UnaryInfC{\LemmaAlt}
+\AxiomC{\Lemma}
+\UnaryInfC{\Lemma}
+\TrinaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \sF}}{\syncat{\textit{B}}}}
+\RightLabel{\scalebox{.8}{\ensuremath{\vs}$^n$}}
+\UnaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greekp}.  \ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{B}\vs \textit{A}}}}
+\DisplayProof}
+& 
+{ 
+\AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{B}\vs \textit{A}}}}
+\AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
+\RightLabel{\scalebox{.8}{\ensuremath{\vs}E}}
+\BinaryInfC{\LexEnt{\pt{\ptv{b(a)}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
+\DisplayProof}
+\end{tabular}
+\end{exe}
+In (\ref{rules}), the vertical lines surrounding the variable and its
+composition into the proof denote the proof history subsequent to the
+introduction of the variable. \ptv{a,b} are metavariables over
+strings---lexical items or sequences of lexical items---while \pt{ p-
+} is a variable, supplied not by the lexicon, or as a stand-in for
+some actual string whose value is irrelevant in the context of the
+rule.  Rather, they are part of the logic itself, representing, in
+effect.a space in a prosodic or semantic expression that could be
+occupied by any term of the same type as the variable. Each variable
+sign is introduced with a specific index, and each application of an
+Introduction rule is keyed to the index of the variable which is
+removed in the introduction of the directional slashes or \L-bound in
+\ensuremath{\vs} introduction.  The Elimination rules shown are, again, different
+avatars of (\ref{prawitz}a): a slashed term seeks a term of the antecedent
+type to give us a consequent type, and the result of composing the
+slashed term with the antecedent term is necessarily a term of the
+consequent type. One can see these inference rules as inversions of
+ordinary context-free PS rules; for example, taking VP to be an
+abbreviation for \syncat{NP\bsl{}S}---a clause modulo an NP term on its left
+edge---we have S \ensuremath{ \rightarrow } NP \syncat{NP\bsl{}S} on the one hand and a deduction\bigskip
+
+\AxiomC{NP}
+\AxiomC{NP$\bsl$S}
+\RightLabel{\scalebox{.8}{\bsl E}}
+\BinaryInfC{S}
+\DisplayProof
+\bigskip
+
+\noindent on the other.\footnote{However, as noted below, this view leaves
+the nature of a type-logical proof open to a foundational misinterpretation.} The prosodic and semantic sectors combine in
+lockstep with the type composition: the prosody of directionally
+slashed types---$\!\!\!$ \syncat{\textit{Y}/\textit{X}} and \syncat{\textit{X}\bsl{}\textit{Y}}---reflects the
+direction of the slash: the former precedes the prosody of its type X
+argument, the latter follows it\footnote{I defer discussion of
+vertically slashed terms till we get to the Introduction rules}. The
+semantics, however, does not reflect the direction of the slash: for
+all functional types, the semantic term is a function which takes the
+denotation of the syntactic argument as its own arguent. 
+
+With this much in hand, we can now provide a complete proof of an
+English sentence that illustrates the ways in which type, prosody and
+semantics collaborate to derive the sentence in (\ref{sent}) as, in effect, a
+theorem. We start with a lexicon, as in (\ref{lexicon}):
+
+\begin{exe}
+ \ex\label{sent}
+  John sent those documents to the committee over the weekend.
+\end{exe}
+\begin{exe}
+ \ex\label{lexicon}
+\begin{tabular}{lll}
+ \LexEnt{\pt{ john}}{\sem{ \trns{j} }}{\syncat{NP}} & &
+\LexEnt{\pt{sent}}{\sem{ send}}{\syncat{VP/PP\fb{to}/NP}} \\
+\LexEnt{\pt{those}}{\sem{ \iota}}{\syncat{NP/N\fb{pl}}} & & 
+\LexEnt{\pt{documents}}{\sem{ \trns{docs} }}{\syncat{N\fb{pl}}} \\
+\LexEnt{\pt{to}}{\sem{ \lambda x.x}}{\syncat{PP\fb{to}/NP}} & &
+\LexEnt{\pt{the}}{\sem{ \iota}}{\syncat{NP/N}} \\
+\LexEnt{\pt{committee}}{\sem{ comm}}{\syncat{N}} & &
+\LexEnt{\pt{over}}{\sem{ \trns{over} }}{\syncat{(VP\bsl{}VP)/NP}} \\
+\LexEnt{\pt{weekend}}{\sem{ \trns{wknd} }}{\syncat{N}} & &
+\end{tabular}
+\end{exe}
+Lexical entries are axioms of the type logic (though other axioms are
+possible, including axioms which incur some kind of penalty, and
+license proofs whose output is not fully acceptable, allowing us to
+incorporate a range of gradience effects into the framework). A few
+comments on (\ref{lexicon}) are in order:  PP\fb{to} is
+a subtype of PP, derived via the the unique prepositional type PP\fb{to}/NP, whose
+semantic interpretation is an identity function, yielding
+a denotation identical to that of its argument. Ns have subtypes N\fb{sg}
+and N\fb{pl}, with some determiners targeting one or the other. Finally,
+\textit{over}, despite its standard identification as a preposition, is in
+type-logical terms a function composing with an NP to yield a function
+which applies a temporal semantics to a property, corresponding to a
+restriction of the event instantiating that property.
+
+The rules of the logic apply to the lexical axioms to yield the proof
+in (\ref{sentProof}):
+
+\begin{exe}
+ \ex\label{sentProof}
+\hspace{-8ex}
+\scalebox{.75}{
+\AxiomC{\MultiLine{\ptfont sent; \\ \sem{ \trns{send} }; \\\syncat{  VP/PP\fb{to}/NP}}}
+\AxiomC{\MultiLine{\ptfont the; \\ \sem{ \iota}; \\\syncat{  NP/N}}}
+\AxiomC{\MultiLine{\ptfont documents; \\ \sem{ \trns{docs} }; \\\syncat{  N}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\MultiLine{\ptfont the \O documents; \\ \sem{ \iota(\trns{docs})}; \\\syncat{  NP}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\MultiLine{\ptfont sent \O the \O documents; \\ \sem{ \trns{send}(\iota(\trns{docs}))}; \\\syncat{  VP/PP\fb{to}}}}
+\AxiomC{\MultiLine{\ptfont the; \\ \sem{ \iota}; \\\syncat{  NP/N}}}
+\AxiomC{\MultiLine{\ptfont committee; \\ \sem{ \trns{comm} }; \\\syncat{  N}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\MultiLine{\ptfont the \O committee; \\ \sem{ \iota(\trns{comm})}; \\\syncat{  NP}}}
+\AxiomC{\MultiLine{\ptfont to; \\ \sem{ \lambda x.x}; \\\syncat{  PP\fb{to}/NP}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\MultiLine{\ptfont to \O the \O committee; \\ \sem{ \iota(\trns{comm})}; \\\syncat{  PP\fb{to}}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\MultiLine{\ptfont sent \O the \O documents \O to \O the \O committee; \\ \sem{ \trns{send}(\iota(\trns{docs}))(\iota(\trns{comm}))}; \syncat{ VP}}}
+\AxiomC{\MultiLine{\ptfont  over; \\ \sem{ \trns{over} }; \\\syncat{  VP\bsl{}VP/NP}}}
+\AxiomC{\MultiLine{\ptfont  the; \\ \sem{ \iota}; \\\syncat{  NP/N}}}
+\AxiomC{\MultiLine{\ptfont  weekend; \\ \sem{ \trns{wknd} }; \\\syncat{  N}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\MultiLine{\ptfont the \O weekend; \\ \sem{ \iota(\trns{wknd})}; \syncat{ NP}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\MultiLine{\ptfont over \O the \O weekend; \\ \sem{ \trns{over}(\iota(\trns{wknd}))}; \\\syncat{  VP\bsl{}VP}}}
+\RightLabel{\scalebox{.8}{\bsl E}}
+\BinaryInfC{\MultiLine{\ptfont sent \O the \O documents \O to \O the \O    {}\\ \ptfont   \hspace{3ex}committee \O over \O the \O weekend; \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  VP}}}
+\AxiomC{\MultiLine{\ptfont john; \\ \sem{ \trns{j} }; \\\syncat{  NP}}}
+\RightLabel{\scalebox{.8}{\bsl E}}
+\BinaryInfC{\MultiLine{\ptfont john \O sent \O the \O documents \O to \O the \O    {}\\ \ptfont   \hspace{3ex}committee \O over \O the \O weekend; \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  S}}}
+\DisplayProof
+}
+\end{exe}
+This proof can be seen as a realization of Peirce's emphasis on
+argument structure, and its satisfaction, as the `engine' of syntactic
+combinatorics. As noted at the beginning of this paper, the types
+associated with strings---either in the lexicon or via composition in
+the course of the proof---do not reflect the standard parts of speech
+inherited from the classical grammarians, but rather their
+combinatorial affinities, determined in part by the nature of their
+contribution to the formation of the proposition conveyed by a
+declarative sentence, or of the more complex semantical object denoted
+by questions, and so on. Proofs proceed purely on the basis of logical
+inference driven by type specifications, with semantic composition
+mirroring the composition steps determined by the inference
+rules given in (\ref{rules}), and the rules themselves reflecting standard
+truth-conditional deductive systems.
+
+On the other hand, one might take the view that such a proof is
+nothing more than a recasting of a standard hierarchical
+representation licensed by context-free phrase structure rules. This
+would be however a fundamental error: note that, in contrast to the
+hierarchical realization of phrase-structure rules in branching tree
+representations of constituent syntax, the proof steps in (\ref{sentProof})
+have no representational status so far as the structure of the
+sentence is concerned. Indeed, strictly speaking there \textit{is} no
+such structure: what we have in (\ref{sentProof}) is a demonstration that
+the closure of the axioms of the system---the English lexicon---under
+the inference rules of the logic allow a valid inference of a prosodic
+string
+\pt{john \O sent \O the \O documents \O to \O the \O committee \O over \O the \O weekend}
+which signifies a proposition
+\sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm}))) } and that the
+linguistic expression which has those prosodic and semantic values is
+a sentence. The steps involved in the proof have no representational
+status, any more than, given a set of premises $\Gamma$, the steps in
+the proof of \sem{ \Gamma  \ensuremath{\vdash\xspace } \phi } in some stardard logic have any
+bearing on the content of $\phi$.\footnote{For example, there are any
+number of ways to prove that \sem{  \ensuremath{\vdash\xspace } \phi\supset(\neg\phi\supset\psi) }
+in classical logic, but the content of of the implication is
+altogether independent of proof narrative.}
+
+The difference between the logical composition of terms in (\ref{sentProof})
+a tree representation of (\ref{sent}) under a set of phrase structure rules
+becomes far more stark when we turn from the elimination rules, which
+are the only ones in play in (\ref{sentProof}), to the introduction rules
+shown in (\ref{rules}). There is nothing in phrase structure grammmar which
+corresponds to the introduction rules, and here the advantages of the
+proof-theoretic framework become apparent. So-called non-constituent
+coordination patterns such as Right Node Raising in (\ref{RNR}) and
+Dependent Cluster Coordination in (\ref{DCC}) are pointed examples:
+
+\begin{exe}
+ \ex\label{NCC}
+  \begin{xlist}
+ \ex\label{RNR}
+    John bought, and Bill baked, the pizza margherita.
+ \ex\label{DCC}
+    John sent that message to Bill on Thursday and Mary on
+  \end{xlist}
+  Saturday.
+\end{exe}
+Both of the patterns in (\ref{NCC}) are essentially embarrassments to
+frameworks based on phrase structure configurations, requiring either
+transformational grammar's complex arrangements of structure-altering
+operations, including movement and/or deletion (along with the purely
+stipulative constraints on the linear output of these operations
+required to get the facts right), or essentially stipulative
+constructional templates, as in later developments of HPSG (for
+detailed critques of these approaches, see \citet{levine11},
+\citet{kubota-levine-coord}, \citet{kubotalevineBook}). For proof-theoretic
+approaches, on the other hands, where valence satisfaction is driven
+by the inference rules of standard logics, the data in (\ref{NCC}) are
+almost trivial to obtain with the correct semantics, once we've
+generalized the system based only on the elimination rules to the
+introduction rules that are their logical duals, as in all Natural
+Deduction systems. For example, we have the following straightforward
+application of the / Elimination rule:
+
+\begin{exe}
+ \ex\label{rnrSubproof}
+\AxiomC{\LexEnt{\pt{bought}}{\sem{ \trns{buy} }}{\syncat{VP/NP}}}
+\AxiomC{\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x}}{\syncat{NP}}}
+\BinaryInfC{\LexEnt{\pt{bought \O p}}{\sem{ \trns{buy}(x)}}{\syncat{VP}}}
+\AxiomC{\LexEnt{\pt{john}}{\sem{ \trns{j} }}{\syncat{NP}}}
+\BinaryInfC{\LexEnt{\pt{john \O bought \O p}}{\sem{ \trns{buy}(x)(\trns{j})}}{\syncat{S}}}
+\UnaryInfC{\LexEnt{\pt{john \O bought}}{\sem{ \lambda x. \trns{buy}(x)(\trns{j})}}{\syncat{S/NP}}}
+\DisplayProof
+\end{exe}
+The / Elimination rule allows us to obtain what in stardard phrase
+structure appoaches would be characterized as a partial constituent
+(although, in the framework adopted here, it is no more
+`partial' than VPs, i.e., signs inhabiting the type \syncat{NP\bsl{}S}). A
+completely parallel proof will derive the sign in (\ref{baked}):
+
+\begin{exe}
+ \ex\label{baked}
+  \LexEnt{\pt{bill \O baked}}{\sem{ \lambda u. \trns{bake}(u)(\trns{b})}}{\syncat{S/NP}}
+\end{exe}
+Application of the standard generalized conjunction operator
+\sem{  \ensuremath{ \sqcap\xspace }  } \trns{introduced} \trns{in} \citet{partee-rooth1983a}, which we take to be the
+denotation of \textit{and}, with the type (\syncat{\textit{X}\bsl{}\textit{X}})/\textit{X}, will then lead to the
+inference in (\ref{rnrSign}):
+
+\begin{exe}
+ \ex\label{rnrSign}
+  \LexEnt{\pt{john \O bought \O and \O bill \O baked}}{\sem{ \lambda w. \trns{buy}(w)(\trns{j}) /\f \trns{bake}(w)(\trns{b})}}{\syncat{S/NP}}
+\end{exe}
+The final step in the proof will then be (\ref{rnrFinal}):
+
+\begin{exe}
+ \ex\label{rnrFinal}
+\AxiomC{\MultiLine{\ptfont john \O bought \O and \O    {}\\ \ptfont   \hspace{3ex} bill \O baked; \\   \sem{ \lambda w. \trns{buy}(w)(\trns{j}) \ensuremath{ \wedge\xspace } \trns{bake}(w)(\trns{b})}; \\\syncat{  S/NP}}}
+\AxiomC{\Lemma}
+\UnaryInfC{\MultiLine{\ptfont the \O pizza \O margarita; \\ \sem{ \iota(\trns{pzzmarg})}; \syncat{ NP}}}
+\BinaryInfC{\MultiLine{\ptfont john \O bought \O and \O    {}\\ \ptfont   \hspace{3ex}bill \O baked; \\   \sem{  \trns{buy}(\iota(\trns{pzzmarg}))(\trns{j}) \ensuremath{ \wedge\xspace } \trns{bake}(\iota(\trns{pzzmarg}))(\trns{b})}; \\\syncat{  S}}}
+\DisplayProof
+\end{exe}
+(\ref{DCC}) can be similarly derived via a somewhat tedious but
+straightforward subproof that yields \textit{Bill on Thursday} and \textit{Mary on
+Friday} as inhabitants of the type \syncat{(PP\fb{to}/NP)\bsl{}(NP\bsl{}(PTV\bsl{}VP))}, where PTV
+is an abbreviation for the type VP/PP\fb{to}/NP. The conjunction of the two
+is therefore also of this same type, so that \textit{Bill on Thursday and Mary on
+Saturday} combines to its left first with a PP\fb{to}/NP sign (i.e., \textit{to}),
+then an NP (\textit{the message}), then a PTV sign (\textit{sent}), and finally VP,
+i.e., \syncat{NP\bsl{}S}, which picks up \textit{John} to give us (\ref{DCC}).
+
+In a nutshell, in both of the patterns exhibited in (\ref{NCC}), the
+interplay of the elimination and introduction rules allows us to
+compose each of the conjoined `nonconstituents' into an S as arguments
+of a variable, with all other components of the S realized as
+variables, and then eliminate the variable terms by successive
+applications of the relevant introduction rules. The result is that
+the apparent nonconstituent prosodic elements are assigned a type,
+with a corresponding semantics corresponding to the applicaton of
+abstraction operators at each elimination step. They are thus, in our
+terms, full constituents, now with the status of functional terms, and
+can then be conjoined. The resulting conjunction, possibly with a
+rather elaborate valence as in the case of (\ref{DCC}), then composes with
+its arguments to form the coordination. No structural operations, or
+indeed any structures at all are involved; the proofs given do
+nothing more than verify the association of the prosody of the
+specific conjunctions with a certain valence, or argument structure,
+and a corresponding semantics. This kind of operation is often
+characterized as type-raising, but in the deductive system embodied in
+(\ref{rules}), it is simply a by-product of the logic of implication
+elimination and introduction.
+
+This leaves the rule for \ensuremath{\vs} introduction to be considered. \ensuremath{\vs}
+introduction differs from directional slash introduction in one
+foundational respect: rather than simply removing \pt{ \ensuremath{\greekp} } from the
+prosodic string, the variable becomes bound by an abstraction
+operator. This makes the resulting prosodic object a function, not a
+string, and when the prosody of a sign typed \syncat{\textit{Y}\vs \textit{X}} composes with
+the prosody of a type $X$ sign, the former takes the latter as an
+argument (as aptly illustrated by (\ref{cleopatra}) below).  It is worth
+noting that the introduction rules repesent a formal expression of
+Peirce's observation, quoted in \citet[8]{nothPeirce}: `in the proposition
+{`'}Anthony gave a ring to Cleopatra'', Cleopatra is as much a subject of what is
+meant and expressed as is the ring or Anthony. A proposition, then,
+has one predicate and any number of subjects.' The significant insight
+here---that a sentence expressing a proposition can be composed as the
+ascription of some property to \textsl{any} of the argument
+terms---corresponds exactly to the possibility of deriving a predicate
+by composing a predicate with one variable term, with constants for
+all the other arguments, and then abstracting on that
+variable. 
+
+\begin{exe}
+ \ex\label{cleopatra}
+\AxiomC{\LexEnt{\pt{gave}}{\sem{ \trns{give} }}{\syncat{VP/PP\fb{to}/NP}}}
+\AxiomC{\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x}}{\syncat{NP}}}
+\BinaryInfC{\LexEnt{\pt{gave \O \ensuremath{\greekp}}}{\sem{ \trns{give}(x)}}{\syncat{VP/PP\fb{to}}}}
+\AxiomC{\Lemma}
+\UnaryInfC{\MultiLine{\ptfont to \O cleopatra; \\ \sem{ \trns{cleop} }; \syncat{ PP\fb{to}}}}
+\BinaryInfC{\LexEnt{\pt{gave \O \ensuremath{\greekp} \O to \O cleopatra}}{\sem{ \trns{give}(x)(\trns{cleop})}}{\syncat{VP}}}
+\AxiomC{\LexEnt{\pt{antony}}{\sem{ \trns{ant} }}{\syncat{NP}}}
+\BinaryInfC{\LexEnt{\pt{antony \O gave \O \ensuremath{\greekp} \O to \O cleopatra}}{\sem{ \trns{give}(x)(\trns{cleop})(\trns{ant})}}{\syncat{S}}}
+\UnaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greekp}.antony \O gave \O \ensuremath{\greekp} \O to \O cleopatra}}{\sem{ \lambda x. \trns{give}(x)(\trns{cleop})(\trns{ant})}}{\syncat{S\vs NP}}}
+\DisplayProof
+\end{exe}
+The predicate in the final line of (\ref{cleopatra}) ascribes a property to
+some object; that object is in the set of things given to Cleopatra to
+Antony, and the proposition in the passage Noth quotes from Peirce is
+decomposable into \L-terms along these lines just as much as it is the
+composition of \textit{Antony} with the denotation of the VP \textit{gave a ring to
+Cleopatra}. In this sense, \ensuremath{\vs} Introduction is the logical warrant for
+the Peirce's view that \textit{Anthony gave a ring to Cleopatra} is `about'
+any (or all) of its `subject', not just the NP which carries the
+grammatical function `subject'. 
+
+But the empirical problem which led to \ensuremath{\vs} introduction (under a different
+notation) in \citet{oehrle1994} was rather different, and took the form of
+the question, how can we capture the fact that quantified expressions
+such as \textit{every student}, \textit{some book}, \textit{most journals} and so on have
+the same syntactic distribution as NPs, i.e., names and definite
+descriptions, while corresponding to radically different semantic
+objects? And, related to this question, is a second: how do
+quantifiers interact syntactically with the sentences they appear in
+such that they take scope over subportions of the semantic
+interpretation of those sentences? Various solutions have been
+proposed, e.g., the machinery introduced by Montague
+(1973)\nocite{montague1973a}, whereby all quantified expressions and
+names denote property sets, i.e., are functors on the properties
+denoted by the VPs that take them as syntactic subject, which require
+the use of meaning postulates; post-SpellOut
+movement operations (`Quantifier Raising', originating in
+\citet{may_r1985a}) in the most recent incarnations of transformational
+grammar; Cooper's (1975, 1983)\nocite{cooper75}\nocite{Cooper83}
+storage mechanism, adopted in \citet{pollardsag94}, and may others. In
+some cases the solutions involve formal devices that seem to be
+purpose-built for the description of quantifier's syntactic and
+semantic behavior, with little use outside the specific problem they
+were designed for, e.g., quantifier storage and retrieval; in others,
+there is is no connection to an actual model-theoretically accessible
+semantic denotation, as is the case with `Quantifier Raising' in
+transformational grammar and the \citet{pollardsag94} proposal; and still
+others are problematic in both respects.
+
+Oehrle's 1994 breakthrough, in contrast, is conceptually simple, of
+extremely broad application to problems of the syntax-semantics
+interface, and yields a directly interpretable expression in
+higher-order logic that is model-theoretically interpretable in a
+straightforward way. But this last point needs to be amplified: the
+basic approach is itself compatible with a wide range of explicit
+semantic frameworks, including proof-theoretic approaches that do not
+appeal to any model. Oehrle's key innovation was the application of a
+higher-order logic in the prosodic sector, with a corresponding type
+hierarchy, allowing the semantics and the prosody to operate
+independently of each other so that quantified expressions, and scopal
+operators, generally, can in effect take the syntactic contexts in
+which they appear as their own arguments. The following simple example
+is representative of the setup generally. We have
+
+\begin{exe}
+ \ex\label{someone}
+  John gave someone that book.
+\end{exe}
+We take the quantified expression \textit{someone} to be a functor that
+intersects a property argument with the set of people, and returns a
+truth value of 0 if the intersection is $\varnothing$, and 1
+otherwise. A proof along the lines of (\ref{cleopatra}) will directly yield the
+sign in (\ref{gaveTerm}):
+
+\begin{exe}
+ \ex\label{gaveTerm}
+  \LexEnt{\pt{ \ensuremath{\lambda} \ensuremath{\greekp}. john \O gave \O \ensuremath{\greekp} \O that \O book}}{\sem{ \lambda x. \trns{gave}(x)(\iota(\trns{book}))}}{\syncat{S\vs NP }}
+\end{exe}
+The semantics here is just what we need: the characteristic function
+of the set of entities who received some discoure-prominent (and in
+some sense pragmatically distal) member of the set of books from
+John. \textit{Someone} intersects this set with that of people and, based on
+the model, returns a value of 0 or 1. But in that case, the pronunciation
+\pt{someone} cannot itself be the prosody of \textit{someone}, since in that
+case it would be an argument of the prosody in (\ref{gaveTerm}) despite
+\textit{someone}'s semantics taking the latter's
+interpretation as its argument. Prosody and semantics would thuis be at
+irreconcilable cross-purposes.
+
+Oehrle's ingenious solution to this seeming contradiction takes the
+prosody of \textit{someone} to be, not \pt{someone}, but a function that
+applies the prosody of its \syncat{S\vs NP} argument to \pt{someone}. Since
+\pt{\ensuremath{\lambda} \ensuremath{\greekp}. john \O gave \O \ensuremath{\greekp} \O that \O book} is a string-to-string
+function, \textit{someone} is given a prosody which applies to such functions
+and positions them to take a string argument \pt{someone} to the
+pronunciation of (\ref{someone}). The lexical entry for \textit{someone} is then
+
+\begin{exe}
+ \ex\label{someoneEntry}
+  \LexEnt{\pt{ \ensuremath{\lambda} \ensuremath{\greeks}. \ensuremath{\greeks}(someone)}}{\sem{ \lambda P. \trns{\raisebox{1.5ex}{\ensuremath{\rotatebox{180}{\textbf{E}}}}}(\trns{person})(P)}}{\syncat{S\vs (S\vs NP) }}
+\end{exe}
+and we have the simple proof in (\ref{someoneProof}):
+
+\begin{exe}
+ \ex\label{someoneProof}
+\AxiomC{\Lemma}
+\UnaryInfC{\MultiLine{\ptfont \lambda \ensuremath{\greekp}. john \O gave \O \ensuremath{\greekp} \O that \O book; \\ \sem{ \lambda x. \trns{gave}(x)(\iota(\trns{book}))}; \syncat{ S\vs NP}}}
+\AxiomC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greeks}. \ensuremath{\greeks}(someone)}}{\sem{ \lambda P. \trns{\raisebox{1.5ex}{\ensuremath{\rotatebox{180}{\textbf{E}}}}}(\trns{person})(P)}}{\syncat{S\vs (S\vs NP)}}}
+\BinaryInfC{\MultiLine{\ptfont \lambda \ensuremath{\greeks} [\ensuremath{\greeks}(someone)](\lambda \ensuremath{\greekp}. john \O gave \O \ensuremath{\greekp} \O that \O book); \\ \sem{ \lambda P[ \trns{\raisebox{1.5ex}{\ensuremath{\rotatebox{180}{\textbf{E}}}}}(\trns{person})(P)](\lambda x. \trns{gave}(x)(\iota(\trns{book})))}; \syncat{ S}}}
+\dottedLine
+\RightLabel{\mbox{\tiny{$\beta$}-conversion}}
+\UnaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greekp} [john \O gave \O \ensuremath{\greekp} \O that \O book](someone)}}{\sem{ \trns{\raisebox{1.5ex}{\ensuremath{\rotatebox{180}{\textbf{E}}}}}(\trns{person})(\lambda x. \trns{gave}(x)(\iota(\trns{book})))}}{\syncat{S}}}
+\dottedLine
+\RightLabel{\mbox{\tiny{$\beta$}-conversion}}
+\UnaryInfC{\LexEnt{\pt{john \O gave \O someone \O that \O book)}}{\sem{ \trns{\raisebox{1.5ex}{\ensuremath{\rotatebox{180}{\textbf{E}}}}}(\trns{person})(\lambda x. \trns{gave}(x)(\iota(\trns{book})))}}{\syncat{S}}}
+\DisplayProof
+\end{exe}
+The quantified expression takes scope over the context in which it
+appears---its continuation, in Barker's terms (2002,
+2004)\nocite{Barker2002}\nocite{Barker2004} (see also Barker and Shan
+2015)\nocite{barkershan2015}. If two quantified expressions are
+introduced into a single proof, the first one introduced into the
+proof will scope over the material included into the proof up to that
+point, and will then be part of the context which the second one
+scopes over when the latter is in turn added in the proof. A different
+proof, in which the two are introduced in the opposite order, will
+yield the opposite scoping. No special mechanism or operation is
+therefor required to obtain multiple scopings under the inference
+rules in (\ref{rules}) (see \citet{kubotalevineBook}, \textsection{2.3} for
+details).
+
+Oehrle's solution to the parallelism of NP and quantifed expression
+distibutions plays on the independent but linked relationship of
+prosody and semantics in type-logical grammar—a relationship made
+possible by the \ensuremath{\vs} connnective. Quantified expressions parallel NPs
+precisely because they are in a sense parasitic on NP variables: they
+only appear in parts of the string where such variables can appear,
+undergo abstraction and ultimately replacement by the string element
+in the prosody of quantifiers. At the same time, their syntax targets
+sentences which are `missing' NPs, in the sense that some argument
+position in the semantics is occupied by a \L-bound variable. These
+characteristics of \ensuremath{\vs} play an essential role across a wide range of
+phenomena, one of which is considered in detail in \textsection{3} as
+a dramatic illustration of the way effects which require recourse to
+operations on phrase structure in other approaches can be reduced to
+mappings between valence values in type-logical grammar, with no need
+to posit syntactic configuation. 
+
+
+\subsection{Interlude}
+
+At this point, it's important that we take a step back from the
+technical details covered in this section in order to get a more
+global picture of the strategy embodied in an approach based on
+(\ref{rules}). The explicit correspondence between the implicational syntax
+and the operations of abstraction and function application in the
+semantics and prosody via independent type hierarchies with their own
+respective \L-calculi, guarantee a fully compositional derivation of
+signs, with the syntactic types guiding the composition on the basis
+of the familiar logic of Modus Ponens and hypothetical reasoning. The
+critical point here is that not only obviously local dependencies
+involving argument structure, but arbitrarily long-distance
+effects---in particular, the interpretation of quantifier scope---are
+reducible to the satisfaction of argument requirements; in effect, in
+the proof-theoretic architecture of type-logical frameworks, valence
+satisfaction is the source of all observed grammatical regularities,
+as well as constructional idiosyncrasies.\footnote{For
+a demonstration of how these eccentries can be elegantly accounted
+for, see \citet{kubota-levine2022a}}. In the case of scopal operators, such
+as generalized quantifiers---as well as symmetrical predicates such as
+\textit{same}, \textit{similar}, \textit{different}, and various other varieties, the
+relationship between semantics and syntax is immediate and
+transparent: quantified expressions scope over the denotations of
+their syntactic arguments, in exactly the same way that modal
+auxiliaries and raising verbs scope over their VP arguments. In all
+cases, truth-conditional meaning is composed in accord with the
+valence of predicates and operators.
+
+What about genuinely long-distance dependencies, of the sort
+exemplified by topicalization, \textit{wh} displacement, \textit{tough}
+constructions and many others? These are standardly treated by
+machinery which `localizes' the dependency, but in neither
+derivational nor monostratal phrase-structure frameworks is the same
+mechanism employed for this localization as for garden-variety valence
+satisfaction. The point of the following analysis is to demonstrate
+the degree to which a proof-theoretic approach in which valence satisfaction,
+rather than syntactic configuration, yields the extraction dependency
+can capture the relevant phenomena in a simple and transparent fashion.
+
+\section{`Extraction' from ellipsis sites: what you don't see is what you don't get.}
+
+\subsection{The empirical problem}
+
+There is a sizable contemporary cross-linguistic literature on
+ellipsis, generally understood to refer to a varied range of phenomena
+in which semantic content from one part of a discourse context is
+part of the interpretation supplied by other(typically, but
+not necessarily, following)  material, despite the absence of any
+overt phonology and syntax corresponding to that interpretation. We
+find, for example, patterns such as the following:
+
+\begin{exe}
+ \ex\label{ellipsis}
+  \begin{xlist}
+ \ex\label{VPE}
+    John likes pizza, but Bill doesn't $\varnothing$\bsl\xspace\
+    `John likes pizza, but Bill doesn't like pizza'. \\
+    (VP/Post-auxiliary ellipsis)   
+ \ex\label{pseudo}
+    John eats way more junk food than he does $\varnothing$ real food.\\
+    `John eats way more junk food than he eats real food. \\
+    (Pseudogapping)
+ \ex\label{sluice}
+    John was arguing with someone, but I don't know who
+  $\varnothing$\bsl\xspace\
+    `John was arguing with someone, but I don't know who John was
+  arguing with.' \\
+    (Sluicing)
+ \ex\label{shortans}
+   \textsf{Q:} Who was John talking to? \\
+   \textsf{A:} $\varnothing$ Someone from his department.\\
+   `John was talking to someone from his department'\\
+   (Fragment answers)
+  \end{xlist}
+\end{exe}
+There are a number of other subspecies of ellipsis, but those in
+(\ref{ellipsis}) have had the lion's share of attention from theorists, most
+of whom appear to favor some version of the basic analytic line taken
+that originates in \citet{kuno81} and has been most influentially developed
+in \citet{merchant01} and subsequent work, whereby the interpretive glosses
+in (\ref{ellipsis}) are, in essence, the syntactic sources of the examples
+themselves. (\ref{VPE}) on this approach arises from a series of processes
+that can be graphically summarized as something very much like
+(\ref{VPdeletion}):
+
+\begin{exe}
+ \ex\label{VPdeletion}
+  John likes pizza, but Bill doesn't [\ensuremath{_{\mbox{\tiny\rm VP}}} \sout{like pizza}]
+\end{exe}
+Pseudo-gapping, as in (\ref{pseudo}), is the result of a movement to the
+left or right of the post-auxiliary `remnant' followed by the VP
+deletion process suggested in (\ref{pseudodeletion}):
+
+\begin{exe}
+ \ex\label{pseudodeletion}
+  John eats way more junk food than he does [\ensuremath{_{\mbox{\tiny\rm VP}}} [\ensuremath{_{\mbox{\tiny\rm VP}}} \sout{eat} {\gp}\xspace ] real food]
+\end{exe}
+and so on. Most of the arguments in favor of this approach are
+necessarily indirect, based on patterns of acceptability judgments which seem to
+mirror judgments of corresponding non-ellipsed data; in \citet{kubotalevineBook}, a
+detailed examination of what appear to be the most persuasive of these
+arguments strongly suggests that they are in fact quite fragile on
+both empirical and methodological grounds. The central difficulty with
+such arguments is their pivotal assumption  that
+the phenomena in  ellipsis and corresponding non-ellipsed example
+which evoke parallel judgments of acceptability---e.g., island effects,
+restriction on anaphora, etc.---are themselves syntactic in
+nature. Building this assumption into an argument that parallel
+judgments of ellpsis and correspnding non-ellipsed data reflects the
+need to posit covert phrase structure which is deleted in the course
+of derivations thus appears to be a textbook instance of begging the question. 
+
+Defenders of the view that what you don't see in ellipsis was never
+there in the first place still have their work cut out for them, of
+course; it is necessary to construct plausibility arguments for the
+premises that (i) the putatively syntactic effects alluded to have
+non-syntactic origins and (ii) that the parallels between ellipsis and
+non-ellipsed examples can originate in the extragrammatical sources
+adduced in establishing (i). Examples such as the following are
+particularly challenging insofar as (i) is concerned;
+
+
+\begin{exe}
+ \ex\label{extrac-from-VPE}
+  \begin{xlist}
+ \ex\label{}
+    I know what John ate for lunch,  but I don't know what Bill did.
+ \ex\label{}
+    I'm acutely aware of what I can do and what I
+  can't. (\citet[735]{mahoney2004}).
+ \ex\label{}
+    John is certain \textsl{he} would buy \textsl{this} kind of sports car, but I have no idea what kind \textsl{I} would.
+  \end{xlist}
+\end{exe}
+Although examples of the sort displayed in (\ref{extrac-from-VPE}) are not
+easy to discover in corpora, they can be found with a bit of
+persistence, though the third example is unattested (but has been
+checked with multiple informants, the great majority of whom found it
+altogether unproblematic with the right prosody (though the latter
+varied somewhat from speaker to speaker). But there is one species of this class of
+\textit{wh}-extractions, so called antecedent-contained deletion,  which is
+quite common. Data parallel to (\ref{antecDel}) can readily be found in
+Google search results, for example.
+
+\begin{exe}
+ \ex\label{antecDel}
+  \begin{xlist}
+ \ex\label{}
+    I hate feeling like everyone knows something I don't {\gp}\xspace . \\\url{https://twitter.com/therealkimj/status/1640857002896396288}
+ \ex\label{}
+    And perhaps they would nod with understanding at what a senior
+  once told me: `'Everyone knows something that I don't {\gp}\xspace . I keep
+  asking until I find out what that is.''\\
+  \url{https://www.footstepstoinspire.org/post/}\\
+  \url{sportistheperfecthuntinggroundforsexualabuse}
+ \ex\label{}
+    However, 4 months ago i said something which i shouldn`t have. \\
+    \url{https://tinybuddha.com/blog/how-to-mend-a-broken-friendship-}\\
+    \url{even-if-youre-not-on-speaking-terms/}
+  \end{xlist}
+\end{exe}
+Dozens of such instances of the construction can be found in Google
+searches, and there is a very substantial literature on them. Versions
+of the sort shown in (\ref{extrac-from-VPE}) are less well-studied, but
+there \textsl{have} \textsl{has} been a certain amount of research devoted to them (see, for example,
+\citet{schuyler2002} and references there).
+
+The problem for (i) is that whereas there is now a deep body of
+results constituting compelling evidence against the structural
+origins of island effects (for recent overviews of the relevant
+literature, see, e.g., \citet{chaves-putnam2020}, \citet{kubotalevineBook}, \citet{liu-et-al2022}),
+most frameworks take filler-gap connectivity itself as irreducibly
+syntactic in nature. And while there are deep consequences that follow
+from rejecting movement operations as the source of extraction, this
+theoretical position does not, on its own, give us any particular help
+in explaining what the \textit{wh} word is doing in (\ref{extrac-from-VPE}). In
+GPSG and its descendent HPSG, for example, a feature carrying
+information about the syntactic and semantic content of a \textit{wh}
+constituent must be carried through the structure to the point where a
+category matching that content satisfies the valence requirements of a
+selecting head. In the case of (\ref{extrac-from-VPE}), the default analysis
+in these frameworks would license a connectivity linkage of this sort
+which would be `cashed out', as it were, by either an empty category
+corresponding to a a valent of some transitive verb or, as in later
+work in HPSG assumed, in a reduction in the valence of such a verb
+(e.g., per the analyses of extraction patterns in \citet{NoordBouma94} and
+\citet{BoumaMaloufea01}). And the entire `point' of VP ellipsis is that no such
+verb is present. Unsurprisingly, advocates of analyses based on
+covert-structure solutions to the problems posed by ellipsis seem to
+have been taken such examples as prima facie evidence for the presence
+of covert structure.  Thus \citet{johnson2001} takes examples such as
+(\ref{extrac-from-VPE}) to show that `the ellipsis site seems to have
+internal parts', while Elbourne agrees that `things seem especially
+difficult for [approaches to ellipsis] according to which there is
+nothing whatsoever in ellipsis sites' \citep[216]{Elbourne2008}.  So far as I
+am aware, there has to date been no account of the pattern exhibited
+in (\ref{extrac-from-VPE}) in any work in the monostratal phrase-structure
+tradition that offers an explicit counteranalysis to the
+movement-and-deletion analysis assumed by transformationalists.
+
+But such an alternative is readily available. It rests however on a
+particular approach to extraction connectivity and assumes a specific
+analysis of VP ellipsis, both of which differ considerably from
+standard positions common to both transformational and monostratal
+frameworks. In the following section, I first outline a commonly
+assumed type-logical treatment of filler/gap linkage, and in the next
+section, recapitulate the treatment of VP ellipsis, and its
+generalization to pseudogapping, proposed in
+\citet{kubota-levine-pseudo}. This background sets the stage for my account
+of (\ref{extrac-from-VPE}).\footnote{For a rather different, though
+ultimately related approach to a solution in a framework belonging to
+a distinct class of categorial grammar frameworks, see \citet{jacobson1992}.} 
+
+%%\subsubsection{Muskens on extraction}\label{subsubsec:Muskens}
+
+\citet{muskens03} outlines a treatment of unbounded \textit{wh} dependencies,
+readily extendable to topicalization, which differs radically from
+previous analyses of extraction within both phrase-structure-based
+approaches and categorial grammar. In terms of \textit{wh} relatives,
+Muskens' proposal takes the form of the lexical sign in (\ref{whrel}):
+
+\begin{exe}
+ \ex\label{whrel}
+  \LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greeks}. which \O \ensuremath{\greeks}(\E)}}{\sem{ \lambda P \lambda Q \lambda w. P(w) \ensuremath{ \wedge\xspace } Q(w)}}{\syncat{(N\bsl{}N)\vs (S\vs NP)}}
+\end{exe}
+Unpacking this operator a bit, we can see that its argument structure
+seeks a clause missing an NP, and its denotation is predicated of
+some entity, while the prosodic functor corresponding to its phonology
+applies to a string of length zero. To derive (\ref{book}), then, we start
+with the subproof in (\ref{bookProof1}):
+
+\begin{exe}
+ \ex\label{book}
+  the book which John lost yesterday
+\end{exe}
+\begin{exe}
+ \ex\label{bookProof1}
+\AxiomC{\LexEnt{\pt{lost}}{\sem{ \lambda x \lambda y \trns{lose}(x)(y)}}{\syncat{(NP\bsl{}S)/NP}}}
+\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_0}}}{\sem{ u}}{\syncat{NP}}]^1\,\,}}
+\BinaryInfC{\LexEnt{\pt{lost \O \ensuremath{\greekp_0}}}{\sem{ \lambda y \trns{lose}(u)(y)}}{\syncat{NP\bsl{}S}}}
+\AxiomC{\LexEnt{\pt{yesterday}}{\sem{ \lambda P \lambda v.yst(P)(v) }}{\syncat{(NP\bsl{}S)\bsl{}(NP\bsl{}S)}}}
+\BinaryInfC{\MultiLine{\ptfont lost \O \ensuremath{\greekp_0} \O yesterday; \\ \sem{ \lambda v. \trns{yst}(\trns{lose}(u))(v)}; \syncat{ NP\bsl{}S}}}
+\AxiomC{\MultiLine{\ptfont john; \\ \sem{ \trns{j} }; \\\syncat{  NP}}}
+\BinaryInfC{\LexEnt{\pt{john \O lost \O \ensuremath{\greekp_0}}}{\sem{ \trns{yst}(\trns{lose}(u))(\trns{j})}}{\syncat{S}}}
+\LeftLabel{\maru{1}\ensuremath{\rightarrow}}
+\UnaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greekp_0}. john \O lost \O \ensuremath{\greekp_0} \O yesterday}}{\sem{ \lambda u.  \trns{yst}(\trns{lose}(u))(\trns{j})}}{\syncat{S\vs NP}}}
+\DisplayProof
+\end{exe}
+The operator in (\ref{whrel}) takes arguments of this type and returns a
+function which picks up an N on the left, while $\beta$-converting a
+zero-length string into the position occupied by \pt{ \ensuremath{\greekp_0} } in the last
+proof line in (\ref{bookProof1}), giving us \textit{which John lost yesterday}:
+
+\begin{exe}
+ \ex\label{bookProof2}
+\end{exe}
+\AxiomC{\MultiLine{\ptfont \lambda \ensuremath{\greeks}. which \O \ensuremath{\greeks}(\E); \\ \sem{ \lambda P \lambda Q \lambda w. P(w) \ensuremath{ \wedge\xspace } Q(w)}; \\\syncat{  (N\bsl{}N)\vs (S\vs NP)}}}
+\AxiomC{\MultiLine{\ptfont \lambda \ensuremath{\greekp_0}. john \O lost \O \ensuremath{\greekp_0} \O yesterday; \\ \sem{ \lambda u  \trns{yst}(\trns{lose}(u))(\trns{j})}; \\\syncat{  S\vs NP}}}
+\BinaryInfC{\MultiLine{\ptfont \lambda \ensuremath{\greeks} [which \O \ensuremath{\greeks}(\E)](\lambda \ensuremath{\greekp_0}. john \O lost \O \ensuremath{\greekp_0} \O yesterday); \\ \sem{ \lambda P [ \lambda Q \lambda x. P(w) \ensuremath{ \wedge\xspace } Q(w)](\lambda u  \trns{yst}(\trns{lose}(u))(\trns{j}))}; \\\syncat{  N\bsl{}N}}}
+\dottedLine
+\UnaryInfC{\LexEnt{\pt{which \O \ensuremath{\lambda} \ensuremath{\greekp_0} [john \O lost \O \ensuremath{\greekp_0} \O yesterday](\E)}}{\sem{ \lambda Q. [ \lambda w.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } Q(w)]}}{\syncat{N\bsl{}N}}}
+\dottedLine
+\UnaryInfC{\LexEnt{\pt{which \O john \O lost \O \E \O yesterday}}{\sem{ \lambda Q [ \lambda w.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } Q(w)]}}{\syncat{N\bsl{}N}}}
+\DisplayProof
+
+The final part of the proof supplies an N argument to the functional
+term in the last proof line in (\ref{bookProof2}):
+
+\begin{exe}
+ \ex\label{bookProof3}
+\AxiomC{\LexEnt{\pt{book}}{\sem{ \trns{book} }}{\syncat{N}}}
+\AxiomC{\LexEnt{\pt{which \O john \O lost \O \E \O yesterday}}{\sem{ \lambda Q [ \lambda w.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } Q(w)]}}{\syncat{N\bsl{}N}}}
+\BinaryInfC{\LexEnt{\pt{book \O  which \O john \O lost \O \E \O yesterday}}{\sem{  \lambda w.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } \trns{book}(w)]}}{\syncat{N}}}
+\DisplayProof
+\end{exe}
+We thus obtain \textit{book which John lost}, denoting the set of things
+which have the properties of being books and being objects that John
+lost.
+
+The critical point for us is what happens at \ding{172} in
+(\ref{bookProof1}). Application of \ensuremath{\vs} Introduction abstracts on the variable
+terms superscripted as 1---an operation completely indifferent to
+the length of the string in which the variable \pt{ \ensuremath{\greekp_0} }
+appears. Exactly the same step would take us from the expression above
+the proof line in (\ref{length}) to the sign below the line:
+
+\begin{exe}
+ \ex\label{length}
+\AxiomC{\MultiLine{\ptfont mary \O thinks \O bill \O remembers \O ann \O saying \O john \O lost \O \ensuremath{\greekp}; \\ \sem{ \trns{think}(\trns{remember}(\trns{saying}(\trns{yest}(\trns{lost}(u))(\trns{j}))(\trns{a})))(\trns{b})))(\trns{m})}; \\\syncat{  S}}}
+\UnaryInfC{\MultiLine{\ptfont \lambda \ensuremath{\greekp}. mary \O thinks \O bill \O remembers \O ann \O saying \O john \O lost \O \ensuremath{\greekp}; \\ \sem{ \trns{think}(\trns{remember}(\trns{saying}(\trns{yest}(\trns{lost}(u))(\trns{j}))(\trns{a})))(\trns{b})))(\trns{m})}; \\\syncat{  S}}}
+\DisplayProof
+\end{exe}
+Essentially the same proof storyline in (\ref{bookProof1})--(\ref{bookProof3})
+will give us the \textit{book which Mary thinks Bill remembers Ann saying
+John lost}. There is no local registration of the information linking
+the filler to the gap---nothing analagous to cyclic \textit{wh} movement, no
+SLASH feature shared between vertically adjacent nodes in a
+phrase-structure tree that gets realized at the tail end of the
+chain. Properly speaking, there isn't even anything that can be
+properly identified as a gap `site'. We have a prosodic component of
+the sign with no marker corresponding to some missing substring, since
+the model theory for the prosodic calculus interprets \ptv{a \O b \O \E} as
+\ptv {a o b}; nor is there any representation in the semantics or the
+syntactic type of something we would want to call a `gap'. In a way,
+this treatment of extraction is an echo of the view in extraction in
+the earliest phase of transformational grammar, when \textit{wh} movement
+shifted a constituent to the left over an unconstrained variable. The
+appearance of \citet{ross67} resulted in the almost universal rejection of
+this view, but the most recent research on the island effects that
+Ross first documented, as noted earlier, overwhelmingly support a view
+of such effects which takes them to be epiphenomena of functional
+factors. Clearly, the nonlocal view of syntactic connectivity has an
+empirical claim on a second act.\footnote{This is not to say, of
+course, that Muskens' operator is completely unproblematic. For one
+thing, it has an obvious failure in its coverage, since obviously
+there's no way that (\ref{whrel}) as given accounts for pied-piping. A
+second problem is that the linearity of the type logic shared by
+Muskens' \L-grammar and our own HTLG, inter alia, makes it difficult
+to derive multiple extractions linked to a single filler. In \citet{kubotalevineBook},
+we offer solutions for both problems, and are currently generalizing
+our proposal for pied-piping to take into account the interaction of
+the latter with a variety of coordination possibilities, an aspect of
+the pied-piping problem that does not appear to have been previously
+addressed. But for our purposes, the approach exemplified in (\ref{whrel})
+is completely serviceable.}
+
+\subsubsection{VP ellipsis and pseudogapping}\label{subsubsec:VPE}
+
+The correct explanation for data such as (\ref{extrac-from-VPE}) obviously
+depends on an empirically sound analysis of VP ellipsis in the first
+place. The standard transformational approaches following \citet{kuno1981}
+face severe empirical challenges and serious conceptual problems,
+detailed in \citet{kubota-levine-pseudo}. These problems are avoided in the
+proof-theoretic solution proposed there, whose central premise that VP
+ellipsis itself is the expression of a kind of `zero derivation'
+whereby signs typed VP/VP are mapped to the type VP, whose denotation
+is the application of the modal/aspectual operator of the input sign
+to some salient property retrieved from the discourse context or,
+under certain conditions, inferred exophorically, per
+\citet{MillerPullum13}. This approach is implemented via the operator in
+(\ref{ellipseOp1}), where \$ is a variable over sequences of arguments,
+following notation introduced in \citet{steedman2000a})\footnote{Because the
+prosodic term is a function, the main connective in the type
+description is \ensuremath{\vs} rather than /.}:
+
+\begin{exe}
+ \ex\label{ellipseOp1}
+  \textbf{VP ellipsis operator} \\
+  \LexEnt{\pt{ \ensuremath{\lambda} \ensuremath{\greekp}. \ensuremath{\greekp} }}{\sem{ \lambda \ensuremath{\mathscr{F}}. \ensuremath{\mathscr{F}}(P')}}{\syncat{(NP\bsl{}S)\vs ((NP\bsl{}S)\vs (NP\bsl{}S) }}
+  
+  ------where $P'$ is a free variable whose value is
+  resolved anaphorically
+ \ex\label{Acondition}
+  Anaphora resolution condition on the VP ellipsis/pseudogapping
+  operator:
+  \begin{enumerate}
+   \item 
+    if there is a syntactic  constituent
+    with category VP in the antecedent clause matching the
+    syntactic  category of the missing verb in the target clause,
+    then the value of $P$ is identified with the denotation of that constituent;
+   \item 
+    if there is no such syntactic  constituent, then the value of $P$  is anaphorically
+    identified with some salient property in the discourse that is not
+    inconsistent with the syntactic  category VP.
+  \end{enumerate}
+\end{exe}
+An example of simple VP ellipsis, illustrating how the ellipsis operator
+in (\ref{ellipseOp1}) works, is given in (\ref{simpleVPE})
+
+\begin{exe}
+ \ex\label{simpleVPE}
+  \begin{xlist}
+ \ex\label{simpleVPEex}
+    Mary should call Ann, but Bill shouldn't.
+  \end{xlist}
+\end{exe}
+\begin{exe}
+ \ex\label{simpleVPEproof}
+\begin{tabular}{ll}
+ \scalebox{.8}{
+\AxiomC{\MultiLine{\ptfont should ; \\ \sem{ \lambda Q \lambda y. \ensuremath{\square} Q(y)}; \\\syncat{   (NP\bsl{}S)/(NP\bsl{}S)}}}
+\AxiomC{\MultiLine{\ptfont call; \\ \sem{ \trns{call} }; \\\syncat{  (NP\bsl{}S)/NP}}}
+\AxiomC{\MultiLine{\ptfont ann; \\ \sem{ \trns{a} }; \\\syncat{  NP}}}
+\LeftLabel{\maru{1}\ensuremath{\rightarrow}}
+\BinaryInfC{\MultiLine{\ptfont call \O ann; \\ \sem{ \trns{call}(\trns{a})}; \\\syncat{  NP\bsl{}S}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\MultiLine{\ptfont should \O call \O ann ; \\ \sem{ \lambda y. \ensuremath{\square} \trns{call}(\trns{a})(y)}; \\\syncat{  NP\bsl{}S}}}
+\AxiomC{\LexEnt{\pt{mary}}{\sem{ \trns{m} }}{\syncat{NP}}}
+\RightLabel{\scalebox{.8}{\bsl E}}
+\BinaryInfC{\MultiLine{\ptfont mary \O should \O call \O ann ; \\ \sem{  \ensuremath{\square} \trns{call}(\trns{a})(\trns{m})}; \\\syncat{  S}}}
+\DisplayProof}
+ &
+ \scalebox{.8}{ 
+\AxiomC{\MultiLine{\ptfont bill ; \\ \sem{ \trns{b} }; \\\syncat{  NP}}}
+\RightLabel{per \ding{172}}
+\AxiomC{\grey{\MultiLine{\ptfont \lambda \ensuremath{\greekp}. \ensuremath{\greekp} ; \\ \sem{ \lambda \ensuremath{\mathscr{F}}. \ensuremath{\mathscr{F}}(\trns{call}(\trns{a}))}; \\\syncat{  (NP\bsl{}S)\vs (NP\bsl{}S/NP\bsl{}S)}}}}
+\AxiomC{\MultiLine{\ptfont  should't ; \\ \sem{ \lambda P \lambda y. \neg \ensuremath{\square}\, P(y)}; \\\syncat{  (NP\bsl{}S)/(NP\bsl{}S)}}}
+\RightLabel{\scalebox{.8}{\ensuremath{\vs}E}}
+\BinaryInfC{\LexEnt{\pt{should't }}{\sem{ \lambda y. \neg \ensuremath{\square}\, \trns{call}(y)()}}{\syncat{ NP\bsl{}S}}}
+\RightLabel{\scalebox{.8}{\bsl E}}
+\BinaryInfC{\LexEnt{\pt{bill \O should't }}{\sem{  \neg \ensuremath{\square}\, \trns{call}(\trns{a})(\trns{b})}}{\syncat{S}}}
+\DisplayProof}
+\end{tabular}
+\end{exe}
+
+\noindent At the grayed-in proof line, the free variable $P$ is instantiated as
+the prominent contextually available property \sem{ \trns{call}(\trns{a}) }.
+
+More complex cases, e.g. those involving sloppy identity (\textit{John thinks
+he deserves a promotion, and Bill does too}) and scopal operators
+(\textit{John read every book before Bill did}) fall out altogether
+straightforwardly on this approach, as shown in
+\citet[236--238]{kubota-levine-pseudo}. But for our purposes, what is relevant
+is the fact that the operator in (\ref{ellipseOp1}) applies to a functional
+term taking a complete \syncat{NP\bsl{}S} to a complete \syncat{NP\bsl{}S}---which we can
+abbreviate as VP/VP---and returns a complete VP. But suppose
+we generalize the operator so that it applies to a functional term
+taking \textsl{partial} VP to a partial VP, and returns a partial VP?
+This seems perhaps like a question completely orthogonal to the
+phenomena we're looking at, because auxiliaries are, in
+non-transformational frameworks generally, taken to apply to VPs and
+return VPs, period. But it is a strict theorem of our proof theory
+that every VP/VP type has a prosodically identical counterpart which
+applies to VP/NP objects and returns a VP/NP object---i.e., maps a
+transitive verb to a transitive verb. This is nothing more than a
+conversion into type logic of one consequence of the transitivity of
+implication in standard logics, and is simply demonstrated as follows
+(where $\bigcirc$ is a variable over arbitrary operators):
+
+\begin{exe}
+ \ex\label{GeachRule}
+\textbf{Geach Theorem}:\\
+\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_2}}}{\sem{ R}}{\syncat{VP/NP}}]^2\,\,}}
+\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_1}}}{\sem{ u}}{\syncat{NP}}]^1\,\,}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\LexEnt{\pt{\ensuremath{\greekp_2} \O \ensuremath{\greekp_1}}}{\sem{  R(u)}}{\syncat{VP}}}
+\AxiomC{\grey{\LexEnt{\pt{\ptv{a}}}{\sem{ \lambda T. \lambda z.\bigcirc T(z) }}{\syncat{VP/VP}}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\LexEnt{\pt{\ptv{a} \O \ensuremath{\greekp_2} \O \ensuremath{\greekp_1}}}{\sem{ \lambda z. \bigcirc \,R(u)(z))}}{\syncat{VP}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}I\ensuremath{^1}}}
+\UnaryInfC{\LexEnt{\pt{\ptv{a} \O \ensuremath{\greekp_2}}}{\sem{ \lambda u \lambda z. \bigcirc \,R(u)(z)}}{\syncat{VP/NP}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}I\ensuremath{^2}}}
+\UnaryInfC{\grey{\LexEnt{\pt{\ptv{a}}}{\sem{ \lambda R \lambda u \lambda z. \bigcirc \,R(u)(z)}}{\syncat{(VP/NP)/(VP/NP)}}}}
+\DisplayProof
+\end{exe}
+The point is that VP/VP \sem{  \ensuremath{\vdash\xspace } } (VP/NP)/(VP/NP), and  a completely parallel
+entailment can be proven between VP/VP and terms of type VP/NP/NP,
+VP/PP/NP, etc. In general, then, for any auxiliary, we have an entailment
+VP/VP\sem{ ,  \ensuremath{\vdash\xspace } \, } VP\$/VP\$. It follows that if we generalize the VP ellipsis
+operator to the type VP\$\ensuremath{\vs}(VP\$/VP\$), we derive an
+operator that yields a form of the auxiliary as a transitive verb, a
+ditransitive verb and so on. And such an operator enables us to extend the coverage of
+the VP ellipsis rule to the pseudogapping phenomenon illustrated in
+(\ref{pseudo}) above; to evade the complexities of the comparative
+semantics, I use the somewhat less natural (though still typically
+acceptable) \textit{but}-conjunction in (\ref{conjPseudo}):
+
+\begin{exe}
+ \ex\label{conjPseudo}
+  For some reasons, John will read \textsc{essays} but he won't \textsc{novels}.
+\end{exe}
+Generalizing the VP ellipsis operator to the form in (\ref{generalized})
+would have the effect of taking \textit{won't}, typed
+(VP/NP)\ensuremath{\vs}((VP/NP)/(VP/NP)) via application of the Geach entailment so that if we set \$ = NP, application of this
+generalized operator to the Geached form of an auxiliary is an
+auxliary typed VP/NP, i.e., a transitive verb. This revised operator
+can be stated as in (\ref{generalized}):
+
+\begin{exe}
+ \ex\label{generalized}
+  \textbf{Generalized ellipsis operator} \\
+  \pt{\ensuremath{\lambda} \ensuremath{\greekp}. \ensuremath{\greekp} }; \sem{ \lambda \ensuremath{\mathscr{F}}. \ensuremath{\mathscr{F}}(P) }; VP\$\ensuremath{\vs}(VP\$/VP\$)
+  
+  ------where $P$ is a free variable whose value is
+  resolved anaphorically
+ \ex\label{Acondition}
+  Anaphora resolution condition on the VP ellipsis/pseudogapping
+  operator:
+  \begin{enumerate}
+   \item 
+    if there is a syntactic  constituent
+    with category VP\$ in the antecedent clause matching the
+    syntactic  category of the missing verb in the target clause,
+    then the value of $P$ is identified with the denotation of that constituent;
+   \item 
+    if there is no such syntactic  constituent, then the value of $P$  is anaphorically
+    identified with some salient property in the discourse that is not
+    inconsistent with the syntactic  category VP\$.
+  \end{enumerate}
+\end{exe}
+We can now derive (\ref{conjPseudo}) directly:
+
+\begin{exe}
+ \ex\label{conjPseudo}
+\end{exe}
+\hspace{-10ex}
+\begin{tabular}{ll}
+{\scalebox{.75}{
+\AxiomC{\MultiLine{\ptfont will; \\ \sem{ \lambda P \lambda y.\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}}\, P(y)}; \\\syncat{  VP/VP}}}
+\AxiomC{\grey{\MultiLine{\ptfont read; \\ \sem{ \trns{read} }; \\\syncat{  VP/NP}}}}
+\AxiomC{  essays}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\MultiLine{\ptfont read \O essays; \\ \sem{ \trns{read}(\trns{essays})}; \\\syncat{  VP}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\MultiLine{\ptfont will \O read \O essays; \\ \sem{  \lambda y.\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}}\, \trns{read}(\trns{essays})(y)}; \\\syncat{  VP}}}
+\AxiomC{\MultiLine{\ptfont john; \\ \sem{ \trns{j} }; \\\syncat{  NP}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\MultiLine{\ptfont john \O will \O read \O essays; \\ \sem{ \textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}}\, \trns{read}(\trns{essays})(\trns{j})}; \\\syncat{  S}}}
+\DisplayProof
+}}
+&
+\hspace{-6ex}
+{\scalebox{.75}{
+\AxiomC{\LexEnt{\pt{won't}}{\sem{ \lambda Q [L u \lambda v.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} Q(u)(v)](P')}}{\syncat{VP/NP}}}
+\dottedLine
+\UnaryInfC{\LexEnt{\pt{won't}}{\sem{ \lambda u \lambda v.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} P'(u)(v)}}{\syncat{VP/NP}}}
+\dottedLine
+\RightLabel{anaphoric retrieval}
+\UnaryInfC{\LexEnt{\pt{won't}}{\sem{ \lambda u \lambda v.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} \trns{read}(u)(v)}}{\syncat{VP/NP}}}
+\AxiomC{\MultiLine{\ptfont novels; \\ \sem{ \trns{novels} }; \\\syncat{  NP}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\MultiLine{\ptfont won't \O novels; \\ \sem{ \lambda v.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} \trns{read}(\trns{novels})(v)}; \\\syncat{  VP}}}
+\AxiomC{\MultiLine{\ptfont he; \\ \sem{ 3 \trns{masc} }; \\\syncat{  NP}}}
+\RightLabel{\scalebox{.8}{\bsl E}}
+\BinaryInfC{\MultiLine{\ptfont he \O won't \O novels; \\ \sem{ \neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} \trns{read}(\trns{novels})(3 \trns{masc})}; \\\syncat{  S}}}
+\DisplayProof
+}}
+\end{tabular}
+\bigskip
+
+\noindent Intuitively, the application of the generalized operator in
+(\ref{generalized}) is to repackage an auxiliary and a transitive verb as a
+somewhat longer and more complex transitive verb, so that rather than
+composing \textit{read novels} as a VP and applying a standardly typed
+auxiliary to derive a VP, we in effect repackage \textit{won't} and \textit{read} as
+a transitive verb \textit{won't}, whose type is the same as \textit{read} itself,
+but which, after the retrieval of the corresponding predicate in the
+antecedent clause, applies the semantics of \textit{won't} to the proposition
+derived by supplying this transitive verb with its arguments.
+
+With our generalized account of ellipsis, we are now in a position to
+see how the proof-theoretic approached introduced in the preceding
+sections can license examples such as (\ref{extrac-from-VPE}) without
+recourse to any actual material corresponding to the gap `site' in the
+antecedent clause ever being involved.  
+
+\subsubsection{Pseudo-extraction via pseudogapping}\label{subsubsec:pseudoextrac}
+
+In the analysis that follows, apparent extraction from an ellipsed VP
+arises as a result of Muskens-style extraction from one or another
+argument of the `transitive' auxiliary which is associated with the
+general ellipsis operator introduced in
+\textsection\ref{subsubsec:VPE}. That is, examples such as
+(\ref{extrac-from-VPE}) involve not just a semantic object, as in purely
+semantic accounts of ellipsis (e.g., that given in \citealt{hardt-diss})
+analysis, but an actual syntactic extraction from an ordinary overt
+VP, as we show below. Treatments such as Hardt's, or that given in
+\citet{dalrymple-etal1991}, have, as noted in the citation above from
+\citet{Elbourne2008}, a difficult time accounting in a simple way for cases
+such as (\ref{extrac-from-VPE}); under the analysis which follows, in
+contrast,, these constructions are predicted to conform to whatever
+conditions hold on extraction in general without any concomitant
+assumption of covert structure corresponding to an `ellipsed' VP.
+
+What is distinctive about the filler-gap relationship, as vs.\  the
+standard picture of valence, is while in both cases we have material
+that is missing other material required to compose a constituent, in
+the case of the former, the gap can be missing from anywhere within
+the partial constituent. That is, while \textit{Y/X} is a sign that must
+compose on the left with a sign of type \textit{X}, and $X\bsl Y$ is the same
+but seeking an \textit{X} arguent on its left to yield an object typed \textit{Y},
+the material missing from the string that is required for \textit{Y} in
+\textit{Y}\ensuremath{\vs}\textit{X} can, as noted in \textsection{\ref{sec:argstruc}}, appear
+anywhere; e.g., Thus, in \textit{I wonder what John said to Mary}, the
+subconstituent \textit{said {\gp}\xspace to Mary} constitutes a VP with a medial NP
+gap, meeting the description \syncat{VP\vs NP}. In terms of sentences such as
+(\ref{extrac-from-VPE}), what we want is a way to get \textit{did} to have the type
+VP\vs NP, in which case we would, roughly speaking, apply a Muskens-style
+operator \textit{what} to a clause composed from this VP\vs NP. As I show
+directly, given a sign \textit{did} typed VP\ensuremath{\vs}NP, we can use hypothetical
+reasoning to deduce S\ensuremath{\vs}NP and then apply the \textit{what} operator to obtain
+signs of expressions such as \textit{what John did}. Furthermore, we predict
+on such an approach the well-formedness of e.g.,
+
+\begin{exe}
+ \ex\label{internal}
+  \begin{xlist}
+ \ex\label{}
+    Do you think the British know something (about this) that we don't
+(at this point)? (Penn Treebank/Wall Street Journal corpus, cited in
+\citet{bos-spenader2011}, slightly modified)
+ \ex\label{}
+    Kollberg suspects Petrus, who Beck does {\gp}\xspace as well (\citet[666]{kennedy1995})
+  \end{xlist}
+\end{exe}
+(\ref{generalized}) will not do the trick here here, since it only gives us
+the possibility of elements missing on the right, not medially. What's
+needed, clearly is some way to extend the generalized ellipsis rule
+still further. Fortunately, just as we were able to show that terms
+typed VP/VP can, by the Geach theorem proof given in (\ref{GeachRule}), be
+extended to the type (VP/NP)/(VP/NP), we can prove that for any term
+inhabiting VP/VP, there is a corresponding term with functional
+prosody having the schematic form \syncat{(VP\vs XP)\vs (VP\vs XP)} for any type XP.
+The structure of the proof is essentially the same as that of
+(\ref{GeachRule}), but involving higher order terms.\footnote{In
+(\ref{vertical-proof}), I gloss over certain important technical details in
+order to lay out most clearly the proof narrative.}
+
+\begin{exe}
+ \ex\label{vertical-proof}
+\AxiomC{\LexEnt{\pt{\ensuremath{\greekp_1}}}{\sem{ \ensuremath{\mathscr{O}} }}{\syncat{VP/VP}}}
+\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greeks_1}}}{\sem{ f}}{\syncat{VP\vs NP}}]^1\,\,}}
+\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_2}}}{\sem{ x}}{\syncat{NP}}]^2\,\,}}
+\BinaryInfC{\LexEnt{\pt{\ensuremath{\greeks_1}(\ensuremath{\greekp_2}) }}{\sem{ f(x)}}{\syncat{VP}}}
+\BinaryInfC{\LexEnt{\pt{\ensuremath{\greekp_1} \O \ensuremath{\greeks_1}(\ensuremath{\greekp_2})}}{\sem{ \ensuremath{\mathscr{O}}(f(x))}}{\syncat{VP}}}
+\RightLabel{\scalebox{.8}{\ensuremath{\vs}I\ensuremath{^2}}}
+\UnaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greekp_2}. \ensuremath{\greekp_1} \O \ensuremath{\greeks_1}(\ensuremath{\greekp_2})}}{\sem{ \lambda x. \ensuremath{\mathscr{O}}(f(x))}}{\syncat{VP\vs NP}}}
+\RightLabel{\scalebox{.8}{\ensuremath{\vs}I\ensuremath{^1}}}
+\UnaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greeks_1} \ensuremath{\lambda} \ensuremath{\greekp_2}. \ensuremath{\greekp_1} \O \ensuremath{\greeks_1}(\ensuremath{\greekp_2})}}{\sem{ \lambda f \lambda x. \ensuremath{\mathscr{O}}(f(x))}}{\syncat{(VP\vs NP)\vs (VP\vs NP)}}}
+\DisplayProof
+\end{exe}
+With this result in hand, all that is needed to derive any given
+auxiliary as a VP seeking a gap-filling NP constituent
+\textsl{somewhere} is a further extension of  
+the already-generalized ellipsis operator to such `vertically Geached'
+auxiliaries, mapping them to type \syncat{VP\vs XP}, anaphorically supplying the
+meaning of the gapped VP. In (\ref{zzzz}), I give a `local' form of this
+extension of the ellipsis operator to internal gaps.
+
+%%\footnote{One might wonder whether this
+%%operator needs to be further generalized via a vertical-slash
+%%version of \$. We will not address this question here. NB: \textit{There are
+%%certain issues which I know I can talk to Bill about and there are
+%%others I know I can talk to Mary about, but there
+%%are certain topics which I'm never quite sure \textsc{who} I can.}}
+
+\begin{exe}
+ \ex\label{zzzz}
+  \LexEnt{\pt{ \ensuremath{\lambda} \ensuremath{\greekr} \ensuremath{\lambda} \ensuremath{\greekp_1}. \ensuremath{\greekr}(\ensuremath{\lambda} \ensuremath{\greekp_0}. \ensuremath{\greekp_0})(\ensuremath{\greekp_1})}}{\sem{ \lambda \ensuremath{\mathscr{F}}. \ensuremath{\mathscr{F}}(R\,')}}{\syncat{(VP\vs NP)\vs ((VP\vs NP)\vs (VP\vs NP)) }}
+  
+  ------where $R\,'$ is the semantic term of a sign retrieved from the
+  context whose type is \syncat{VP\vs NP} 
+\end{exe}
+As before, we first specify how the antecedent clause of
+(\ref{extractionVPE-rep}) makes available the predicate which is retrieved
+in the ellipsed clause, per (\ref{part1}).
+
+\begin{exe}
+ \ex\label{extractionVPE-rep}
+  I know what John ate for lunch,  but I don't know what\ensuremath{_i} Bill did
+  \sout{eat}  {\ensuremath{\gp_i}}\xspace \sout{for lunch}.
+\end{exe}
+\begin{exe}
+ \ex\label{part1}
+\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_1}}}{\sem{ x }}{\syncat{NP}}]^1\,\,}}
+\noLine
+\UnaryInfC{\Lemma}
+\noLine
+\UnaryInfC{\MultiLine{\ptfont ate \O \ensuremath{\greekp_1} \O for \O lunch; \\ \sem{ \trns{ate}(x)(\trns{lunch})}; \syncat{ VP}}}
+\LeftLabel{\maru{1}\ensuremath{\rightarrow}}
+\RightLabel{\scalebox{.8}{\ensuremath{\vs}I\ensuremath{^1}}}
+\UnaryInfC{\MultiLine{\ptfont \lambda \ensuremath{\greekp_1}.ate \O \ensuremath{\greekp_1} \O for \O lunch; \\ \sem{ \mbox{\grey{\sem{ \lambda x. \trns{ate}(x)(\trns{lunch}) }}} }; \syncat{ VP\vs NP}}}
+\AxiomC{\ensuremath{\ThreeColHyp{\MultiLine{\ptfont \ensuremath{\greekp_2}; \\ \sem{ u}; \\\syncat{  NP}}}^2}}
+\BinaryInfC{\LexEnt{\pt{ate \O \ensuremath{\greekp_2} \O for \O lunch}}{\sem{ \trns{ate}(u)(\trns{lunch})}}{\syncat{VP}}}
+\AxiomC{\MultiLine{\ptfont john; \\ \sem{ \trns{j} }; \\\syncat{  NP}}}
+\BinaryInfC{\LexEnt{\pt{john \O ate \O \ensuremath{\greekp_2} \O for \O lunch}}{\sem{ \trns{ate}(u)(\trns{lunch})(\trns{j})}}{\syncat{S}}}
+\RightLabel{\scalebox{.8}{\ensuremath{\vs}I\ensuremath{^2}}}
+\UnaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greekp_2}. john \O ate \O \ensuremath{\greekp_2} \O for \O lunch}}{\sem{ \lambda u. \trns{ate}(u)(\trns{lunch})(\trns{j})}}{\syncat{S\vs NP}}}
+\AxiomC{\MultiLine{\ptfont \lambda \ensuremath{\greeks}. what \O \ensuremath{\greeks}(\E); \\ \sem{  \lambda P. \trns{what}(P) }; \\\syncat{  Q\vs (S\vs NP)}}}
+\BinaryInfC{\LexEnt{\pt{what \O john \O ate \O \E \O for \O lunch}}{\sem{ \trns{what}(\lambda u. \trns{ate}(u)(\trns{lunch})(\trns{j}))}}{\syncat{Q}}}
+\DisplayProof
+\end{exe}
+\noindent The grayed-in semantic term in (\ref{part1}) is an available predicate
+with which the free variable $R\,'$ obtained in the proof line \maru{1}
+can be anaphorically identified. The first part of the proof for \textit{what
+Bill did} then takes the following form:
+
+\begin{exe}
+ \ex\label{extractionVPE-drv-part2}
+\AxiomC{\Lemma}
+\UnaryInfC{\MultiLine{\ptfont \lambda \ensuremath{\greeks} \lambda \ensuremath{\greekp}. did \O \ensuremath{\greeks}(\ensuremath{\greekp}); \\ \sem{ \lambda f \lambda x \lambda y. f(x)(y)}; \\\syncat{  (VP\vs NP)\vs (VP\vs NP)}}}
+\AxiomC{\MultiLine{\ptfont \lambda \ensuremath{\greekr} \lambda \ensuremath{\greekp}. \ensuremath{\greekr}(\lambda \ensuremath{\greekp_0}. \ensuremath{\greekp_0})(\ensuremath{\greekp}); \\ \sem{ \lambda \ensuremath{\mathscr{F}}. \ensuremath{\mathscr{F}}(\lambda x. \trns{ate}(x)(\trns{lunch}))}; \\\syncat{  (VP\vs NP)\vs }\\ \hspace{2ex}\syncat{((VP\vs NP)\vs (VP\vs NP))}}}
+\BinaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greekp}.did \O \ensuremath{\greekp}}}{\sem{ \lambda x \lambda y. \trns{ate}(x)(\trns{lunch})(y)}}{\syncat{VP\vs NP}}}
+\AxiomC{\ensuremath{\ThreeColHyp{\MultiLine{\ptfont \ensuremath{\greekp_3}; \\ \sem{ v}; \\\syncat{  NP}}}^3}}
+\BinaryInfC{\LexEnt{\pt{did \O \ensuremath{\greekp_3}}}{\sem{ \lambda y. \trns{ate}(v)(\trns{lunch})(y)}}{\syncat{VP}}}
+\AxiomC{\MultiLine{\ptfont bill; \\ \sem{ \trns{b} }; \\\syncat{  NP}}}
+\BinaryInfC{\LexEnt{\pt{bill \O did \O \ensuremath{\greekp_3}}}{\sem{ \trns{ate}(v)(\trns{lunch})(\trns{b})}}{\syncat{S}}}
+\RightLabel{\scalebox{.8}{\ensuremath{\vs}I\ensuremath{^3}}}
+\UnaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greekp_3}. bill \O did \O \ensuremath{\greekp_3}}}{\sem{ \lambda v. \trns{ate}(v)(\trns{lunch})(\trns{b})}}{\syncat{S\vs NP}}}
+\DisplayProof
+\end{exe}
+\noindent The term obtained at the last step of this proof, supplied as an
+argument to the extraction operator, yields an interpretation
+identical to the unellipsed embedded question \textit{what Bill ate for
+lunch}. Note that the prosodic term derived in the last proof step,
+\pt{\ensuremath{\lambda} \ensuremath{\greekp_3}. bill \O did \O \ensuremath{\greekp_3}}, is exactly what we would have obtained via
+the earlier version of the generalized ellipsis operator; the
+associated type would however been S/NP, and therefore ineligible to
+compose with \textit{what}. Moreover, as noted above, only the
+vertically-slashed version of the ellipsis operator would allow us to
+derive a sentence with a non-peripheral `gap' as in (\ref{internal}).
+But the larger point is that long-distance dependencies into what
+appear to be ellipsis contexts are, on this analysis, based on what is
+in effect the extraction of a pseudogapping remnant. For example,
+a proof along the lines of that began along the lines of
+(\ref{extractionVPE-drv-part2}) might have continued as in (\ref{other}):
+
+\begin{exe}
+ \ex\label{other}
+\AxiomC{\Lemma}
+\UnaryInfC{\MultiLine{\ptfont \lambda \ensuremath{\greeks} \lambda \ensuremath{\greekp}. did \O \ensuremath{\greeks}(\ensuremath{\greekp}); \\ \sem{ \lambda f \lambda x \lambda y. f(x)(y)}; \\\syncat{  (VP\vs NP)\vs (VP\vs NP)}}}
+\AxiomC{\MultiLine{\ptfont \lambda \ensuremath{\greekr} \lambda \ensuremath{\greekp}. \ensuremath{\greekr}(\lambda \ensuremath{\greekp_0}. \ensuremath{\greekp_0})(\ensuremath{\greekp}); \\ \sem{ \lambda \ensuremath{\mathscr{F}}. \ensuremath{\mathscr{F}}(\lambda x. \trns{ate}(x)(\trns{lunch}))}; \\\syncat{  (VP\vs NP)\vs }\\ \hspace{2ex}\syncat{((VP\vs NP)\vs (VP\vs NP))}}}
+\BinaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greekp}.did \O \ensuremath{\greekp}}}{\sem{ \lambda x \lambda y. \trns{ate}(x)(\trns{lunch})(y)}}{\syncat{VP\vs NP}}}
+\AxiomC{\LexEnt{\pt{breakfast}}{\sem{ \trns{brkfst} }}{\syncat{NP}}}
+\BinaryInfC{\LexEnt{\pt{did \O breakfast}}{\sem{ \lambda y. \trns{ate}(x)(\trns{brkfst})(y)}}{\syncat{VP}}}
+\AxiomC{\LexEnt{\pt{he}}{\sem{ 3masc }}{\syncat{S}}}
+\BinaryInfC{\LexEnt{\pt{he \O did \O breakfast}}{\sem{ \trns{ate}(\trns{brkfst})(3masc)}}{\syncat{S}}}
+\DisplayProof
+\end{exe}
+This would then be an ordinary instance of pseudogapping as in \textit{John
+ate lunch much faster than he did breakfast}. The upshot is that
+apparent extraction from ellipsis sites as in (\ref{extrac-from-VPE}) is nothing other than
+the interaction of Muskens-style \textit{wh} operators with the object of a
+transitive auxiliary---a possibility that we would predict in advance
+on the analysis given above.
+
+The reader might suppose that the possibility of this kind of
+extraction depends on some kind of parallel interpretation between the
+antecedent and the ellipsed clauses in (\ref{extrac-from-VPE}), based on the
+extraction already visible in the former. But we also have examples
+where the there is no extraction in the antecedent, such as (\ref{internal}c) and (\ref{noparallel}):
+
+\begin{exe}
+ \ex\label{noparallel}
+  John is certain he would buy \textsl{this} kind of sports car, but I have no
+  idea what kind \textsl{I} would.
+\end{exe}
+To obtain such examples, we derive the antecedent by a derivation
+which includes the following subproof.
+
+\begin{exe}
+ \ex\label{subproof}
+\hspace{-8ex}
+\AxiomC{\LexEnt{\pt{buy}}{\sem{ \trns{buy} }}{\syncat{VP/NP}}}
+\AxiomC{\LexEnt{\pt{\ensuremath{\greekp_1}}}{\sem{ x}}{\syncat{NP}}}
+\BinaryInfC{\MultiLine{\ptfont buy \O \ensuremath{\greekp_1}; \\ \sem{ \trns{buy}(x)}; \\\syncat{  VP}}}
+\UnaryInfC{\MultiLine{\ptfont \lambda \ensuremath{\greekp_1}. buy \O \ensuremath{\greekp_1}; \\ \sem{ \mbox{\grey{\sem{ \lambda x. \trns{buy}(x) }}} }; \\\syncat{  VP\vs NP}}}
+\AxiomC{\Lemma}
+\UnaryInfC{\MultiLine{\ptfont this \O kind \O of \O sports \O car; \\ \sem{ \iota(\trns{kind}(\trns{spcr}))}; \\\syncat{  NP}}}
+\BinaryInfC{\MultiLine{\ptfont buy \O this \O kind \O of \O sports \O car; \\ \sem{ \trns{buy}(\iota(\trns{kind}(\trns{spcr})))}; \\\syncat{  VP}}}
+\AxiomC{\MultiLine{\ptfont would; \\ \sem{ \lambda P \lambda y.\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{D}}}\, P(y)}; \\\syncat{  VP/VP}}}
+\BinaryInfC{\MultiLine{\ptfont would \O buy \O this \O kind \O of \O sports \O car; \\ \sem{ \lambda y.\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{D}}}\,\trns{buy}(\iota(\trns{kind}(\trns{spcr})))(y)}; \\\syncat{  VP}}}
+\DisplayProof
+\end{exe}
+From this point on, the proof for the ellipsed clause would proceed in
+exactly the same fashion as in the derivation of (\ref{extractionVPE-rep}),
+with the free variable \sem{ P\,' } instantiated as the grayed-in term
+in (\ref{subproof}). 
+
+The above (re)analysis of `extraction out of an elided VP' as
+extraction of a pseudogapping remnant gives us, in effect, a
+proof-of-concept argument for rejecting the assumption that covert
+structures in VP ellipsis necessarily exist in order that a `site of
+origin' be available for filler/gap linkages that appear to implicate
+material missing from deleted VPs.\footnote{This approach has been
+challenged in \citet{johnson2001}, on the graounds that apparent extraction
+from ellipsis sites is subject to different contraints from
+pseudogapping, counterexamples to his claims are already familiar
+from, inter alia, examples from corpora or naturally occurring data
+presented in \citet{levin-diss}. For detailed discusson of this point, see
+\citet{kubotalevineBook}, \textsection{8.4.2}.} There is, on the analysis
+presented in this section, no extraction from a subsequently deleted
+(or phonologically supressed) subpart of some structural arrangement
+of linguistic expressions, as in a phrase structure tree. Rather, an
+auxiliary is licensed whose type and semantics correspond to a VP
+missing an NP, and which composes by hypothetical reasoning to the
+type of a clause missing an NP. A \textit{wh} operator along the lines
+proposed by Muskens can then take this clause as an argument. The
+appearance in (\ref{extrac-from-VPE}) of an extraction from a subsequently
+ellipsed constituent is, on this view, a illusion due to the
+string-identity of a VP ellipsis on the one hand and displacement of a
+pseudogapping remnant on the other.
+
+\section{Conclusion: Peirce' linguistics, logic,and mathematics\\ and the sources of type logical grammar}
+
+It is important at this point to consider how the results reported
+above have been achieved. Fundamentally, treatment of syntactic
+categories \textsl{as} valence specifications means that grammatical
+rules and operations can map the combinatorial possibilites of signs
+to different possibilities without ever requiring those possibilities
+to be realized as actual structures e.g., the operators for auxiliary
+type-shifting given above. But just as basic to this kind of solution
+is the fact that in type-logical systems, the `categories' of phrase
+structure grammar are replaced by types which specify the argument
+requirements of their own arguments. The \textit{what} operator discussed
+above can apply to a sign typed \syncat{S\vs NP}, an object itself seeking an NP
+to yield a clause of arbitrary depth. Since on the analysis in
+\textsection{3.1.2} the auxiliary \textit{did} in (\ref{extrac-from-VPE}) is a VP
+missing an NP and thus, by hypothetical reasoning, \textit{Bill did} is an S
+missing an NP, a \textit{wh} operator such as \textit{what} can take the latter as
+an argument without there ever having been any material in its
+licensing corresponding to the transitive verb \textit{eat} per
+(\ref{extractionVPE-rep}). The interpretation of (\ref{extrac-from-VPE}) involves
+the sign \textit{eat} only in the antecedent; in the ellipsis clause, the
+predicate \textbf{eat} is understood in the meaning only as a result of
+anaphoric retrieval from the antecedent clause. The heavy lifting in
+this proposal is carried out entirely by valence-shifting operators
+and the treatment of extraction as just one more instance of a
+dependency mediated by valence satisfaction.
+
+The possibilities of this kind of framework depend on a \textsc{residuated}
+logic, i.e., a logic in which the connectives, viewed as
+type-constructors, have the property that, in the notation of
+classical implication (but necessarily modulo the directionality of the
+type-constructor slashes), and with $\Lleftarrow\!\Rrightarrow$
+denoting metalogical equivalence:
+
+\begin{exe}
+ \ex\label{residuation}
+  \sem{ (\psi  \ensuremath{\vdash\xspace } \psi\supset\varrho)\Lleftarrow\!\Rrightarrow (\psi,\phi  \ensuremath{\vdash\xspace } \varrho)\Lleftarrow\!\Rrightarrow (\phi  \ensuremath{\vdash\xspace } \psi\supset\varrho) }
+\end{exe}
+(For detailed discussion, see \citet{sep-logic-substructural}). Residuation
+is a property of the type-constructors /,$\bsl$ introduced in
+\citet{lambek58}, for all practical purposes the founding document of
+contemporary type-logical formalisms, and so far as type-logic is
+concerned, can be understood in the following way: there is a natural
+relationship between the entailment/equivalence relations in
+(\ref{residuation}), whereby if inhabiting a given type $\tau_1$ entails
+inhabiting some other type $\tau_2$, then \sem{ \tau_1  \ensuremath{\vdash\xspace } \tau_2 },
+i.e., \sem{   \ensuremath{\vdash\xspace } \tau_1 \ensuremath{ \rightarrow } \tau_2 }. Suppose that, given two types $A,B$,
+we can compose each member of $A$ with each member of $B$ to yield a
+term belonging to type $C$, i.e., \sem{ A\bullet B\,  \ensuremath{\vdash\xspace } \,\textit{C}  }. Then
+necessarily every member of $A$ belongs to the set of terms which form
+a member of $C$ when they compose with a member of $B$ on the right;
+if we call this set \sem{ B/C } then 
+\sem{ A{}  \ensuremath{\vdash\xspace } B/C}, and likewise for
+\textit{B}. We thus have the relations
+
+\begin{exe}
+ \ex\label{typeResiduation}
+   $ (A \bullet B\,\vdash\, C)\scalebox{.8}{\Lleftarrow\!\Rrightarrow}(A \vdash C/B)
+   \Lleftarrow\!\Rrightarrow(\B \vdash B \vdash A\bsl C)$
+\end{exe}
+(\ref{typeResiduation}) is nothing more than the residuated implication
+relationship of standard logic displayed in residuation.  But as
+discussed at length in \citet{pratt92}, Peirce himself developed a theory of
+binary relations that incorporated the key components of residuated
+relationships between terms, including a kind of proto-version of the
+left and right `division' relations that, per (\ref{typeResiduation}), are
+formally entailed by each of the arguments of the type composition
+operator $\bullet$ (and which are in essence the upper adjoints of the
+monotone Galois connection which frames residuation in terms of
+partial orderings).\footnote{Specifically, assume that for any two
+types $A,B$, $A\bullet B \leqslant C$, i.e., every inhabitant of the
+concatenation of the types $A, B$ is an inhabitant of $C$. Then with
+$f_\ast = \L\alpha. \alpha\bullet B$ and $f^\ast = \L \beta. \beta/B$,
+there is a Galois connection between $f^\ast$ and $f^\ast {\rm\,
+iff\,} $f_\ast(A) \leqslant C \Leftrightarrow A\leqslant f^\ast(C)$,
+which, if we also define an upper adjoint $f^\ast\ast = \L
+\gamma. A\bsl\gamma$, and take the entailement relation $X\vdash
+Y$ to define a partial ordering $X\leqslant Y$, gives us exactly the
+`triquivalence' in (\ref{typeResiduation}).} As Pratt notes, the upper and
+lower adjoint operators are effectively the functions corresponding to
+the composition and division connectives (which Peirce wrote with a
+semicon and a horizonal-line franction notation respectively).}
+
+It seems fair to say, then, that---to extend Peirce's original
+chemical metaphor only slightly---we can plausibly view Lambek's
+seminal work in his 1958 and 1961 papers as the reaction product of an
+imagined catalyst bonding Peirce's ideas about valence as the basis of
+linguistic combinatorics to his work on the algebra of relations. Any
+doubt about the correctness of such a view should be immediately
+dispelled by Lambek's own words; in one of his papers on pregroup
+grammars---an algebraic reformulation of type-logical grammar he
+developed in order to make transparent the logical foundation of his
+earlier systems as instances of (a fragment of) intuitionistic
+noncommutative linear logic---he comments of a very basic skeleton for
+the pregroup grammar formalism that the essential combinatorics `may
+even be implicit in the ideas of C.S. Peirce [i.e. \citet{peirce1897}
+---RDL], noting that certain combinators in this `rudimentary' version
+may have been seen by Peirce as comparable to `the unsaturated bonds
+of an atom. \textsl{I believe pregroup grammars developed from this
+rudimentary setup}.' (Lambek 2007, p.352;\nocite{lambek2007a}emphasis added).
+
+The system exhibited in (\ref{rules}) combines Lambek's earliest formulation
+of a type-based logic for linguistic composition with the version of
+type-logic developed in \citet{oehrle1994}; but note that Oehrle's system is
+presented as itself an outcome of enriching the associated type-logic
+of Lambek's 1958 paper with the structural rule of permutation; this
+of course then requires word order to be somehow separated from type
+combinatorics, and Oehrle's own deep insight was to allow the prosody
+to contain functional operators. It is not unreasonable to see
+Lambek's 1958 paper as the fountainhead for the two separate research
+traditions that have developed under the broad heading of type-logical
+grammar, and as I hope to have made clear, Peirce's work in both
+linguistics and the algebra of relations had already provided the
+materials for Lambek's profound synthesis, as Lambek himself stressed.
+It is to be hoped that future overviews of the history of type-logical
+systems along the lines of e.g. \citet{moortgat2010} will take due note of Peirce's right to
+ancestral status in the lineage of the Lambek calculus, and therefore
+of all contemporary versions of type-logical grammar. And it strikes
+me as extremely likely that Peirce would have been
+particularly glad had he known the degree to which his key
+linguistic principles---valence satisfaction as the driver of
+grammatical composition and language as an extension of logic---would
+be unified so precisely and rigorously in Lambek's brilliant fusion
+of developments in logic and mathematics that can be traced, to a large
+extent, back to Peirce himself.
+
+
+
+%%.. word; L x. meaning(x) ; (NP\S)/PP\fb{for}
+
+%%.. word; L x. meaning(x) ; (be\S)/al
+
+\bibliographystyle{mybst} 
+\bibliography{mybib-new}
+\end{document}
+***
+
+%= ABBREVIATORY NOTATIONS
+%
+%An rdx has the following general structure:
+%
+%------------------------------------
+%
+%(i) Main body 
+%
+%------------------------------------
+%
+%(ii) Recipe for Perl code 
+%
+%------------------------------------
+%
+%(iii) Recipe for the LaTeX preamble
+%
+%------------------------------------
+%
+%What follows corresponds to part (ii) in this general structure.
+%
+%Note in particular that in this part, what you write is \emph{perl} code
+%fragments (or abbreviations for code fragments), and NOT LaTeX code
+%fragments. So, the notational conventions follow that of perl. In
+%particular, comments should be prefixed by #, and NOT %.
+%
+%There are four sections in this part: 
+%
+%- simple arrow: 
+%This is for abbreviatory notations written in the simple A \ensuremath{ \Rightarrow } B
+%format. You don't need to escape the backslashes here since that's
+%automatically taken care of by the preprocessor. Expansion is done
+%*before* all the other .rdx \ensuremath{ \Rightarrow } .tex expansions. If you want to
+%write an expansion definition for the syntactic category part of 
+%linguistic expressions, write it in the `simple arrow post' 
+%(see below) section rather than in this section.
+%
+%- simple arrow post
+%Same as `simple arrow' except that expansion is done \emph{after} all the
+%other .rdx \ensuremath{ \Rightarrow } .tex expansions. When you want to write an expansion
+%definition for the syntactic category part of linguistic
+%expressions, this is the right place to put the definition.
+%
+%- replace:       
+%Here, you write perl code for replacing string based on regular
+%expression. Since this is real perl code, you need to quote the
+%backslash, which means you need to write \\ instead of \. The notation
+%is more cumbersome as compared to the `simple arrow' part, but it
+%allows for greater flexibility by making full use of perl regular
+%expressions. Expansion is done \emph{before} all the other .rdx \ensuremath{ \Rightarrow } .tex
+%expansions.
+%
+%- replace post: 
+%Same as `replace' except that expansion is done \emph{after} all the
+%other .rdx \ensuremath{ \Rightarrow } .tex expansions.
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+>simple arrow
+
+\PARA{In most cases, it suffices to write abbreviations in this part.  }
+\PARA{See below for some examples.}
+
+\PARA{box and diamond (e.g., for the necessity and possibility modalities)}
+\ensuremath{\square} \ensuremath{ \Rightarrow } \ensuremath{\square}
+\ensuremath{\Diamond} \ensuremath{ \Rightarrow } \ensuremath{\Diamond}
+
+\PARA{words that should almost always appear uppercase in the output}
+RNR \ensuremath{ \Rightarrow } RNR
+NCC \ensuremath{ \Rightarrow } NCC
+CCG \ensuremath{ \Rightarrow } CCG
+CG \ensuremath{ \Rightarrow } CG
+LBE \ensuremath{ \Rightarrow } LBE
+OQM \ensuremath{ \Rightarrow } OQM
+HPSG \ensuremath{ \Rightarrow } HPSG
+TLCG \ensuremath{ \Rightarrow } TLCG
+
+
+<simple arrow
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+>simple noquote arrow post
+
+\textrm{\textbf{I}}\scalebox{.7}{\textrm{\textbf{NV}}} \ensuremath{ \Rightarrow } \textrm{\textbf{I}}\scalebox{.75}{\textrm{\textbf{NV}}}
+
+\textrm{\textbf{E}}\scalebox{.7}{\textrm{\textbf{LL}}} \ensuremath{ \Rightarrow } \textrm{\textbf{E}}\scalebox{.75}{\textrm{\textbf{LL}}}
+
+\textrm{\textbf{N}}\scalebox{.7}{\textrm{\textbf{EG}}} \ensuremath{ \Rightarrow } \textrm{\textbf{N}}\scalebox{.75}{\textrm{\textbf{EG}}}
+
+\textrm{\textbf{S}}\scalebox{.7}{\textrm{\textbf{HOULD}}} \ensuremath{ \Rightarrow } \textrm{\textbf{S}}\scalebox{.75}{\textrm{\textbf{HOULD}}}
+
+\textrm{\textbf{S}}\scalebox{.7}{\textrm{\textbf{HOULDN}\textsf{'}\textbf{T}}} \ensuremath{ \Rightarrow } \textrm{\textbf{S}}\scalebox{.75}{\textrm{\textbf{HOULDN}\textsf{`}\textbf{T}}}
+
+\textrm{\textbf{D}}\scalebox{.7}{\textrm{\textbf{O}}} \ensuremath{ \Rightarrow } \textrm{\textbf{D}}\scalebox{.75}{\textrm{\textbf{O}}}
+
+\rotatebox[origin=c]{
