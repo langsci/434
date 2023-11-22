@@ -4,25 +4,6 @@
 ]{langscibook}
 
 
-%move the following commands to the "local..." files of the master project when integrating this chapter
-\usepackage{tabularx}
-\usepackage{langsci-optional}
-\usepackage{langsci-gb4e}
-\bibliography{localbibliography}
-\newcommand{\orcid}[1]{}
-
-% For the block quote:
-\usepackage[most]{tcolorbox}
-\definecolor{linequote}{RGB}{224,215,188}
-\definecolor{backquote}{RGB}{249,245,233}
-\newtcolorbox{myquote}[1][]{%
-    enhanced, breakable, 
-    size=minimal,
-    frame hidden, boxrule=0pt,
-    sharp corners,
-    colback=backquote,
-    #1
-}
 
 \IfFileExists{../localcommands.tex}{
    \addbibresource{../localbibliography.bib}

@@ -2,21 +2,11 @@
 %\documentclass{article}
 % ,hidelinks
 % showindex]
-\usepackage{xypic}
-\usepackage[matrix,arrow]{xy}
-\usepackage{amsmath}
-\usepackage{subcaption}
-\usepackage{wrapfig}
-\newcommand{\orcid}[1]{}
-%\usepackage[title]{appendix}
-\author{Andr\'as Kornai}%\affiliation{Budapest University of Technology and Economics}}
+
+\author{Andr\'as Kornai\orcid{0000-0001-6078-6840}\affiliation{Budapest University of Technology and Economics}}
 \title{What is the simplest semantics imaginable?}
-\usepackage{tabularx}
-\usepackage{langsci-optional}
-\usepackage{langsci-gb4e}
-%\usepackage[backend=biber, bibencoding=utf8, natbib,style=authoryear,uniquename=false,uniquelist=false]{biblatex}
-\bibliography{localbibliography}
-\orcid{0000-0001-6078-6840}
+
+
 
 
 \abstract{We claim
@@ -61,8 +51,7 @@ the rules?
 
 This question is especially vexing in light of the observation that the main
 vector operation, vector addition, plays only a marginal role in the
-computational system: it is used for solving analogical puzzles like {\it
-  France is to Germany as Paris is to X} \citep{Mikolov:2013l} and little
+computational system: it is used for solving analogical puzzles like \emph{France is to Germany as Paris is to X} \citep{Mikolov:2013l} and little
 besides. Using the KR side to explore the issue we find that three binary
 operations, 0, 1, and 2, are both necessary and sufficient for formal
 semantics. 1 and 2 are the well-known ``subject of" and ``object of"
@@ -81,14 +70,14 @@ considered (together with other conceptual relations typically expressed by
 case markers and adpositions) to have their own subjects and (prepositional)
 objects. This will of course complicate the graphs (in ways that will be
 familiar from generative semantics) but assure that we will never need
-hyper{\it edges} just hyper{\it nodes}. The resulting system is rather similar
+hyper\emph{edges} just hyper\emph{nodes}. The resulting system is rather similar
 to the
 \href{https://en.wikipedia.org/wiki/Resource_Description_Framework}{Resource
   Description Framework} used in the
 \href{https://en.wikipedia.org/wiki/Semantic_Web}{Semantic Web} where binary
 relations are are encoded in a (subject verb object) triple. Since such
-triples can be substituted in one other, for {\it give} we obtain an analysis
-`cause to have' so that {\it x gives y to z} becomes \texttt{(x cause (z has
+triples can be substituted in one other, for \emph{give} we obtain an analysis
+`cause to have' so that \emph{x gives y to z} becomes \texttt{(x cause (z has
   y))}. This method is immune to the standard criticisms \citep{Fodor:1970}
 leveled against generative semantics-style meaning decomposition that were
 based on the pronominalization possibilities of the `to + inf' natural
@@ -97,7 +86,7 @@ language paraphrase, since the formulas explicitly contain this information.
 decomposition (cause to die $\rightarrow$ cause not to have life functions
 $\rightarrow$ cause not to metabolize, respond, \ldots) may never terminate,
 is actually irrelevant in an algebraic setup that enables circularity, and
-\citet{Kornai:2012} describes how higher arity verbs, such as {\it promise} can
+\citet{Kornai:2012} describes how higher arity verbs, such as \emph{promise} can
 be handled in the same manner. 
 
 But the necessity of three different operations is even less trivial: after all,
@@ -131,13 +120,12 @@ argument will rely on a stricter understanding of compositionality than the
 one generally assumed: while the mapping from G\"odel numbers (or binary
 strings) back to logic formulas is unique, and Turing-computable, not every
 such mapping is compositional in the accepted sense of taking some string X,
-decomposing it {\it by simple means} as AB, and computing the meaning of
+decomposing it \emph{by simple means} as AB, and computing the meaning of
 the whole from the meanings of the parts A and B. 
 
 In Section~\ref{expect} we set expectations by discussing some important
 desiderata for OTF.  We also introduce some less commonly taught desiderata
-students of linguistic semantics may not even have heard of, such as {\it
-  smooth transition from morphology to syntax} and {\it embeddability}, and
+students of linguistic semantics may not even have heard of, such as \emph{smooth transition from morphology to syntax} and \emph{embeddability}, and
 argue that these are actually part of the same cluster of desiderata.  Our own
 proposal, the \texttt{4lang} system (see \texttt{https://github}
 \texttt{.com/kornai/4lang/tree/master/V2}), is discussed in
@@ -164,7 +152,7 @@ Let us begin with some standard desiderata:
 \noindent
 D1 is taken very seriously by proponents of logical
 semantics, who treat all other approaches (by natural language paraphrase, by
-diagrams, and by KR in general) as {\it markerese} since \citet{Lewis:1970}.
+diagrams, and by KR in general) as \emph{markerese} since \citet{Lewis:1970}.
 To satisfy this, OTF must contain three well-defined parts: a language of
 formulas $L$, a collection of models $\mathcal{M}$, and an interpretation
 relation $i: L \rightarrow \mathcal{M} $ between the two \citep{Tarski:1956}.
@@ -180,7 +168,7 @@ use $\mathcal{M}$, the collection of models, to capture the world that is
 being talked about, with $i$ mapping elements of the language onto their
 meanings.  In reality, MG \citep{Montague:1970,Montague:1973}, represents a
 considerable departure from this architecture. On the left side, we do not
-find $L$, natural language, but $D$, {\it disambiguated language}, a
+find $L$, natural language, but $D$, \emph{disambiguated language}, a
 theoretical construct that contains not just the well-formed expressions of
 language but also their constituents and derivation histories (see discussion
 of D4 below).
@@ -221,8 +209,7 @@ meanings and brings back the psychological problem
 \citep{Partee:1979,Partee:2013} of accounting for infinite data sets in a
 finite brain.
 
-Clearly, expressions like {\it ropeladder} `ladder made of rope'; {\it
-  testtube} `tube used for test'; and {\it manslaughter} `slaughter undergone
+Clearly, expressions like \emph{ropeladder} `ladder made of rope'; \emph{testtube} `tube used for test'; and \emph{manslaughter} `slaughter undergone
 by man' \citep{Kiparsky:1982b} are not entirely compositional. Equally
 clearly, the meaning of novel compounds is largely predictable, as are the
 meanings conferred by productive derivational processes. The Lexicalist
@@ -239,7 +226,7 @@ desideratum:
 In other words, there cannot be a different semantics for morphology and for
 syntax, especially as the border between the two is not uniform across
 languages. It must be one and the same interpretation mechanism that takes you
-`from morpheme to utterance'. This is not to say that there is no {\it word}
+`from morpheme to utterance'. This is not to say that there is no \emph{word}
 unit that syntax can refer to (the classical psycholinguistic evidence in
 favor of memorized units with lexicalized meanings cited in \cite{Muller:2018}
 is hardly controvertible), but simply to insist on deriving as much of this
@@ -282,7 +269,7 @@ stretch the case-by-case definition accordingly (see \cite{Curry:1958}
 Ch. 1E4). 
 
 For a concrete example, consider the translation of the English reflexive
-pronoun {\it himself} which \cite{Szabolcsi:1987} argues to be the combinator
+pronoun \emph{himself} which \cite{Szabolcsi:1987} argues to be the combinator
 $W$, defined as $W x y = x y y$. In the standard $S,K$ basis $W$ is
 expressible as $((SS)(SK))$ so $W$ is $(((JJ)(JJ))((JJ)(J(JJ))))$. Continuing
 with the no-frills approach, the order of applications encoded in the
@@ -353,7 +340,7 @@ perfectly synonymous. This, if true, is highly problematic for Boolean
 connectives, where the logic creates synonymy: if something is translated as
 $p \wedge q$ it is perforce translated as $q \wedge p$ which then translates
 back to a non-synonymous natural language expression. This in fact happens:
-{\it I went home and had dinner} is not synonymous to {\it I had dinner and
+\emph{I went home and had dinner} is not synonymous to \emph{I had dinner and
   went home}.
 
 This particular problem instance can be eliminated by insisting that the logic
@@ -391,20 +378,19 @@ how things can be) in the world. If we had a substantive theory of being
 awestruck `feeling great respect for the importance, difficulty, or
 seriousness of someone or something' (LDOCE, \cite{Procter:1978}) we could
 make some progress on the semantics of these non-linguistic domains by
-leveraging the lexical semantics of words like {\it awe}, a matter we shall
+leveraging the lexical semantics of words like \emph{awe}, a matter we shall
 return to in Section~\ref{4lang}.
 
 \medskip\noindent Until now we have discussed a set of desiderata that any
 semantic theory should meet, selecting D1, D7, and D8 as our central
 desiderata. D2 and D3 are subsumed under D8, while D4, D5, and D6 are seen as
-{\it good to have}s, criteria that must be subordinated to the central
+\emph{good to have}s, criteria that must be subordinated to the central
 ones. That failure of meeting these three is not generally considered fatal is
 best seen from the widespread acceptance of MG and similar theories.
 
 Perhaps the most important takeaway so far concerns D8, compositionality. The
 point of our `logic bestiary' examples is that semantics requires more than
-any old Turing-computable algorithm, it requires a specific mechanism of {\it
-  decomposing} expressions into constituent parts, and computing the results
+any old Turing-computable algorithm, it requires a specific mechanism of \emph{  decomposing} expressions into constituent parts, and computing the results
 based on the parts. Decomposition itself must be a simple operation, ideally
 expressed by a low-power Turing machine such as a finite state transducer that
 detects the constituent boundary. The overall semantics is obtained by (i)
@@ -416,13 +402,13 @@ contain discontinuous (gapped, interleaved) constituents are questions of
 great technical importance, but compositionality can be achieved either way.
 
 This leaves us with one central desideratum we have not touched upon so far,
-{\it learnability}. In theory, the interpretation mechanism can be given
+\emph{learnability}. In theory, the interpretation mechanism can be given
 externally (e.g. as a lex/yacc parser), but in practice we would prefer the
 entire algorithm to be learnable, ideally from positive data alone. Whether
 this is just good to have, or a non-negotiable desideratum as urged by
 \citet{Chomsky:1965} is hard to say, but one thing is clear: so far, all
-successful learners are {\it supervised}, requiring labeled data. These
-include {\it self-supervised} techniques where the labels are generated by
+successful learners are \emph{supervised}, requiring labeled data. These
+include \emph{self-supervised} techniques where the labels are generated by
 simple automated methods from initially unsupervised data (raw text). At the
 price of demanding orders of magnitude more data than encountered by human
 language learners during language acquisition, such self-supervision is used
@@ -452,11 +438,11 @@ practical necessity, we have
 \end{itemize}
 
 One of the key inventions that powered the LLM revolution was enabling
-gradient learning by means if a new semantic structure, {\it word vectors}
+gradient learning by means if a new semantic structure, \emph{word vectors}
 \citep{Schutze:1993,Collobert:2011}. This is by no means the only relevant
-invention: we already mentioned {\it self-supervision}; and we should mention
-at least {\it byte pair encoding} \citep{Gage:1994}; {\it sequence to sequence
-  transformation} \citep{Sutskever:2014}; and {\it attention}
+invention: we already mentioned \emph{self-supervision}; and we should mention
+at least \emph{byte pair encoding} \citep{Gage:1994}; \emph{sequence to sequence
+  transformation} \citep{Sutskever:2014}; and \emph{attention}
 \citep{Vaswani:2017}. By replacing the discrete tree structures used since
 \citet{Katz:1963} for encoding the meaning of lexical items by vectors in
 $n$-dimensional space where partial derivatives can be taken, learning based
@@ -478,14 +464,14 @@ languages where training data is in short supply.
 In what follows, we take the system of
 \href{https://en.wikipedia.org/wiki/Polytope}{polytopes} induced by word
 vectors as our starting point \citep{Kornai:2022}, and begin with the trivial
-observation that the {\it thought vectors} of \citet{LeCun:2015}, which are
+observation that the \emph{thought vectors} of \citet{LeCun:2015}, which are
 intended as semantic representations of the (already spoken part of) sentences
 and larger discourses, appear in the same space. This takes care of D7, which
 asks for a style of representation that is common to subword units (morphemes,
 or the bytepair-like units used in the WordPiece algorithm of \cite{Wu:2016}),
 phrases, sentences, and even larger units. In this system,
-non-compositionality corresponds to {\it subdirect} products, and
-compositionality appears as a special case, {\it direct} products
+non-compositionality corresponds to \emph{subdirect} products, and
+compositionality appears as a special case, \emph{direct} products
 \citep{Kornai:2010} -- the difference is illustrated in
 Fig.~\ref{fig:dirsubdir}.
 
@@ -512,17 +498,17 @@ Fig.~\ref{fig:dirsubdir}.
 
 \noindent
 The \href{https://en.wikipedia.org/wiki/Subdirect_product}{subdirect product},
-standardly defined as a {\it sub}set of the {\it direct product} satisfying
+standardly defined as a \emph{sub}set of the \emph{direct product} satisfying
 projection requirements is not unique: there can be many subsets of the direct
 product that project onto both components. This means that the semantics
 itself is underdetermined, but this is only to be expected in cases like
 noun-noun compounding. Whatever portion of the semantics is rule-governed is
 captured, e.g. that in N-N compounding we have `N$_2$ that is V-ed by N$_1$'
-with the V indeterminate: ladder {\it made of} rope, slaughter {\it undergone
-  by} man, tube {\it used for} test \citep{Kiparsky:1982b}, the
+with the V indeterminate: ladder \emph{made of} rope, slaughter \emph{undergone
+  by} man, tube \emph{used for} test \citep{Kiparsky:1982b}, the
 noncompositional part is admitted as such. This seems to be the right approach
-not just for morphology, but also for the grey zone of {\it constructions}
-between the purely morphological and the purely syntactic such as {\it NP of
+not just for morphology, but also for the grey zone of \emph{constructions}
+between the purely morphological and the purely syntactic such as \emph{NP of
   NP} studied in
 \href{https://www1.icsi.berkeley.edu/~kay/bcg/ConGram.html}{Berkeley
   Construction Grammar} \citep{Kornai:1988a}, taking care of our desideratum
@@ -530,26 +516,25 @@ D7.
 
 \medskip\noindent What are, then, the non-negotiable elements of vector
 semantics? One, perhaps the most important one, is the notion of containment,
-{\sc IsA}, which we see as essential for the reconstruction of Aristotelian
-{\it genus}. Whatever definition we provide for {\it dachshund} or {\it
-  labrador,} the first thing in the definiens will be {\it dog}. Given that we
+\textsc{IsA}, which we see as essential for the reconstruction of Aristotelian
+\emph{genus}. Whatever definition we provide for \emph{dachshund} or \emph{labrador}, the first thing in the definiens will be \emph{dog}. Given that we
 use polytopes (polyhedra-line $n$-dimensional regions) around the word
-vectors, {\sc IsA} comes for free as the set-theoretical inclusion `$\subset$'
+vectors, \textsc{IsA} comes for free as the set-theoretical inclusion `$\subset$'
 relation. This works well for for ordinary (intersective) adjectival modifiers
-as well: a {\it brown dog} is in the intersection of the {\it brown} and the
-{\it dog} polytopes. (For non-intersective adjectives like {\it former}, see
+as well: a \emph{brown dog} is in the intersection of the \emph{brown} and the
+\emph{dog} polytopes. (For non-intersective adjectives like \emph{former}, see
 Ch. 3.2 of \cite{Kornai:2022}.)
 
-The method of assigning semantics to {\it Kim is a donkey} by leveraging
+The method of assigning semantics to \emph{Kim is a donkey} by leveraging
 set-theo\-ret\-ical containment cannot be directly generalized.  Clearly,
-there is nothing in set theory that would directly work for {\it Kim has a
+there is nothing in set theory that would directly work for \emph{Kim has a
   donkey}, but the underlying idea of taking a relation, in this example the
-possessive relation {\sc Has}, and use that for assigning meaning, is
-solid. ({\sc Has} can be further subdivided into inalienable and ordinary
+possessive relation \textsc{Has}, and use that for assigning meaning, is
+solid. (\textsc{Has} can be further subdivided into inalienable and ordinary
 possession, but we will not pursue this matter here.) There remains one
-technical difficulty: however the language signals the distinction, {\it John
-  ate the fish} and {\it The fish ate John} should not be treated as
-synonymous. We use {\sc SubjectOf} and {\sc ObjectOf} for the
+technical difficulty: however the language signals the distinction, \emph{John
+  ate the fish} and \emph{The fish ate John} should not be treated as
+synonymous. We use \textsc{SubjectOf} and \textsc{ObjectOf} for the
 disambiguation. These are good candidates for universality, even in languages
 where the distinction is made in absolutive/ergative terms.
 
@@ -574,8 +559,7 @@ considered relevant for semantics are advised to look at
 \citet{Kornai:2022}. But one word of caution is in order: not having further
 operations is not the same as not having further primitives.
 
-The \texttt{4lang} system actually treats a handful of binary relations {\sc
-  at between cause er follow for from has in ins isA lack mark on partOf
+The \texttt{4lang} system actually treats a handful of binary relations \textsc{at between cause er follow for from has in ins isA lack mark on partOf
   under} as primitives (and makes the claim that all others are
 derivable). These correspond to matrices, rather than vectors. Remarkably,
 what traditional syntax treats as higher order operators, quantifiers in
@@ -584,28 +568,28 @@ example is the generic quantifier \texttt{gen}, which simply corresponds to the
 $n$-dimensional vector $(1/n,1/n,\ldots,1/n)$ (for details see
 \cite{Kornai:2022} Ch. 4.5). The bulk of the primitives are unaries (vectors)
 appearing in a system of mutually constraining definitions, and this includes
-most verbs that can have an optional object like {\it eat} as well.
+most verbs that can have an optional object like \emph{eat} as well.
 
-With {\it eat} it is reasonably easy to see how one can define it in terms of
+With \emph{eat} it is reasonably easy to see how one can define it in terms of
 the Longman Defining Vocabulary `to put food in your mouth and chew and
 swallow it' and the process of turning this into a \texttt{4lang} clause can be
 automated \citep{Recski:2016d} to yield \texttt{=agt cause\_ \{=pat in mouth\},
   swallow, <=pat[food]>, <bite/1001>, <chew>, =agt has mouth} which uses an
 even smaller defining vocabulary of 739 elements (including the 16 binaries).
 
-Arguably {\it eat}, if not a universal semantic primitive, is at least very
+Arguably \emph{eat}, if not a universal semantic primitive, is at least very
 close to being one, and clearly it is a `simple' word \citet{Kornai:2021} that
-comes very early in language acquisition. Our earlier example, {\it awe}, is
+comes very early in language acquisition. Our earlier example, \emph{awe}, is
 clearly far from the simple/basic layer of the vocabulary, but the same method
 remains applicable: take the LDOCE definition, in this case `a feeling of
 great respect and liking for someone or something', normalize the syntax, and
 reduce further until only the \texttt{4lang} primitives remain. We begin with
-{\it for someone or something} and replace it by \texttt{=pat}. {\it great}
-and {\it liking} are defined, great as \texttt{big} and {\it like} as
-\texttt{feel \{=pat[good], good for\_ =agt\}}. For {\it respect} we have to
+\emph{for someone or something} and replace it by \texttt{=pat}. \emph{great}
+and \emph{liking} are defined, great as \texttt{big} and \emph{like} as
+\texttt{feel \{=pat[good], good for\_ =agt\}}. For \emph{respect} we have to
 go back to LDOCE to obtain `admire', for which we obtain `to look at something
 and think how beautiful or impressive it is'. The process goes on, but for
-{\it beautiful} we obtain 'extremely attractive' and with \texttt{attract} we
+\emph{beautiful} we obtain 'extremely attractive' and with \texttt{attract} we
 terminate at \texttt{=agt cause\_ \{=pat want \{=pat near =agt\}\}}.
 
 This may appear tedious, but eventually all non-\texttt{4lang} words are
@@ -648,15 +632,14 @@ as far as the vectors (unaries) are concerned, though we seem to approach the
 limits of reducibility for the matrices (binary relations) used. Remarkably,
 it is not the verbs, transitive, ditransitive, or even higher arity, that
 require departure from unary relations, but the prepositions expressing
-spatial relations {\sc at between follow from in on under} for which we must
+spatial relations \textsc{at between follow from in on under} for which we must
 assume a prepositional subject and a prepositional object, the comparative
-{\sc er}, the negative {\sc lack}, and a few conceptual relation markers,
-quite often expressed by cases, such as {\sc cause, for, has, ins,} and {\sc
-  partOf}. Pride of place goes to {\sc isA}, essential for taxonomic
-organization, and {\sc mark}, denoting the relation between the two parts of
+\textsc{er}, the negative \textsc{lack}, and a few conceptual relation markers,
+quite often expressed by cases, such as \textsc{cause, for, has, ins}, and \textsc{partOf}. Pride of place goes to \textsc{isA}, essential for taxonomic
+organization, and \textsc{mark}, denoting the relation between the two parts of
 the Sausseurian sign.
 
-%operate with just {\it Move} and {\it Merge}? 
+%operate with just \emph{Move} and \emph{Merge}? 
 
 
 
@@ -670,15 +653,3 @@ penetrating comments on an earlier draft.
 \end{document}
 
 
-
-What makes us uniquely human? Chomsky says our genes
-
-
-
-De Libertatae Arbitrii Bonum
-
-``On the freedom of good will''
-
-It is only subsumption that has a trivial translation in the
-vectorial setup (where it will correspond to the ordinary subset `$\subset$'
-relation) a
