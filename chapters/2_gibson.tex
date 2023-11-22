@@ -3,12 +3,11 @@
 
 % \title{Cognitive syntax}
 
-\title{Composition, not infinity: \\The irrelevance of recursion to theories of language}
+\title[Composition, not infinity]{Composition, not infinity: The irrelevance of recursion to theories of language}
 
-\author{Edward Gibson\\
-Department of Brain and Cognitive Sciences, MIT\\
-egibson@mit.edu}
-\date{September 20, 2023}
+\author{Edward Gibson\affiliation{Department of Brain and Cognitive Sciences, MIT}}
+
+\graphicspath{ {./figures/} }
 
 \begin{document}
 
@@ -25,13 +24,13 @@ egibson@mit.edu}
 \cite{hauser2002faculty} argued that the grammars for human languages are recursive, such that (more important components for my purposes are in bold):
 
 \begin{quote}
-\textbf{All approaches agree that a core property of FLN (Faculty of Language, Narrow) is recursion, attributed to narrow syntax in the conception just outlined. FLN takes a finite set of elements and yields a potentially infinite array of discrete expressions. This capacity of FLN yields discrete infinity (a property that also characterizes the natural numbers).} Each of these discrete expressions is then passed to the sensory-motor and conceptual-intentional systems, which process and elaborate this information in the use of language. Each expression is, in this sense, a pairing of sound and meaning. It has been recognized for thousands of years that language is, fundamentally, a system of sound-meaning connections; the potential infiniteness of this system has been explicitly recognized by Galileo, Descartes, and the 17th-century ``philosophical grammarians'' and their successors, notably von Humboldt. One goal of the study of FLN and, more broadly, FLB is to discover just how the faculty of language satisfies these basic and essential conditions.
+\emph{All approaches agree that a core property of FLN (Faculty of Language, Narrow) is recursion, attributed to narrow syntax in the conception just outlined. FLN takes a finite set of elements and yields a potentially infinite array of discrete expressions. This capacity of FLN yields discrete infinity (a property that also characterizes the natural numbers).} Each of these discrete expressions is then passed to the sensory-motor and conceptual-intentional systems, which process and elaborate this information in the use of language. Each expression is, in this sense, a pairing of sound and meaning. It has been recognized for thousands of years that language is, fundamentally, a system of sound-meaning connections; the potential infiniteness of this system has been explicitly recognized by Galileo, Descartes, and the 17th-century ``philosophical grammarians'' and their successors, notably von Humboldt. One goal of the study of FLN and, more broadly, FLB is to discover just how the faculty of language satisfies these basic and essential conditions.
 
-\textbf{The core property of discrete infinity is intuitively familiar to every language user. Sentences are built up of discrete units:  There are 6-word sentences and 7-word sentences, but no 6.5-word sentences.  There is no longest sentence (any candidate sentence can be trumped by, for example, embedding it in `Mary thinks that ...'), and there is no nonarbitrary upper bound to sentence length.  In these respects, language is directly analogous to the natural numbers (see below). } \cite{hauser2002faculty}, p. 1571.
+\emph{The core property of discrete infinity is intuitively familiar to every language user. Sentences are built up of discrete units:  There are 6-word sentences and 7-word sentences, but no 6.5-word sentences.  There is no longest sentence (any candidate sentence can be trumped by, for example, embedding it in `Mary thinks that ...'), and there is no nonarbitrary upper bound to sentence length.  In these respects, language is directly analogous to the natural numbers (see below). } \cite{hauser2002faculty}, p. 1571.
 \end{quote}
 
 In fact, as was widely discussed afterwards, there was no definition of ``recursion'' in \cite{hauser2002faculty};  They simply give an example, and ask the reader to infer what they probably mean.  
-Here I follow \cite{pullum2020theorizing}  in assuming that a reasonable interpretation of what  \cite{hauser2002faculty} meant by recursion in a language is \textit{having syntactic devices that could in principle permit the construction of sentences of arbitrary length}.  I will refer to  this idea as \textbf{syntactic self-embedding}.  The motivation for this interpretation is given in the following section.
+Here I follow \cite{pullum2020theorizing}  in assuming that a reasonable interpretation of what  \cite{hauser2002faculty} meant by recursion in a language is \textit{having syntactic devices that could in principle permit the construction of sentences of arbitrary length}.  I will refer to  this idea as \emph{syntactic self-embedding}.  The motivation for this interpretation is given in the following section.
 
 \subsection{Elaborating Hauser, Chomsky \& Fitch's (2002) proposal in context-free grammar terms}
 
@@ -48,16 +47,14 @@ A context-free phrase-structure grammar derivation is the recursive expansion of
 
 A simple corpus of a few English sentences is given in \exref{corpus1}. A lexicon (a set of terminal symbols) T for this corpus is given in \exref{lexicon1}. And a rule set R that can generate the corpus in \exref{corpus1} is provided in \exref{cfg1}:
 
-\begin{myexample}
+\eal
 \label{corpus1}
-\begin{examples}
-\item \label{corpus1a} The girl saw the dog.
-\item \label{corpus1c} Mary thinks that the girl saw the dog.
-\item \label{corpus1d} Alison says that Mary thinks that the girl saw the dog.
-\end{examples}
-\end{myexample}
+\ex\label{corpus1a} The girl saw the dog.
+\ex\label{corpus1c} Mary thinks that the girl saw the dog.
+\ex\label{corpus1d} Alison says that Mary thinks that the girl saw the dog.
+\zl
 
-\begin{myexample}
+\ea
 \label{lexicon1}
 A Lexicon T:
 \begin{verbatim}
@@ -67,9 +64,9 @@ Det → the, a
 V_NP → saw, liked
 V_S → thinks, believes, says
 \end{verbatim}
-\end{myexample}
+\z
 
-\begin{myexample}
+\ea
 \label{cfg1}
 A rule set R:
 \begin{verbatim}
@@ -79,27 +76,27 @@ A rule set R:
 4. VP → V_NP NP
 5. VP → V_S that S
 \end{verbatim}
-\end{myexample}
+\z
 
 In phrase-structure terms, a category B is said to be \textit{embedded} within another category A if B combines with some other category to make A: this is simple compositionality within phrase structure.  The determiner (Det) \textit{the} can combine with the noun (N) \textit{girl} (according to rule 3) in order to form an NP that generates the string \textit{the girl}. The categories Det and N are then \textit{embedded} within the category NP.
 
 A similar expansion applies to generate the NP \textit{the dog}. In order to form the VP that generates the string \textit{saw the dog}, we combine the V$_{NP}$ \textit{saw} with the NP \textit{the dog} according to rule 5. And finally, the NP \textit{the girl} combines with the VP \textit{saw the dog} to form an S category, according to rule 1, now covering the entire string \textit{the girl saw the dog} in \exref{corpus1a}.  This set of expansions is represented in the tree structure below:
 
 \begin{center}
-\Tree [.S [.NP [.Det the ] [.N girl ] ] [.VP [.\[V_{NP}\] saw ] [.NP [.Det the ] [.N dog ] ] ] ]
+\Tree [.S [.NP [.Det the ] [.N girl ] ] [.VP [.V\sub{NP} saw ] [.NP [.Det the ] [.N dog ] ] ] ]
 
 \end{center}
 
 If the rules of the grammar are such that the category A can dominate another node of category A, then we have \textit{self-embedding} of A within A. The grammar in \exref{cfg1} has three instances of self-embedding: The category S expands to another S, through rules 1 and 6: an S expands to an NP and a VP in rule 1; and a VP expands to a V$_{S}$ and then a further S category in rule 5. We can generate arbitrarily long sentences using these rules, as \cite{hauser2002faculty} indirectly suggest. Parses for self-embedded examples like \exref{corpus1c} and \exref{corpus1d} according to the above grammar are provided below:
 
 \begin{center}
-\Tree [.S [.NP [.Name Mary ] ] [.VP [.\[V_{S}\] thinks ] that 
-[.S [.NP [.Det the ] [.N girl ] ] [.VP [.\[V_{NP}\] saw ] [.NP [.Det the ] [.N dog ] ] ] ] ] ]
+\Tree [.S [.NP [.Name Mary ] ] [.VP [.V\sub{S} thinks ] that 
+[.S [.NP [.Det the ] [.N girl ] ] [.VP [.V\sub{NP} saw ] [.NP [.Det the ] [.N dog ] ] ] ] ] ]
 
 \hspace*{40pt}
 
-\Tree [.S [.NP [.Name Alison ] ] [.VP [.\[V_{S}\] says ] that [.S [.NP [.Name Mary ] ] [.VP [.\[V_{S}\] thinks ] that 
-[.S [.NP [.Det the ] [.N girl ] ] [.VP [.\[V_{NP}\] saw ] [.NP [.Det the ] [.N dog ] ] ] ] ] ] ] ]
+\Tree [.S [.NP [.Name Alison ] ] [.VP [.V\sub{S} says ] that [.S [.NP [.Name Mary ] ] [.VP [.V\sub{S} thinks ] that 
+[.S [.NP [.Det the ] [.N girl ] ] [.VP [.V\sub{NP} saw ] [.NP [.Det the ] [.N dog ] ] ] ] ] ] ] ]
 
 \end{center}
 
@@ -116,13 +113,11 @@ Hence allowing sentences of unbounded length within a context-free phrase struct
 
 Note that even with no self-embedding in the syntax, we can express recursive meanings, as in \exref{rec_meaning}:
 
-\begin{myexample}
+\eal
 \label{rec_meaning}
-\begin{examples}
-\item \label{rec_meaning1} Alison says that Mary thinks that the girl saw the dog.
-\item \label{rec_meaning2} Alison says the following. Mary thinks the following. The girl saw the dog.
-\end{examples}
-\end{myexample}
+\ex \label{rec_meaning1} Alison says that Mary thinks that the girl saw the dog.
+\ex \label{rec_meaning2} Alison says the following. Mary thinks the following. The girl saw the dog.
+\zl
 
 So the English doubly right-branching embedded sentence \exref{rec_meaning1} can be rephrased as the three separate utterances in \exref{rec_meaning2}. 
  Hence \cite{hauser2002faculty}’s claim is about the \textit{syntax} of utterances, and \cite{everett2005cultural}’s claim is about Pirahã syntax, not meaning.
@@ -167,19 +162,17 @@ In our attempt to elicit possessive noun phrases along the lines of ``Kóxoi’s
 
 Although these examples could in principle be syntactic self-embedding of a noun phrase within a noun phrase, they could also be the result of a rule that allows only two nouns to combine, and does not allow arbitrary embedding.  Hence examples of just two combined nouns does not provide strong evidence of syntactic self-embedding.
 
-\begin{myexample}
+\eal
 \label{kohoi_ex}
-\begin{examples}
-\item \label{kohoi_ex1} This is Kóxoi. (pointing to doll 1, male)\\
+\ex \label{kohoi_ex1} This is Kóxoi. (pointing to doll 1, male)\\
 Who is this?
-\item \label{kohoi_ex2} He has a spouse. (pointing to doll 2, female)\\
+\ex \label{kohoi_ex2} He has a spouse. (pointing to doll 2, female)\\
 Who is this?
-\item \label{kohoi_ex3} She has a parent. (pointing to doll 3, male)\\
+\ex \label{kohoi_ex3} She has a parent. (pointing to doll 3, male)\\
 Who is this?
-\item \label{kohoi_ex4} He has a dog. (pointing to doll 4, a dog)\\
+\ex \label{kohoi_ex4} He has a dog. (pointing to doll 4, a dog)\\
 Who is this?
-\end{examples}
-\end{myexample}
+\zl
 
 The presentation of the third doll was intended as a test of syntactic self-embedding in Pirahã possessive nominals.  We told the participant that this doll had another close relationship with doll 2, such as the parent of doll 2.  We then asked the participants to describe the third doll in relation to the first doll (e.g., Kóxoi).  Of the 34 responses at this level, 14 expressed only a single relationship between two of the dolls.  Of the remaining 20 responses, only 8 expressed relationships among the three dolls appropriately, but none of these were plausibly syntactic self-embedding in Pirahã.  Rather, they were statements like ‘This is Kóxoi, this (his) parents sibling’ or ‘Koxoi’s sibling, he has a spouse’.
 
@@ -191,20 +184,18 @@ This particular study therefore failed to provide evidence that Pirahã speakers
 
 Our second attempt to elicit syntactic self-embedding in Pirahã consisted of an attempt to elicit relative clauses.  To do this, we used two of our dolls that we used to represent Pirahã people. We would show each doll to the participant, and tell them an event that each one took part in, as in \exref{piraha_rcs}:
 
-\begin{myexample}
+\eal
 \label{piraha_rcs}
-\begin{examples}
-\item \label{piraha_rcs1} Doll 1: This person paddled a canoe.
-\item \label{piraha_rcs2} Doll 2: This person swam in the river.
-\end{examples}
-\end{myexample}
+\ex \label{piraha_rcs1} Doll 1: This person paddled a canoe.
+\ex \label{piraha_rcs2} Doll 2: This person swam in the river.
+\zl
 
 We would then tell the participant that one of the dolls took part in a third event, as in:
 
-\begin{myexample}
+\ea
 \label{piraha_rcs3}
 Doll 1: This person ate some farinha.
-\end{myexample}
+\z
 
 We would then take the dolls away, and ask who took part in the last event: \textit{Who ate some farinha}?  If the Pirahã language includes relative clauses in its syntax, then it is possible that people might generate materials like \textit{The man who paddled the canoe ate some farinha}. But as discussed briefly above, a language does not need syntactic tools to represent such complex (embedded) meanings.  A language can represent such meanings using anaphoric elements (pronouns of various kinds) to link between separate simple syntactic elements, one for each clause.  This general strategy is sometimes called \textit{parataxis}.
 
@@ -251,10 +242,9 @@ So overall, the corpus evidence do not provide strong evidence for syntactic sel
 
 In contrast to \cite{futrell2016corpus}, \cite{sauerland2018false} purported to have found evidence of syntactic self-embedding in Pirahã, by gathering interpretations of experimental materials. In order to do this, Sauerland went to work with the Pirahã, and had two native speakers record materials of the following form, that he would then play to other Pirahã native speakers:\footnote{As noted by \cite{everett2019recursion}, there are issues with the Pirahã materials: it is not typical Pirahã language, probably because the translator that Sauerland used didn't speak good Pirahã. \cite{everett2019recursion} provide better Pirahã translations of the target materials. In any case, this problem is less of an issue than other problems with Sauerland's design and interpretation, to be discussed here.}
 
-\begin{myexample}
+\eal
 \label{sauerland_ex}
-\begin{examples}
-\item \label{sauerland_ex1} Spoken by speaker 1 (Toe):\\
+\ex \label{sauerland_ex1} Spoken by speaker 1 (Toe):\\
 \begin{tabular}{l l l l}
 ce & kahápe & ogéhiai & igeuo \\ 
 I & have.been & stars & there\\
@@ -262,7 +252,7 @@ I & have.been & stars & there\\
 
 ``I have been to the stars''
 
-\item \label{sauerland_ex2} Spoken by speaker 2:\\
+\ex \label{sauerland_ex2} Spoken by speaker 2:\\
 \begin{tabular}{l l l l l l l l}
 Toi & he & gái-sai & ce & kahápe & ogéhiai & igeuo \\
 Toe & 3sg & say & 1sg & have.been & stars & there\\
@@ -271,8 +261,7 @@ Toe & 3sg & say & 1sg & have.been & stars & there\\
 
 i. subordinate interpretation: ``Toe said ‘I have been to the stars’.''\\
 ii. co-ordinate interpretation: ``Toe talked, and I have been to the stars.''
-\end{examples}
-\end{myexample}
+\zl
 
 Thus Speaker 1 (named ``Toe'') said \textit{I have been to the stars}, which is intended to be statement that is obviously impossible. The dependent measure was how the listeners interpreted Speaker 2's statement, which depended on how they would interpret the pronoun ``I'' (ce) in speaker 2’s statement. The pronoun ``I'' in speaker 2’s statement might refer to ``Toe'', giving  a subordinate interpretation. In English, this might correspond to sentences like \textit{Toe said ``I have been to the stars''}, or \textit{Toe said that he has been to the stars}. Or the listener might interpret``I'' as Speaker 2, to get a coordinate interpretation, corresponding to English materials like \textit{Toe said something and I have been to the stars.}  Critically for Sauerland, the coordinate interpretation is false in this scenario (Speaker 2 hasn’t been to the stars), while the subordinate interpretation is true (Toe did say that he had been to the stars).
 
@@ -281,7 +270,7 @@ Sauerland hypothesized that in order to get the subordinate interpretation, a la
 \cite{sauerland2018false} provided many of the details of his raw data, so we can visualize his results in Figure~\ref{fig1}, where each shaded square represents the answers given by a Pirahã participant in his critical experiment and a control experiment. In this figure, the Y-axis indicates the number of embedded interpretations out of nine that a particular participant obtained, and the X-axis indicates the number of correct interpretations of the nine control materials (to be described below) that the participant got. There are 16 shaded squares: one for each participant, including two who happened to give the same pattern of subordinate and control responses. 
 
 \begin{figure}
-    \centerline{\includesvg[width=.7\textwidth]{ gibson_figure1.svg}}
+    \centerline{\includesvg[width=.7\textwidth]{ ./figures/gibson_figure1.svg}}
     \caption{Each shaded square represents the answers given by a Pirahã participant in two sub-experiments conducted by \cite{sauerland2018false}. On the Y-axis are the number of embedded interpretations out of nine. On the X-axis are the number of correct interpretations of the control materials, also out of nine. There are 16 shaded squares one for each participant, including two who happened to give the same pattern of subordinate and control responses.  \newline \newline For Sauerland's data to be supportive of his hypothesis, participants would need to be in the upper right corner of the graph:  most passing the control test, and most showing evidence of an embedded interpretation.  Most participants are not in the upper right corner. Even if the data had been in the upper right corner, this would not be evidence of syntactic embedding, as discussed in the text. \newline \newline 
     Data reported as presented in \cite{sauerland2018false}, replotted using \cite{r2023, wickham2016, ggpattern2022}. (Thanks to Moshe Poliak for this picture.)}
     \label{fig1}
@@ -295,10 +284,9 @@ There are two major flaws with Sauerland’s reasoning here. First, we need to e
 
 First, Sauerland doesn't speak Pirahã. So he needs some control to ensure that the participants understood the task. In order to address this potential issue, Sauerland included a set of nine control sentences, that had correct answers.  One such example is given in \exref{sauerland_ex_cont}:
 
-\begin{myexample}
+\eal
 \label{sauerland_ex_cont}
-\begin{examples}
-\item \label{sauerland_ex1_cont} Spoken by speaker 1 (Toe):\\
+\ex \label{sauerland_ex1_cont} Spoken by speaker 1 (Toe):\\
 \begin{tabular}{l l l l}
 ce & kahápe & kahe’ai & igeuo \\ 
 I & have.been & moon & there\\
@@ -306,7 +294,7 @@ I & have.been & moon & there\\
 
 ``I have been to the moon''
 
-\item \label{sauerland_ex2_cont} Spoken by speaker 2:\\
+\ex \label{sauerland_ex2_cont} Spoken by speaker 2:\\
 \begin{tabular}{l l l l l l l l}
 Toi & he & gái-sai & ce & kahápe & heesé & igeuo \\
 Toe & 3sg & say & 1sg & have.been & sun & there\\
@@ -314,8 +302,7 @@ Toe & 3sg & say & 1sg & have.been & sun & there\\
 
 i. co-ordinate interpretation: ``Toe talked, and I have been to the sun.''\\
 ii. subordinate interpretation: ``Toe said ‘I have been to the sun’.''
-\end{examples}
-\end{myexample}
+\zl
 
 These materials are just like the target materials, except that Speaker 2 now refers to a different location that Speaker 1 (Toe) is purported to have visited.  So while Toe talks about the moon in his statement, Speaker 2 refers to the sun as the place that someone might have visited.  Now, Statement 2 is false, no matter whether the participant gets the subordinate or coordinate interpretation.  So participants need to have rejected all of these sentences uniformly.
 
@@ -325,11 +312,11 @@ So contrary to what Sauerland says, his Pirahã participants don’t actually re
 
 The second problematic issue in Sauerland's paper is that he assumes that answering ``true'' to the target materials necessitates a self-embedded syntactic structure.  This is not the case.  Alternatively, it could be that the meanings of the materials are biased towards a subordinate \textit{meaning}, whether or not there is self-embedded syntax.  We can test this hypothesis in English by giving people similar materials in English, but critically with no syntactic embedding.  \cite{everett2019recursion} did this with 20 participants on English translations of Sauerland's materials, as in \exref{ev_gib2019_ex}: 
 
-\begin{myexample}
+\ea
 \label{ev_gib2019_ex}
 John: ‘I have been to the stars.’\\
 Bill: John said something. I have been to the stars.
-\end{myexample}
+\z
 
 The question is who does ``I'' refer to in Bill’s sentence:  John or Bill? Sauerland thinks that we can only get a referent to ``John'' through embedding in the syntax, such as ``John said that I have been to the stars.''  But In spite of the lack of syntactic embedding in the materials all participants answered ``true'' most of the time (98\% of trials), getting the embedded meaning interpretation, in spite of no embedded syntax.  Hence, people think ``I'' refers to John almost all the time in \exref{ev_gib2019_ex}, even with no embedded syntax
 
@@ -354,152 +341,25 @@ Furthermore, the existence of potential exceptions to this claim (such as Pirah�
 
 Note that even with a finite language, we can convey an unfathomably large number of meanings. For example, suppose that there were $5000$ nouns in the lexicon, among other words. Suppose that there were 100 different syntactic sequences 20 words long, with 10 nouns in each sequence, such that each noun could go in any noun position as in \exref{ex1}. This gives at least 5,000$^{10}$ x 100 = 10$^{39}$ sequences, even ignoring the flexibility of all the other words in the sequences (represented as ``x$_i$'' for each). (See \cite{muller2016grammatical} for a similar point.)
 
-\begin{myexample}
+\ea
 \label{ex1}
-\newline
 100 sequences of 20 words, each with 10 nouns in a different set of positions across sequences; the sequences shown are arbitrary sequences from the set:\\
 Sequence 1: N$_1$ x$_1$ N$_2$ x$_2$ N$_3$ x$_3$ N$_4$ x$_4$ N$_5$ x$_5$ N$_6$ x$_6$ N$_7$ x$_7$ N$_8$ x$_8$ N$_9$ x$_9$ N$_{10}$ x$_{10}$\\
 Sequence 2: N$_1$ N$_2$ x$_1$ N$_3$ x$_2$ N$_4$ x$_3$ N$_5$ x$_4$ N$_6$ x$_5$ N$_7$ x$_6$ N$_8$ x$_7$ N$_9$ x$_8$ N$_{10}$ x$_9$ x$_{10}$\\
 Sequence 3: N$_1$ x$_1$ N$_2$ N$_3$ x$_2$ N$_4$ x$_3$ N$_5$ x$_4$ N$_6$ x$_5$ N$_7$ x$_6$ N$_8$ x$_7$ N$_9$ x$_8$ N$_{10}$ x$_9$ x$_{10}$\\
 . . .\\
 Sequence 100: x$_1$ x$_2$ N$_1$ N$_2$ N$_3$ x$_3$ N$_4$ N$_5$ x$_4$ N$_6$ x$_5$ N$_7$ x$_6$ N$_8$ x$_7$ N$_9$ x$_8$ N$_{10}$ x$_9$ x$_{10}$
-\end{myexample}
+\z
 
 There are 10$^{10}$ neurons in the brain and 10$^{50}$ atoms in the earth. These are inconceivably large numbers. There is no need to appeal to infinity / unboundedness to explain human language: large finite sets are sufficient to motivate a compositional grammar. Recursion or syntactic self-embedding is irrelevant to this argument.
 
 Finally, the unboundedness of sentence length is an odd property for Chomsky and colleagues to propose as the most critical part of human grammar.  ``Arbitrarily'' long (or deeply nested) sentences are never actually realized, due to performance constraints. How could the critical property of human-like language be something like unboundedness, which isn’t ever seen? It's a bit like claiming that the defining feature of a car is that it can in principle go any speed, even though we only ever actually see it go two hundred miles per hour. This kind of theorizing is confused and simply can't be right. The critical aspects of human language will inevitably turn out to be features which are empirically observed in languages, not abstractions about infinity that no human mind actually realizes.
 
-\newpage
-
-\section{References}
-\bibliographystyle{apalike}
-\bibliography{main}
-
-\end{document}
-
-\begin{myexample}
-\label{ex}
-\begin{examples}
-\item \label{ex1} 
-\end{examples}
-\end{myexample}
-
-% Pullum comments:  Suppose there are finite clauses (S[fin]) and infinitival clauses (S[inf]), and we take them to be different syntactic categories. If you can embed an S[inf] in an S[fin], then that is embedding, but not self-embedding. It doesn't necessarily give you a way of constructing sentences of arbitrary length.
-
-% On the other hand, if an S[fin] can be embedded in another S[fin], that's self-embedding. It should yield sentences of arbitrary length, provided only that there are strings of words that can be the yield of an S[fin] (i.e., provided S[fin] is not a useless category).
-
-% If you can embed an S[fin] in an S[inf] but not in an S[fin], then you have indirect self-embedding: an S[fin]. That too can yield arbitrarily long sentences.
-
-English has syntactic self-embedding in many structures, such as in  possessives \exref{syn_self_embed_eng1} (where an NP expands to another NP);   clausal complements \exref{syn_self_embed_eng2} (where an S expands to another S further down the grammar), or coordination as in \exref{syn_self_embed_eng3}.
-
-\begin{myexample}
-\label{syn_self_embed_eng}
-\begin{examples}
-\item \label{syn_self_embed_eng1} Possessives: NP → NP ’s N;  NP → N \newline
-[$_{NP}$ [$_{NP}$ [$_{NP}$ [$_{NP}$ John]’s mother]’s brother]’s house]
-\item \label{syn_self_embed_eng2} Clausal complements: S → NP  VP;  VP → V CP;  CP → Comp S\newline
-[$_{S}$ John thinks that [$_{S}$ Mary said that [$_{S}$ the girl cried]]]
-\item \label{syn_self_embed_eng3} Coordination: S → S Conj S; NP → NP Conj NP;  VP → VP Conj VP \newline
-[$_{NP}$ [$_{NP}$ [$_{NP}$ John] and [$_{NP}$ Mary]] and [$_{NP}$ Bill]]
-\end{examples}
-\end{myexample}
+\printbibliography[heading=subbibliography,notkeyword=this]
 
 
-\subsection{Elaborating Hauser, Chomsky \& Fitch's (2002) proposal in context-free grammar terms}
-
-A context-free grammar consists of a tuple (T, N, S, R), such that:
-
-\begin{itemize}
-    \item T is a finite set of terminal symbols: the words, that make up the lexicon or dictionary
-    \item N is a finite set of non-terminal symbols
-    \item S $\epsilon$ N is the start symbol
-    \item R is a finite set of rules of the form X → $\alpha$, where X $\epsilon$ N, and $\alpha$ is a sequence of symbols drawn from V or N
-\end{itemize}
-
-A context-free phrase-structure grammar derivation is the recursive expansion of non-terminal symbols in a string by rules in R, starting with S. A derivation tree is the history of those rule applications (see \cite{chomsky1959certain, lewis1998elements, hopcroft2001introduction}).
-
-A simple corpus of a few English sentences is given in \exref{corpus1}. A lexicon (a set of terminal symbols) T for this corpus is given in \exref{lexicon1}. And a rule set R that can generate the corpus in \exref{corpus1} is provided in \exref{cfg1}:
-
-\begin{myexample}
-\label{corpus1}
-\begin{examples}
-\item \label{corpus1a} The girl saw the dog.
-\item \label{corpus1b} The boy liked the pizza.
-\item \label{corpus1c} Mary thinks that the girl saw the dog.
-\item \label{corpus1d} Alison says that Mary thinks that the girl saw the dog.
-\item \label{corpus1e} Mary's friend's neighbor's dog wanted the pizza.
-\item \label{corpus1f} The girl saw the dog by the cat near the elephant.
-\end{examples}
-\end{myexample}
-
-\begin{myexample}
-\label{lexicon1}
-A Lexicon T:
-\begin{verbatim}
-Name → Mary, Alison, George, Yuhan, Yamato
-N → neighbor, friend, woman, man, girl, boy, cat, dog, bird, elephant, pizza
-Det → the, some, this, a
-V_NP → saw, liked, chased, wanted
-V_S → thinks, believes, says
-Prep → in, by, near, beside, on
-\end{verbatim}
-\end{myexample}
-
-\begin{myexample}
-\label{cfg1}
-A rule set R:
-\begin{verbatim}
-1. S → NP VP
-2. NP → Name
-3. NP → Det N
-4. NP → NP 's N
-5. VP → V_NP NP
-6. VP → V_S that S
-7. PP → Prep NP
-8. VP → VP PP
-\end{verbatim}
-\end{myexample}
-
-In phrase-structure terms, a category B is said to be \textit{embedded} within another category A if B combines with some other category to make A: this is simple compositionality within phrase structure.  The determiner (Det) \textit{the} can combine with the noun (N) \textit{girl} (accordong to rule 3) in order to form an NP that generates the string \textit{the girl}. The categories Det and N are then \textit{embedded} within the category NP.
-
-A similar expansion applies to generate the NP \textit{the dog}. In order to form the VP that generates the string \textit{saw the dog}, we combine the V$_{NP}$ \textit{saw} with the NP \textit{the dog} according to rule 5. And finally, the NP \textit{the girl} combines with the VP \textit{saw the dog} to form an S category, according to rule 1, now covering the entire string \textit{the girl saw the dog} in \exref{corpus1a}.  This set of expansions is represented in the tree structure below:
-
-\begin{center}
-\Tree [.S [.NP [.Det the ] [.N girl ] ] [.VP [.\[V_{NP}\] saw ] [.NP [.Det the ] [.N dog ] ] ] ]
-
-\end{center}
-
-If the rules of the grammar are such that the category A can dominate another node of category A, then we have \textit{self-embedding} of A within A. The grammar in \exref{cfg1} has three instances of self-embedding: The category S expands to another S, through rules 1 and 6: an S expands to an NP and a VP in rule 1; and a VP expands to a V$_{S}$ and then a further S category in rule 6. We can generate arbitrarily long sentences using these rules, as \cite{hauser2002faculty} indirectly suggest. Parses for self-embedded examples like \exref{corpus1c} and \exref{corpus1d} according to the above grammar are provided below:
-
-\begin{center}
-\Tree [.S [.NP [.Name Mary ] ] [.VP [.\[V_{S}\] thinks ] that 
-[.S [.NP [.Det the ] [.N girl ] ] [.VP [.\[V_{NP}\] saw ] [.NP [.Det the ] [.N dog ] ] ] ] ] ]
-
-\hspace*{40pt}
-
-\Tree [.S [.NP [.Name Alison ] ] [.VP [.\[V_{S}\] says ] that [.S [.NP [.Name Mary ] ] [.VP [.\[V_{S}\] thinks ] that 
-[.S [.NP [.Det the ] [.N girl ] ] [.VP [.\[V_{NP}\] saw ] [.NP [.Det the ] [.N dog ] ] ] ] ] ] ] ]
-
-\end{center}
-
-The grammar in \exref{cfg1} allows two other kinds of self-embedding. The first is self-embedding of a noun phrase within a noun phrase for possessive (genitive) noun phrases, as in \exref{corpus1e} \textit{Mary's friend's neighbor's dog wanted the pizza}, whose structure is presented below:
-
-\begin{center}
-\Tree [.S [.NP [.NP [.NP [.NP [.Name Mary ] ] 's [.N friend ] ] 's [.N neighbor ] ] 's [.N dog ] ] [.VP [.\[V_{NP}\] wanted ] [.NP [.Det the ] [.N pizza ] ] ] ]
-
-\end{center}
-
-Here we have the NP \textit{Mary} embedded within the NP \textit{Mary's friend}, which is itself within the NP \textit{Mary's friend's neighbor}, etc.
-
-Finally, the grammar in \exref{cfg1} allows self-embedding of VPs within other VPs by adding prepositional phrases (PPs) according to rule 8. So the structure generated by this grammar for sentence \exref{corpus1f} is provided below:
-
-\begin{center}
-\Tree [.S [.NP [.Det the ] [.N girl ] ] [.VP [.VP [.VP [.\[V_{NP}\] saw ] [.NP [.Det the ] [.N dog ] ] ] [.PP [.Prep by ] [.Det the ] [.N cat ] ] ] [.PP [.Prep near ] [.Det the ] [.N elephant ] ] ] ] 
-
-\end{center}
-
-When the grammar rules allow unbounded connections on the right, we refer to these structures as right-branching, such as in rule 8, and the combination of rules 1 and 6. When the rules allow unbounded connections on the left, as in rule 4, we refer to these structures as left-branching. And when the rules allow for unbounded structure in the center of a string, we refer to such structures as center-embedded (but the current grammar does not have such rules).
 
 
 \end{document}
+
 
