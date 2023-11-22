@@ -1,31 +1,9 @@
-\documentclass[output=paper,colorlinks,citecolor=brown
-% ,hidelinks
-% showindex
-]{langscibook}
+\documentclass[output=paper,biblatex,babelshorthands,newtxmath,draftmode,colorlinks,citecolor=brown]{langscibook}
 \author{Edward Gibson\orcid{}\affiliation{MIT} }
 \abstract{}
 \title{Introduction} %of\\Chomskyan Linguistics}
 
-%move the following commands to the "local..." files of the master project when integrating this chapter
-\usepackage{tabularx}
-\usepackage{langsci-optional}
-\usepackage{langsci-gb4e}
-\bibliography{localbibliography}
-\newcommand{\orcid}[1]{}
 
-% For the block quote:
-
-\usepackage[most]{tcolorbox}
-\definecolor{linequote}{RGB}{224,215,188}
-\definecolor{backquote}{RGB}{249,245,233}
-\newtcolorbox{myquote}[1][]{%
-    enhanced, breakable, 
-    size=minimal,
-    frame hidden, boxrule=0pt,
-    sharp corners,
-    colback=backquote,
-    #1
-}
 
 \IfFileExists{../localcommands.tex}{
    \addbibresource{../localbibliography.bib}
@@ -47,7 +25,7 @@ After knowing him for a while, I asked Dan to be on my thesis committee because 
 
 Dan grew up in extreme poverty on the U.S Mexican border. He and his mother lived happily in a trailer park, when she died suddenly of an aneurysm when at only 29 years old. Dan was only 11, and he had to go to live with his estranged father in San Diego, who Dan did not get along with. Sadly, Dan's father was abusive, and so Dan had to spend a lot of time on the streets. In 1968, Dan was 16 years old, selling drugs at a rock concert when he met the children of missionaries who were trying to help troubled young people like Dan. Dan got along well with the them, and was asked to join them at their house for dinner. Soon thereafter Dan met and fell in love with the missionaries' daughter Keren, who was also 16 at the time.
 
-Dan told me that he'd never met happy people before this. The missionaries attributed their happiness to their Christian beliefs, so Dan converted. By the time Dan was 19, he and Keren were married, and had a child, Caleb (who is a now professor of anthropology at the University of Miami, and who has written a paper for this volume: Chapter~\ref{}). Dan became a missionary after studying at the Moody Bible Institute in Chicago and learning some linguistics at the University of Oklahoma. He moved to Brazil in 1977 to work with the Pirahã, by which time he and Keren had three children. Along the way he got a masters in linguistics from Unicamp in Brazil, and he got the first PhD ever awarded in Linguistics in Brazil in 1983, also from Unicamp. 
+Dan told me that he'd never met happy people before this. The missionaries attributed their happiness to their Christian beliefs, so Dan converted. By the time Dan was 19, he and Keren were married, and had a child, Caleb (who is a now professor of anthropology at the University of Miami, and who has written a paper for this volume: Chapter~\ref{chap-13_everett}). Dan became a missionary after studying at the Moody Bible Institute in Chicago and learning some linguistics at the University of Oklahoma. He moved to Brazil in 1977 to work with the Pirahã, by which time he and Keren had three children. Along the way he got a masters in linguistics from Unicamp in Brazil, and he got the first PhD ever awarded in Linguistics in Brazil in 1983, also from Unicamp. 
 
 If you don't know him, one of Dan's great talents is that he can learn a language extraordinarily quickly and well. He knows many, many languages and sounds native in many of them. I know that when I travel with him in Brazil, Brazilians always try to figure out where exactly he is from in Brazil. They're surprised when he says San Diego. Although he only learned Portuguese as an adult in the 1970s, he sounds native. He is also a rare linguist who can figure out the sounds, morphemes, and structure of a language, even with no bilinguals. And that's what he did with the Pirahã. He has worked on many languages, perhaps most with the Pirahã, where he started as a missionary in 1977 and spent over seven full years working and living with them, by which time he became close to bilingual, more so than anyone else ever, according to the Pirahã people. Although he went to the Pirahã to convert them to Christianity, he likes to tell the story that he never converted any of them. In fact, he'll tell you that they helped convert him away from Christianity. Dan ended up getting divorced from Karen (and Christianity) and marrying Linda, to whom he has been happily married now for 15 years. 
 
@@ -57,5 +35,4 @@ Dan has also worked on linguistic anthropology, in a book called \textit{Dark Ma
 
 This Festschrift includes 15 articles that are related to Dan's work over the years. It is being released after a tribute event for Dan Everett that was held at MIT on June 8th, 2023. 
 
-\sloppy
 \end{document}

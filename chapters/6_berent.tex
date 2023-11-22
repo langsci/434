@@ -7,13 +7,6 @@
 \title{Why is UG such a hard question?}
 \abstract{UG is undoubtedly a hard problem for scholars. Here, I ask why. The problem, I suggest, does not lie in the question itself—innate knowledge, of language or otherwise, is not an incoherent hypothesis. And yet, “innate knowledge” is a notion that is difficult for us to grasp. New evidence suggests that laypeople are systematically biased to presume that knowledge arises from experience, and this empiricist bias is rooted in core cognition (e.g., \cite{berent2022autism}). These results open up the possibility that the difficulty with UG arises for the same reasons that people struggle to reason about gravity, electromagnetism and natural selection: these scientific proposals violate core cognition. Indeed, scholars systematically underestimate the role of core knowledge \citep{wang2019empiricism}, and there is some anecdotal evidence that similar biases plague linguists. Whether linguists are indeed biased, and whether this putative bias arises from core cognition is unknown. But the possibility that our troubles with UG arise from innate core knowledge merits close attention.}
 
-%move the following commands to the "local..." files of the master project when integrating this chapter
-\usepackage{tabularx}
-\usepackage{langsci-optional}
-\usepackage{langsci-gb4e}
-\bibliography{localbibliography}
-\newcommand{\orcid}[1]{}
-\usepackage{graphicx}
 \graphicspath{ {./figures/} }
 \IfFileExists{../localcommands.tex}{
    \addbibresource{../localbibliography.bib}
@@ -24,52 +17,6 @@
    \togglepaper[23]%%chapternumber
 }{}
 
-% Example(s) Environments
-% 12pt, No new-lines after example number is printed
-
-\newcommand{\exref}[1]{(\ref{#1})}
-% This command puts reference numbers with parentheses
-% surrounding them 
-
-% The environment ``examples'' gives a list of examples, one on each line,
-% numbered with a lower case alphabetic character
-\newenvironment{examples}%
-	{ \vspace{-\baselineskip}
-	  \begin{list}%
-	  {\usecounter{subexamplectr}
-	  \setlength{\topsep}{-\parskip}
-	  \setlength{\itemsep}{-2pt}
-	  \setlength{\leftmargin}{0.5in}
-	  \setlength{\rightmargin}{0in} } }%
-	{ \end{list}}
-
-% The environment ``myexample'' outputs an arabic counter ``examplectr''
-% surrounded by parentheses.
-\newenvironment{myexample}
-	{ \vspace{20pt}
-	  \noindent
-	  \begin{minipage}{\textwidth}    % minipage environment disallows
-					  % breaks across pages
-
-	  \refstepcounter{examplectr}     % step the counter and cause this
-					  % section to be referenced by the
-					  % counter ``examplectr''
-	  (\arabic{examplectr})}%
-	{ \vspace{20pt}
-	  \end{minipage}}
-
-\newenvironment{myfnexample}
-	{ \vspace{2pt}
-	  \noindent
-	  \begin{minipage}{\textwidth}    % minipage environment disallows
-					  % breaks across pages
-
-	  \refstepcounter{fnexamplectr}     % step the counter and cause this
-					  % section to be referenced by the
-					  % counter ``examplectr''
-	  (\roman{fnexamplectr})}%
-	{ \vspace{2pt}
-	  \end{minipage}}
    
 \begin{document}
 
@@ -167,7 +114,7 @@ Gleitman was obviously joking. There is no reason to assume that empiricism, or 
 
 Essentialism could plausibly be linked to a number of distinctions that specifically can help identify living things as such, including notions of agency \citep{setoh2013young} and the distinction between artifacts and plants \citep{wertz2014selective}. And indeed, Essentialist thinking has been shown to arise spontaneously, even when participants’ culture attributes innate physical traits to social and cultural interactions \citep{astuti2004constraints}.
 
-Dualism, in turn, has been linked to the interaction between knowledge systems. Core knowledge systems are early, putatively innate principles that guide reasoning in specific domains, such as intuitive physics, numerical cognition, intuitive biology and theory of mind (Spelke & Kinzler, 2007). Two of these systems of core knowledge could lead to Dualism: intuitive Physics and Theory of Mind (Bloom, 2004). 
+Dualism, in turn, has been linked to the interaction between knowledge systems. Core knowledge systems are early, putatively innate principles that guide reasoning in specific domains, such as intuitive physics, numerical cognition, intuitive biology and theory of mind (Spelke \& Kinzler, 2007). Two of these systems of core knowledge could lead to Dualism: intuitive Physics and Theory of Mind (Bloom, 2004). 
 
 Briefly, intuitive Physics maintains that objects can only interact by contact, and in the “eyes” of core physics, one’s body is just like a physical object. Yet Theory of Mind leads us to attribute people’s behavior to their mental states—to their beliefs, knowledge and goals. 
 
@@ -264,7 +211,7 @@ Why, then, is UG so difficult for us to grasp—arguably, even for scholars? I t
 
 Quantum physics and evolutionary biology are notorious examples. Concepts in these fields are amenable to formal description, and yet, they are difficult for us to comprehend. Even notions such as “gravity” and “electromagnetism” are hard for laypeople—it is difficult to appreciate that forces can apply at a distance (Shtulman, 2017; Chomsky, 2016). These proposals are perfectly coherent, but they are not fully intelligible: these are notions that people struggle to grasp intuitively. This difficulty likely arises because these scientific concepts violate principles of core knowledge (Shtulman, 2017). 
 
-Consider, for example, intuitive physics. Young infants—indeed, newborns and nonhuman animals—possess an early understanding of what objects are and how they behave (Mascalzoni, Regolin, Vallortigara, & Simion, 2013; Regolin & Vallortigara, 1995; Vallortigara, 2021). They know that objects are cohesive entities that interact only by contact (Spelke, Breinlinger, Macomber, & Jacobson, 1992). So, when they see an impossible event, such as contactless interaction between two moving balls, infants are demonstrably surprised (Mascalzoni et al., 2013). And, if we come to the world expecting physical causation to require contact, it is no wonder that, when physical science shows us that forces can operate at a distance (e.g., gravity), we are baffled. The concept of contactless physical causation is perfectly coherent, but it violates intuitive physics.  For this reason, the notion of ”contactless causation” is hard. 
+Consider, for example, intuitive physics. Young infants—indeed, newborns and nonhuman animals—possess an early understanding of what objects are and how they behave (Mascalzoni, Regolin, Vallortigara, \& Simion, 2013; Regolin \& Vallortigara, 1995; Vallortigara, 2021). They know that objects are cohesive entities that interact only by contact (Spelke, Breinlinger, Macomber, \& Jacobson, 1992). So, when they see an impossible event, such as contactless interaction between two moving balls, infants are demonstrably surprised (Mascalzoni et al., 2013). And, if we come to the world expecting physical causation to require contact, it is no wonder that, when physical science shows us that forces can operate at a distance (e.g., gravity), we are baffled. The concept of contactless physical causation is perfectly coherent, but it violates intuitive physics.  For this reason, the notion of ”contactless causation” is hard. 
 
 I believe the same applies for UG. As we have seen (in Section 4), the notion of “innate knowledge”, generally, likely violates Essentialism and Dualism—biases that are rooted in core knowledge. And scientific theories that violate core knowledge are hard for us to grasp. Accordingly, core knowledge could well explain our troubles with UG.
 

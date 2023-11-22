@@ -1,101 +1,5 @@
 \documentclass{article}
 
-\usepackage{setspace}
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
-\usepackage[english]{babel}
-\usepackage{tikz-dependency}
-\usepackage{tikz}
-\usepackage{tikz-qtree}
-\usepackage{natbib}
-\usepackage{svg}
-
-% Example(s) Environments
-% 12pt, No new-lines after example number is printed
-
-\newcounter{examplectr}
-\newcounter{fnexamplectr}
-
-% Note: don't use subexamples in footnotes.
-
-% This line is to overcome a bug in cmu-art style: it prints counter
-% values to the aux file using \theaux... rather than using \the...
-\def\theauxexamplectr{\theexamplectr}
-
-\newcounter{subexamplectr}
-\def\theauxsubexamplectr{\thesubexamplectr}
-\def\theauxfnexamplectr{\thefnexamplectr}
-
-\renewcommand{\theexamplectr}{\arabic{examplectr}}
-% This command causes example numbers to appear without following periods
-
-\renewcommand{\thefnexamplectr}{\roman{fnexamplectr}}
-% This command causes example numbers to appear without following periods
-
-\renewcommand{\thesubexamplectr}{\theexamplectr\alph{subexamplectr}}
-% This command gives the number of an example and subexample as e.g. 1a, 2b
-
-\newlength{\wdth}
-\newcommand{\strike}[1]{\settowidth{\wdth}{#1}\rlap{\rule[.5ex]{\wdth}{1pt}}#1}
-
-\newcommand{\exref}[1]{(\ref{#1})}
-% This command puts reference numbers with parentheses
-% surrounding them 
-
-% The environment ``examples'' gives a list of examples, one on each line,
-% numbered with a lower case alphabetic character
-\newenvironment{examples}%
-   { \vspace{-\baselineskip}
-     \begin{list}%
-     {\rm \alph{subexamplectr}.}%
-     {\usecounter{subexamplectr}
-     \setlength{\topsep}{-\parskip}
-     \setlength{\itemsep}{-2pt}
-     \setlength{\leftmargin}{0.5in}
-     \setlength{\rightmargin}{0in} } }%
-   { \end{list}}
-
-% The environment ``myexample'' outputs an arabic counter ``examplectr''
-% surrounded by parentheses.
-\newenvironment{myexample}
-   { \vspace{20pt}
-     \noindent
-     \begin{minipage}{\textwidth}    % minipage environment disallows
-                 % breaks across pages
-
-     \refstepcounter{examplectr}     % step the counter and cause this
-                 % section to be referenced by the
-                 % counter ``examplectr''
-     (\arabic{examplectr})}%
-   { \vspace{20pt}
-     \end{minipage}}
-
-\newenvironment{myfnexample}
-   { \vspace{2pt}
-     \noindent
-     \begin{minipage}{\textwidth}    % minipage environment disallows
-                 % breaks across pages
-
-     \refstepcounter{fnexamplectr}     % step the counter and cause this
-                 % section to be referenced by the
-                 % counter ``examplectr''
-     (\roman{fnexamplectr})}%
-   { \vspace{2pt}c
-     \end{minipage}}
-    
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
-            
-% Set page size and margins
-% Replace `letterpaper' with `a4paper' for UK/EU standard size
-\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-
-% Useful packages
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
-
-\doublespacing
 
 % \title{Cognitive syntax}
 
@@ -595,3 +499,7 @@ Finally, the grammar in \exref{cfg1} allows self-embedding of VPs within other V
 \end{center}
 
 When the grammar rules allow unbounded connections on the right, we refer to these structures as right-branching, such as in rule 8, and the combination of rules 1 and 6. When the rules allow unbounded connections on the left, as in rule 4, we refer to these structures as left-branching. And when the rules allow for unbounded structure in the center of a string, we refer to such structures as center-embedded (but the current grammar does not have such rules).
+
+
+\end{document}
+

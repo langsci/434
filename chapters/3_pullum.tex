@@ -2,7 +2,7 @@
 % ,hidelinks
 % showindex
 ]{langscibook}
-\newcommand{\orcid}[1]{0000-0002-7748-8847}
+
 %%% GKP:  The following line produces an error message about an
 %%%       incomplete \ifx, but the error is apparently harmless.
 \author{Geoffrey K. Pullum\orcid{0000-0002-7748-8847}\affiliation{University of Edinburgh}}
@@ -25,27 +25,6 @@ It is very likely that Everett is empirically correct. The unjustified
 attacks on his integrity and career do a major injustice to the most
 important living scholar of Amazonian languages.}
 
-%%%  GKP:  I put in these pointless commands to kill off a bug elsewhere
-%%%        that tries to \newcommand \it (etc.) as \itshape (etc.), but
-%%%        fails because they haven't been defined.
-\newcommand{\it}{\relax}
-\newcommand{\bf}{\relax}
-\newcommand{\sc}{\relax}
-\newcommand{\rm}{\relax}
-
-%%% GKP:  Two additional commands that I need
-\newcommand{\data}[1]{\textit{#1}}
-\newcommand{\blank}{\rule{1.2em}{0.5pt}}
-
-%%% GKP:  tipa package needed solely to admit \textglotstop
-%%%       --- which comes through, but in the wrong font:
-\usepackage{tipa}
-
-%move the following commands to the "local..." files of the master project when integrating this chapter
-\usepackage{tabularx}
-\usepackage{langsci-optional}
-\usepackage{langsci-gb4e}
-\bibliography{localbibliography}
 
 \IfFileExists{../localcommands.tex}{
    \addbibresource{../localbibliography.bib}
@@ -1879,8 +1858,8 @@ English structure in (6a) --- where I omit determiners to save space
 \nopagebreak[4]
 
 \noindent
-\hspace*{1.5em}\scalebox{0.6}{\includegraphics{pullum_figure1.pdf}}
-\hspace*{2em}\scalebox{0.55}{\includegraphics{pullum_figure2.pdf}}
+\hspace*{1.5em}\scalebox{0.6}{\includegraphics{figures/pullum_figure1.pdf}}
+\hspace*{2em}\scalebox{0.55}{\includegraphics{figures/pullum_figure2.pdf}}
 
 \noindent
 Sandalo et al.\ have overlooked a crucial syntactic fact. Pirah{\~a} is
@@ -1923,7 +1902,7 @@ and word identification as well as the structure.
 
 \nopagebreak[4]
 
-\hspace*{2em}\scalebox{0.7}{\includegraphics{pullum_figure3.pdf}}
+\hspace*{2em}\scalebox{0.7}{\includegraphics{figures/pullum_figure3.pdf}}
 
 \medskip\noindent
 No one has ever suggested that PPs like (8) are encountered in Pirah{\~a}
@@ -1969,7 +1948,7 @@ as in (10).
 (10) Most likely native-speaker parse of (9)
 \nopagebreak[4]
 
-\quad\scalebox{0.6}{\includegraphics{pullum_figure4.pdf}}
+\quad\scalebox{0.6}{\includegraphics{figures/pullum_figure4.pdf}}
 
 \medskip\noindent
 Convinced that they had identified nested PPs in Pirah{\~a}, Sandalo

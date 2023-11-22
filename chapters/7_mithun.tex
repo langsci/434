@@ -9,13 +9,6 @@ Complexities of Place
 }
 \abstract{A major thrust of much theoretical linguistics has been the search for ‘universals’: innate, abstract, formal design principles governing all languages. Work by Dan Everett, based on long-term observation of speech in its cultural context, has raised questions about their universality and precise nature, and explored the power of culture in shaping language \citep{everett2012language,everett2015role,everett2018role}. One proposed universal is that a fundamental design feature is recursion via complex sentences. If we look only at translations of isolated sentences from English or another contact language, we stand to miss some intriguing complexities and perhaps some deeper understanding of forces that can shape language. Here such issues are explored in the examination of the expression of place in Mohawk. Though the language does contain complex sentences of the type ascribed to universals, an examination of unscripted speech in context shows that syntactic constructions specifying place are more complex and powerful than might be predicted purely from a principle of recursion.}
 
-%move the following commands to the "local..." files of the master project when integrating this chapter
-\usepackage{tabularx}
-\usepackage{langsci-optional}
-\usepackage{langsci-gb4e}
-\bibliography{localbibliography}
-\newcommand{\orcid}[1]{}
-\usepackage{graphicx}
 \graphicspath{ {./figures/} }
 \IfFileExists{../localcommands.tex}{
    \addbibresource{../localbibliography.bib}
@@ -26,52 +19,6 @@ Complexities of Place
    \togglepaper[23]%%chapternumber
 }{}
 
-% Example(s) Environments
-% 12pt, No new-lines after example number is printed
-
-\newcommand{\exref}[1]{(\ref{#1})}
-% This command puts reference numbers with parentheses
-% surrounding them 
-
-% The environment ``examples'' gives a list of examples, one on each line,
-% numbered with a lower case alphabetic character
-\newenvironment{examples}%
-	{ \vspace{-\baselineskip}
-	  \begin{list}%
-	  {\usecounter{subexamplectr}
-	  \setlength{\topsep}{-\parskip}
-	  \setlength{\itemsep}{-2pt}
-	  \setlength{\leftmargin}{0.5in}
-	  \setlength{\rightmargin}{0in} } }%
-	{ \end{list}}
-
-% The environment ``myexample'' outputs an arabic counter ``examplectr''
-% surrounded by parentheses.
-\newenvironment{myexample}
-	{ \vspace{20pt}
-	  \noindent
-	  \begin{minipage}{\textwidth}    % minipage environment disallows
-					  % breaks across pages
-
-	  \refstepcounter{examplectr}     % step the counter and cause this
-					  % section to be referenced by the
-					  % counter ``examplectr''
-	  (\arabic{examplectr})}%
-	{ \vspace{20pt}
-	  \end{minipage}}
-
-\newenvironment{myfnexample}
-	{ \vspace{2pt}
-	  \noindent
-	  \begin{minipage}{\textwidth}    % minipage environment disallows
-					  % breaks across pages
-
-	  \refstepcounter{fnexamplectr}     % step the counter and cause this
-					  % section to be referenced by the
-					  % counter ``examplectr''
-	  (\roman{fnexamplectr})}%
-	{ \vspace{2pt}
-	  \end{minipage}}
    
 \begin{document}
 
@@ -535,5 +482,5 @@ partitive}
 
 \printbibliography[heading=subbibliography,notkeyword=this]
 
-\sloppy
+
 \end{document}
