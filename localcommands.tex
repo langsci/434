@@ -1,5 +1,19 @@
 \newcommand*{\orcid}{}
 
+\SetupAffiliations{output in groups = false,
+                   orcid placement = after,
+                   separator between two = {\bigskip\\},
+                   separator between multiple = {\bigskip\\},
+                   separator between final two = {\bigskip\\}
+                   }
+
+% ORCIDs in langsci-affiliations 
+\definecolor{orcidlogocol}{cmyk}{0,0,0,1}
+\RenewDocumentCommand{\LinkToORCIDinAffiliations}{ +m }
+  {%
+    \,\orcidlink{#1}%
+  }
+
 
 \makeatletter
 \let\thetitle\@title
@@ -150,8 +164,6 @@
 %%% GKP:  Two additional commands that I need
 \newcommand{\data}[1]{\textit{#1}}
 \newcommand{\blank}{\rule{1.2em}{0.5pt}}
-
-
 
 
 
