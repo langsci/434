@@ -1,23 +1,9 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%     Language Science Press Master File       %%%
-%%%              edited volumes                  %%%
-%%%         follow the instructions below        %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Everything following a % is ignored
-% Some lines start with %. Remove the % to include them
-
-\documentclass[output=book,collection
-            ,colorlinks, citecolor=brown
+\documentclass[output=book,collection,colorlinks, citecolor=brown
             % ,draft
- 	        ,biblatex  
             ,draftmode
 		  ]{langscibook}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% put all additional commands you need in the
-% following files. If you do not know what this might
-% mean, you can safely ignore this section
 
 \input{localmetadata.tex}
 \input{localpackages.tex}
@@ -48,7 +34,7 @@
 %%%             Chapters                         %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\includepaper{chapters/1_intro} %add a percentage sign in front of the line to exclude this chapter from book
+\includepaper{chapters/1_intro}
 \includepaper{chapters/2_gibson}
 \includepaper{chapters/3_pullum}
 \includepaper{chapters/4_vanvalin}
@@ -57,18 +43,16 @@
 \includepaper{chapters/7_mithun}
 % \includepaper{chapters/8_levine} % not done yet
 \includepaper{chapters/9_gil}
-\includepaper{chapters/10_senderowricz}
+\includepaper{chapters/10_senderowicz}
 \includepaper{chapters/11_bentley}
 % \includepaper{chapters/12_thomason}   % redo
 \includepaper{chapters/13_everett}
 \includepaper{chapters/14_kornai}
 \includepaper{chapters/15_sakel}
 \includepaper{chapters/16_piantadosi}
-% copy the lines above and adapt as necessary
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%             Backmatter                       %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% There is normally no need to change the backmatter section
 \input{backmatter.tex}
 \end{document}
