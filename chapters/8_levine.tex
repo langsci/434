@@ -2,10 +2,10 @@
 \IfFileExists{../localcommands.tex}{
    \addbibresource{../localbibliography.bib}
    \input{../localpackages}
-   \input{../localcommands}
+%    \input{../localcommands}
    \input{../localhyphenation}
-   \boolfalse{bookcompile}
-   \togglepaper[23]%%chapternumber
+%    \boolfalse{bookcompile}
+%    \togglepaper[23]%%chapternumber
 }{}
 
 \title{A Peircean turn in linguistics: syntactic-semantic composition as logical inference}
@@ -16,7 +16,7 @@
 
 \begin{document}
 \maketitle
-
+\providecommand{\SetInfLen}{\relax}
 \section{Abstract}
 In the late 19th century Charles Sanders Peirce proposed what can be seen as a model of natural language in which the combinatoric affinity of lexical items—which he characterizes as their respective valence—drove the composition of sentences. In this paper I argue that Peirce’s conception of valence as the basis of linguistic composition,  ncorporated into a logic of types in which valence is interpreted as implication, finds its formal realization in a species of categorial grammar. I further show the power of this conception in capturing a complex interaction of filler-gap connectivity with ellipsis which has been claimed to be one of the strongest pieces of evidence for covert structure analyses treatment of ellipsis patterns. The type-logical treatment of this supposed pattern of extraction from ellipsis sites undercuts such claims, and reinforces Joachim Lambek’s invocation of Peirce as perhaps the earliest intellectual ancestor of modern type-logical approaches to natural language architecture.
 
@@ -57,7 +57,7 @@ grammarian of the modern era to recognize the depth of Peirce's
 insights on natural language, particularly \citet{peirce1897}, and actively
 promoted Peirce's work in conversations and international gatherings,
 such as the 1948 International Congress of Linguists in Paris, among
-other venues.  
+other venues.
 
 It is generally conceded among those who have studied Peirce's work as
 it bears on natural languages that his perspective was primarily
@@ -150,7 +150,7 @@ second is the same with `left' in place of `right'. The third is a bit
 more complex: it tells you that, if there is a sign of type it can be
 realized in a certain designated position `within' the sign typed
 \textit{Y}\vs \textit{X}. We refer to inhabitants of slashed types as
-\textsl{functional} terms, in view of their semantics, as we discuss below. 
+\textsl{functional} terms, in view of their semantics, as we discuss below.
 
 What are the syntactic types that can instantiate \textit{Y} and \textit{X}? For our
 purposes, we can posit three atomic types, which are in a
@@ -197,20 +197,20 @@ below, the ordinary IPL rule would take the form in (\ref{prawitz}b):
 \begin{exe}
  \ex\label{prawitz}
 \begin{tabular}{cccc}
-{a.    
+{a.
 \AxiomC{$\phi\supset\psi$}
 \AxiomC{$\phi$}
-\RightLabel{\mbox{\tiny $\scriptstyle \supset\,$}\tiny Elim}  
+\RightLabel{\mbox{\tiny $\scriptstyle \supset\,$}\tiny Elim}
 \BinaryInfC{$\psi$}
 \DisplayProof
-} & & & 
+} & & &
 {b.
 \AxiomC{$\phi$}
-\noLine  
+\noLine
 \UnaryInfC{$\vdots$}
 \noLine
 \UnaryInfC{$\psi$}
-\RightLabel{\mbox{\tiny $\scriptstyle \supset\,$}\tiny Intro}  
+\RightLabel{\mbox{\tiny $\scriptstyle \supset\,$}\tiny Intro}
 \UnaryInfC{$\phi \supset \psi$}
 \DisplayProof
 }
@@ -251,71 +251,71 @@ paper. In (\ref{rules}) and hereafter, I take a sign to be a tripartite
 object with a prosodic sector, a semantic sector and a type value,
 presented in that order.
 
-% \begin{exe}
-%  \ex\label{rules}
-% \begin{tabular}{ccc}
-% \term{Connective} & \term{Introduction} & \term{Elimination} \\
-% / &
-% {
-% \AxiomC{\Lemma}
-% \UnaryInfC{\Lemma}
-% \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
-% \UnaryInfC{\LemmaAlt}
-% \AxiomC{\Lemma}
-% \UnaryInfC{\Lemma}
-% \TrinaryInfC{\LexEnt{\pt{\ptv{b} \O \pt{\ensuremath{\greekp}} }}{\sem{ \sF}}{\syncat{\textit{B}}}}
-% \RightLabel{\scalebox{.8}{/I$^n$}}
-% \UnaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{B}/\textit{A}}}}
-% \DisplayProof}
-% &
-% {
-% \AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{B}/\textit{A}}}}
-% \AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
-% \RightLabel{\scalebox{.8}{\ensuremath{/}E}}
-% \BinaryInfC{\LexEnt{\pt{\ptv{b} \O \ptv{a}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
-% \DisplayProof}\\
-% & & & \\[-1ex]
-% \bsl &
-% {
-% \AxiomC{\Lemma}
-% \UnaryInfC{\Lemma}
-% \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
-% \UnaryInfC{\LemmaAlt}
-% \AxiomC{\Lemma}
-% \UnaryInfC{\Lemma}
-% \TrinaryInfC{\LexEnt{\pt{\pt{\ensuremath{\greekp}} \O \ptv{b}}}{\sem{ \sF}}{\syncat{\textit{B}}}}
-% \RightLabel{\scalebox{.8}{\bsl I$^n$}}
-% \UnaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{A}\bsl{}\textit{B}}}}
-% \DisplayProof}
-% &
-% {
-% \AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
-% \AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{A}\bsl{}\textit{B}}}}
-% \RightLabel{\scalebox{.8}{\bsl E}}
-% \BinaryInfC{\LexEnt{\pt{\ptv{a} \O \ptv{b}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
-% \DisplayProof}\\
-%  & & & \\
-% {
-% \ensuremath{\vs} &
-% \AxiomC{\Lemma}
-% \UnaryInfC{\Lemma}
-% \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
-% \UnaryInfC{\LemmaAlt}
-% \AxiomC{\Lemma}
-% \UnaryInfC{\Lemma}
-% \TrinaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \sF}}{\syncat{\textit{B}}}}
-% \RightLabel{\scalebox{.8}{\ensuremath{\vs}$^n$}}
-% \UnaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greekp}.  \ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{B}\vs \textit{A}}}}
-% \DisplayProof}
-% &
-% {
-% \AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{B}\vs \textit{A}}}}
-% \AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
-% \RightLabel{\scalebox{.8}{\ensuremath{\vs}E}}
-% \BinaryInfC{\LexEnt{\pt{\ptv{b(a)}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
-% \DisplayProof}
-% \end{tabular}
-% \end{exe}
+\begin{exe}
+ \ex\label{rules}
+\begin{tabular}{ccc}
+\term{Connective} & \term{Introduction} & \term{Elimination} \\
+/ &
+{
+\AxiomC{\Lemma}
+\UnaryInfC{\Lemma}
+\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
+\UnaryInfC{\LemmaAlt}
+\AxiomC{\Lemma}
+\UnaryInfC{\Lemma}
+\TrinaryInfC{\LexEnt{\pt{\ptv{b} \O \pt{\ensuremath{\greekp}} }}{\sem{ \sF}}{\syncat{\textit{B}}}}
+\RightLabel{\scalebox{.8}{/I$^n$}}
+\UnaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{B}/\textit{A}}}}
+\DisplayProof}
+&
+{
+\AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{B}/\textit{A}}}}
+\AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
+\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+\BinaryInfC{\LexEnt{\pt{\ptv{b} \O \ptv{a}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
+\DisplayProof}\\
+& & & \\[-1ex]
+\bsl &
+{
+\AxiomC{\Lemma}
+\UnaryInfC{\Lemma}
+\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
+\UnaryInfC{\LemmaAlt}
+\AxiomC{\Lemma}
+\UnaryInfC{\Lemma}
+\TrinaryInfC{\LexEnt{\pt{\pt{\ensuremath{\greekp}} \O \ptv{b}}}{\sem{ \sF}}{\syncat{\textit{B}}}}
+\RightLabel{\scalebox{.8}{\bsl I$^n$}}
+\UnaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{A}\bsl{}\textit{B}}}}
+\DisplayProof}
+&
+{
+\AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
+\AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{A}\bsl{}\textit{B}}}}
+\RightLabel{\scalebox{.8}{\bsl E}}
+\BinaryInfC{\LexEnt{\pt{\ptv{a} \O \ptv{b}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
+\DisplayProof}\\
+ & & & \\
+{
+\ensuremath{\vs} &
+\AxiomC{\Lemma}
+\UnaryInfC{\Lemma}
+\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
+\UnaryInfC{\LemmaAlt}
+\AxiomC{\Lemma}
+\UnaryInfC{\Lemma}
+\TrinaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \sF}}{\syncat{\textit{B}}}}
+\RightLabel{\scalebox{.8}{\ensuremath{\vs}$^n$}}
+\UnaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greekp}.  \ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{B}\vs \textit{A}}}}
+\DisplayProof}
+&
+{
+\AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{B}\vs \textit{A}}}}
+\AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
+\RightLabel{\scalebox{.8}{\ensuremath{\vs}E}}
+\BinaryInfC{\LexEnt{\pt{\ptv{b(a)}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
+\DisplayProof}
+\end{tabular}
+\end{exe}
 In (\ref{rules}), the vertical lines surrounding the variable and its
 composition into the proof denote the proof history subsequent to the
 introduction of the variable. \ptv{a,b} are metavariables over
@@ -353,7 +353,7 @@ argument, the latter follows it\footnote{I defer discussion of
 vertically slashed terms till we get to the Introduction rules}. The
 semantics, however, does not reflect the direction of the slash: for
 all functional types, the semantic term is a function which takes the
-denotation of the syntactic argument as its own arguent. 
+denotation of the syntactic argument as its own arguent.
 
 With this much in hand, we can now provide a complete proof of an
 English sentence that illustrates the ways in which type, prosody and
@@ -369,7 +369,7 @@ theorem. We start with a lexicon, as in (\ref{lexicon}):
 \begin{tabular}{lll}
  \LexEnt{\pt{ john}}{\sem{ \trns{j} }}{\syncat{NP}} & &
 \LexEnt{\pt{sent}}{\sem{ send}}{\syncat{VP/PP\fb{to}/NP}} \\
-\LexEnt{\pt{those}}{\sem{ \iota}}{\syncat{NP/N\fb{pl}}} & & 
+\LexEnt{\pt{those}}{\sem{ \iota}}{\syncat{NP/N\fb{pl}}} & &
 \LexEnt{\pt{documents}}{\sem{ \trns{docs} }}{\syncat{N\fb{pl}}} \\
 \LexEnt{\pt{to}}{\sem{ \lambda x.x}}{\syncat{PP\fb{to}/NP}} & &
 \LexEnt{\pt{the}}{\sem{ \iota}}{\syncat{NP/N}} \\
@@ -394,42 +394,42 @@ restriction of the event instantiating that property.
 
 The rules of the logic apply to the lexical axioms to yield the proof
 in (\ref{sentProof}):
-
-\begin{exe}
- \ex\label{sentProof}
-\hspace{-8ex}
-\scalebox{.75}{
-\AxiomC{\MultiLine{\ptfont sent; \\ \sem{ \trns{send} }; \\\syncat{  VP/PP\fb{to}/NP}}}
-\AxiomC{\MultiLine{\ptfont the; \\ \sem{ \iota}; \\\syncat{  NP/N}}}
-\AxiomC{\MultiLine{\ptfont documents; \\ \sem{ \trns{docs} }; \\\syncat{  N}}}
-\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
-\BinaryInfC{\MultiLine{\ptfont the \O documents; \\ \sem{ \iota(\trns{docs})}; \\\syncat{  NP}}}
-\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
-\BinaryInfC{\MultiLine{\ptfont sent \O the \O documents; \\ \sem{ \trns{send}(\iota(\trns{docs}))}; \\\syncat{  VP/PP\fb{to}}}}
-\AxiomC{\MultiLine{\ptfont the; \\ \sem{ \iota}; \\\syncat{  NP/N}}}
-\AxiomC{\MultiLine{\ptfont committee; \\ \sem{ \trns{comm} }; \\\syncat{  N}}}
-\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
-\BinaryInfC{\MultiLine{\ptfont the \O committee; \\ \sem{ \iota(\trns{comm})}; \\\syncat{  NP}}}
-\AxiomC{\MultiLine{\ptfont to; \\ \sem{ \lambda x.x}; \\\syncat{  PP\fb{to}/NP}}}
-\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
-\BinaryInfC{\MultiLine{\ptfont to \O the \O committee; \\ \sem{ \iota(\trns{comm})}; \\\syncat{  PP\fb{to}}}}
-\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
-\BinaryInfC{\MultiLine{\ptfont sent \O the \O documents \O to \O the \O committee; \\ \sem{ \trns{send}(\iota(\trns{docs}))(\iota(\trns{comm}))}; \syncat{ VP}}}
-\AxiomC{\MultiLine{\ptfont  over; \\ \sem{ \trns{over} }; \\\syncat{  VP\bsl{}VP/NP}}}
-\AxiomC{\MultiLine{\ptfont  the; \\ \sem{ \iota}; \\\syncat{  NP/N}}}
-\AxiomC{\MultiLine{\ptfont  weekend; \\ \sem{ \trns{wknd} }; \\\syncat{  N}}}
-\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
-\BinaryInfC{\MultiLine{\ptfont the \O weekend; \\ \sem{ \iota(\trns{wknd})}; \syncat{ NP}}}
-\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
-\BinaryInfC{\MultiLine{\ptfont over \O the \O weekend; \\ \sem{ \trns{over}(\iota(\trns{wknd}))}; \\\syncat{  VP\bsl{}VP}}}
-\RightLabel{\scalebox{.8}{\bsl E}}
-\BinaryInfC{\MultiLine{\ptfont sent \O the \O documents \O to \O the \O    {}\\ \ptfont   \hspace{3ex}committee \O over \O the \O weekend; \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  VP}}}
-\AxiomC{\MultiLine{\ptfont john; \\ \sem{ \trns{j} }; \\\syncat{  NP}}}
-\RightLabel{\scalebox{.8}{\bsl E}}
-\BinaryInfC{\MultiLine{\ptfont john \O sent \O the \O documents \O to \O the \O    {}\\ \ptfont   \hspace{3ex}committee \O over \O the \O weekend; \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  S}}}
-\DisplayProof
-}
-\end{exe}
+%
+% \begin{exe}
+%  \ex\label{sentProof}
+% \hspace{-8ex}
+% \scalebox{.75}{
+% \AxiomC{\MultiLine{\ptfont sent; \\ \sem{ \trns{send} }; \\\syncat{  VP/PP\fb{to}/NP}}}
+% \AxiomC{\MultiLine{\ptfont the; \\ \sem{ \iota}; \\\syncat{  NP/N}}}
+% \AxiomC{\MultiLine{\ptfont documents; \\ \sem{ \trns{docs} }; \\\syncat{  N}}}
+% \RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+% \BinaryInfC{\MultiLine{\ptfont the \O documents; \\ \sem{ \iota(\trns{docs})}; \\\syncat{  NP}}}
+% \RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+% \BinaryInfC{\MultiLine{\ptfont sent \O the \O documents; \\ \sem{ \trns{send}(\iota(\trns{docs}))}; \\\syncat{  VP/PP\fb{to}}}}
+% \AxiomC{\MultiLine{\ptfont the; \\ \sem{ \iota}; \\\syncat{  NP/N}}}
+% \AxiomC{\MultiLine{\ptfont committee; \\ \sem{ \trns{comm} }; \\\syncat{  N}}}
+% \RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+% \BinaryInfC{\MultiLine{\ptfont the \O committee; \\ \sem{ \iota(\trns{comm})}; \\\syncat{  NP}}}
+% \AxiomC{\MultiLine{\ptfont to; \\ \sem{ \lambda x.x}; \\\syncat{  PP\fb{to}/NP}}}
+% \RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+% \BinaryInfC{\MultiLine{\ptfont to \O the \O committee; \\ \sem{ \iota(\trns{comm})}; \\\syncat{  PP\fb{to}}}}
+% \RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+% \BinaryInfC{\MultiLine{\ptfont sent \O the \O documents \O to \O the \O committee; \\ \sem{ \trns{send}(\iota(\trns{docs}))(\iota(\trns{comm}))}; \syncat{ VP}}}
+% \AxiomC{\MultiLine{\ptfont  over; \\ \sem{ \trns{over} }; \\\syncat{  VP\bsl{}VP/NP}}}
+% \AxiomC{\MultiLine{\ptfont  the; \\ \sem{ \iota}; \\\syncat{  NP/N}}}
+% \AxiomC{\MultiLine{\ptfont  weekend; \\ \sem{ \trns{wknd} }; \\\syncat{  N}}}
+% \RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+% \BinaryInfC{\MultiLine{\ptfont the \O weekend; \\ \sem{ \iota(\trns{wknd})}; \syncat{ NP}}}
+% \RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+% \BinaryInfC{\MultiLine{\ptfont over \O the \O weekend; \\ \sem{ \trns{over}(\iota(\trns{wknd}))}; \\\syncat{  VP\bsl{}VP}}}
+% \RightLabel{\scalebox{.8}{\bsl E}}
+% \BinaryInfC{\MultiLine{\ptfont sent \O the \O documents \O to \O the \O    {}\\ \ptfont   \hspace{3ex}committee \O over \O the \O weekend; \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  VP}}}
+% \AxiomC{\MultiLine{\ptfont john; \\ \sem{ \trns{j} }; \\\syncat{  NP}}}
+% \RightLabel{\scalebox{.8}{\bsl E}}
+% \BinaryInfC{\MultiLine{\ptfont john \O sent \O the \O documents \O to \O the \O    {}\\ \ptfont   \hspace{3ex}committee \O over \O the \O weekend; \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  S}}}
+% \DisplayProof
+% }
+% \end{exe}
 This proof can be seen as a realization of Peirce's emphasis on
 argument structure, and its satisfaction, as the `engine' of syntactic
 combinatorics. As noted at the beginning of this paper, the types
@@ -593,7 +593,7 @@ ascription of some property to \textsl{any} of the argument
 terms---corresponds exactly to the possibility of deriving a predicate
 by composing a predicate with one variable term, with constants for
 all the other arguments, and then abstracting on that
-variable. 
+variable.
 
 \begin{exe}
  \ex\label{cleopatra}
@@ -616,7 +616,7 @@ composition of \textit{Antony} with the denotation of the VP \textit{gave a ring
 Cleopatra}. In this sense, \ensuremath{\vs} Introduction is the logical warrant for
 the Peirce's view that \textit{Anthony gave a ring to Cleopatra} is `about'
 any (or all) of its `subject', not just the NP which carries the
-grammatical function `subject'. 
+grammatical function `subject'.
 
 But the empirical problem which led to \ensuremath{\vs} introduction (under a different
 notation) in \citet{oehrle1994} was rather different, and took the form of
@@ -743,7 +743,7 @@ phenomena, one of which is considered in detail in \textsection{3} as
 a dramatic illustration of the way effects which require recourse to
 operations on phrase structure in other approaches can be reduced to
 mappings between valence values in type-logical grammar, with no need
-to posit syntactic configuation. 
+to posit syntactic configuation.
 
 
 \subsection{Interlude}
@@ -804,7 +804,7 @@ find, for example, patterns such as the following:
  \ex\label{VPE}
     John likes pizza, but Bill doesn't $\varnothing$\bsl\xspace\
     `John likes pizza, but Bill doesn't like pizza'. \\
-    (VP/Post-auxiliary ellipsis)   
+    (VP/Post-auxiliary ellipsis)
  \ex\label{pseudo}
     John eats way more junk food than he does $\varnothing$ real food.\\
     `John eats way more junk food than he eats real food. \\
@@ -857,7 +857,7 @@ restriction on anaphora, etc.---are themselves syntactic in
 nature. Building this assumption into an argument that parallel
 judgments of ellpsis and correspnding non-ellipsed data reflects the
 need to posit covert phrase structure which is deleted in the course
-of derivations thus appears to be a textbook instance of begging the question. 
+of derivations thus appears to be a textbook instance of begging the question.
 
 Defenders of the view that what you don't see in ellipsis was never
 there in the first place still have their work cut out for them, of
@@ -958,7 +958,7 @@ generalization to pseudogapping, proposed in
 \citet{kubota-levine-pseudo}. This background sets the stage for my account
 of (\ref{extrac-from-VPE}).\footnote{For a rather different, though
 ultimately related approach to a solution in a framework belonging to
-a distinct class of categorial grammar frameworks, see \citet{jacobson1992}.} 
+a distinct class of categorial grammar frameworks, see \citet{jacobson1992}.}
 
 
 
@@ -1096,19 +1096,19 @@ description is \ensuremath{\vs} rather than /.}:
  \ex\label{ellipseOp1}
   \textbf{VP ellipsis operator} \\
   \LexEnt{\pt{ \ensuremath{\lambda} \ensuremath{\greekp}. \ensuremath{\greekp} }}{\sem{ \lambda \ensuremath{\mathscr{F}}. \ensuremath{\mathscr{F}}(P')}}{\syncat{(NP\bsl{}S)\vs ((NP\bsl{}S)\vs (NP\bsl{}S) }}
-  
+
   ------where $P'$ is a free variable whose value is
   resolved anaphorically
  \ex\label{Acondition}
   Anaphora resolution condition on the VP ellipsis/pseudogapping
   operator:
   \begin{enumerate}
-   \item 
+   \item
     if there is a syntactic  constituent
     with category VP in the antecedent clause matching the
     syntactic  category of the missing verb in the target clause,
     then the value of $P$ is identified with the denotation of that constituent;
-   \item 
+   \item
     if there is no such syntactic  constituent, then the value of $P$  is anaphorically
     identified with some salient property in the discourse that is not
     inconsistent with the syntactic  category VP.
@@ -1140,7 +1140,7 @@ in (\ref{ellipseOp1}) works, is given in (\ref{simpleVPE})
 \BinaryInfC{\MultiLine{\ptfont mary \O should \O call \O ann ; \\ \sem{  \ensuremath{\square} \trns{call}(\trns{a})(\trns{m})}; \\\syncat{  S}}}
 \DisplayProof}
  &
- \scalebox{.8}{ 
+ \scalebox{.8}{
 \AxiomC{\MultiLine{\ptfont bill ; \\ \sem{ \trns{b} }; \\\syncat{  NP}}}
 \RightLabel{per \ding{172}}
 \AxiomC{\grey{\MultiLine{\ptfont \lambda \ensuremath{\greekp}. \ensuremath{\greekp} ; \\ \sem{ \lambda \ensuremath{\mathscr{F}}. \ensuremath{\mathscr{F}}(\trns{call}(\trns{a}))}; \\\syncat{  (NP\bsl{}S)\vs (NP\bsl{}S/NP\bsl{}S)}}}}
@@ -1220,19 +1220,19 @@ can be stated as in (\ref{generalized}):
  \ex\label{generalized}
   \textbf{Generalized ellipsis operator} \\
   \pt{\ensuremath{\lambda} \ensuremath{\greekp}. \ensuremath{\greekp} }; \sem{ \lambda \ensuremath{\mathscr{F}}. \ensuremath{\mathscr{F}}(P) }; VP\$\ensuremath{\vs}(VP\$/VP\$)
-  
+
   ------where $P$ is a free variable whose value is
   resolved anaphorically
  \ex\label{Acondition}
   Anaphora resolution condition on the VP ellipsis/pseudogapping
   operator:
   \begin{enumerate}
-   \item 
+   \item
     if there is a syntactic  constituent
     with category VP\$ in the antecedent clause matching the
     syntactic  category of the missing verb in the target clause,
     then the value of $P$ is identified with the denotation of that constituent;
-   \item 
+   \item
     if there is no such syntactic  constituent, then the value of $P$  is anaphorically
     identified with some salient property in the discourse that is not
     inconsistent with the syntactic  category VP\$.
@@ -1292,7 +1292,7 @@ With our generalized account of ellipsis, we are now in a position to
 see how the proof-theoretic approached introduced in the preceding
 sections can license examples such as (\ref{extrac-from-VPE}) without
 recourse to any actual material corresponding to the gap `site' in the
-antecedent clause ever being involved.  
+antecedent clause ever being involved.
 
 \subsubsection{Pseudo-extraction via pseudogapping}\label{subsubsec:pseudoextrac}
 
@@ -1371,7 +1371,7 @@ order to lay out most clearly the proof narrative.}
 \end{exe}
 With this result in hand, all that is needed to derive any given
 auxiliary as a VP seeking a gap-filling NP constituent
-\textsl{somewhere} is a further extension of  
+\textsl{somewhere} is a further extension of
 the already-generalized ellipsis operator to such `vertically Geached'
 auxiliaries, mapping them to type \syncat{VP\vs XP}, anaphorically supplying the
 meaning of the gapped VP. In (\ref{zzzz}), I give a `local' form of this
@@ -1387,9 +1387,9 @@ extension of the ellipsis operator to internal gaps.
 \begin{exe}
  \ex\label{zzzz}
   \LexEnt{\pt{ \ensuremath{\lambda} \ensuremath{\greekr} \ensuremath{\lambda} \ensuremath{\greekp_1}. \ensuremath{\greekr}(\ensuremath{\lambda} \ensuremath{\greekp_0}. \ensuremath{\greekp_0})(\ensuremath{\greekp_1})}}{\sem{ \lambda \ensuremath{\mathscr{F}}. \ensuremath{\mathscr{F}}(R\,')}}{\syncat{(VP\vs NP)\vs ((VP\vs NP)\vs (VP\vs NP)) }}
-  
+
   ------where $R\,'$ is the semantic term of a sign retrieved from the
-  context whose type is \syncat{VP\vs NP} 
+  context whose type is \syncat{VP\vs NP}
 \end{exe}
 As before, we first specify how the antecedent clause of
 (\ref{extractionVPE-rep}) makes available the predicate which is retrieved
@@ -1505,7 +1505,7 @@ which includes the following subproof.
 From this point on, the proof for the ellipsed clause would proceed in
 exactly the same fashion as in the derivation of (\ref{extractionVPE-rep}),
 with the free variable \sem{ P\,' } instantiated as the grayed-in term
-in (\ref{subproof}). 
+in (\ref{subproof}).
 
 The above (re)analysis of `extraction out of an elided VP' as
 extraction of a pseudogapping remnant gives us, in effect, a
@@ -1582,7 +1582,7 @@ we can compose each member of $A$ with each member of $B$ to yield a
 term belonging to type $C$, i.e., \sem{ A\bullet B\,  \ensuremath{\vdash\xspace } \,\textit{C}  }. Then
 necessarily every member of $A$ belongs to the set of terms which form
 a member of $C$ when they compose with a member of $B$ on the right;
-if we call this set \sem{ B/C } then 
+if we call this set \sem{ B/C } then
 \sem{ A{}  \ensuremath{\vdash\xspace } B/C}, and likewise for
 \textit{B}. We thus have the relations
 
