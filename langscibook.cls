@@ -1599,6 +1599,7 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
 \usepackage[
 	natbib=true,
 	style=langsci-unified,
+	datamodel=langsci,   % add authauthor and autheditor as possible fields to bibtex entries
 	%refsection=chapter,
 	maxbibnames=99,
 	uniquename=false,
