@@ -183,6 +183,10 @@
 %
 %
 % % slashes (CCG)
+
+\newcommand{\bs}{{\textbackslash}}
+\newcommand{\bsl}{{\bs}}
+
 %
 % \newcommand{\Var}[2]{\ensuremath{#1^{#2}}} %Variable notation
 % \newcommand{\Varp}[2]{\ensuremath{(#1^{#2})}} %Variable notation w/ paren
@@ -237,6 +241,8 @@
 %
 % % features, subscripted
 %
+
+\newcommand{\fb}[1]{\textsubscript{#1}}
 % %\newcommand{\fb}[1]{\ensuremath{\!_{\mbox{\footnotesize$#1$}}}}
 % %\newcommand{\fb}[1]{\ensuremath{\!_{\scalebox{.7}[.7]{$#1$}}}}
 % \newcommand{\fb}[1]{\ensuremath{\!_{\scalebox{.7}{\textit{#1}}}}}
@@ -246,7 +252,7 @@
 % % categories with subscripts
 % \newcommand{\syncat}{\mathit}
 %
-% % \newcommand{\syncat}[1]{\ensuremath{\mathrm{#1}}}
+\newcommand{\syncat}[1]{\ensuremath{\mathrm{#1}}}
 %
 % \renewcommand{\S}{\ensuremath{\syncat{S}}\xspace}
 % \newcommand{\N}{\ensuremath{\syncat{N}}\xspace}

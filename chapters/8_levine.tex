@@ -251,71 +251,71 @@ paper. In (\ref{rules}) and hereafter, I take a sign to be a tripartite
 object with a prosodic sector, a semantic sector and a type value,
 presented in that order.
 
-\begin{exe}
- \ex\label{rules}
-\begin{tabular}{ccc}
-\term{Connective} & \term{Introduction} & \term{Elimination} \\
-/ &
-{
-\AxiomC{\Lemma}
-\UnaryInfC{\Lemma}
-\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
-\UnaryInfC{\LemmaAlt}
-\AxiomC{\Lemma}
-\UnaryInfC{\Lemma}
-\TrinaryInfC{\LexEnt{\pt{\ptv{b} \O \pt{\ensuremath{\greekp}} }}{\sem{ \sF}}{\syncat{\textit{B}}}}
-\RightLabel{\scalebox{.8}{/I$^n$}}
-\UnaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{B}/\textit{A}}}}
-\DisplayProof}
-&
-{
-\AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{B}/\textit{A}}}}
-\AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
-\RightLabel{\scalebox{.8}{\ensuremath{/}E}}
-\BinaryInfC{\LexEnt{\pt{\ptv{b} \O \ptv{a}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
-\DisplayProof}\\
-& & & \\[-1ex]
-\bsl &
-{
-\AxiomC{\Lemma}
-\UnaryInfC{\Lemma}
-\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
-\UnaryInfC{\LemmaAlt}
-\AxiomC{\Lemma}
-\UnaryInfC{\Lemma}
-\TrinaryInfC{\LexEnt{\pt{\pt{\ensuremath{\greekp}} \O \ptv{b}}}{\sem{ \sF}}{\syncat{\textit{B}}}}
-\RightLabel{\scalebox{.8}{\bsl I$^n$}}
-\UnaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{A}\bsl{}\textit{B}}}}
-\DisplayProof}
-&
-{
-\AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
-\AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{A}\bsl{}\textit{B}}}}
-\RightLabel{\scalebox{.8}{\bsl E}}
-\BinaryInfC{\LexEnt{\pt{\ptv{a} \O \ptv{b}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
-\DisplayProof}\\
- & & & \\
-{
-\ensuremath{\vs} &
-\AxiomC{\Lemma}
-\UnaryInfC{\Lemma}
-\AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
-\UnaryInfC{\LemmaAlt}
-\AxiomC{\Lemma}
-\UnaryInfC{\Lemma}
-\TrinaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \sF}}{\syncat{\textit{B}}}}
-\RightLabel{\scalebox{.8}{\ensuremath{\vs}$^n$}}
-\UnaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greekp}.  \ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{B}\vs \textit{A}}}}
-\DisplayProof}
-&
-{
-\AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{B}\vs \textit{A}}}}
-\AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
-\RightLabel{\scalebox{.8}{\ensuremath{\vs}E}}
-\BinaryInfC{\LexEnt{\pt{\ptv{b(a)}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
-\DisplayProof}
-\end{tabular}
-\end{exe}
+% \begin{exe}
+%  \ex\label{rules}
+% \begin{tabular}{ccc}
+% \term{Connective} & \term{Introduction} & \term{Elimination} \\
+% / &
+% {
+% \AxiomC{\Lemma}
+% \UnaryInfC{\Lemma}
+% \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
+% \UnaryInfC{\LemmaAlt}
+% \AxiomC{\Lemma}
+% \UnaryInfC{\Lemma}
+% \TrinaryInfC{\LexEnt{\pt{\ptv{b} \O \pt{\ensuremath{\greekp}} }}{\sem{ \sF}}{\syncat{\textit{B}}}}
+% \RightLabel{\scalebox{.8}{/I$^n$}}
+% \UnaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{B}/\textit{A}}}}
+% \DisplayProof}
+% &
+% {
+% \AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{B}/\textit{A}}}}
+% \AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
+% \RightLabel{\scalebox{.8}{\ensuremath{/}E}}
+% \BinaryInfC{\LexEnt{\pt{\ptv{b} \O \ptv{a}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
+% \DisplayProof}\\
+% & & & \\[-1ex]
+% \bsl &
+% {
+% \AxiomC{\Lemma}
+% \UnaryInfC{\Lemma}
+% \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
+% \UnaryInfC{\LemmaAlt}
+% \AxiomC{\Lemma}
+% \UnaryInfC{\Lemma}
+% \TrinaryInfC{\LexEnt{\pt{\pt{\ensuremath{\greekp}} \O \ptv{b}}}{\sem{ \sF}}{\syncat{\textit{B}}}}
+% \RightLabel{\scalebox{.8}{\bsl I$^n$}}
+% \UnaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{A}\bsl{}\textit{B}}}}
+% \DisplayProof}
+% &
+% {
+% \AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
+% \AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{A}\bsl{}\textit{B}}}}
+% \RightLabel{\scalebox{.8}{\bsl E}}
+% \BinaryInfC{\LexEnt{\pt{\ptv{a} \O \ptv{b}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
+% \DisplayProof}\\
+%  & & & \\
+% {
+% \ensuremath{\vs} &
+% \AxiomC{\Lemma}
+% \UnaryInfC{\Lemma}
+% \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp}}}{\sem{ x }}{\syncat{\textit{A}}}]^1\,\,}}
+% \UnaryInfC{\LemmaAlt}
+% \AxiomC{\Lemma}
+% \UnaryInfC{\Lemma}
+% \TrinaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ \sF}}{\syncat{\textit{B}}}}
+% \RightLabel{\scalebox{.8}{\ensuremath{\vs}$^n$}}
+% \UnaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greekp}.  \ptv{b}}}{\sem{ \lambda x. \sF}}{\syncat{\textit{B}\vs \textit{A}}}}
+% \DisplayProof}
+% &
+% {
+% \AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{B}\vs \textit{A}}}}
+% \AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
+% \RightLabel{\scalebox{.8}{\ensuremath{\vs}E}}
+% \BinaryInfC{\LexEnt{\pt{\ptv{b(a)}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
+% \DisplayProof}
+% \end{tabular}
+% \end{exe}
 In (\ref{rules}), the vertical lines surrounding the variable and its
 composition into the proof denote the proof history subsequent to the
 introduction of the variable. \ptv{a,b} are metavariables over
