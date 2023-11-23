@@ -225,11 +225,7 @@
 
 % not used \newcommand{\cites}[1]{\citeauthor{#1}'s~\citeyearpar{#1}}
 
-%\renewcommand{\SetInfLen}{\setpremisesend{0pt}\setpremisesspace{10pt}\setnamespace{0pt}}
-
-% missing commands 
-\newcommand{\ptfont}{}
-\newcommand{\f}{}
+% \renewcommand{\SetInfLen}{\setpremisesend{0pt}\setpremisesspace{10pt}\setnamespace{0pt}}
 
 \newcommand{\pt}[1]{\ensuremath{\mathsf{#1}}}
 \newcommand{\ptv}[1]{\ensuremath{\textsf{\textsl{#1}}}}
@@ -239,213 +235,244 @@
 \newcommand{\sX}{\sv{X}}
 \newcommand{\sF}{\sv{F}}
 \newcommand{\sG}{\sv{G}}
-
-\renewcommand{\lex}{\SF}
-\renewcommand{\syncat}[1]{\ensuremath{\mathrm{#1}}}
-\newcommand{\syncatVar}[1]{\ensuremath{\mathit{#1}}}
-
-\newcommand{\RuleName}[1]{\textrm{#1}}
-
-\newcommand{\SemTyp}{\textsf{Sem}}
-
-\newcommand{\something}{\vdots\,\,\,\,\,\,\vdots}
-
-\newcommand{\pb}{\phantom{[}}
-
-\renewcommand{\E}{\ensuremath{\bm{\epsilon}}\xspace}
-
-\newcommand{\greeka}{\upalpha}
-\newcommand{\greekb}{\upbeta}
-\newcommand{\greekd}{\updelta}
+%
+% \renewcommand{\lex}{\SF}
+% \renewcommand{\syncat}[1]{\ensuremath{\mathrm{#1}}}
+% \newcommand{\syncatVar}[1]{\ensuremath{\mathit{#1}}}
+%
+% \newcommand{\RuleName}[1]{\textrm{#1}}
+%
+% \newcommand{\SemTyp}{\textsf{Sem}}
+%
+% \newcommand{\something}{\vdots\,\,\,\,\,\,\vdots}
+%
+% \newcommand{\pb}{\phantom{[}}
+%
+% \renewcommand{\E}{\ensuremath{\bm{\epsilon}}\xspace}
+%
+% \newcommand{\greeka}{\upalpha}
+% \newcommand{\greekb}{\upbeta}
+% \newcommand{\greekd}{\updelta}
 \newcommand{\greekp}{\upvarphi}
 \newcommand{\greekr}{\uprho}
 \newcommand{\greeks}{\upsigma}
-\newcommand{\greekt}{\uptau}
-\newcommand{\greeko}{\upomega}
-\newcommand{\greekz}{\upzeta}
-
-% Do not do this!!!!!
-% \renewcommand{\labelenumi}{(\roman{enumi})}
-
-\newcommand{\upa}[2]{\ensuremath{\syncat{#1}|\syncat{#2}}}
-\newcommand{\dna}[2]{\upa{#2}{#1}}
-
-\renewcommand{\term}[1]{\textit{#1}}
-
-\newcommand{\Lemma}{\ensuremath{\vdots\hskip.5cm\vdots}\noLine}
-\newcommand{\LemmaAlt}{\ensuremath{\vdots\hskip.5cm\vdots}}
-
-\newcommand{\la}{\ensuremath{\langle}}
-\newcommand{\ra}{\ensuremath{\rangle}}
-
-\renewcommand{\I}{\iota}
-
-\renewcommand{\sem}{\ensuremath}
-
-\newcommand{\LemmaShort}{\ensuremath{\vdots\hskip.2cm\vdots\hskip.2cm\vdots}\noLine}
-\newcommand{\LemmaShortAlt}{\ensuremath{\vdots\hskip.2cm\vdots}}
-
-
-\newcommand{\NoSem}{%
-\renewcommand{\LexEnt}[3]{##1; \syncat{##3}}
-\renewcommand{\LexEntTwoLine}[3]{\renewcommand{\arraystretch}{.8}%
-\begin{array}[b]{l} ##1;  \\ \syncat{##3} \end{array}}
-\renewcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
-\begin{array}[b]{l} ##1; \\ \syncat{##3} \end{array}}}
-
-
-\newcommand{\NoSemVar}{%
-\renewcommand{\LexEnt}[3]{##1; \syncat{##3}}
-\renewcommand{\LexEntTwoLine}[3]{\renewcommand{\arraystretch}{.8}%
-\begin{array}{l} ##1;  \\ \syncat{##3} \end{array}}
-\renewcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
-\begin{array}{l} ##1; \\ \syncat{##3} \end{array}}}
-
-\newcommand{\vs}{\raisebox{.05em}{\ensuremath{\upharpoonright}}}
-
-\newcommand{\AXX}[1]{\raisebox{-7mm}{\ensuremath{#1}}}
-
-\newcommand{\hypml}[2]{\left[\!\!#1\!\!\right]^{#2}}
-
-\newcommand{\alt}[2]{$\left\{\begin{array}{c}
-\hskip-.7ex\textrm{#1}\hskip-.7ex \\
-\hskip-.7ex\textrm{#2}\hskip-.7ex 
-        \end{array}
-\right\}$}
-
-\newcommand{\altalt}[2]{\{#1/#2\}}
-
-
-
-\newcommand{\altt}[3]{$\left\{\begin{array}{c}
-\hskip-.7ex\textrm{#1}\hskip-.7ex \\
-\hskip-.7ex\textrm{#2}\hskip-.7ex \\
-\hskip-.7ex\textrm{#3}\hskip-.7ex 
-\end{array}
-\right\}$}
-
-\newcommand{\alttt}[4]{$\left\{\begin{array}{c}
-\hskip-.7ex\textrm{#1}\hskip-.7ex \\
-\hskip-.7ex\textrm{#2}\hskip-.7ex \\
-\hskip-.7ex\textrm{#3}\hskip-.7ex \\
-\hskip-.7ex\textrm{#4}\hskip-.7ex 
-\end{array}
-\right\}$}
-
-
-%%%%for bussproof
-
-\def\defaultHypSeparation{\hskip0.1in}
-\def\ScoreOverhang{0pt}
-
-
-%%\newcommand{\MultiLine}[1]{\renewcommand{\arraystretch}{.8}%
-%%\ensuremath{\begin{array}{l} #1 \end{array}}}
-
+% \newcommand{\greekt}{\uptau}
+% \newcommand{\greeko}{\upomega}
+% \newcommand{\greekz}{\upzeta}
+%
+% % Do not do this!!!!!
+% % \renewcommand{\labelenumi}{(\roman{enumi})}
+%
+% \newcommand{\upa}[2]{\ensuremath{\syncat{#1}|\syncat{#2}}}
+% \newcommand{\dna}[2]{\upa{#2}{#1}}
+%
+% \renewcommand{\term}[1]{\textit{#1}}
+%
+% \newcommand{\Lemma}{\ensuremath{\vdots\hskip.5cm\vdots}\noLine}
+% \newcommand{\LemmaAlt}{\ensuremath{\vdots\hskip.5cm\vdots}}
+%
+% \newcommand{\la}{\ensuremath{\langle}}
+% \newcommand{\ra}{\ensuremath{\rangle}}
+%
+% \renewcommand{\I}{\iota}
+%
+% \renewcommand{\sem}{\ensuremath}
+%
+% \newcommand{\LemmaShort}{\ensuremath{\vdots\hskip.2cm\vdots\hskip.2cm\vdots}\noLine}
+% \newcommand{\LemmaShortAlt}{\ensuremath{\vdots\hskip.2cm\vdots}}
+%
+%
+% \newcommand{\NoSem}{%
+% \renewcommand{\LexEnt}[3]{##1; \syncat{##3}}
+% \renewcommand{\LexEntTwoLine}[3]{\renewcommand{\arraystretch}{.8}%
+% \begin{array}[b]{l} ##1;  \\ \syncat{##3} \end{array}}
+% \renewcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
+% \begin{array}[b]{l} ##1; \\ \syncat{##3} \end{array}}}
+%
+%
+% \newcommand{\NoSemVar}{%
+% \renewcommand{\LexEnt}[3]{##1; \syncat{##3}}
+% \renewcommand{\LexEntTwoLine}[3]{\renewcommand{\arraystretch}{.8}%
+% \begin{array}{l} ##1;  \\ \syncat{##3} \end{array}}
+% \renewcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
+% \begin{array}{l} ##1; \\ \syncat{##3} \end{array}}}
+%
+% \newcommand{\vs}{\raisebox{.05em}{\ensuremath{\upharpoonright}}}
+%
+% \newcommand{\AXX}[1]{\raisebox{-7mm}{\ensuremath{#1}}}
+%
+% \newcommand{\hypml}[2]{\left[\!\!#1\!\!\right]^{#2}}
+%
+% \newcommand{\alt}[2]{$\left\{\begin{array}{c}
+% \hskip-.7ex\textrm{#1}\hskip-.7ex \\
+% \hskip-.7ex\textrm{#2}\hskip-.7ex
+%         \end{array}
+% \right\}$}
+%
+% \newcommand{\altalt}[2]{\{#1/#2\}}
+%
+%
+%
+% \newcommand{\altt}[3]{$\left\{\begin{array}{c}
+% \hskip-.7ex\textrm{#1}\hskip-.7ex \\
+% \hskip-.7ex\textrm{#2}\hskip-.7ex \\
+% \hskip-.7ex\textrm{#3}\hskip-.7ex
+% \end{array}
+% \right\}$}
+%
+% \newcommand{\alttt}[4]{$\left\{\begin{array}{c}
+% \hskip-.7ex\textrm{#1}\hskip-.7ex \\
+% \hskip-.7ex\textrm{#2}\hskip-.7ex \\
+% \hskip-.7ex\textrm{#3}\hskip-.7ex \\
+% \hskip-.7ex\textrm{#4}\hskip-.7ex
+% \end{array}
+% \right\}$}
+%
+%
+% %%%%for bussproof
+%
+% \def\defaultHypSeparation{\hskip0.1in}
+% \def\ScoreOverhang{0pt}
+%
+%
+% %%\newcommand{\MultiLine}[1]{\renewcommand{\arraystretch}{.8}%
+% %%\ensuremath{\begin{array}{l} #1 \end{array}}}
+%
 \newcommand{\MultiLine}[1]{\renewcommand{\arraystretch}{.8}%
 \ensuremath{\begin{array}[b]{l} #1 \end{array}}}
 
-
-
-\newcommand{\MultiLineMod}[1]{%
-\ensuremath{\begin{array}[t]{l} #1 \end{array}}}
-
-
-%%%%%\AFourMargin
-%%\JLSubmissionMargin
-
-%%\setlength\topmargin{-1cm}
-%%\setlength\textheight{23cm}
-%%%%%\setlength\textwidth{13.5cm}
-
-%\setstretch{1.2}
-
-% not used \newcommand{\hyp}[2]{[ #1 ]^{#2}}
-
+%
+%
+% \newcommand{\MultiLineMod}[1]{%
+% \ensuremath{\begin{array}[t]{l} #1 \end{array}}}
+%
+%
+% %%%%%\AFourMargin
+% %%\JLSubmissionMargin
+%
+% %%\setlength\topmargin{-1cm}
+% %%\setlength\textheight{23cm}
+% %%%%%\setlength\textwidth{13.5cm}
+%
+% %\setstretch{1.2}
+%
+% % not used \newcommand{\hyp}[2]{[ #]^{#2}}
+%
 \newcommand{\LexEnt}[3]{#1; \ensuremath{#2}; \syncat{#3}}
-
-\newcommand{\LexEntTwoLine}[3]{\renewcommand{\arraystretch}{.8}%
-\begin{array}[b]{l} #1; \\ \ensuremath{#2};  \syncat{#3} \end{array}}
-
-\newcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
-\begin{array}[b]{l} #1; \\ \ensuremath{#2}; \\ \syncat{#3} \end{array}}
-
-
-\newcommand{\LexEntFiveLine}[5]{\renewcommand{\arraystretch}{.8}%
-\begin{array}{l} #1 \\ #2; \\ \ensuremath{#3} \\ \ensuremath{#4}; \\ \syncat{#5} \end{array}}
-
-
-\newcommand{\LexEntFourLine}[4]{\renewcommand{\arraystretch}{.8}%
-\begin{array}{l} \pt{#1} \\ \pt{#2}; \\ \syncat{#4} \end{array}}
-
-\newcommand{\ManySomething}{\renewcommand{\arraystretch}{.8}%
-\raisebox{-3mm}{\begin{array}[b]{c} \vdots \,\,\,\,\,\, \vdots \\
-\vdots \,\,\,\,\,\, \vdots \end{array}}}
-
-
-\newcommand{\lemma}[1]{\renewcommand{\arraystretch}{.8}%
-\begin{array}[b]{c} \vdots \,\,\,\,\,\, \vdots \\ #1 \end{array}}
-
-\newcommand{\lemmarev}[1]{\renewcommand{\arraystretch}{.8}%
-\begin{array}[b]{c} #1 \\ \vdots \,\,\,\,\,\, \vdots \end{array}}
-
-\newcommand{\p}{\ensuremath{\upvarphi}}
-
-\newcommand{\Not}{\leavevmode\llap{\textbf{\smc{NOT:}} }}
-
-\newcommand{\Conj}{\fs{\bsp{\mathit{X}}{\mathit{X}}}{\mathit{X}}}
-\newcommand{\ConjY}{\fs{\bsp{\mathit{Y}}{\mathit{Y}}}{\mathit{Y}}}
-\newcommand{\sameLE}{\dna{(\upa{(\upa{S}{\mathit{X}})}{NP})}{(\upa{S}{\mathit{X}})}}
-
-\newcommand{\derivcenter}[2][1.1]{%
-\SetInfLen
-\attop{\vskip3ex
-\resizebox{#1\linewidth}{!}{\hskip-#1in
-#2}}}
-
-\newcommand{\derivcenterAlt}[2][.98]{%
-\SetInfLen
-\attop{\vskip3ex
-\resizebox{#1\linewidth}{!}{\hskip-#1in \hskip.5in 
-#2}}\vspace{.5ex}}
-
-\renewcommand{\O}{\circ}
-
-\newcommand{\derivcenterMod}[2][1.1]{%
-\renewcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
-\raisebox{.4ex}{\ensuremath{\begin{array}{l} ##1; \\ \ensuremath{##2}; \\ \syncat{##3} \end{array}}}}
-\SetInfLen
-\attop{\vskip3ex
-\resizebox{#1\linewidth}{!}{\hskip-#1in
-#2}}}
-
-
-\newcommand{\shortarrow}{\xspace\hskip-1.2ex\scalebox{.5}[1]{\ensuremath{\bm{\rightarrow}}}\hskip-.5ex\xspace}
-
-\newcommand{\SemInt}[1]{\mbox{$[\![ \textrm{#1} ]\!]$}}
-
-\def\maru#1{{\ooalign{\hfil
-  \ifnum#1>999 \resizebox{.25\width}{\height}{#1}\else%
-  \ifnum#1>99 \resizebox{.33\width}{\height}{#1}\else%
-  \ifnum#1>9 \resizebox{.5\width}{\height}{#1}\else #1%
-  \fi\fi\fi%
-\/\hfil\crcr%
-\raise.167ex\hbox{\mathhexbox20D}}}}
-
+%
+% \newcommand{\LexEntTwoLine}[3]{\renewcommand{\arraystretch}{.8}%
+% \begin{array}[b]{l} #1; \\ \ensuremath{#2};  \syncat{#3} \end{array}}
+%
+% \newcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
+% \begin{array}[b]{l} #1; \\ \ensuremath{#2}; \\ \syncat{#3} \end{array}}
+%
+%
+% \newcommand{\LexEntFiveLine}[5]{\renewcommand{\arraystretch}{.8}%
+% \begin{array}{l} #1 \\ #2; \\ \ensuremath{#3} \\ \ensuremath{#4}; \\ \syncat{#5} \end{array}}
+%
+%
+% \newcommand{\LexEntFourLine}[4]{\renewcommand{\arraystretch}{.8}%
+% \begin{array}{l} \pt{#1} \\ \pt{#2}; \\ \syncat{#4} \end{array}}
+%
+% \newcommand{\ManySomething}{\renewcommand{\arraystretch}{.8}%
+% \raisebox{-3mm}{\begin{array}[b]{c} \vdots \,\,\,\,\,\, \vdots \\
+% \vdots \,\,\,\,\,\, \vdots \end{array}}}
+%
+%
+% \newcommand{\lemma}[1]{\renewcommand{\arraystretch}{.8}%
+% \begin{array}[b]{c} \vdots \,\,\,\,\,\, \vdots \\ #1 \end{array}}
+%
+% \newcommand{\lemmarev}[1]{\renewcommand{\arraystretch}{.8}%
+% \begin{array}[b]{c} #1 \\ \vdots \,\,\,\,\,\, \vdots \end{array}}
+%
+% \newcommand{\p}{\ensuremath{\upvarphi}}
+%
+% \newcommand{\Not}{\leavevmode\llap{\textbf{\smc{NOT:}} }}
+%
+% \newcommand{\Conj}{\fs{\bsp{\mathit{X}}{\mathit{X}}}{\mathit{X}}}
+% \newcommand{\ConjY}{\fs{\bsp{\mathit{Y}}{\mathit{Y}}}{\mathit{Y}}}
+% \newcommand{\sameLE}{\dna{(\upa{(\upa{S}{\mathit{X}})}{NP})}{(\upa{S}{\mathit{X}})}}
+%
+% \newcommand{\derivcenter}[2][1.1]{%
+% \SetInfLen
+% \attop{\vskip3ex
+% \resizebox{#1\linewidth}{!}{\hskip-#1in
+% #2}}}
+%
+% \newcommand{\derivcenterAlt}[2][.98]{%
+% \SetInfLen
+% \attop{\vskip3ex
+% \resizebox{#1\linewidth}{!}{\hskip-#1in \hskip.5in
+% #2}}\vspace{.5ex}}
+%
+% \renewcommand{\O}{\circ}
+%
+% \newcommand{\derivcenterMod}[2][1.1]{%
+% \renewcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
+% \raisebox{.4ex}{\ensuremath{\begin{array}{l} ##1; \\ \ensuremath{##2}; \\ \syncat{##3} \end{array}}}}
+% \SetInfLen
+% \attop{\vskip3ex
+% \resizebox{#1\linewidth}{!}{\hskip-#1in
+% #2}}}
+%
+%
+% \newcommand{\shortarrow}{\xspace\hskip-1.2ex\scalebox{.5}[1]{\ensuremath{\bm{\rightarrow}}}\hskip-.5ex\xspace}
+%
+% \newcommand{\SemInt}[1]{\mbox{$[\![ \textrm{#1} ]\!]$}}
+%
+% \def\maru#1{{\ooalign{\hfil
+%   \ifnum#1>999 \resizebox{.25\width}{\height}{#1}\else%
+%   \ifnum#1>99 \resizebox{.33\width}{\height}{#1}\else%
+%   \ifnum#1>9 \resizebox{.5\width}{\height}{#1}\else #1%
+%   \fi\fi\fi%
+% \/\hfil\crcr%
+% \raise.167ex\hbox{\mathhexbox20D}}}}
+%
 \newcommand{\HypSpace}{\hskip-.8ex}
 \newcommand{\RaiseHeight}{\raisebox{2.2ex}}
-\newcommand{\RaiseHeightLess}{\raisebox{1ex}}
-
-\newcommand{\fW}{\ensuremath{\mathfrak{W}}}
-
+% \newcommand{\RaiseHeightLess}{\raisebox{1ex}}
+%
+% \newcommand{\fW}{\ensuremath{\mathfrak{W}}}
+%
 \newcommand{\ThreeColHyp}[1]{\RaiseHeight{\Bigg[}\HypSpace#1\HypSpace\RaiseHeight{\Bigg]}}
-\newcommand{\TwoColHyp}[1]{\RaiseHeightLess{\Big[}\HypSpace#1\HypSpace\RaiseHeightLess{\Big]}}
+% \newcommand{\TwoColHyp}[1]{\RaiseHeightLess{\Big[}\HypSpace#1\HypSpace\RaiseHeightLess{\Big]}}
+%
+%
+% %\newcommand{\maskref}[1]{\textsl{\textbf{[reference omitted for refereeing]}}}
+% \newcommand{\maskref}[1]{#1}
+%
+% \newcommand{\DerivSize}{\small}
+% \newcommand{\AppDerivSize}{\footnotesize}
+%
+% \renewcommand{\sem}{\ensuremath}
 
 
-%\newcommand{\maskref}[1]{\textsl{\textbf{[reference omitted for refereeing]}}}
-\newcommand{\maskref}[1]{#1}
+% \newcommand{\greekp}{{\color{green}π}}
+% \newcommand{\greekr}{{\color{green}\textrho}}
+% \newcommand{\greeks}{{\color{green}\textsigma}}
+\newcommand{\ptfont}{\color{purple}}
+\newcommand{\grey}{\color{gray}}
+\newcommand{\gap}{\longrule}
+\newcommand{\gp}{\gap}
+\newcommand{\vs}{vs. }
+% \newcommand{\sub}[1]{\textsubscript[#1]}
+\newcommand{\E}{\emph}
+\newcommand{\B}{\textbf}
+\newcommand{\f}{{\color{green}f}}
+\newcommand{\Lemma}{{\color{pink}Lemma}}
 
-\newcommand{\DerivSize}{\small}
-\newcommand{\AppDerivSize}{\footnotesize}
+\newcommand{\maru}[1]{\ooalign{\hfil#1\/\hfil\crcr
+      \raise.05ex\hbox{\LARGE\mathhexbox20D}}}
 
-\renewcommand{\sem}{\ensuremath}
+
+\newcommand{\sem}[2][M\!,g]{\mbox{$[\![ \mathrm{#2} ]\!]^{#1}$}}
+%
+\newcommand{\trns}[1]{\textbf{#1}\xspace}
+
+\newcommand{\bs}{{\textbackslash}}
+\newcommand{\bsl}{{\bs}}
+
+
+\newcommand{\fb}[1]{\textsubscript{#1}}
+
+\newcommand{\syncat}[1]{\ensuremath{\mathrm{#1}}}
