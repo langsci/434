@@ -37,8 +37,7 @@ main.snd: main.bbl
 	sed -i 's/.*committee.*//' main.adx
 	sed -i 's/.*government.*//' main.adx
 	sed -i 's/\\MakeCapital//' main.adx
-# 	python3 fixindex.py
-# 	mv mainmod.adx main.adx
+	python3 fixindex.py
 	makeindex -o main.and main.adx
 	makeindex -o main.lnd main.ldx
 	makeindex -o main.snd main.sdx 
