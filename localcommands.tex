@@ -59,6 +59,8 @@
 
 \let\citew\citet
 
+\def\underRevision{Revise and resubmit}
+
 \newcommand{\todostefan}[1]{\todo[color=orange!80]{\footnotesize #1}\xspace}
 \newcommand{\todosatz}[1]{\todo[color=red!40]{\footnotesize #1}\xspace}
 
@@ -451,7 +453,10 @@
 % \newcommand{\greekr}{{\color{green}\textrho}}
 % \newcommand{\greeks}{{\color{green}\textsigma}}
 \newcommand{\ptfont}{\color{purple}}
-\newcommand{\grey}{\color{gray}}
+%\newcommand{\grey}{\color{gray}}
+\newcommand{\grey}[1]{\colorbox{mycolor}{#1}}
+\definecolor{mycolor}{gray}{0.8}
+
 \newcommand{\gap}{\longrule}
 \newcommand{\gp}{\gap}
 \newcommand{\vs}{vs. }
