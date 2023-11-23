@@ -1,0 +1,430 @@
+\DeclareDatamodelFields[type=list, datatype=name]{
+  authauthor,autheditor,sortname}
+\DeclareDatamodelEntryfields{authauthor,autheditor,sortname}
+
+% for URLs like jstor URLs and MIT handle URLs, ACL antology
+
+\DeclareDatamodelFields[type=field,datatype=literal]{
+   stableurl}
+\DeclareDatamodelEntryfields{stableurl}
+
+
+% We also want to have this for books. Otherwise
+%
+% biber --validate-datamodel main
+%
+% complains.
+
+\DeclareDatamodelEntryfields[book,proceedings]{
+  booktitle}
+
+% just to get rid of warnings, authors keep supplying publishers with article entries
+% St. Mü, 2021-02-11
+\DeclareDatamodelEntryfields[article]{
+  publisher}
+
+% St. Mü. 2021-02-11
+% our maintainance field. It records whether an item was reviewed or not.
+%
+\DeclareDatamodelFields[type=field,datatype=literal]{checked}
+\DeclareDatamodelEntryfields{checked}
+
+% \DeclareDatamodelFields[type=field,datatype=literal]{checkedseries}
+% \DeclareDatamodelEntryfields{checkedseries}
+
+% \DeclareDatamodelFields[type=field,datatype=literal]{checkednumber}
+% \DeclareDatamodelEntryfields{checkednumber}
+
+
+% bibdesk stuff
+
+\DeclareDatamodelFields[type=field,datatype=uri]{
+   bdsk-url-1,
+   bdsk-url-2}
+
+\DeclareDatamodelFields[type=field,datatype=literal]{
+   bdsk-file-1,
+   bdsk-file-2,
+   bdsk-file-3,
+   date-added,
+   date-modified,
+   opturldate,
+   read}
+\DeclareDatamodelEntryfields{
+   bdsk-url-1,
+   bdsk-url-2,
+   bdsk-file-1,
+   bdsk-file-2,
+   bdsk-file-3,
+   date-added,
+   date-modified,
+   opturldate,
+   read}
+
+% opt fields
+
+\DeclareDatamodelFields[type=field,datatype=uri]{
+   opturl}
+
+\DeclareDatamodelFields[type=field,datatype=literal]{
+%optdate,
+opteditor,
+optchapter,
+optlocation,
+optisbn,
+optissn,
+optmonth,
+optpublisher,
+optschool,
+optyear}
+
+\DeclareDatamodelEntryfields{
+%optdate,
+opteditor,
+optchapter,
+optlocation,
+optisbn,
+optissn,
+optmonth,
+optpublisher,
+optschool,
+opturl}
+
+% other stuff
+\DeclareDatamodelFields[type=field,datatype=literal]{
+%optdate,
+cited,
+optaddress,
+optbooktitle,
+optdoi,
+optlocation,
+optnote,
+opturldate,
+optpages,
+price,
+optnumber,
+opteditor,
+optchapter,
+optisbn,
+optissn,
+optmonth,
+optorganization,
+optpublisher,
+optschool,
+optseries,
+opttype,
+opturl,
+optyear}
+
+\DeclareDatamodelEntryfields{
+%optdate,
+cited,
+optaddress,
+optbooktitle,
+optdoi,
+optlocation,
+optnote,
+opturldate,
+optpages,
+price,
+optnumber,
+opteditor,
+optchapter,
+optisbn,
+optissn,
+optmonth,
+optorganization,
+optpublisher,
+optschool,
+optseries,
+opttype,
+opturl}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+\ResetDatamodelConstraints
+
+% St. Mü. 2021-02-10
+\DeclareDatamodelConstraints[
+  article,
+  book,
+  inbook,
+  bookinbook,
+  suppbook,
+  booklet,
+  collection,
+  incollection,
+  suppcollection,
+  manual,
+  misc,
+  mvbook,
+  mvcollection,
+  online,
+  patent,
+  periodical,
+  suppperiodical,
+  proceedings,
+  inproceedings,
+  reference,
+  inreference,
+  report,
+  set,
+  thesis,
+  unpublished]{
+    \constraint[type=mandatory]{
+      \constraintfieldsxor{
+        \constraintfield{date}
+        \constraintfield{year}
+      }
+      \constraintfield{checked}  % uncomment for checking
+    }
+    % if there is an URL then there should be a urldate field.
+    \constraint[type=conditional]{
+      \antecedent[quantifier=one]{
+        \constraintfield{url}
+      }
+      % biber/biblatex splits urldate into urlyear,urlmoth,ulrday
+      \consequent[quantifier=all]{
+          \constraintfield{urlyear}
+          \constraintfield{urlmonth}
+          \constraintfield{urlday}
+      }
+    }
+  }
+
+
+\DeclareDatamodelConstraints[
+  article,
+%  book,
+  inbook,
+%  bookinbook,
+%  suppbook,
+%  booklet,
+%  collection,
+  incollection,
+  suppcollection,
+%  manual,
+%  misc,
+%  mvbook,
+%  mvcollection,
+%  online,
+%  patent,
+%  periodical,
+%  suppperiodical,
+%  proceedings,
+  inproceedings%,
+%  reference,
+%  inreference,
+%  report,
+%  set,
+%  thesis,
+%  unpublished
+]{
+    \constraint[type=mandatory]{
+      \constraintfield{pages}  % uncomment for checking
+    }
+  }
+
+
+\DeclareDatamodelConstraints[set]{
+  \constraint[type=mandatory]{
+    \constraintfield{entryset}
+  }
+}
+
+\DeclareDatamodelConstraints[article]{
+  \constraint[type=mandatory]{
+    \constraintfield{author}
+    \constraintfield{journaltitle}
+    \constraintfield{title}
+% st. mü. 2021-02-13 yes, we want volume and number
+% if there is no number, the number field should be filled with "none". This will be surpressed by
+% an output filter.
+    \constraintfield{volume}
+    \constraintfield{number}
+    \constraintfield{pages}
+  }
+}
+
+\DeclareDatamodelConstraints[book,mvbook,mvcollection,mvreference,incollection]{
+  \constraint[type=mandatory]{
+    \constraintfield{title}
+    % Those books that are not in a series have the value none. St. Mü. 2021.02.11
+    % The value is suppressed by an outputfilter declaration for biblatex
+    \constraintfield{series}
+   }
+   % if there is a series, there has to be a number. books without a number get the value none.
+   % The value none is suppressed by an output filter declaration for biblatex
+   \constraint[type=conditional]{
+      \antecedent[quantifier=one]{
+        \constraintfield{series}
+      }
+      \consequent[quantifier=all]{
+          \constraintfield{number}
+      }
+    }
+}
+
+\DeclareDatamodelConstraints[inbook,bookinbook,suppbook]{
+  \constraint[type=mandatory]{
+    \constraintfield{author}
+    \constraintfield{title}
+    \constraintfield{booktitle}
+    \constraintfield{publisher}
+    \constraintfieldsxor{
+       \constraintfield{address}
+       \constraintfield{location}
+    }
+  }
+}
+
+\DeclareDatamodelConstraints[booklet]{
+  \constraint[type=mandatory]{
+    \constraintfieldsor{
+      \constraintfield{author}
+      \constraintfield{editor}
+    }
+    \constraintfield{title}
+  }
+}
+
+\DeclareDatamodelConstraints[collection,reference]{
+  \constraint[type=mandatory]{
+    \constraintfield{editor}
+    \constraintfield{title}
+    \constraintfield{publisher}
+    \constraintfieldsxor{
+       \constraintfield{address}
+       \constraintfield{location}
+    }
+  }
+}
+
+\DeclareDatamodelConstraints[incollection,suppcollection,inreference]{
+  \constraint[type=mandatory]{
+    \constraintfield{author}
+    \constraintfield{editor}
+    \constraintfield{title}
+    \constraintfield{booktitle}
+%\constraintfield{series}
+%\constraintfield{number}
+    \constraintfield{publisher}
+    \constraintfieldsxor{
+       \constraintfield{address}
+       \constraintfield{location}
+    }
+  }
+}
+
+\DeclareDatamodelConstraints[dataset]{
+  \constraint[type=mandatory]{
+    \constraintfield{title}
+  }
+}
+
+\DeclareDatamodelConstraints[manual]{
+  \constraint[type=mandatory]{
+    \constraintfield{title}
+  }
+}
+
+\DeclareDatamodelConstraints[misc,software]{
+  \constraint[type=mandatory]{
+    \constraintfield{title}
+  }
+}
+
+\DeclareDatamodelConstraints[online]{
+  \constraint[type=mandatory]{
+    \constraintfield{title}
+    \constraintfieldsor{
+      \constraintfield{url}
+      \constraintfield{doi}
+      \constraintfield{eprint}
+    }
+  }
+}
+
+\DeclareDatamodelConstraints[patent]{
+  \constraint[type=mandatory]{
+    \constraintfield{author}
+    \constraintfield{title}
+    \constraintfield{number}
+  }
+}
+
+\DeclareDatamodelConstraints[periodical]{
+  \constraint[type=mandatory]{
+    \constraintfield{editor}
+    \constraintfield{title}
+  }
+}
+
+\DeclareDatamodelConstraints[proceedings,mvproceedings]{
+  \constraint[type=mandatory]{
+    \constraintfield{title}
+    \constraintfield{editor}
+    \constraintfield{publisher}
+    \constraintfieldsxor{
+       \constraintfield{address}
+       \constraintfield{location}
+    }
+  }
+}
+
+\DeclareDatamodelConstraints[inproceedings]{
+  \constraint[type=mandatory]{
+    \constraintfield{author}
+    \constraintfield{editor}
+    \constraintfield{title}
+    \constraintfield{booktitle}
+    \constraintfield{publisher}
+    \constraintfieldsxor{
+       \constraintfield{address}
+       \constraintfield{location}
+    }
+  }
+}
+
+\DeclareDatamodelConstraints[report]{
+  \constraint[type=mandatory]{
+    \constraintfield{author}
+    \constraintfield{title}
+    \constraintfield{type}
+    \constraintfield{institution}
+  }
+}
+
+\DeclareDatamodelConstraints[thesis]{
+  \constraint[type=mandatory]{
+    \constraintfield{author}
+    \constraintfield{title}
+    \constraintfield{type}
+    \constraintfield{institution}
+  }
+}
+
+\DeclareDatamodelConstraints[unpublished]{
+  \constraint[type=mandatory]{
+    \constraintfield{author}
+    \constraintfield{title}
+  }
+}
+
+\DeclareDatamodelConstraints{
+  \constraint[type=data, datatype=isbn]{
+    \constraintfield{isbn}
+  }
+  \constraint[type=data, datatype=issn]{
+    \constraintfield{issn}
+  }
+  \constraint[type=data, datatype=ismn]{
+    \constraintfield{ismn}
+  }
+  \constraint[type=data, datatype=pattern, pattern=\regexp{(?:sf|sm|sn|pf|pm|pn|pp)}]{
+    \constraintfield{gender}
+  }
+}
+
