@@ -11,12 +11,12 @@
 
 \abstract{We claim
 that three binary relations, 0, 1, and 2, are both necessary and sufficient
-for formal semantics: 1 and 2 are the well-known ``subject of" and ``object of"
-relations, and 0 corresponds to the subsumption or ``is a" relationship well
+for formal semantics: 1 and 2 are the well-known ``subject of'' and ``object of''
+relations, and 0 corresponds to the subsumption or ``is a'' relationship well
 known from knowledge representation. We describe how these can be used to
 compositionally assign a semantic representation built from primitives
 (morphemes, semantic atoms) and how the system can be related to the
-computational ``word vector" semantics which is surprisingly effective even
+computational ``word vector'' semantics which is surprisingly effective even
 though it appears to employ no grammatical rules or constraints.}
 
 \begin{document}
@@ -54,8 +54,8 @@ vector operation, vector addition, plays only a marginal role in the
 computational system: it is used for solving analogical puzzles like \emph{France is to Germany as Paris is to X} \citep{Mikolov:2013l} and little
 besides. Using the KR side to explore the issue we find that three binary
 operations, 0, 1, and 2, are both necessary and sufficient for formal
-semantics. 1 and 2 are the well-known ``subject of" and ``object of"
-relations, and 0 corresponds to the subsumption relationship known as ``is a"
+semantics. 1 and 2 are the well-known ``subject of'' and ``object of''
+relations, and 0 corresponds to the subsumption relationship known as ``is a''
 in KR and as hyponymy in lexicography. (The vector equivalents of these
 operations are somewhat more technical, and are not required for making our
 main point that the minimum is three -- see \citet{Kornai:2022} for details.)
@@ -105,7 +105,7 @@ direction by a rather simple Turing machine. Taking this to the extreme,
 binary integers can be written in base 1, and again translation between the
 formats by Turing machine is available in both directions, so that all we need
 is a single symbol which can be repeated as many times as we need. If we are
-happy with integers, base unspecified, G\"odel numbering would work just as
+happy with integers, base unspecified, Gödel numbering would work just as
 well.
 
 This is not just a walk through some rarely visited pages of the mathematical
@@ -117,7 +117,7 @@ important links to mild context sensitivity/polynomial parsability
 such as employed in Montague Grammar have a privileged status as the One True
 Formalism for semantics, and the search for OTF is not a trivial one. Our
 argument will rely on a stricter understanding of compositionality than the
-one generally assumed: while the mapping from G\"odel numbers (or binary
+one generally assumed: while the mapping from Gödel numbers (or binary
 strings) back to logic formulas is unique, and Turing-computable, not every
 such mapping is compositional in the accepted sense of taking some string X,
 decomposing it \emph{by simple means} as AB, and computing the meaning of
@@ -249,7 +249,7 @@ This onesidedness cannot be entirely attributed to the fact that systems of
 translation to logic formulas (including descendants of MG such as dynamic
 predicate logic) have very little coverage to begin with. It appears the real
 issue is lack of transparency, a phenomenon well observable on the
-Sch\"onfinkel-style reduction step of replacing the standard $S$ and $K$ 
+Schönfinkel-style reduction step of replacing the standard $S$ and $K$ 
 combinators by a single combinator $J$. This  $J$ is defined by cases:
 
 \[
@@ -281,12 +281,12 @@ as decimal 111472, which could be written in unary base as a string of 111472
 1s (see \cite{Fokker:1989} on how to obtain one-combinator bases). 
 
 It is worth emphasizing that the tricks of converting to combinatory logic,
-using the Sch\"onfinkel reduction, converting the parenthesized $J$ strings to
+using the Schönfinkel reduction, converting the parenthesized $J$ strings to
 binary numbers (and finally converting the binaries to unaries) are not
 essential for this undertaking. As is well known to students of logic, every
 formula (e.g. the kinds of formulas used in Montague's intensional logic) can
 be converted to a number by
-\href{https://en.wikipedia.org/wiki/Gödel_numbering}{G\"odel numbering}, and a
+\href{https://en.wikipedia.org/wiki/Gödel_numbering}{Gödel numbering}, and a
 Turing-computable and invertible mapping of natural language meanings to
 numbers is not hard to define.
 
@@ -294,15 +294,15 @@ But when we see decimal 69720375229712477164533808935312303556800 what is it
 exactly that we see? Well, we see $2^6\cdot 3^4\cdot 5^2\cdot 7^2\cdot 11\cdot
 13\cdot 17\cdot 19\cdot 23\cdot 29\cdot 31\cdot 37\cdot 41\cdot 43\cdot
 47\cdot 53\cdot 59\cdot 61\cdot 67\cdot 71\cdot 73\cdot 79\cdot 83\cdot
-89\cdot 97$ which would be the G\"odel code for $[6,4,2,2,1,\ldots,1]$ (a
-total of 21 1s). The problem is not that the translation back from the G\"odel
+89\cdot 97$ which would be the Gödel code for $[6,4,2,2,1,\ldots,1]$ (a
+total of 21 1s). The problem is not that the translation back from the Gödel
 code to the $n$-tuple is not computable, but rather that it is not at all
 transparent, requiring a relatively powerful Turing machine to compute. For a
 translation, we would want compositionality, D2, which in turn requires a
 transparent machine, one that finds the boundary in the expression to make the
 first split into substrings A and B, and can recursively repeat the process
 for A and B. The real problem is that there is no boundary in the decimal
-number that the G\"odel coding yields. Even if there were compositional
+number that the Gödel coding yields. Even if there were compositional
 boundaries in the original, these are washed out in the encoding process.
 Therefore, we replace the original desiderata D2 and D3 with D8 (mnemonic:
 $8=2^3$):
@@ -618,7 +618,7 @@ the dimension of the vector space we use for modeling semantics.
 
 Minimality requires thrift both in the number of operations and in the number
 of primitives manipulated by these. To maintain compositionality in both
-directions, the `bestiary-style' minimalism of (G\"odel) numbering has to be
+directions, the `bestiary-style' minimalism of (Gödel) numbering has to be
 sacrificed for more transparent operations. Of particular interest is the case
 when the objects manipulated are vectors and matrices in finite-dimensional
 Euclidean space, since these can be acquired gradually, by optimization
@@ -648,8 +648,9 @@ the Sausseurian sign.
 \section*{Acknowledgments} I'm grateful to Geoff Pullum and Bob Levine for
 penetrating comments on an earlier draft.
 
-%\sloppy
-\printbibliography %[heading=subbibliography,notkeyword=this]
+\sloppy
+\printbibliography[heading=subbibliography,notkeyword=this]
+
 \end{document}
 
 
