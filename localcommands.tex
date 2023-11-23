@@ -225,7 +225,7 @@
 
 % not used \newcommand{\cites}[1]{\citeauthor{#1}'s~\citeyearpar{#1}}
 
-\newcommand{\SetInfLen}{\setpremisesend{0pt}\setpremisesspace{10pt}\setnamespace{0pt}}
+\renewcommand{\SetInfLen}{\setpremisesend{0pt}\setpremisesspace{10pt}\setnamespace{0pt}}
 
 \newcommand{\pt}[1]{\ensuremath{\mathsf{#1}}}
 \newcommand{\ptv}[1]{\ensuremath{\textsf{\textsl{#1}}}}
@@ -236,8 +236,8 @@
 \newcommand{\sF}{\sv{F}}
 \newcommand{\sG}{\sv{G}}
 
-\newcommand{\lex}{\SF}
-\newcommand{\syncat}[1]{\ensuremath{\mathrm{#1}}}
+\renewcommand{\lex}{\SF}
+\renewcommand{\syncat}[1]{\ensuremath{\mathrm{#1}}}
 \newcommand{\syncatVar}[1]{\ensuremath{\mathit{#1}}}
 
 \newcommand{\RuleName}[1]{\textrm{#1}}
@@ -248,7 +248,7 @@
 
 \newcommand{\pb}{\phantom{[}}
 
-\newcommand{\E}{\ensuremath{\bm{\epsilon}}\xspace}
+\renewcommand{\E}{\ensuremath{\bm{\epsilon}}\xspace}
 
 \newcommand{\greeka}{\upalpha}
 \newcommand{\greekb}{\upbeta}
@@ -266,7 +266,7 @@
 \newcommand{\upa}[2]{\ensuremath{\syncat{#1}|\syncat{#2}}}
 \newcommand{\dna}[2]{\upa{#2}{#1}}
 
-\newcommand{\term}[1]{\textit{#1}}
+\renewcommand{\term}[1]{\textit{#1}}
 
 \newcommand{\Lemma}{\ensuremath{\vdots\hskip.5cm\vdots}\noLine}
 \newcommand{\LemmaAlt}{\ensuremath{\vdots\hskip.5cm\vdots}}
@@ -274,9 +274,9 @@
 \newcommand{\la}{\ensuremath{\langle}}
 \newcommand{\ra}{\ensuremath{\rangle}}
 
-\newcommand{\I}{\iota}
+\renewcommand{\I}{\iota}
 
-\newcommand{\sem}{\ensuremath}
+\renewcommand{\sem}{\ensuremath}
 
 \newcommand{\LemmaShort}{\ensuremath{\vdots\hskip.2cm\vdots\hskip.2cm\vdots}\noLine}
 \newcommand{\LemmaShortAlt}{\ensuremath{\vdots\hskip.2cm\vdots}}

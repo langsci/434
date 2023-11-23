@@ -1,0 +1,841 @@
+% Small macros for doing linguistics
+% Version 2
+%
+% Yusuke Kubota
+%
+% Last Modified: <12/20/2012>
+
+%\RequirePackage[dvips]{graphicx,color}
+
+\RequirePackage{graphicx,color}
+
+\RequirePackage{amsmath,amsthm,amssymb,upgreek}
+\RequirePackage{xspace}
+
+\RequirePackage{pifont}
+
+% St Mü. 2023-11-23
+%\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+
+
+\newcommand{\expands}[3]{#1 \hskip.5em $\rightarrow$ \hskip.5em #2 \hskip.5em #3}
+
+%% pseudo-LaTeX codes
+
+% morphemes (requires xspace)
+\newcommand{\ko}{\I{\mbox{-ko}}\xspace}
+\newcommand{\te}{\I{\mbox{-te}}\xspace}
+%\renewcommand{\i}{\I{\mbox{-i}}\xspace}
+
+\newcommand{\koi}{\I{\mbox{-ko$_1$}}\xspace}
+\newcommand{\koii}{\I{\mbox{-ko$_2$}}\xspace}
+
+\newcommand{\pro}{\I{pro}}
+
+% "gp" for gap
+%\newcommand{\gp}{\_\_}
+\newcommand{\gp}{\underline{\phantom{oo}}}
+
+% traces
+\newcommand{\ti}{\ensuremath{t_i}}
+\newcommand{\tj}{\ensuremath{t_j}}
+\newcommand{\tk}{\ensuremath{t_j}}
+
+% sections
+\newcommand{\SX}{\section}
+\newcommand{\SSX}{\subsection}
+\newcommand{\SSSX}{\subsubsection}
+\newcommand{\SSSSX}{\subsubsubsection}
+
+\newcommand{\PARA}{\paragraph}
+
+% crossreference, footnotes
+\newcommand{\R}[1]{(\ref{#1})}
+\newcommand{\LB}{\label}
+\newcommand{\FN}{\footnote}
+
+% example environments (gb4e)
+\newcommand{\BE}{\begin{exe}}
+\newcommand{\EE}{\end{exe}}
+\newcommand{\BL}{\begin{xlist}}
+\newcommand{\EL}{\end{xlist}}
+
+% list environments 
+\newcommand{\BB}{\begin{itemize}} % B being mnemonic for "bullet points"
+\newcommand{\EB}{\end{itemize}}
+        
+\newcommand{\BN}{\begin{enumerate}}
+\newcommand{\EN}{\end{enumerate}}
+
+\newcommand{\BD}{\begin{description}}
+\newcommand{\ED}{\end{description}}
+
+
+% italics, bold face and slanted (to save typing)
+\newcommand{\I}{\textit}
+\newcommand{\B}{\textbf}
+\newcommand{\G}{\textsf} % mnemonic for "Gothic"
+\newcommand{\BI}[1]{\textbf{\textit{#1}}}
+
+\newcommand{\E}{\emph}
+
+\newcommand{\emphemph}{\textsc}
+
+% BL always prefers to typeset emphasis in slanted font
+% rather than in italics:
+\renewcommand{\E}{\SL}
+
+\newcommand{\SL}[1]{\textsl{#1}}
+\newcommand{\BSL}[1]{\textsl{\textbf{#1}}}
+
+\newcommand{\SF}[1]{\textsf{#1}}
+\newcommand{\BSF}[1]{\textsf{\textbf{#1}}}
+
+\newcommand{\SC}[1]{\textsc{#1}}
+
+\newcommand{\bsl}{\ensuremath{\backslash}}
+
+% \cmt is for inserting commnts in the bold face slanted in-brackets format
+%
+% to get rid of all the \cmt{...} in a file, M-x delete-cmt
+% (uses a function of YaTeX)
+
+\newcommand{\cmt}[1]{\textsl{\textbf{[#1]}}}
+
+
+% semantics
+\newcommand{\AT}{\textrm{AT}}
+\newcommand{\EX}{\ensuremath{\exists}}
+\newcommand{\A}{\ensuremath{\forall}}
+\renewcommand{\L}{\ensuremath{\lambda}}
+
+\newcommand{\Or}{\ensuremath{\,\vee\,}}
+%\newcommand{\And}{\ensuremath{\,\wedge\,}}
+
+\def\into#1#2{\ensuremath{(#1 \rightarrow #2)}}
+
+\newcommand{\GQtype}{\into{\into{e}{t}}{t}}
+\newcommand{\TVtype}{\into{e}{\into{e}{t}}}
+
+% ordered pairs: \pair{a,b} produces <a,b> 
+\def\pair#1{\ensuremath{\langle#1\rangle}}
+
+% entailment
+
+\newcommand{\entails}{\ensuremath{\models}}
+\newcommand{\Nentails}{\ensuremath{\not\models}}
+
+% up and down operators (^ and `') for semantics 
+\newcommand{\Dn}{\>\!{\ensuremath{^{\mbox{\tiny $\vee$}}}}\!}
+\newcommand{\Up}{\>\!{\ensuremath{^{\mbox{\tiny $\wedge$}}}}}
+
+% [[ double brackets for semantics ]]
+
+\newcommand{\sem}[2][M\!,g]{\mbox{$[\![ \mathrm{#2} ]\!]^{#1}$}}
+
+\newcommand{\trns}[1]{\textbf{#1}\xspace}
+
+%\mathchardef\mhyp="2D
+\newcommand{\mhyp}{-}
+
+
+%Calligraphic capitals
+% already defined \newcommand{\cp}{\mathcal{P}}
+\newcommand{\cq}{\mathcal{Q}}
+\newcommand{\ccr}{\mathcal{R}}
+
+
+% for citing linguistic expressions in text
+% \expr{tabe}{eat} => _tabe_ `eat'
+% this will force one to put translations for non-English words 
+% (which one often forgets)
+
+\newcommand{\expr}[2]{\textit{#1} `#2'}
+
+
+% for semantic.sty
+% (proof trees)
+\newcommand{\lex}{\textrm}
+\newcommand{\infr}{\inference}
+\newcommand{\SetInfLen}{\setpremisesend{0pt}\setpremisesspace{5pt}\setnamespace{0pt}}
+
+
+% modality (CCG)
+\newcommand{\Nmod}{\ensuremath{\star}\xspace}
+\newcommand{\Amod}{\ensuremath{\diamond}\xspace}
+\newcommand{\Pmod}{\ensuremath{\times}\xspace}
+\newcommand{\APmod}{{\hskip-.2ex\scalebox{1.5}{\ensuremath{\cdot}}\xspace}}
+
+\newcommand{\SPmod}{\raisebox{.2ex}{\hskip-.05ex\scalebox{.6}[.5]{\ensuremath{\blacklozenge}}}\xspace}
+
+\newcommand{\RAmod}{\ensuremath{>}\xspace}
+
+\newcommand{\LAmod}{\scalebox{.5}[.7]{\ensuremath{<}}\xspace}
+
+\newcommand{\VRmod}{\scalebox{.5}[.7]{\ensuremath{<\!<}}\xspace}
+
+\newcommand{\Xmod}{\ensuremath{\times}\xspace}
+
+%\newcommand{\RAmod}{\ensuremath{\blacktriangleright}}
+%\newcommand{\LAmod}{\ensuremath{\blacktriangleleft}}
+
+
+
+
+% slashes (CCG)
+
+\newcommand{\Var}[2]{\ensuremath{#1^{#2}}} %Variable notation
+\newcommand{\Varp}[2]{\ensuremath{(#1^{#2})}} %Variable notation w/ paren
+
+\newcommand{\fs}[2]{\ensuremath{#1/#2}} % backward slash
+\newcommand{\fsp}[2]{\ensuremath{(\fs{#1}{#2})}}   % backward slash with paren
+
+\newcommand{\bs}[2]{\ensuremath{#1\bsl#2}} % backward slash
+\newcommand{\bsp}[2]{\ensuremath{(#1\bsl#2)}}   % backward slash with paren
+
+\newcommand{\bsm}[3]{\ensuremath{#2\bsl_{#1}#3}}   % backward slash with modality
+\newcommand{\bsmp}[3]{\ensuremath{(#2\bsl_{#1}#3)}} % backward slash with modality
+
+\newcommand{\fsm}[3]{\ensuremath{#2/\!_{#1}#3}}   % backward slash with modality
+\newcommand{\fsmp}[3]{\ensuremath{(#2/\!_{#1}#3)}} % backward slash with modality
+
+\newcommand{\Afs}[2]{\fsm{\Amod}{#1}{#2}}     % associative forward slash
+\newcommand{\Abs}[2]{\bsm{\Amod}{#1}{#2}} % associative backward slash
+\newcommand{\Afsp}[2]{\fsmp{\Amod}{#1}{#2}}     % associative forward slash
+\newcommand{\Absp}[2]{\bsmp{\Amod}{#1}{#2}} % associative backward slash
+
+\newcommand{\APfs}[2]{\fsm{\APmod}{#1}{#2}} % AP forward slash
+\newcommand{\APbs}[2]{\bsm{\APmod}{#1}{#2}} % AP backward slash
+\newcommand{\APfsp}[2]{\fsmp{\APmod}{#1}{#2}} % permutative forward slash
+\newcommand{\APbsp}[2]{\bsmp{\APmod}{#1}{#2}} % permutative backward slash
+
+\newcommand{\Pfs}[2]{\fsm{\Pmod}{#1}{#2}} % permutative forward slash
+\newcommand{\Pbs}[2]{\bsm{\Pmod}{#1}{#2}} % permutative backward slash
+\newcommand{\Pfsp}[2]{\fsmp{\Pmod}{#1}{#2}} % permutative forward slash
+\newcommand{\Pbsp}[2]{\bsmp{\Pmod}{#1}{#2}} % permutative backward slash
+
+\newcommand{\Nfs}[2]{\fsm{\Nmod}{#1}{#2}} % NP&NA forward slash
+\newcommand{\Nbs}[2]{\bsm{\Nmod}{#1}{#2}} % NP&NA backward slash
+\newcommand{\Nfsp}[2]{\fsmp{\Nmod}{#1}{#2}} % NP&NA forward slash
+\newcommand{\Nbsp}[2]{\bsmp{\Nmod}{#1}{#2}} % NP&NA backward slash
+
+\newcommand{\RAfs}[2]{\fsm{\RAmod}{#1}{#2}}     % associative forward slash
+\newcommand{\RAbs}[2]{\bsm{\RAmod}{#1}{#2}} % associative backward slash
+\newcommand{\RAfsp}[2]{\fsmp{\RAmod}{#1}{#2}}     % associative forward slash
+\newcommand{\RAbsp}[2]{\bsmp{\RAmod}{#1}{#2}} % associative backward slash
+
+\newcommand{\LAfs}[2]{\fsm{\LAmod}{#1}{#2}}     % associative forward slash
+\newcommand{\LAbs}[2]{\bsm{\LAmod}{#1}{#2}} % associative backward slash
+\newcommand{\LAfsp}[2]{\fsmp{\LAmod}{#1}{#2}}     % associative forward slash
+\newcommand{\LAbsp}[2]{\bsmp{\LAmod}{#1}{#2}} % associative backward slash
+
+\newcommand{\Ifs}[2]{\fsm{\mathit{i}}{#1}{#2}}    % forward slash with subscript
+\newcommand{\Ibs}[2]{\bsm{\mathit{i}}{#1}{#2}} % backward slash with subscript
+\newcommand{\Ifsp}[2]{\fsmp{\mathit{i}}{#1}{#2}}    % forward slash with subscript
+\newcommand{\Ibsp}[2]{\bsmp{\mathit{i}}{#1}{#2}} % backward slash with subscript
+
+
+% features, subscripted
+
+%\newcommand{\fb}[1]{\ensuremath{\!_{\mbox{\footnotesize$#1$}}}}
+%\newcommand{\fb}[1]{\ensuremath{\!_{\scalebox{.7}[.7]{$#1$}}}}
+\newcommand{\fb}[1]{\ensuremath{\!_{\scalebox{.7}{\textit{#1}}}}}
+\newcommand{\fbs}[1]{\ensuremath{\!_{\mbox{\tiny$#1$}}}}
+
+
+% categories with subscripts
+%\newcommand{\syncat}{\mathit}
+
+\newcommand{\syncat}[1]{\ensuremath{\mathrm{#1}}}
+
+\renewcommand{\S}{\ensuremath{\syncat{S}}\xspace}
+\newcommand{\N}{\ensuremath{\syncat{N}}\xspace}
+\newcommand{\NPn}{\ensuremath{\syncat{NP\fb{n}}}\xspace}
+\newcommand{\NPa}{\ensuremath{\syncat{NP\fb{a}}}\xspace}
+\newcommand{\NPd}{\ensuremath{\syncat{NP\fb{d}}}\xspace}
+\newcommand{\NPg}{\ensuremath{\syncat{NP\fb{g}}}\xspace}
+\newcommand{\NP}{\ensuremath{\syncat{NP}}\xspace}
+\newcommand{\PP}{\ensuremath{\syncat{PP}}\xspace}
+\newcommand{\VP}{\ensuremath{\syncat{VP}}\xspace}
+
+\newcommand{\VPd}{\ensuremath{\bsp{\VP}{\NPd}}\xspace}
+\newcommand{\VPa}{\ensuremath{\bsp{\VP}{\NPa}}\xspace}
+\newcommand{\VPda}{\ensuremath{\bsp{\VPd}{\NPa}}\xspace}
+
+\newcommand{\VPADV}{\ensuremath{(\VP/\VP)}\xspace}
+
+\newcommand{\Sd}{\ensuremath{\bsp{\S}{\NPd}}\xspace}
+\newcommand{\Sn}{\ensuremath{\bsp{\S}{\NPn}}\xspace}
+
+\newcommand{\Snd}{\ensuremath{\bsp{\Sn}{\NPd}}\xspace}
+
+
+% fancy categories, abbreviations
+
+\newcommand{\TV}{\bs{\bs{\S}{\NPn}}{\NPa}}
+\newcommand{\TValt}{\bs{\VP}{\NPa}}
+
+\newcommand{\arTV}{\bs{\bs{\S}{\NPn}}{\upNPa}}
+
+\newcommand{\IV}{\bs{\S}{\NP}}
+\newcommand{\IVn}{\bs{\S}{\NPn}}
+\newcommand{\IVa}{\bs{\S}{\NPa}}
+
+\newcommand{\upNP}{\ensuremath{^\uparrow\!\NP}\xspace}
+\newcommand{\upNPa}{\ensuremath{^\uparrow\!\NPa}\xspace}
+\newcommand{\upNPn}{\ensuremath{^\uparrow\!\NPn}\xspace}
+
+%\newcommand{\morattaLE}{\LAbs{\bs{\bs{\S}{\NPn}}{\NPd}}{\VP}}
+%\newcommand{\morattaLEalt}{\LAbs{\bs{\VP}{\NPd}}{\VP}}
+
+\newcommand{\morattaLE}{\LAbs{\APbs{\APbs{\S}{\NPn}}{\NPd}}{\VP}}
+\newcommand{\morattaLEalt}{\LAbs{\APbs{\VP}{\NPd}}{\VP}}
+
+
+
+\newcommand{\CP}{\bs{\bs{\bs{\S}{\NPn}}{\NPd}}{\NPa}}
+\newcommand{\CPalt}{\bs{\bs{\VP}{\NPd}}{\NPa}}
+
+\newcommand{\fpLE}{\Nbs{(\bs{\VP}{\NPa})}{(\bs{\VP}{\NPa})}}
+
+% glosses
+% uses graphicx
+%\newcommand{\smc}[1]{\scalebox{.9}[.9]{#1}}
+\newcommand{\smc}[1]{\scalebox{.85}{#1}}
+
+\newcommand{\bsmc}[1]{\scalebox{.9}[.9]{\textbf{#1}}}
+
+\newcommand{\nom}{\smc{NOM}}
+\newcommand{\acc}{\smc{ACC}}
+\newcommand{\dat}{\smc{DAT}}
+\newcommand{\abs}{\smc{ABS}}
+\newcommand{\erg}{\smc{ERG}}
+%\newcommand{\loc}{\smc{LOC}}
+\newcommand{\topi}{\smc{TOP}}
+\newcommand{\gen}{\smc{GEN}}
+\newcommand{\cop}{\smc{COP}}
+\newcommand{\nmlz}{\smc{NMLZ}}
+\newcommand{\past}{\smc{PAST}}
+\newcommand{\nonpast}{\smc{NONPAST}}
+\newcommand{\npst}{\smc{NPST}}
+\newcommand{\decl}{\smc{DECL}}
+\newcommand{\rel}{\smc{REL}}
+\newcommand{\pres}{\smc{PRES}}
+\newcommand{\fut}{\smc{FUT}}
+\newcommand{\empha}{\smc{EMPH}}
+\newcommand{\comp}{\smc{COMP}}
+\newcommand{\benef}{\smc{BENEF}}
+\newcommand{\mkr}{\smc{MKR}}
+\newcommand{\nega}{\smc{NEG}}
+\newcommand{\cl}{\smc{CL}}
+\newcommand{\caus}{\smc{CAUS}}
+\newcommand{\prog}{\smc{PROG}}
+\newcommand{\goal}{\smc{GOAL}}
+\newcommand{\perf}{\smc{PERF}}
+\newcommand{\cond}{\smc{COND}}
+\newcommand{\conj}{\smc{CONJ}}
+\newcommand{\cause}{\smc{CAUSE}}
+\newcommand{\hon}{\smc{HON}}
+\newcommand{\pass}{\smc{PASS}}
+\newcommand{\ger}{\smc{GER}}
+\newcommand{\sg}{\smc{SG}}
+\newcommand{\aux}{\smc{AUX}}
+\newcommand{\recip}{\smc{RECIP}}
+
+\newcommand{\Te}{\smc{TE}}
+\newcommand{\Ko}{\smc{KO}}
+
+\newcommand{\bnom}{\bsmc{NOM}}
+\newcommand{\bacc}{\bsmc{ACC}}
+\newcommand{\bdat}{\bsmc{DAT}}
+\newcommand{\bloc}{\bsmc{LOC}}
+\newcommand{\btopi}{\bsmc{TOP}}
+\newcommand{\bgen}{\bsmc{GEN}}
+\newcommand{\bcop}{\bsmc{COP}}
+\newcommand{\bnmlz}{\bsmc{NMLZ}}
+\newcommand{\bpast}{\bsmc{PAST}}
+\newcommand{\bnonpast}{\bsmc{NONPAST}}
+\newcommand{\bpres}{\bsmc{PRES}}
+\newcommand{\bempha}{\bsmc{EMPH}}
+\newcommand{\bcomp}{\bsmc{COMP}}
+\newcommand{\bbenef}{\bsmc{BENEF}}
+\newcommand{\bmkr}{\bsmc{MKR}}
+\newcommand{\bnega}{\bsmc{NEG}}
+\newcommand{\bcl}{\bsmc{CL}}
+\newcommand{\bcaus}{\bsmc{CAUS}}
+\newcommand{\bprog}{\bsmc{PROG}}
+\newcommand{\bgoal}{\bsmc{GOAL}}
+\newcommand{\bperf}{\bsmc{PERF}}
+\newcommand{\bcond}{\bsmc{COND}}
+\newcommand{\bcause}{\bsmc{CAUSE}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PAPER SETTING FOR letter 2 column                                    %
+%                                                                      %
+% should use the following commands for typesetting:                   %
+% $ ps -T 8.5in,5.5in    filename.dvi                                  %
+% $ psnup -Pstatement -pletter -2 filename.ps > filename2.ps           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% one inch on each side
+\newcommand{\LetterAbstractMargin}{
+\setlength\topmargin{0cm}
+\setlength\oddsidemargin{0cm}
+\setlength\textheight{23cm}
+\setlength\textwidth{16.5cm}
+\setlength{\headheight}{0cm}
+\setlength{\headsep}{0cm}
+\setlength{\bibsep}{0cm}
+}
+
+\newcommand{\LetterTwoUpMargin}{
+\setlength{\oddsidemargin}{-1cm}
+\setlength{\footskip}{30pt}
+\setlength{\textwidth}{11.5cm}
+\setlength{\textheight}{17cm}
+\setlength{\topmargin}{-.5cm}
+\setlength{\headheight}{0cm}
+\setlength{\headsep}{0cm}}
+
+\newcommand{\LetterMargin}{
+\setlength\topmargin{0cm}
+\setlength\oddsidemargin{0cm}
+\setlength\textheight{23cm}
+\setlength\textwidth{16.5cm}
+\setlength{\headheight}{0cm}
+\setlength{\headsep}{0cm}
+}
+
+\newcommand{\AFourMargin}{
+\setlength\topmargin{-0cm}
+\setlength\oddsidemargin{-0cm}
+\setlength\textheight{23.7cm}
+\setlength\textwidth{16cm}
+\setlength{\headheight}{0cm}
+\setlength{\headsep}{0cm}
+}
+
+\newcommand{\JLSubmissionMargin}{
+\setlength\topmargin{.5cm}
+\setlength\oddsidemargin{1.5cm}
+\setlength\textheight{20cm}
+\setlength\textwidth{13.5cm}
+\setlength{\headheight}{.5cm}
+\setlength{\headsep}{.5cm}
+}
+
+
+% requires fancybox.sty
+%
+% the space between the box and the text inside can be
+% adjusted with \fboxsep
+
+\newlength{\linewidthframing}
+
+\newenvironment{framing}%
+  {\setlength{\fboxsep}{2ex}\begin{Sbox}%
+                                   \setlength{\linewidthframing}{-4.5ex}%
+                                   \addtolength{\linewidthframing}{\linewidth}%
+	             \begin{minipage}{\linewidthframing}\setlength{\parskip}{0.3em}\setlength{\fboxsep}{1ex}}%
+	             {\end{minipage}\end{Sbox}\fbox{\TheSbox}}
+
+%\newenvironment{framing}%
+%  {\setlength{\fboxsep}{2ex}\begin{Sbox}\begin{minipage}{.97\linewidth}\setlength{\parskip}{0.3em}\setlength{\fboxsep}{1ex}}%
+%  {\end{minipage}\end{Sbox}\fbox{\TheSbox}}
+
+
+
+\newenvironment{framingOv}%
+  {\setlength{\fboxsep}{2ex}\begin{Sbox}%
+                               \setlength{\linewidthframing}{-4.5ex}%
+                               \addtolength{\linewidthframing}{\linewidth}%
+                              \begin{minipage}{\linewidthframing}}%
+	             {\end{minipage}\end{Sbox}\Ovalbox{\TheSbox}}
+
+
+% for doing (i), (ii), (iii), ... in the enumerate environment
+% (needed for JL submission)
+%\renewcommand{\labelenumi}{(\roman{enumi})}
+
+% default
+%\renewcommand{\labelenumi}{\arabic{enumi}.}
+
+
+% for judgement marks in the example environment
+% (from Judith, but some more definitions added)
+\def\bad{{\leavevmode\llap{*}}}
+\def\marginal{{\leavevmode\llap{?}}}
+\def\verymarginal{{\leavevmode\llap{?\hskip-.1em ?}}}
+\def\infelic{{\leavevmode\llap{\#}}}
+
+\def\q{{\leavevmode\llap{?}}}
+\def\qq{{\leavevmode\llap{?\hskip-.1em ?}}}
+\def\qbad{{\leavevmode\llap{?\hskip-.1em *}}}
+
+\def\lbracket{{\leavevmode\llap{[}}}
+\def\lb{{\leavevmode\llap{[}}}
+\def\lbb{{\leavevmode\llap{[[}}}
+\def\lcbracket{{\leavevmode\llap{\{}}}
+\def\llbracket{{\leavevmode\llap{[[}}}
+
+\def\infellb{{\leavevmode\llap{\#[}}}
+\def\badlb{{\leavevmode\llap{*[}}}
+\def\mlb{{\leavevmode\llap{?[}}}
+\def\vmlb{{\leavevmode\llap{??[}}}
+
+
+
+\makeatletter
+
+%\def\bemph#1{\textbf{#1}}
+%\def\bsout#1{\textbf{\sout{#1}}}
+%\def\bslemph#1{\textsl{\textbf{#1}}}
+%\def\bslsout#1{\textsl{\textbf{\sout{#1}}}}
+
+\def\bemph#1{\textbf{#1}}
+\def\bsout#1{\textbf{\Midline{#1}}}
+%\def\bsout#1{\textbf{\Underline{#1}}}
+\def\bslemph#1{\textsl{\textbf{#1}}}
+\def\bslsout#1{\textsl{\textbf{\Midline{#1}}}}
+
+%\def\CorrectionColor#1{\textcolor{red}{#1}}
+\def\CorrectionColor#1{\textcolor{blue}{#1}}
+\def\OriginalColor#1{#1}
+
+\def\ShowCorrection{\protect\@ShowCorrection}
+\def\@ShowCorrection{%
+   \def\@originalEmph##1{\bsout{##1}}%
+   \def\@correctedEmph##1{\bemph{##1}}%
+   \@ifnextchar[{\@PrintCorrection}
+                        {\@PrintCorrection[]}}
+
+\def\ShowCorrectionSL{\protect\@ShowCorrectionSL}
+\def\@ShowCorrectionSL{%
+   \def\@originalEmph##1{\bslsout{##1}}%
+   \def\@correctedEmph##1{\bslemph{##1}}%
+   \@ifnextchar[{\@PrintCorrection}
+                        {\@PrintCorrection[]}}
+
+\def\ShowCorrectionColor{\protect\@ShowCorrectionColor}
+\def\@ShowCorrectionColor{%
+   \def\@originalEmph##1{\OriginalColor{\bsout{##1}}}%
+   \def\@correctedEmph##1{\CorrectionColor{\bemph{##1}}}%
+   \@ifnextchar[{\@PrintCorrection}
+                        {\@PrintCorrection[]}}
+
+\def\ShowCorrectionUpdate{\protect\@ShowCorrectionUpdate}
+\def\@ShowCorrectionUpdate{%
+   \def\@originalEmph##1{\hskip0in}%
+   \def\@correctedEmph##1{##1}%
+   \@ifnextchar[{\@PrintCorrectionNoCmt}
+                        {\@PrintCorrection[]}}
+
+\def\ShowBackCorrection{\protect\@ShowBackCorrection}
+\def\@ShowBackCorrection{%
+   \def\@originalEmph##1{\bslemph{##1}}%
+   \def\@correctedEmph##1{\bslsout{##1}}%
+   \@ifnextchar[{\@PrintCorrection}
+                        {\@PrintCorrection[]}}
+
+\def\ShowBackCorrectionColor{\protect\@ShowBackCorrectionColor}
+\def\@ShowBackCorrectionColor{%
+   \def\@originalEmph##1{\textcolor{red}{\bslemph{##1}}}%
+   \def\@correctedEmph##1{\textcolor{blue}{\bslsout{##1}}}%
+   \@ifnextchar[{\@PrintCorrection}
+                        {\@PrintCorrection[]}}
+
+\def\ShowBackCorrectionUpdate{\protect\@ShowBackCorrectionUpdate}
+\def\@ShowBackCorrectionUpdate{%
+   \def\@originalEmph##1{##1\hskip0in}%
+   \def\@correctedEmph##1{\hskip0in}%
+   \@ifnextchar[{\@PrintCorrectionNoCmt}
+                        {\@PrintCorrection[]}}
+
+	        
+\def\ShowFurtherCorrection{\protect\@ShowFurtherCorrection}
+\def\@ShowFurtherCorrection{%
+   \def\@originalEmph##1{\textbf{\Midline{##1}}}%
+   \def\@correctedEmph##1{\textsl{\textbf{\Midline{##1}}}}%
+   \def\@furthercorrectedEmph##1{\textsl{\textbf{##1}}}%
+   \@ifnextchar[{\@PrintFurtherCorrection}
+                        {\@PrintFurtherCorrection[]}}
+
+\def\ShowFurtherCorrectionColor{\protect\@ShowFurtherCorrectionColor}
+\def\@ShowFurtherCorrectionColor{%
+   \def\@originalEmph##1{\textcolor{blue}{\textbf{\Midline{##1}}}}%
+   \def\@correctedEmph##1{\textcolor{green}{\textsl{\textbf{\Midline{##1}}}}}%
+   \def\@furthercorrectedEmph##1{\textcolor{red}{\textsl{\textbf{##1}}}}%
+   \@ifnextchar[{\@PrintFurtherCorrection}
+                        {\@PrintFurtherCorrection[]}}
+
+\def\ShowFurtherCorrectionUpdate{\protect\@ShowFurtherCorrectionUpdate}
+\def\@ShowFurtherCorrectionUpdate{%
+   \def\@originalEmph##1{\hskip0in}%
+   \def\@correctedEmph##1{\hskip0in}%
+   \def\@furthercorrectedEmph##1{##1}%
+   \@ifnextchar[{\@PrintFurtherCorrectionNoCmt}
+                        {\@PrintFurtherCorrection[]}}
+
+
+\def\@PrintFurtherCorrection[#1]#2#3#4{%
+   \def\@null{}%
+   \def\@comment{#1}%
+   \def\@commentEmph##1{\textit{##1}}%
+   \@originalEmph{#2}
+   \@correctedEmph{#3}
+   \@furthercorrectedEmph{#4}%
+   \ifx\@comment\@null
+   \else
+      { [\@commentEmph{#1}]}%
+   \fi
+   }
+
+   
+\def\@PrintCorrection[#1]#2#3{%
+   \def\@null{}%
+   \def\@comment{#1}%
+   \def\@commentEmph##1{\textit{##1}}%
+   \def\@original{#2}%
+   \def\@corrected{#3}%
+     \ifx\@corrected\@null
+      \@originalEmph{#2}%
+   \else
+      \ifx\@original\@null
+         \@correctedEmph{#3}%
+      \else
+         \@originalEmph{#2} \@correctedEmph{#3}%
+      \fi
+   \fi
+   \ifx\@comment\@null
+   \else
+      { [\@commentEmph{#1}]}%
+   \fi
+   }
+
+\def\@PrintCorrectionNoCmt[#1]#2#3{%
+   \@PrintCorrection[]{#2}{#3}%
+   }
+
+\def\@PrintFurtherCorrectionNoCmt[#1]#2#3#4{%
+   \@PrintCorrection[]{#2}{#3}{#4}%
+   }
+
+\makeatother
+
+
+%\setlength\MidlineHeight{.5ex}
+
+
+% \cites{author} produces something like Author's (year)
+% rather than Author (year)'s
+% load natbib.sty to use this macro
+% \newcommand{\cites}[1]{\citeauthor{#1}'s \citeyearpar{#1}}
+
+
+
+% samepage2
+% put stuff in this environment inside which should not come a page boundary
+\newenvironment{samepage2}%
+ {\begin{flushleft}\begin{minipage}{\linewidth}}
+ {\end{minipage}\end{flushleft}}
+
+
+
+% customized itemize environments
+
+\newenvironment{comment}%  
+{%
+\small
+\vskip.3ex
+\begin{shadow}\begin{list}{\ding{"2E}}% 
+   {%
+      \setlength{\labelwidth}{2em}%  space between labels 
+      \setlength{\itemsep}{.2em}%
+      \setlength{\topsep}{.4em}%
+      \setlength{\labelsep}{.7em}%
+      \setlength{\leftmargin}{15pt}
+	      }
+}{%
+\end{list}\end{shadow}
+\vskip.3ex
+}
+
+
+
+\newenvironment{itemizeF}%  
+{%
+   \begin{list}{$\bullet$\ \ }% 
+   {%
+      \setlength{\itemsep}{.4em}%
+      \setlength{\topsep}{.4em}%
+      \setlength{\labelsep}{0em}%
+	      }
+}{%
+   \end{list}%
+}
+
+
+% itemize and enumerate environments with smaller spaces
+
+\newenvironment{itemizex}%  
+{%
+\vskip.3ex
+\begin{list}{$\bullet$}% 
+   {%
+      \setlength{\labelwidth}{2em}%  space between labels 
+      \setlength{\itemsep}{.2em}%
+      \setlength{\topsep}{.4em}%
+      \setlength{\labelsep}{.5em}%
+      \setlength{\leftmargin}{15pt}
+	      }
+}{%
+\end{list}
+\vskip.3ex
+}
+
+\newenvironment{itemize0}%  
+{%
+   \begin{list}{$\bullet$\ \ }% 
+   {%
+      \setlength{\itemindent}{0em}
+      \setlength{\leftmargin}{2em}%  left indentation
+      \setlength{\rightmargin}{0em}% right indentation
+      \setlength{\labelsep}{0em}%    space between bullet and itemized text 
+      \setlength{\labelwidth}{2em}%  space between labels 
+      \setlength{\itemsep}{.2em}%     vertical space between items 
+      \setlength{\parsep}{0em}%      space between paragraph inside
+			      %      itemized environment
+      \setlength{\listparindent}{0em}% indentation for paragraph
+				     % inside itemized environment
+   }
+}{%
+   \end{list}%
+}
+
+\newcounter{enum0}
+\newenvironment{enumerate0}{%
+   \begin{list}%
+   {%
+      (\roman{enum0})\ \,%  
+   }%
+   {%
+      \usecounter{enum0}
+      \setlength{\itemindent}{0em}%  
+      \setlength{\leftmargin}{2em}%  
+      \setlength{\rightmargin}{0em}% 
+      \setlength{\labelsep}{0.4em}%  
+      \setlength{\labelwidth}{2em}%  
+      \setlength{\itemsep}{.2em}%     
+      \setlength{\parsep}{0em}%      
+      \setlength{\listparindent}{0em}% 
+   }
+}{%
+   \end{list}%
+}
+
+\newcounter{enum1}
+\newenvironment{enumerate1}{%
+   \begin{list}%
+   {%
+      \arabic{enum1}.\ \,%  
+   }%
+   {%
+      \usecounter{enum1}
+      \setlength{\itemindent}{0em}%  
+      \setlength{\leftmargin}{2em}%  
+      \setlength{\rightmargin}{0em}% 
+      \setlength{\labelsep}{0.4em}%  
+      \setlength{\labelwidth}{2em}%  
+      \setlength{\itemsep}{.2em}%     
+      \setlength{\parsep}{0em}%      
+      \setlength{\listparindent}{0em}% 
+   }
+}{%
+   \end{list}%
+}
+
+
+% counter (requires fancybox)
+\newcounter{num}
+\newcommand{\num}{\addtocounter{num}{1}\medskip\shadowbox{\B{\Large
+\thenum.}}\, }
+
+
+%% 280 handout
+
+\newcommand{\AElim}{{\ooalign{$\diagup$\crcr\hss$\forall$\hss}}}
+\newcommand{\EElim}{{\ooalign{$\diagup$\crcr\hss$\exists$\hss}}}
+
+\newcommand{\X}[1]{\textsf{#1}} % X for expression (in PL)
+\newcommand{\term}[1]{\textbf{#1}}
+
+\newenvironment{exercise}{
+\medskip\medskip
+\begin{leftbar}
+\vskip-2ex}{\end{leftbar}}
+
+% counter for exercise
+\newcounter{ExerciseCtr}
+\newcommand{\xrc}{\vskip1ex
+%\addtocounter{ExerciseCtr}{1}
+\refstepcounter{ExerciseCtr}%
+\B{\raisebox{-2ex}{\shadowbox{\large Exercise
+\theExerciseCtr}}}
+\\[1ex]
+}
+
+
+\newlength{\linewidthshadow}%
+
+\newenvironment{shadow}%
+  {\setlength{\fboxsep}{2ex}\begin{Sbox}%
+                                   \setlength{\linewidthshadow}{-4.5ex}%
+                                   \addtolength{\linewidthshadow}{\linewidth}%
+	              \begin{minipage}{\linewidthshadow}}%
+	             {\end{minipage}\end{Sbox}\grey{\TheSbox}}
+
+\newcommand{\grey}[1]{\colorbox{mycolor}{#1}}
+%\definecolor{mycolor}{gray}{0.75}
+\definecolor{mycolor}{gray}{0.8}
+\definecolor{mydarkgray}{gray}{0.5}
+
+\definecolor{LightOrange}{cmyk}{0,0.4,0.6,0}
+\definecolor{Pink}{cmyk}{0,0.3,0.2,0}
+\definecolor{LightBlue}{cmyk}{0.4,0.1,0.1,0}
+\definecolor{LightYellow}{cmyk}{0,0,1,0.05}
+
+\definecolor{DarkRed}{cmyk}{0,1,0.6,0.3}
+\definecolor{DarkBlue}{cmyk}{1,0.8,0,0.2}
+
+%\renewcommand{\v}{\ensuremath{\bm{\vee}\,}}
+\newcommand{\n}{\ensuremath{\thicksim}}
+\renewcommand{\a}{\&\,}
+\renewcommand{\t}{\ensuremath{\bm{\supset}\,}}
+
+%\renewcommand{\EX}{\ensuremath{\bm{\exists}}}
+%\renewcommand{\A}{\ensuremath{\bm{\forall}}}
+
+
+%\renewcommand{\o}{\ensuremath{^\mathsf{1}}}
+
+%\renewcommand{\al}{\ensuremath{\upalpha}\xspace}
+%\renewcommand{\be}{\ensuremath{\upbeta}\xspace}
+%\renewcommand{\ga}{\ensuremath{\upgamma}\xspace}
+
+\newcommand{\MARU}[1]{\ooalign{\hfil#1\/\hfil\crcr
+      \raise.05ex\hbox{\LARGE\mathhexbox20D}}}
+
+% temporary counter
+\newcounter{exxtmp}
+
+
+\newenvironment{exeN}{%
+\setcounter{exxtmp}{\theexx}%
+\setcounter{exx}{0}%
+\begin{exe}%
+}{\end{exe}%
+\setcounter{exx}{\theexxtmp}%
+}
+
+
