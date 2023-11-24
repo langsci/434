@@ -1019,7 +1019,7 @@ with the subproof in (\ref{bookProof1}):
 \BinaryInfC{\MultiLine{\ptfont lost \BobsO \ensuremath{\greekp_0} \BobsO yesterday; \\ \sem{ λv. \trns{yst}(\trns{lose}(u))(v)}; \syncat{ NP\bsl{}S}}}
 \AxiomC{\MultiLine{\ptfont john; \\ \sem{ \trns{j} }; \\\syncat{  NP}}}
 \BinaryInfC{\LexEnt{\pt{john \BobsO lost \BobsO \ensuremath{\greekp_0}}}{\sem{ \trns{yst}(\trns{lose}(u))(\trns{j})}}{\syncat{S}}}
-\LeftLabel{\maru{1}\ensuremath{\rightarrow}}
+\LeftLabel{①\ensuremath{\rightarrow}}
 \UnaryInfC{\LexEnt{\pt{\ensuremath{\lambda} \ensuremath{\greekp_0}. john \BobsO lost \BobsO \ensuremath{\greekp_0} \BobsO yesterday}}{\sem{ λu.  \trns{yst}(\trns{lose}(u))(\trns{j})}}{\syncat{S\vs NP}}}
 \DisplayProof}
 \end{exe}
@@ -1127,7 +1127,7 @@ description is \ensuremath{\vs} rather than /.}:
   \textbf{VP ellipsis operator} \\
   \LexEnt{\pt{ \ensuremath{\lambda} \ensuremath{\greekp}. \ensuremath{\greekp} }}{\sem{ λ\ensuremath{\mathscr{F}}. \ensuremath{\mathscr{F}}(P')}}{\syncat{(NP\bsl{}S)\vs ((NP\bsl{}S)\vs (NP\bsl{}S) }}
 
-  ------where $P'$ is a free variable whose value is
+  ---where $P'$ is a free variable whose value is
   resolved anaphorically
  \ex\label{Acondition}
   Anaphora resolution condition on the VP ellipsis/pseudogapping
@@ -1161,7 +1161,7 @@ in (\ref{ellipseOp1}) works, is given in (\ref{simpleVPE})
 \AxiomC{\MultiLine{\ptfont should ; \\ \sem{ λQ λy. \ensuremath{\square} Q(y)}; \\\syncat{   (NP\bsl{}S)/(NP\bsl{}S)}}}
 \AxiomC{\MultiLine{\ptfont call; \\ \sem{ \trns{call} }; \\\syncat{  (NP\bsl{}S)/NP}}}
 \AxiomC{\MultiLine{\ptfont ann; \\ \sem{ \trns{a} }; \\\syncat{  NP}}}
-\LeftLabel{\maru{1}\ensuremath{\rightarrow}}
+\LeftLabel{①\ensuremath{\rightarrow}}
 \BinaryInfC{\MultiLine{\ptfont call \BobsO ann; \\ \sem{ \trns{call}(\trns{a})}; \\\syncat{  NP\bsl{}S}}}
 \RightLabel{\scalebox{.8}{\ensuremath{/}E}}
 \BinaryInfC{\MultiLine{\ptfont should \BobsO call \BobsO ann ; \\ \sem{ λy. \ensuremath{\square} \trns{call}(\trns{a})(y)}; \\\syncat{  NP\bsl{}S}}}
@@ -1438,7 +1438,7 @@ in the ellipsed clause, per (\ref{part1}).
 \UnaryInfC{\Lemma}
 \noLine
 \UnaryInfC{\MultiLine{\ptfont ate \BobsO \ensuremath{\greekp_1} \BobsO for \BobsO lunch; \\ \sem{ \trns{ate}(x)(\trns{lunch})}; \syncat{ VP}}}
-\LeftLabel{\maru{1}\ensuremath{\rightarrow}}
+\LeftLabel{①\ensuremath{\rightarrow}}
 \RightLabel{\scalebox{.8}{\ensuremath{\vs}I\ensuremath{^1}}}
 \UnaryInfC{\MultiLine{\ptfont λ\ensuremath{\greekp_1}.ate \BobsO \ensuremath{\greekp_1} \BobsO for \BobsO lunch; \\ \sem{ \mbox{\grey{\sem{ λx. \trns{ate}(x)(\trns{lunch}) }}} }; \syncat{ VP\vs NP}}}
 \AxiomC{\ensuremath{\ThreeColHyp{\MultiLine{\ptfont \ensuremath{\greekp_2}; \\ \sem{ u}; \\\syncat{  NP}}}^2}}
@@ -1453,7 +1453,7 @@ in the ellipsed clause, per (\ref{part1}).
 \end{exe}
 
 \noindent The grayed-in semantic term in (\ref{part1}) is an available predicate
-with which the free variable $R\,'$ obtained in the proof line \maru{1}
+with which the free variable $R\,'$ obtained in the proof line ①
 can be anaphorically identified. The first part of the proof for \textit{what
 Bill did} then takes the following form:
 
@@ -1628,7 +1628,7 @@ if we call this set \sem{ B/C } then
    \Lleftarrow\!\Rrightarrow(\B \vdash B \vdash A\bsl C)$
 \end{exe}
 
-\vspace{10mm}
+%\vspace{10mm}
 \itdopt{Is the first left arrow/right arrow-combination really supposed to be smaller? And shouldn't there be a
   symbol for double arrows? \backslash B is missing in the PDF and here. vdash does not print.}
 
