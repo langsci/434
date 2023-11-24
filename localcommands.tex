@@ -234,8 +234,8 @@
 \newcommand{\pt}[1]{\ensuremath{\mathsf{#1}}}
 \newcommand{\ptv}[1]{\ensuremath{\textsf{\textsl{#1}}}}
 
-% \newcommand{\sv}[1]{\ensuremath{\bm{\mathcal{#1}}}}
-\newcommand{\sv}[1]{#1}
+%\newcommand{\sv}[1]{\ensuremath{\bm{\mathcal{#1}}}}
+\newcommand{\sv}[1]{\ensuremath{\mathcal{#1}}}
 
 \newcommand{\sX}{\sv{X}}
 \newcommand{\sF}{\sv{F}}
@@ -409,7 +409,8 @@
 % \resizebox{#1\linewidth}{!}{\hskip-#1in \hskip.5in
 % #2}}\vspace{.5ex}}
 %
-% \renewcommand{\O}{\circ}
+% \renewcommand{\O}{\circ}  Do not recommand!
+\newcommand{\BobsO}{\circ}
 %
 % \newcommand{\derivcenterMod}[2][1.1]{%
 % \renewcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
@@ -454,26 +455,35 @@
 % \newcommand{\greekp}{{\color{green}π}}
 % \newcommand{\greekr}{{\color{green}\textrho}}
 % \newcommand{\greeks}{{\color{green}\textsigma}}
-\newcommand{\ptfont}{\color{purple}}
+\newcommand{\ptfont}{\color{purple}}                % what does ptfont do? Where is it defined?
+                                % Question
+%\newcommand{\ptfont}{\ttfamily}
+
 %\newcommand{\grey}{\color{gray}}
 \newcommand{\grey}[1]{\colorbox{mycolor}{#1}}
 \definecolor{mycolor}{gray}{0.8}
 
 \newcommand{\gap}{\longrule}
 \newcommand{\gp}{\gap}
-\newcommand{\vs}{vs. }
+\newcommand{\vs}{\raisebox{.05em}{\ensuremath{\upharpoonright}}}
 % \newcommand{\sub}[1]{\textsubscript[#1]}
 \newcommand{\E}{\emph}
 \newcommand{\B}{\textbf}
 \newcommand{\f}{{\color{green}f}}
-\newcommand{\Lemma}{{\color{pink}Lemma}}
-\newcommand{\calP}{{\color{pink}calP}}
+%\newcommand{\Lemma}{{\color{pink}Lemma}}
+\newcommand{\Lemma}{\ensuremath{\vdots\hskip.5cm\vdots}\noLine}
+
+%\newcommand{\calP}{{\color{pink}calP}} % Sebastian
+\newcommand{\calP}{\ensuremath{\mathcal{P}}}
+
 
 \newcommand{\maru}[1]{\ooalign{\hfil#1\/\hfil\crcr
       \raise.05ex\hbox{\LARGE\mathhexbox20D}}}
 
 
-\newcommand{\sem}[2][M\!,g]{\mbox{$[\![ \mathrm{#2} ]\!]^{#1}$}}
+%\newcommand{\sem}[2][M\!,g]{\mbox{$[\![ \mathrm{#2} ]\!]^{#1}$}}
+\newcommand{\sem}{\ensuremath}
+
 %
 \newcommand{\trns}[1]{\textbf{#1}\xspace}
 
@@ -487,4 +497,4 @@
 \newcommand{\term}[1]{\textit{#1}}
 \newcommand{\LemmaAlt}{\ensuremath{\vdots\hskip.5cm\vdots}}
 
-\renewcommand{\O}{ø}
+%\renewcommand{\O}{ø}
