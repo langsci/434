@@ -139,23 +139,20 @@ However, the transition network format of Figure\,\ref{fig:fig03} has greater he
 The iterative linear grammar with inclusive cycles is realistic in real time and real memory space. It does not seem necessary to model the development of  dialogues like this as becoming ever more deeply embedded and requiring ever more nonlinear increases in time and memory space as the dialogue unfolds. The formal parallels between the dialogue model and cyclical prosodic models suggest that this dialogue grammar should be interpretable physically as a rhythm generating or accepting oscillator with inclusive cycles at multiple frequencies, which relates easily to cyclical linear models of prosody. This is to be demonstrated in the following sections on the phonetics of rhythm.
 
 The including and included iterations have flexible assignments to locutions, especially in the \textit{narrator} turns and do not necessarily constitute a `strict layer hypothesis' \cite{selkirk1984}. Four inclusive cycles are defined by the FSA:
-\vspace{-10pt}
-\begin{enumerate} \itemsep -5pt
+
+\begin{enumerate} %\itemsep -5pt
 \item Local (included) cycles:
-\vspace{-12pt}
 	\begin{enumerate} \itemsep -5pt
 	\item[] \textit{narrative-pause} cycle within a narrative turn;
 	\item[] \textit{narrator-responder} cycle, with pauses, intervening within a narrative turn;
 	\item[] chanted \textit{caller-choir} cycle, complementary to the \textit{narrator-responder} cycles;
 	\end{enumerate}
-\vspace{-5pt}
 \item Global (including) cycle with restart of local cycles:
-\vspace{-10pt}
-	\begin{enumerate} \itemsep -5pt
+	\begin{enumerate} %\itemsep -5pt
 	\item[] \textit{pause} return to \textit{narrative} start state.
 	\end{enumerate}
 \end{enumerate}
-\vspace{-10pt}
+
 Cycles, of the kinds shown in Figure\,\ref{fig:fig03} do not necessarily reflect a rhythmic pattern; the inverse is true, however: a rhythmic pattern is expressible as a cycle, given additional time and frequency constraints. The \textit{caller-choir} cycle in particular is a strong candidate for resonant oscillation with the coupling function of rhythm, as a chanted or sung context of \textit{caller-choir} pairs.
 
 The task facing the following annotation-based phonetic analysis and acoustic phonetic signal processing is to investivate the empirical physical grounding for the different rhythms in the \textit{narrator-responder} and \textit{caller-choir} sequences.
@@ -174,7 +171,7 @@ The task facing the following annotation-based phonetic analysis and acoustic ph
 \end{figure}
 
 A set of informal descriptive hypotheses are formulated:
-\vspace{-10pt}
+
 \begin{itemize} \itemsep -5pt
     \item[H0:] The presence of rhythmic beats cannot be identified in the speech signal.
     \item[H1:] The presence of rhythmic beats can be found by visual inspection of the waveform of the speech signal.
@@ -182,16 +179,17 @@ A set of informal descriptive hypotheses are formulated:
     \item[H3:] Rhythmic beats can be dynamically modelled in the time domain.
     \item[H4:] Rhythmic beats can be modelled in the frequency domain.
 \end{itemize}
-\vspace{-10pt}
+
 H0 represents a sceptical view sometimes found in the literature. The hypotheses H1 to H3 represent goals for the time domain annotation-based analysis and are not incompatible but increasingly detailed. H4 represents the perspective of Rhythm Formant Analysis, to be addressed in the next section. The hypotheses are necessarily informal in view of the tiny data. H1 is immediately confirmed by inspection of Figure\,\ref{fig:fig04} and Figure\,\ref{fig:fig05} mid panel, and Table\,\ref{table:table01} provides simple evidence for H2. H3, H4 and H5 are argued for below (cf. Figure\,\ref{fig:fig05} and Figure\,\ref{fig:fig06}).
 \begin{table}[ht]
 \centering
 \caption{Rhythm unit durations and periodicity of \textit{caller-choir} categories}
 \vspace{0.2cm}
 \label{table:table01}
+\oneline{%
 \begin{tabular}{|l|c|c||c|c||c|c|}
 \hline
-\textbf{Item}	& \textbf{caller-d}	& \textbf{caller-p}	& \textbf{choir-d} & \textbf{choir-p} & \textbf{caller-choir-d} & \textbf{caller-choir-p}\\
+Item	& caller-d	& caller-p	& choir-d & choir-p & caller-choir-d & caller-choir-p\\
 \hline\hline
 cr1:	& 2.337	& 0.428	& 2.08	& 0.481	& 4.417	& 0.226\\
 \hline
@@ -209,7 +207,7 @@ SD:	& 0.305	& 3.279	& 0.616	& 1.623	& 0.476	& \\
 \hline
 CoV:	& 0.165	& 6.061	& 0.22	& 4.545	& 0.1	& \\
 \hline
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 The recording was annotated with participant turns, combining qualitative decisions on descriptive categories with time-stamped intervals in which these categories occur (see Figure \ref{fig:fig04} for a segment of the annotation). Results of the annotation and a basic descriptive analysis are shown in Table \ref{table:table01}. The low coefficients of variance for the sequences, together with the alternating durations between the \textit{narrator-responder} and \textit{caller-choir} turn exchanges, are simple time domain indications of long-term rhythmic properties.
@@ -227,12 +225,9 @@ FM and AM in speech have specific properties and also different roles in communi
 \subsection{Rhythm Formant Theory (RFT): spectral patterning}
 
 \begin{figure}[ht]
-\vspace{-10pt}
 \centering
 \includegraphics[trim={1.5cm 1.5cm 0 0}, clip, width=0.99\textwidth]{gibbon_figure05.png}
-\vspace{-10pt}
 \caption{\label{fig:fig05}Modulated waveform (upper panel), demodulated LF AM information signal (centre panel), demodulated LF FM information signal (lower panel).}
-\vspace{-10pt}
 \end{figure}
 
 \begin{figure}[ht]
@@ -297,7 +292,7 @@ Taking up the concepts introduced in the discussion of discourse functionality i
 \label{table:table02}
 \begin{tabular}{|l||l||c|c||c|}
 \hline
-\textbf{Tier} & \textbf{Label} & \textbf{Start} & \textbf{End} & \textbf{Duration}\\
+Tier & Label & Start & End & Duration\\
 \hline\hline
 Episodes	&	\_	&	0.000	&	0.146	&	0.146\\
 Episodes	&	Narrative	&	0.146	&	16.684	&	16.538\\
