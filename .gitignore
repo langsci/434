@@ -274,3 +274,6 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+gibson_figure1_svg-tex.pdf_tex
+localbibliography-levine.bib
+localbibliography-safe.bib
