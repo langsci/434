@@ -63,6 +63,8 @@
 
 \let\textbfemph\emph
 
+\newcommand{\textbfremoved}[1]{#1}
+
 \newcommand{\todostefan}[1]{\todo[color=orange!80]{\footnotesize #1}\xspace}
 \newcommand{\todosatz}[1]{\todo[color=red!40]{\footnotesize #1}\xspace}
 
@@ -465,9 +467,18 @@
 
 \newcommand{\gap}{\longrule}
 \newcommand{\gp}{\gap}
-\newcommand{\vs}{\raisebox{.05em}{\ensuremath{\upharpoonright}}}
+\newcommand{\vs}{\raisebox{.05em}{\ensuremath{\,\upharpoonright}}}
 % \newcommand{\sub}[1]{\textsubscript[#1]}
-\newcommand{\E}{\emph}
+%\newcommand{\E}{\emph}
+% Absolutely messy code.
+% \renewcommand{\E}{\SL}
+%
+% \newcommand{\SL}[1]{\textsl{#1}}
+
+\newcommand{\E}{ε}
+
+\newcommand{\EBob}[1]{\textsl{#1}}
+
 \newcommand{\B}{\textbf}
 \newcommand{\f}{{\color{green}f}}  % Question what does f do? It does not have any output in the
                                 % original PDF
