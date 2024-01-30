@@ -154,13 +154,13 @@ comprises a phonological and semantic annotation which is said to
 the grammar are homologous to the implicational subsystem of
 substructural intuitionistic propositional logic (SIPL), i.e.,
 IPL lacking rules of permutation, contraction or weakening, with implication
-corresponding to types of the form \syncat{\textit{Y}/\textit{X}}, \syncat{\textit{X}\bsl{}\textit{Y}} and \syncat{\textit{Y}\vs \textit{X}} The
+corresponding to types of the form \syncat{\textit{Y}/\textit{X}}, \syncat{\textit{X}\bsl{}\textit{Y}} and \syncat{\textit{Y} \vs \textit{X}} The
 first of these can be thought of as something like, ``give me a sign of
 type \textit{X} on my right and you'll get back a sign of type  \textit{Y}'', and the
 second is the same with ``left'' in place of ``right''. The third is a bit
 more complex: it tells you that, if there is a sign of type \textit{X} it can be
 realized in a certain designated position ``within'' the sign typed
-\textit{Y}\vs \textit{X}. We refer to inhabitants of slashed types as
+\textit{Y} \vs \textit{X}. We refer to inhabitants of slashed types as
 \textsl{functional} terms, in view of their semantics, as we discuss below.
 
 What are the syntactic types that can instantiate \textit{Y} and \textit{X}? For our
@@ -230,7 +230,7 @@ below, the ordinary IPL rule would take the form in (\ref{prawitz}b):
 (\ref{prawitz}a) is nothing other than the ancient principle of Modus
 Ponens, where there is an antecedent ($\phi$) and a consequent
 ($\psi$), such that the truth of $\phi$ is a guarantor of the truth of
-$\psi$. (\ref{prawitz}b) is the slightly less transparent rule of
+$\psi$ (or, under the more appropriate intuitionistic interpretation, a proof of $\psi$ follows from a proof of $\phi$). (\ref{prawitz}b) is the slightly less transparent rule of
 hypothetical reasoning: if, in some context of established results,
 introducing an hypothesis $\phi$ allows us to deduce $\psi$, then in
 that same context, we know that the implication $\phi\supset\psi$
@@ -246,7 +246,7 @@ structure.} In a nutshell, if we assume a certain premise that allows
 us to deduce a certain result, we know that, mutatis mutandis, if that
 premise were true, the result would then follow.
 
-But transating these rules into the type-logical domain requires a
+But translating these rules into the type-logical domain requires a
 good deal more than just inference rules for types. Linguistic signs do not just inhabit types;
 they also carry phonological and semantic information. Unlike the
 propositions that combine under intuitionistic rules of inference, the
@@ -452,7 +452,7 @@ in (\ref{sentProof}):
 \end{exe}
 This proof can be seen as a realization of Peirce's emphasis on
 argument structure, and its satisfaction, as the ``engine'' of syntactic
-combinatorics. As noted at the beginning of this paper, the types
+combinatorics. As noted at the beginning of this chapter, the types
 associated with strings---either in the lexicon or via composition in
 the course of the proof---do not reflect the standard parts of speech
 inherited from the classical grammarians, but rather their
@@ -479,7 +479,7 @@ the inference rules of the logic allows a valid inference of a prosodic
 string
 \pt{john \BobsO sent} \pt{\BobsO the \BobsO documents \BobsO to \BobsO the \BobsO committee \BobsO over \BobsO the \BobsO weekend}
 which signifies a proposition
-\sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs})))(\iota(\trns{comm}))(j) } and that the
+\sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs})))(\iota(\trns{comm}))(\trns{j}) } and that the
 linguistic expression which has those prosodic and semantic values is
 a sentence. The steps involved in the proof have no representational
 status, any more than, given a set of premises $\Gamma$, the steps in
@@ -559,10 +559,10 @@ The final step in the proof will then be (\ref{rnrFinal}):
 
 \begin{exe}
  \ex\label{rnrFinal}
-\AxiomC{\MultiLine{\ptfont{john \BobsO bought \BobsO and \BobsO    {}}\\ \ptfont{  \hspace{3ex} bill \BobsO baked;} \\   \sem{ λw. \trns{buy}(w)(\trns{j}) \ensuremath{ \wedge\xspace } \trns{bake}(w)(\trns{b})}; \\\syncat{  S/NP}}}
+\AxiomC{\MultiLine{\ptfont{john \BobsO \ bought \BobsO \ and \BobsO    {}}\\ \ptfont{  \hspace{3ex} bill \BobsO \ baked;} \\   \sem{ λw. \trns{buy}(w)(\trns{j}) \ensuremath{ \wedge\xspace } \trns{bake}(w)(\trns{b})}; \\\syncat{  S/NP}}}
 \AxiomC{\Lemma}
-\UnaryInfC{\MultiLine{\ptfont{the \BobsO pizza \BobsO margarita;} \\ \sem{ \iota(\trns{pzzmarg})}; \syncat{ NP}}}
-\BinaryInfC{\MultiLine{\ptfont{john \BobsO bought \BobsO and \BobsO    {}}\\ \ptfont{  \hspace{3ex}bill \BobsO baked;} \\   \sem{  \trns{buy}(\iota(\trns{pzzmarg}))(\trns{j}) \ensuremath{ \wedge\xspace } \trns{bake}(\iota(\trns{pzzmarg}))(\trns{b})}; \\\syncat{  S}}}
+\UnaryInfC{\MultiLine{\ptfont{the \BobsO \ pizza \BobsO \ margherita;} \\ \sem{ \iota(\trns{pzzmarg})}; \syncat{ NP}}}
+\BinaryInfC{\MultiLine{\ptfont{john \BobsO \ bought \BobsO \ and \BobsO    {}}\\ \ptfont{  \hspace{3ex}bill \BobsO \ baked \BobsO \ the \BobsO \ pizza \BobsO \ margherita;} \\   \sem{  \trns{buy}(\iota(\trns{pzzmarg}))(\trns{j}) \ensuremath{ \wedge\xspace } \trns{bake}(\iota(\trns{pzzmarg}))(\trns{b})}; \\\syncat{  S}}}
 \DisplayProof
 \end{exe}
 (\ref{DCC}) can be similarly derived via a somewhat tedious but
@@ -600,12 +600,12 @@ introduction differs from directional slash introduction in one
 foundational respect: rather than simply removing \pt{ \ensuremath{\greekp} } from the
 prosodic string, the variable becomes bound by an abstraction
 operator. This makes the resulting prosodic object a function, not a
-string, and when the prosody of a sign typed \syncat{\textit{Y}\vs \textit{X}} composes with
+string, and when the prosody of a sign typed \syncat{\textit{Y}\ \vs \textit{X}} composes with
 the prosody of a type $X$ sign, the former takes the latter as an
 argument (as aptly illustrated by (\ref{cleopatra}) below).  It is worth
 noting that the introduction rules repesent a formal expression of
 Peirce's observation, quoted in \citet[8]{nothPeirce}: ``in the proposition
-{`'}Anthony gave a ring to Cleopatra'', Cleopatra is as much a subject of what is
+{`}Anthony gave a ring to Cleopatra', Cleopatra is as much a subject of what is
 meant and expressed as is the ring or Anthony. A proposition, then,
 has one predicate and any number of subjects.'' The significant insight
 here---that a sentence expressing a proposition can be composed as the
@@ -632,7 +632,7 @@ variable.
 The predicate in the final line of (\ref{cleopatra}) ascribes a property to
 some object; that object is in the set of things given to Cleopatra to
 Antony, and the proposition in the passage Noth quotes from Peirce is
-decomposable into \L-terms along these lines just as much as it is the
+decomposable into λ-terms along these lines just as much as it is the
 composition of \textit{Antony} with the denotation of the VP \textit{gave a ring to
 Cleopatra}. In this sense, \ensuremath{\vs} Introduction is the logical warrant for
 Peirce's view that \textit{Anthony gave a ring to Cleopatra} is ``about''
@@ -1235,9 +1235,8 @@ acceptable) \textit{but}-conjunction in (\ref{conjPseudo}):
 \end{exe}
 Generalizing the VP ellipsis operator to the form in (\ref{generalized})
 would have the effect of taking \textit{won't}, typed
-(VP/NP)\ensuremath{\vs}((VP/NP)/(VP/NP)) via application of the Geach entailment so that if we set \$ = NP, application of this
-generalized operator to the Geached form of an auxiliary is an
-auxliary typed VP/NP, i.e., a transitive verb. This revised operator
+(VP/NP)\ensuremath{\vs}((VP/NP)/(VP/NP)) (via application of the Geach entailment, with \$ = NP) to an
+auxiliary typed VP/NP, i.e., a transitive verb. This revised operator
 can be stated as in (\ref{generalized}):
 
 \begin{exe}
@@ -1344,7 +1343,7 @@ the partial constituent. That is, while \textit{Y/X} is a sign that must
 compose on the left with a sign of type \textit{X}, and $X\bsl Y$ is the same
 but seeking an \textit{X} arguent on its left to yield an object typed \textit{Y},
 the material missing from the string that is required for \textit{Y} in
-\textit{Y}\ensuremath{\vs}\textit{X} can, as noted in \sectref{sec:argstruc}, appear
+\textit{Y} \ensuremath{\vs}\textit{X} can, as noted in \sectref{sec:argstruc}, appear
 anywhere. Thus, in \textit{I wonder what John said to Mary}, the
 subconstituent \textit{said {\gp}\xspace to Mary} constitutes a VP with a medial NP
 gap, meeting the description \syncat{VP\vs NP}. In terms of sentences such as
@@ -1640,8 +1639,7 @@ concatenation of the types $A, B$ is an inhabitant of $C$. Then with
 $f_\ast = λ\alpha. \alpha\bullet B$ and $f^\ast = λ\beta. \beta/B$,
 there is a Galois connection between $f^\ast$ and $f^\ast \textrm{\,
 iff\,} f_\ast(A) \leqslant C \Leftrightarrow A\leqslant f^\ast(C)$,
-which, if we also define an upper adjoint $f^\ast\ast = \L
-\gamma. A\bsl\gamma$, and take the entailement relation $X\vdash
+which, if we also define an upper adjoint $f\,^{\ast\ast} = λ\gamma. A\bsl\gamma$, and take the entailement relation $X\vdash
 Y$ to define a partial ordering $X\leqslant Y$, gives us exactly the
 ``triquivalence'' in (\ref{typeResiduation}).} As Pratt notes, the upper and
 lower adjoint operators are effectively the functions corresponding to
@@ -1661,7 +1659,7 @@ earlier systems as instances of (a fragment of) intuitionistic
 noncommutative linear logic---he comments of a very basic skeleton for
 the pregroup grammar formalism that the essential combinatorics ``may
 even be implicit in the ideas of C.S. Peirce [i.e. \citet{peirce1897}
----RDL], noting that certain combinators in this ``rudimentary'' version
+---RDL]'', noting that certain combinators in this ``rudimentary'' version
 may have been seen by Peirce as comparable to ``the unsaturated bonds
 of an atom. \textsl{I believe pregroup grammars developed from this
 rudimentary setup}.'' (\citealt[352]{lambek2007a}; emphasis added).
