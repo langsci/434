@@ -80,25 +80,45 @@ A rule set R:
 
 In phrase-structure terms, a category B is said to be \textit{embedded} within another category A if B combines with some other category to make A: this is simple compositionality within phrase structure.  The determiner (Det) \textit{the} can combine with the noun (N) \textit{girl} (according to rule 3) in order to form an NP that generates the string \textit{the girl}. The categories Det and N are then \textit{embedded} within the category NP.
 
-A similar expansion applies to generate the NP \textit{the dog}. In order to form the VP that generates the string \textit{saw the dog}, we combine the V$_{NP}$ \textit{saw} with the NP \textit{the dog} according to rule 5. And finally, the NP \textit{the girl} combines with the VP \textit{saw the dog} to form an S category, according to rule 1, now covering the entire string \textit{the girl saw the dog} in \exref{corpus1a}.  This set of expansions is represented in the tree structure below:
+A similar expansion applies to generate the NP \textit{the dog}. In order to form the VP that
+generates the string \textit{saw the dog}, we combine the V$_{NP}$ \textit{saw} with the NP
+\textit{the dog} according to rule 5. And finally, the NP \textit{the girl} combines with the VP
+\textit{saw the dog} to form an S category, according to rule 1, now covering the entire string
+\textit{the girl saw the dog} in \exref{corpus1a}.  This set of expansions is represented in the
+tree structure in Figure~\ref{fig-the-girl-saw-the-dog}.
 
+\begin{figure}
 \begin{center}
 \Tree [.S [.NP [.Det the ] [.N girl ] ] [.VP [.V\sub{NP} saw ] [.NP [.Det the ] [.N dog ] ] ] ]
-
 \end{center}
+\caption{Analysis of \emph{The girl saw the dog.}}\label{fig-the-girl-saw-the-dog}
+\end{figure}
 
-If the rules of the grammar are such that the category A can dominate another node of category A, then we have \textit{self-embedding} of A within A. The grammar in \exref{cfg1} has three instances of self-embedding: The category S expands to another S, through rules 1 and 6: an S expands to an NP and a VP in rule 1; and a VP expands to a V$_{S}$ and then a further S category in rule 5. We can generate arbitrarily long sentences using these rules, as \citet{hauser2002faculty} indirectly suggest. Parses for self-embedded examples like \exref{corpus1c} and \exref{corpus1d} according to the above grammar are provided below:
+If the rules of the grammar are such that the category A can dominate another node of category A,
+then we have \textit{self-embedding} of A within A. The grammar in \exref{cfg1} has three instances
+of self-embedding: The category S expands to another S, through rules 1 and 6: an S expands to an NP
+and a VP in rule 1; and a VP expands to a V$_{S}$ and then a further S category in rule 5. We can
+generate arbitrarily long sentences using these rules, as \citet{hauser2002faculty} indirectly
+suggest. Parses for self-embedded examples like \exref{corpus1c} and \exref{corpus1d} according to
+the above grammar are provided in the Figures~\ref{fig-Mary-thinks-the-girl-saw-the-dog} and~\ref{fig-Alison-says-Mary-thinks-the-girl-saw-the-dog}:
 
+\begin{figure}[htb]
 \begin{center}
 \Tree [.S [.NP [.Name Mary ] ] [.VP [.V\sub{S} thinks ] that 
 [.S [.NP [.Det the ] [.N girl ] ] [.VP [.V\sub{NP} saw ] [.NP [.Det the ] [.N dog ] ] ] ] ] ]
+\end{center}
+\caption{Analysis of \emph{Mary thinks the girl saw the dog.}}\label{fig-Mary-thinks-the-girl-saw-the-dog}
+\end{figure}
+%\hspace*{40pt}
 
-\hspace*{40pt}
-
+\begin{figure}[htb]
+\begin{center}
 \Tree [.S [.NP [.Name Alison ] ] [.VP [.V\sub{S} says ] that [.S [.NP [.Name Mary ] ] [.VP [.V\sub{S} thinks ] that 
 [.S [.NP [.Det the ] [.N girl ] ] [.VP [.V\sub{NP} saw ] [.NP [.Det the ] [.N dog ] ] ] ] ] ] ] ]
 
 \end{center}
+\caption{Analysis of \emph{Alison says Mary thinks the girl saw the dog.}}\label{fig-Alison-says-Mary-thinks-the-girl-saw-the-dog}
+\end{figure}
 
 Within context-free phrase-structure, it is only possible to generate utterances of unbounded length through syntactic self-embedding in the grammar.  To see this, first consider a grammar where we have syntactic self-embedding (as in the example above). There is clearly no limit to the number of times that the syntactic self-embedding can apply.  In our example, we can apply the category VP to generate an S, which generates a VP as many times as we like.  As long as one of VP or S (or both) is associated with the generation of at least one independent nonterminal, then we can generate a sentence of arbitrary length. Let's consider standard human language phrase structure, like X-bar theory \citep{jackendoff1977x}, such that each nonterminal is associated with at least one distinct terminal. That is, a VP in our grammar is always associated with a kind of verb (a $V_{S}$ or $V_{NP}$), which expands to exactly one terminal. Thus, there is no bound to the length of an utterance in a grammar with syntactic self-embedding.
 
@@ -212,7 +232,7 @@ We would then take the dolls away, and ask who took part in the last event: \tex
          35 & 13 & 22 & 0 \\
     \lspbottomrule
     \end{tabularx}
-
+\itdopt{Sebastian: fix sticking out part}
 \end{table}
 
 The 70 responses from our 9 participants on this task were distributed as in Table~\ref{gibson_table_1}.  Of the 13 two-clause responses, all were likely parataxis, consisting of pairs of clauses like \textit{canoe paddle} and \textit{same eat farinha}, where the Pirahã word for \textit{same} connects the subjects of the two clauses.
@@ -223,16 +243,16 @@ It is also worth noting that \citet{sakel2010piraha} investigated the use of the
 
 \subsection{\citew*{futrell2016corpus}}
 
-\citet{futrell2016corpus} analyzed a corpus of spoken Pirahã that Dan Everett and the previous missionary to the Pirahã -- Steve Sheldon -- had gathered, to see what the simplest syntactic re-write grammar might be, and whether that grammar had self-embedding. \citet{futrell2016corpus} parsed 17 Pirahã stories (13 by Sheldon in the 1970s, 4 by Everett in 1980—2009; 1149 sentences; 6830 words), and looked at the resulting structures for evidence of syntactic self-embedding. The full parsed corpus is available at http://osf.io/kt2e8 .
+\citet{futrell2016corpus} analyzed a corpus of spoken Pirahã that Dan Everett and the previous missionary to the Pirahã -- Steve Sheldon -- had gathered, to see what the simplest syntactic re-write grammar might be, and whether that grammar had self-embedding. \citet{futrell2016corpus} parsed 17 Pirahã stories (13 by Sheldon in the 1970s, 4 by Everett in 1980—2009; 1149 sentences; 6830 words), and looked at the resulting structures for evidence of syntactic self-embedding. The full parsed corpus is available at \url{http://osf.io/kt2e8}.
 
 In this project, \citet{futrell2016corpus} looked for examples of syntactic self\hyp embedding in a range of kinds of examples that are typically analyzed as syntactic self-embedding in English, including the following:
 
 \begin{itemize}
-    \item Relative clauses: No examples.
-    \item Coordination: Conjunctions / disjunctions: No examples 
-    \item Possessive structures: No examples
-    \item Nominalizers and complementizers: No examples
-    \item Reported speech: Possible examples; but the examples could also be analyzed as a sequence of non-embedded utterances
+    \item Relative clauses: no examples,
+    \item Coordination: Conjunctions/disjunctions: no examples, 
+    \item Possessive structures: no examples,
+    \item Nominalizers and complementizers: no examples,
+    \item Reported speech: possible examples; but the examples could also be analyzed as a sequence of non-embedded utterances.
 \end{itemize} 
 
 As indicated above, we found no evidence for syntactic self-embedding in the form of relative clauses, coordination structures, possessive structures, nominalizers or complementizers (subordinate clause markers). The one case that might plausibly be analyzed as syntactic self-embedding was \textit{reported speech}, such that the reported content of the speech (what was said) frequently appears immediately following a form of the verb \textit{gá} (``speak'' / ``say''). In 183 of the 191 instances of this verb in the corpus, the content of the reported speech immediately followed. In the remaining 8 instances, the verb was used clearly intransitively, with no following reported speech. It is possible to analyze this verb as always being intransitive, with the content of the reported speech indicated but not necessarily an argument of the verb, as in:  \textit{Mary spoke.  Bill will be coming.}  The listener can infer that the following clause is what Mary said.  
@@ -249,25 +269,31 @@ In contrast to \citet{futrell2016corpus}, \citet{sauerland2018false} purported t
 \eal
 \label{sauerland_ex}
 \ex \label{sauerland_ex1} Spoken by speaker 1 (Toe):\\
-\begin{tabular}{l l l l}
+\begin{tabular}{@{}l l l l}
 ce & kahápe & ogéhiai & igeuo \\ 
 I & have.been & stars & there\\
 \end{tabular}
 
-``I have been to the stars''
+`I have been to the stars.'
 
 \ex \label{sauerland_ex2} Spoken by speaker 2:\\
-\begin{tabular}{l l l l l l l l}
+\begin{tabular}{@{}l l l l l l l l}
 Toi & he & gái-sai & ce & kahápe & ogéhiai & igeuo \\
 Toe & 3sg & say & 1sg & have.been & stars & there\\
 \end{tabular}
 
 
-i. subordinate interpretation: ``Toe said ‘I have been to the stars’.''\\
-ii. co-ordinate interpretation: ``Toe talked, and I have been to the stars.''
+i. subordinate interpretation: `Toe said ‘I have been to the stars’.'\\
+ii. co-ordinate interpretation: `Toe talked, and I have been to the stars.'
 \zl
 
-Thus Speaker 1 (named ``Toe'') said \textit{I have been to the stars}, which is intended to be statement that is obviously impossible. The dependent measure was how the listeners interpreted Speaker 2's statement, which depended on how they would interpret the pronoun ``I'' (ce) in speaker 2’s statement. The pronoun ``I'' in speaker 2’s statement might refer to ``Toe'', giving  a subordinate interpretation. In English, this might correspond to sentences like \textit{Toe said ``I have been to the stars''}, or \textit{Toe said that he has been to the stars}. Or the listener might interpret``I'' as Speaker 2, to get a coordinate interpretation, corresponding to English materials like \textit{Toe said something and I have been to the stars.}  Critically for Sauerland, the coordinate interpretation is false in this scenario (Speaker 2 hasn’t been to the stars), while the subordinate interpretation is true (Toe did say that he had been to the stars).
+Thus Speaker 1 (named ``Toe'') said \textit{I have been to the stars}, which is intended to be
+statement that is obviously impossible. The dependent measure was how the listeners interpreted
+Speaker 2's statement, which depended on how they would interpret the pronoun ``I'' (ce) in speaker
+2’s statement. The pronoun ``I'' in speaker 2’s statement might refer to ``Toe'', giving  a
+subordinate interpretation. In English, this might correspond to sentences like \textit{Toe said ``I
+  have been to the stars''}, or \textit{Toe said that he has been to the stars}. Or the listener
+might interpret ``I'' as Speaker 2, to get a coordinate interpretation, corresponding to English materials like \textit{Toe said something and I have been to the stars.}  Critically for Sauerland, the coordinate interpretation is false in this scenario (Speaker 2 hasn’t been to the stars), while the subordinate interpretation is true (Toe did say that he had been to the stars).
 
 Sauerland hypothesized that in order to get the subordinate interpretation, a language needs syntactic recursion. (This assumption is not actually correct; I return to this problem below.) Thus if people get the subordinate interpretation, then Pirahã must have syntactic recursion. Sauerland investigated this by asking participants if these sentences were true in the context. 
 
@@ -292,21 +318,21 @@ First, Sauerland doesn't speak Pirahã. So he needs some control to ensure that 
 \eal
 \label{sauerland_ex_cont}
 \ex \label{sauerland_ex1_cont} Spoken by speaker 1 (Toe):\\
-\begin{tabular}{l l l l}
+\begin{tabular}{@{}l l l l}
 ce & kahápe & kahe’ai & igeuo \\ 
 I & have.been & moon & there\\
 \end{tabular}
 
-``I have been to the moon''
+`I have been to the moon.'
 
 \ex \label{sauerland_ex2_cont} Spoken by speaker 2:\\
-\begin{tabular}{l l l l l l l l}
+\begin{tabular}{@{}l l l l l l l l}
 Toi & he & gái-sai & ce & kahápe & heesé & igeuo \\
 Toe & 3sg & say & 1sg & have.been & sun & there\\
 \end{tabular}
 
-i. co-ordinate interpretation: ``Toe talked, and I have been to the sun.''\\
-ii. subordinate interpretation: ``Toe said ‘I have been to the sun’.''
+i. co-ordinate interpretation: `Toe talked, and I have been to the sun.'\\
+ii. subordinate interpretation: `Toe said ‘I have been to the sun’.'
 \zl
 
 These materials are just like the target materials, except that Speaker 2 now refers to a different location that Speaker 1 (Toe) is purported to have visited.  So while Toe talks about the moon in his statement, Speaker 2 refers to the sun as the place that someone might have visited.  Now, Statement 2 is false, no matter whether the participant gets the subordinate or coordinate interpretation.  So participants need to have rejected all of these sentences uniformly.
