@@ -1,11 +1,8 @@
-\documentclass[output=paper,colorlinks,citecolor=brown
-% ,hidelinks
-% showindex
-]{langscibook}
+\documentclass[output=paper,colorlinks,citecolor=brown]{langscibook}
 
 \author{Dafydd Gibbon\orcid{0000—0002—9825—5516}\affiliation{Bielefeld University}}
 
-\title{Cohesive rhythms: choral narrative in Ega}
+\title{Cohesive rhythms: Choral narrative in Ega}
 
 \abstract{This contribution combines functional, structural and acoustic explanations of a domain 'beyond words': how speech rhythm provides narrative cohesion and group bonding by caller entrainment with a choir during an orature event, recorded during fieldwork, in Ega, an endangered language isolate in south central Ivory Coast. The event in question is an oral narrative, a parable related in an interactive scenario by the village orator in two roles: as narrator, with feedback from his designated responder, and as caller in chanted interaction with the audience. First, a qualitative characterisation of coupling functions of speech rhythms is given, continued with a cyclical dynamic interaction model with specific rhythmical properties. The qualitative analyses are followed by a phonetic analysis based on annotation mining as a bridge leading to the quantitative signal processing of rhythm formants, and back to a qualitative interpretation of frequency properties of spectral peaks as resonant rhythm formants. While previous approaches have either selected functional or structural or acoustic analyses and representations of rhythm, the present study shows how these three approaches, taken together, can cohere and explain how speech rhythm patterns can be both physically grounded and functionally interpreted in context.}
 
@@ -35,24 +32,21 @@ The present case study in the documentation and description of Ega, a language i
 
 The data consist of the sound track of the video recording of the parable, which is narrated by an accomplished orator, the \textit{chef du village}, to his fellow villagers in the Ega-speaking region of Ivory Coast \citep{rossinigibbon2011}. The general framework for the case study is description and documentation of an endangered language \citep{gibbonbowbirdhughes2004}, with the aim of understanding some of the discourse skills of the community by combining brief functional and structural accounts as background for a contemporary prosodic phonetic analysis, in search of both hermeneutic interpretation and causal physical grounding for speech rhythms.
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.65\textwidth]{gibbon_figure01.png}
-\vspace{-10pt}
+\begin{figure}
+\includegraphics[width=.9\textwidth]{gibbon_figure01.png}
 \caption{\label{fig:fig01}Unsupervised clustering of Ivory Coast Kwa languages derived from phoneme feature vectors (source: Atlas Linguistique des Langues Kwa, \citealt{herault1983}). Colours and line lengths represent Hamming distances between phoneme inventory vectors. Insert: Sketch map of the Ega enclave in south-central Ivory Coast.}
 \end{figure}
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.65\textwidth]{gibbon_figure02.png}
+\begin{figure}
+\includegraphics[width=0.75\textwidth]{gibbon_figure02.png}
 \caption{\label{fig:fig02}Recording scenario with narrator (right), responder (left) and audience. (Video frame by permission of the participants.)}
 \end{figure}
 
 The video data were recorded on 6th March 2001, during fieldwork on the Ega language in Gnieguédougou village, Ivory Coast, an enterprise which was cut short by the Ivorian civil war. The data are consequently rare and sparse, and quantitative phonetic analysis has therefore to be subordinated to qualitative interpretation and structural modelling, and to a final qualitative interpretation of the quantitative results in terms of initial assumptions and predictions. The direction taken in this contribution has the character of a travelogue about discovering discourse rhythms, their functionality, their structure and their physical form.
 
-The language Ega (ISO 639—3 \textit{ega}) is an endangered Niger-Congo tone language isolate in south central Ivory Coast. The endangerment of the language results from several factors, including the gradual failing of intergenerational transmission due to the dominance of French in schooling and influence from the enclaving Eastern Kru dialect related to Lakota Dida (ISO 639—3 \textit{dic}) as spoken in neighbouring Divo.
+The language Ega (ISO 639-3 \textit{ega}) is an endangered Niger-Congo tone language isolate in south central Ivory Coast. The endangerment of the language results from several factors, including the gradual failing of intergenerational transmission due to the dominance of French in schooling and influence from the enclaving Eastern Kru dialect related to Lakota Dida (ISO 639-3 \textit{dic}) as spoken in neighbouring Divo.
 
-Ega has been tentatively assigned to the Kwa subgroup \citep{bolerichard1983, connellahouagibbon2002, salffner2004}. A sceptical view is taken in \citew{blench2015, blench2017} of the closeness of the language to other Ivory Coast Kwa languages or other neighbouring Niger-Congo subgroups. Ega community members in the social media see the Ega as autochthonous, surrounded by invading ethnic groups. Ega is regarded with some suspicion as a `secret language' by Dida speakers, whose name for the community and the language is Diès, a term resented by many Ega as a colonial invention. The outsider status of Ega in relation to other Ivory Coast Kwa languages is shown in \citew{gibbonweb2014}, using unsupervised clustering of pairwise phoneme inventory distances between Kwa languages,\footnote{$http://wwwhomes.uni-bielefeld.de/gibbon/DistGraph/distgraph-kwa.html$} based on legacy data from the \textit{Atlas des langues Kwa} \citep{herault1983}. The visualisation in \figref{fig:fig01} shows the linguistic isolate status of Ega, which matches its geographical and social isolate status as an enclave in a Kru area.
+Ega has been tentatively assigned to the Kwa subgroup \citep{bolerichard1983, connellahouagibbon2002, salffner2004}. A sceptical view is taken in \citew{blench2015, blench2017} of the closeness of the language to other Ivory Coast Kwa languages or other neighbouring Niger-Congo subgroups. Ega community members in the social media see the Ega as autochthonous, surrounded by invading ethnic groups. Ega is regarded with some suspicion as a `secret language' by Dida speakers, whose name for the community and the language is Diès, a term resented by many Ega as a colonial invention. The outsider status of Ega in relation to other Ivory Coast Kwa languages is shown in \citew{gibbonweb2014}, using unsupervised clustering of pairwise phoneme inventory distances between Kwa languages,\footnote{\url{http://wwwhomes.uni-bielefeld.de/gibbon/DistGraph/distgraph-kwa.html}} based on legacy data from the \textit{Atlas des langues Kwa} \citep{herault1983}. The visualisation in \figref{fig:fig01} shows the linguistic isolate status of Ega, which matches its geographical and social isolate status as an enclave in a Kru area.
 
 The orature session takes place in a typical Niger-Congo village scenario involving an orator with two roles: as \textit{narrator} of the parable, with a designated backchannel \textit{responder}, and as the \textit{caller} who elicits \textit{choir} responses from the audience in interactive chanted segments of the session, cf. \figref{fig:fig02}. The participant role relations can be summarised as follows:
 \begin{quotation}
@@ -86,7 +80,9 @@ In phonetics the main paradigm which uses this methodology is \textit{speech mod
 
 Phonological and phonetic descriptions of rhythm tend to be concerned with the very brief timing patterns of ``linguistic rhythm'', in the words of \citep{libermanprince1977}, of syllable, word and phrase sequences. In phonetic terms, the periods of such rhythms tend to be between about 100\,ms for shorter syllables and 1\,s to 3\,s for phrases and sentences, corresponding to beat rates or frequencies between about 10\,Hz and 0.3\,Hz.
 
+\begin{sloppypar}
 However, as studies in interactional linguistics show \citep{couperkuhlenselting2017}, much longer prosodic domains are called for in registers such as conversation, story-telling (as with the Ega parable), or speeches. For example, the duration of the complete Ega orature event is 300\,s, and very long-term LF rhythms with rhetorical functionality span the entire event.
+\end{sloppypar}
 
 As a poetic feature, rhythm is a configurative indicator of cohesion, which can be present in different types and degrees with different functionalities throughout a poetic event \citep{wagner2010}. The poetic discourse of the selected parable calls for description in terms of the metalocutionary dimension of \textit{coupling} \citep{levin1962}: the iteration of functionally relevant sound features which create a layer of ritualised cohesion superimposed over the grammatical structure of locutions, by means of iterative \textit{alliteration}, \textit{assonance} and \textit{rhyme}, and by the iterative patterns of performed rhythms, conventional metres, stanzas, refrains or the strophe-strophe-bridge-strophe patterns of popular music. Of all the available coupling parameters, only rhythm, as a variable iterative cohesion indicator, which may or may not align closely with grammatical structures or conventional metres, is picked out for discussion in the present case study.
 
@@ -105,7 +101,7 @@ Pragmatic indexical metalocutionary meanings are also conveyed in the locutionar
 
 Lexical prosodic forms, such as phonemic and morphosyntactic tones and lexical pitch accents, have direct contrastive and syncategorematic functions and are tightly synchronised with head syllables of locutionary lexical items. In addition to some direct influence from segments, particularly consonants, tonal forms are partly independent of syllable components in the sense that they may undergo sandhi processes such as terracing and tonal assimilation without reference to locutionary properties \citep{gibbonfstone1987, jansche1998}. These lexical prosodic conditions also characterise the 3 phonemic and morphosyntactic level tones of the Ega language \citep{connellahouagibbon2002}.
 
-Supralexical prosodic forms such as metadeictic pitch accents and intonation boundary and contour patterns are less tightly synchronised with the heads of the items they denote. Accentual and boundary features, also in tone languages such as Tem (Togo, ISO 639—3 \textit{kdh}) \citep{tchagbale2001}, Ega, and also Mandarin \citep{duanmu2007}, may include speech tempo deceleration with syllable lengthening, pitch upstep and downstep and increased pitch range, not only lexical tonal features such as relative pitch height, pitch range and pitch contour. In Ega narration, multimodal features of manual gesture, facial gesture and posture, as shown in \figref{fig:fig02}, are part of the metalocutionary complex \citep{rossinigibbon2011}, but are not within the scope of the present contribution.
+Supralexical prosodic forms such as metadeictic pitch accents and intonation boundary and contour patterns are less tightly synchronised with the heads of the items they denote. Accentual and boundary features, also in tone languages such as Tem (Togo, ISO 639-3 \textit{kdh}) \citep{tchagbale2001}, Ega, and also Mandarin \citep{duanmu2007}, may include speech tempo deceleration with syllable lengthening, pitch upstep and downstep and increased pitch range, not only lexical tonal features such as relative pitch height, pitch range and pitch contour. In Ega narration, multimodal features of manual gesture, facial gesture and posture, as shown in \figref{fig:fig02}, are part of the metalocutionary complex \citep{rossinigibbon2011}, but are not within the scope of the present contribution.
 
 Speech rhythms in the Ega parable distinguish different kinds of prosodic cohesion in the narrative exchanges between the \textit{narrator} and his \textit{responder} on the one hand, and interactive choral exchanges between the \textit{caller} and the \textit{choir}, on the other hand, as the acoustic phonetic analyses in the following sections show. The rhythms of the narrative exchanges have the function of structuring cohesive propositional groups, while the rhythmic entrainment of the choral exchanges has an additional function of creating explicit backchannel agreement and social bonding among the participants along a functional scale between mutual entrainment to shared rhythmic patterns at the one end of the scale and relatively arhythmic patterns at the other end. The present data tend to show the former case, with cohesive rhythms associated with narration structure by an individual speaker, and with entrainment and bonding created by rhythms contributing to the aesthetic and social value of interactive choral chanting.
 
@@ -119,9 +115,8 @@ Type 3 recursion can be efficiently implemented as iteration with linear time an
 
 Another key difference is that for any Type 3 grammar there is an equivalent FSA (or FS transducer, FST, if tree output is also desired), with realistic processing properties of finite memory and linear time as a function of the size of the input. Cyclical FSAs are ubiquitous in many areas of computational linguistics, especially in morphology, phonology and prosody. It is assumed here, until the contrary is demonstrated, that FSAs and FSTs are the formal devices needed for the description of rhythms.
  
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.65\textwidth]{gibbon_figure03.pdf}
+\begin{figure}
+\includegraphics[width=0.8\textwidth]{gibbon_figure03.pdf}
 \caption{\label{fig:fig03}Sketch of discourse grammar for interactive orature as an iterative transition network.}
 \end{figure}
 
@@ -163,9 +158,8 @@ The task facing the following annotation-based phonetic analysis and acoustic ph
 
 \subsection{Phonetic preliminaries: annotation mining}
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.98\textwidth]{gibbon_figure04.png}
+\begin{figure}
+\includegraphics[width=\textwidth]{gibbon_figure04.png}
 \caption{\label{fig:fig04}Segment of Ega orature event annotation comprising \textit{caller-choir} iterations (posterised Praat screenshot).}
 \end{figure}
 
@@ -200,7 +194,7 @@ CoV:	& 0.165	& 6.061	& 0.22	& 4.545	& 0.1	& \\
 \end{tabular}
 \end{table}
 
-The recording was annotated with participant turns, combining qualitative decisions on descriptive categories with time-stamped intervals in which these categories occur (see Figure \figref{fig:fig04} for a segment of the annotation). Results of the annotation and a basic descriptive analysis are shown in Table \tabref{table:table01}. The low coefficients of variance for the sequences, together with the alternating durations between the \textit{narrator-responder} and \textit{caller-choir} turn exchanges, are simple time domain indications of long-term rhythmic properties.
+The recording was annotated with participant turns, combining qualitative decisions on descriptive categories with time-stamped intervals in which these categories occur (see \figref{fig:fig04} for a segment of the annotation). Results of the annotation and a basic descriptive analysis are shown in \tabref{table:table01}. The low coefficients of variance for the sequences, together with the alternating durations between the \textit{narrator-responder} and \textit{caller-choir} turn exchanges, are simple time domain indications of long-term rhythmic properties.
 
 \subsection{Modulation}
 
@@ -212,32 +206,30 @@ The speech carrier signal is modulated directly at source in the larynx by lower
 
 FM and AM in speech have specific properties and also different roles in communication: noise, for example, is essentially amplitude modulation: frequency modulation is less sensitive to noise, explaining why, in teleglossia, communication at a distance, the speech rhythm and melody of a speaker, for example in the next room, can often be followed, but not the speaker's words, and why whistling, horns and melodic drums are used for teleglossic communication in many parts of the world.
 
-\subsection{Rhythm Formant Theory (RFT): spectral patterning}
+\subsection{Rhythm Formant Theory (RFT): Spectral patterning}
 
-\begin{figure}[ht]
-\centering
-\includegraphics[trim={1.5cm 1.5cm 0 0}, clip, width=0.99\textwidth]{gibbon_figure05.png}
+\begin{figure}
+\includegraphics[trim={1.5cm 1.5cm 0 0}, clip, width=\textwidth]{gibbon_figure05.png}
 \caption{\label{fig:fig05}Modulated waveform (upper panel), demodulated LF AM information signal (centre panel), demodulated LF FM information signal (lower panel).}
 \end{figure}
 
-\begin{figure}[ht]
-\centering
+\begin{figure}
 %\includegraphics[trim={1.5cm 1.5cm 0 0}, clip, width=0.95\textwidth]{GGMfirstnarration.png}
 %\includegraphics[trim={1.5cm 1.5cm 0 0}, clip, width=0.95\textwidth]{GGMfirstcall.png}
 {\footnotesize A. \textit{narrator-responder} exchanges following first \textit{caller-choir} exchanges (23\,s FFT window)}
 
-\includegraphics[width=0.99\textwidth]{gibbon_figure06A.png}
+\includegraphics[width=\textwidth]{gibbon_figure06A.png}
 
 {\footnotesize B. First \textit{caller-choir} exchanges (23\,s FFT window)}
 
-\includegraphics[width=0.99\textwidth]{gibbon_figure06B.png}
+\includegraphics[width=\textwidth]{gibbon_figure06B.png}
 
 {\footnotesize C. Complete parable (300\,s FFT window)}
 
-\includegraphics[width=0.99\textwidth]{gibbon_figure06C.png}
+\includegraphics[width=\textwidth]{gibbon_figure06C.png}
 \caption{\label{fig:fig06}RFA: upper panels, waveform and amplitude envelope; lower panels, long-term spectrum of the selected event with conspicuous rhythm formants and smaller higher frequency formants.}
 \end{figure}
-\noindent
+
 Rhythm Formant Theory is a further development of Speech Modulation Theory and addresses the task of the hearer (or the phonetician, or the automatic speech recognition application, in demodulating and then analysing the structure of the speech signal. The underlying idea in RFT \citep{gibbonsp2018, gibbonjipa2021, gibbonsp2022} is that speech rhythms are not only identifiable as intervals between beats or as beat rate per second in the time domain, but also, and in more detail, as low frequency spectral magnitude peaks, the rhythm formants. Over the entire spectral frequency range there are magnitude peaks at specific frequencies, in particular the peak frequencies of the LF AM and FM rhythm formants, the MF (medium frequency) carrier signal frequency (F0), and the HF peak frequencies of the harmonics of the carrier signal and of the HF phone formants as modulations of the harmonics.
 
 The term \textit{formant} emphasises that, except for the different frequencies, the acoustic definition of LF rhythm formants as spectral peaks is the same as for the HF phone formants which constitute consonants and vowels, which are spectral peaks above and below 1\,kHz. The LF rhythm formants are spectral peaks above and below 1\,Hz, with frequencies between 0.3\,Hz and 10\,Hz (periods of 3\,s to 100\,ms) for the `linguistic rhythm' \citep{libermanprince1977} of syllables, words and phrases, and below approximately 0.3\,Hz (periods of $\rangle\rangle$3\,s or more, in the present analysis 300\,s) for rhetorical or discourse rhythms. Rhythm formants in both FM and AM LF spectra are relevant for rhythm analysis \citep{gibbonsp2018, gibbonjipa2021, gibbonsp2022, gibbon4urua2022}, but in the present contribution attention is restricted to the AM rhythm formants.
@@ -306,8 +298,9 @@ So far, the spectrogram of just one \textit{caller-choir} sequence was discussed
 In summary, the expected dual rhythm formant bars for the three \textit{caller-choir} exchanges are present, at about 30\,s, 180\,s and 220\,s, and provide further informal support the hypotheses H2, H3, H4 and H5. The intervening \textit{narrator-responder} alternations are complementary to the \textit{caller-choir} cycles, and can be seen to have their own entirely different shorter-term timing properties. It is beyond the scope of the present study to investigate other details. It is sufficient for the present study to point out that there are in fact clear spectral differences in segments of the discourse, that they evidently relate to different kinds of turn in the interaction, and that pessimism about identifying rhythm in the physical signal, at least in its discourse functions, is not justified.
 
 \section{Summary and conclusion}
-
+\begin{sloppypar}
 This contribution explores functional, structural and physical properties of speech rhythms in the interactive narration of a parable in the endangered Ega language, south central Ivory Coast, recorded during a fieldwork project, a small and rare example of traditional orature. The village orator has two roles, as \textit{narrator} of the parable with feedback from his designated \textit{responder}, and as \textit{caller} in chanted interaction with a responding audience as \textit{choir}.  The methodology is an interdisciplinary combination of qualitative and quantitative analyses. Relevant functions of speech rhythm are characterised as coupling, a concept from linguistic stylistics, and iterations of matching functional and structural cohesion in the temporal rhythm domain are described with a cyclical linear model. Annotation analysis provides a hybrid qualitative-quantitative bridge to acoustic phonetic signal analysis, and finally spectral peaks which distinguish between different turn and exchange types are interpreted as rhythm formants with a high level of rhythmicity or resonance. The signal processing procedure is based on \textit{Rhythm Formant Theory} and its associated \textit{Rhythm Formant Analysis} methodology and provides physical grounding for rhythm theories, embedded in a background of poetic culture.
+\end{sloppypar}
 
 In conclusion, it was shown that functional, structural and causal physical accounts can combine to explain the overall picture of how speech rhythms work in interactive orature: \textit{discourse rhythms} have a \textit{coupling} function for the accompanying locutions, are given hermeneutic motivation by functional analysis, and are structured by means of an \textit{iterative linear oscillator} (in the formal grammar sense of `linear'), and realised with \textit{causal physical grounding} as \textit{rhythm formants} with specific frequency, amplitude and bandwidth properties.
 
