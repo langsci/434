@@ -183,7 +183,7 @@ L \ar[r]^d &D\ar[r]^t &F\ar[r]^I & \mathcal{M}\ar[r]^g &W\\
 On the right side, we do not find real-world objects or even formal objects
 (models), but formulas $F$ of a particular logic calculus. The full picture of
 MG is composed of the first two or three arrows in
-Fig.~\figref{fig:information_objects}, with the primary attention focused on the
+\figref{fig:information_objects}, with the primary attention focused on the
 translation homomorphism $t$. The models $\mathcal{M}$ are reasonably standard
 set-theoretical constructs (except for an internal time parameter that
 temporal semantics often relies on), and the grounding $g$ in the real world
@@ -233,7 +233,7 @@ mechanism that deals with the non-compositional aspects by means of subdirect
 products, which contain the fully compositional direct products as a limiting
 case.
 
-\medskip\noindent D3, while in principle compatible with many theories, is
+D3, while in principle compatible with many theories, is
 seriously underresearch\-ed. Using a natural language (typically English) as
 pivot (intermediary) between two languages is common both in manual and in
 machine translation. The use of a formal language is almost unheard of: the
@@ -249,7 +249,6 @@ predicate logic) have very little coverage to begin with. It appears the real
 issue is lack of transparency, a phenomenon well observable on the
 Schönfinkel-style reduction step of replacing the standard $S$ and $K$ 
 combinators by a single combinator $J$. This  $J$ is defined by cases:
-
 \[
   Jx =
   \begin{cases}
@@ -310,7 +309,7 @@ $8=2^3$):
   transparently compositional in both directions
 \end{itemize}
 
-\medskip\noindent D4 and D5 are part of the \citet{Katz:1963} criteria that
+D4 and D5 are part of the \citet{Katz:1963} criteria that
 for many years were (and in many ways remain) the standard statement regarding
 the adequacy of any semantic theory:
 
@@ -350,7 +349,7 @@ Section \sectref{4lang} we will considerably relax D4 and D5: whatever is OTF,
 translation from it should not be more difficult than translation to it, and
 full capture of ambiguity and paraphrase is impossible. 
 
-\medskip\noindent D6 is very ambitious, and is not shared widely among
+ D6 is very ambitious, and is not shared widely among
 linguists, except those with a more semiotic bent. Clearly, there is such a
 thing as `the language of music', it even has a written form, scores. But it
 is not clear that when we say that `music speaks to us' we mean the sequence
@@ -379,7 +378,7 @@ make some progress on the semantics of these non-linguistic domains by
 leveraging the lexical semantics of words like \emph{awe}, a matter we shall
 return to in Section \sectref{4lang}.
 
-\medskip\noindent Until now we have discussed a set of desiderata that any
+Until now we have discussed a set of desiderata that any
 semantic theory should meet, selecting D1, D7, and D8 as our central
 desiderata. D2 and D3 are subsumed under D8, while D4, D5, and D6 are seen as
 \emph{good to have}s, criteria that must be subordinated to the central
@@ -471,11 +470,10 @@ phrases, sentences, and even larger units. In this system,
 non-compositionality corresponds to \emph{subdirect} products, and
 compositionality appears as a special case, \emph{direct} products
 \citep{Kornai:2010} -- the difference is illustrated in
-Fig.~\figref{fig:dirsubdir}.
+\figref{fig:dirsubdir}.
 
 
 \begin{figure}[h]
-    \centering
     \begin{subfigure}[t]{0.5\textwidth}
 	\centering
         \begin{tikzpicture}[scale=0.5]
@@ -494,7 +492,6 @@ Fig.~\figref{fig:dirsubdir}.
     \caption{Direct and subdirect products of the same two intervals $[0,12]$ and $[0,8]$}\label{fig:dirsubdir}
 \end{figure}
 
-\noindent
 The \href{https://en.wikipedia.org/wiki/Subdirect_product}{subdirect product},
 standardly defined as a \emph{sub}set of the \emph{direct product} satisfying
 projection requirements is not unique: there can be many subsets of the direct
@@ -512,7 +509,7 @@ between the purely morphological and the purely syntactic such as \emph{NP of
   Construction Grammar} \citep{Kornai:1988a}, taking care of our desideratum
 D7.
 
-\medskip\noindent What are, then, the non-negotiable elements of vector
+What are, then, the non-negotiable elements of vector
 semantics? One, perhaps the most important one, is the notion of containment,
 \textsc{IsA}, which we see as essential for the reconstruction of Aristotelian
 \emph{genus}. Whatever definition we provide for \emph{dachshund} or \emph{labrador}, the first thing in the definiens will be \emph{dog}. Given that we
@@ -548,7 +545,7 @@ edges). These should be familiar from the
 \href{https://en.wikipedia.org/wiki/Resource_Description_Framework}{Resource
   Description Framework} that is standard on the WorldWideWeb.
 
-\bigskip\noindent It is easy to check that the system presented here meets our
+It is easy to check that the system presented here meets our
 desiderata D1 and D8 as well, so our work is done. Readers interested in how the
 system can be extended, without adding further operators, to issues of
 temporal and spatial semantics, indexicals, negation, quantification,
@@ -616,7 +613,7 @@ the dimension of the vector space we use for modeling semantics.
 
 Minimality requires thrift both in the number of operations and in the number
 of primitives manipulated by these. To maintain compositionality in both
-directions, the `bestiary-style' minimalism of (Gödel) numbering has to be
+directions, the “bestiary-style” minimalism of (Gödel) numbering has to be
 sacrificed for more transparent operations. Of particular interest is the case
 when the objects manipulated are vectors and matrices in finite-dimensional
 Euclidean space, since these can be acquired gradually, by optimization
