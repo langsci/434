@@ -46,13 +46,76 @@ $G_3$ is a ‘recursive hierarchical grammar’, the complex grammatical system 
 
 \section{A Role and Reference Grammar analysis of $G_1$ grammars}\label{sec:vanvalin:3}
 
-On p. 198 of \citew{everett2017language} there is a partial RRG tree diagram illustrating some of the structural complexity in a $G_3$ grammar.  That tree represents only one of the four projections of the clause posited in RRG: there are constituent, operator, information structure, and prosodic projections. Only the first two are represented in \figref{fig:fig1} below.  
+On p. 198 of \citew{everett2017language} there is a partial RRG tree diagram illustrating some of the structural complexity in a $G_3$ grammar.  That tree represents only one of the four projections of the clause posited in RRG: there are constituent, operator, information structure, and prosodic projections. Only the first two are represented in Figure \figref{fig:fig1} below.  
 
-The constituent projection contains lexical items functioning as predicators, arguments, adjuncts and modifiers.  The layered structure of the clause consists of the \textsc{nucleus}, the syntactic unit housing the predicating element, typically, but not necessarily, a verb.  The nucleus plus the semantic arguments of the predicator constitute the \textsc{core} of the clause.  The English verb give has three semantic arguments, yet there are only two arguments in the core in \figref{fig:fig1}. The third semantic argument is a WH-expression, and occurs displaced in the \textsc{pre-core slot}, the normal position for displaced WH-expressions in many languages. Locative and temporal adjuncts normally appear in the core-level periphery, since they specify where and when the event coded in the core takes place.  In this example the temporal adjunct yesterday functions as a frame-setting topic and occurs in the \textsc{pre-detached position}.  The \textsc{clause} contains the core plus the pre-core slot and the core-level periphery, while the \textsc{sentence} includes the clause, the clause-level periphery, and the pre-detached position.\footnote{Some languages have a  \textsc{post-core slot} and/or a \textsc{post-detached position}.}
+The constituent projection contains lexical items functioning as predicators, arguments, adjuncts and modifiers.  The layered structure of the clause consists of the \textsc{nucleus}, the syntactic unit housing the predicating element, typically, but not necessarily, a verb.  The nucleus plus the semantic arguments of the predicator constitute the \textsc{core} of the clause.  The English verb give has three semantic arguments, yet there are only two arguments in the core in Figure \figref{fig:fig1}. The third semantic argument is a WH-expression, and occurs displaced in the \textsc{pre-core slot}, the normal position for displaced WH-expressions in many languages. Locative and temporal adjuncts normally appear in the core-level periphery, since they specify where and when the event coded in the core takes place.  In this example the temporal adjunct yesterday functions as a frame-setting topic and occurs in the \textsc{pre-detached position}.  The \textsc{clause} contains the core plus the pre-core slot and the core-level periphery, while the \textsc{sentence} includes the clause, the clause-level periphery, and the pre-detached position.\footnote{Some languages have a  \textsc{post-core slot} and/or a \textsc{post-detached position}.}
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{vanvalin_figure1.png}
+\includegraphics[width=0.8\textwidth]{vanvalin_figure1.png}
+\fittable{
+\begin{forest}
+  [SENTENCE,xshift=10mm
+   [PrDP, tier=core
+      [ADV, tier=v
+         [Yesterday, tier=word]
+      ]
+   ]
+   [CLAUSE, name=clause1,xshift=-4mm
+      [PrCS, tier=core
+         [RP, tier=v
+            [~, text width=1cm, tier=word, no edge]
+            [what, text width=1cm, tier=word]
+            [did, text width=1cm, tier=word, no edge, name=did]
+         ]
+      ]
+      [CORE, name=core, tier=core
+         [RP, text width=1cm, text centered
+            [John, tier=word]
+         ]
+         [NUC, text width=1cm, text centered
+            [PRED
+               [V, tier=v
+                  [give, tier=word
+                     [\textsc{nuc},s=-5mm
+                        [\textsc{core}
+                           [\textsc{clause}, name=clause2
+                              [\textsc{clause}, name=clause3
+                                 [\textsc{sentence}
+                              ]
+                           ]
+                        ]
+                     ]
+                  ]
+               ]
+            ]
+            ]
+         ]
+         [PP, text width=1cm, text centered
+            [to Mary, tier=word]
+         ]
+   ]
+      [PERIPHERY, name=periphery, tier=core, no edge
+         [PP, tier=v
+            [in the library?, tier=word]
+         ]
+      ]
+   [~, tier=core, no edge]
+  ]
+   [~, tier=core, no edge]
+]
+\node(TNS)[left=0.5cm of clause2]{\textsc{tns}};
+\node(IF)[left=1cm of clause3]{\textsc{if}};
+\node(cp)[left=9cm of clause1]{\textbf{Constituent projection}};
+\node[below=9.5cm of cp]{\textbf{Operator projection}};
+\draw[dotted,thick](did.south)--(TNS);
+\draw[dotted,thick](did.south)--(IF);
+\draw[->](TNS)--(clause2);
+\draw[->](IF)--(clause3);
+\draw[->](periphery)--(core);
+\end{forest}
+}
+
 \caption{\label{fig:fig1}Clause structure in a $G_3$ language}
 \end{figure}
 
@@ -67,35 +130,35 @@ What would a sequence of utterances in a $G_1$ language look like?  Consider the
 It would have the following structure.
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{vanvalin_figure2.png}
+\includegraphics[width=0.8\textwidth]{vanvalin_figure2.png}
 \caption{\label{fig:fig2}Structure of utterances in $G_1$ language}
 \end{figure}
 
 The first thing to note is the lack of syntactic categories.  There are no grounds for attributing syntactic categories or syntactic structure to these utterances.  The categories are all semantic: ‘RE’ is \textsc{referring expression} and is not phrasal; ‘\textsc{pred}’ is \textsc{predicator}; and ‘PROP’ is \textsc{proposition}.  A proposition consists of a predicator and its arguments. There are no adjuncts modifying the proposition or any of its constituents.  When a location needs to be mentioned, for example, it is expressed as an independent locative proposition, analogous to the independent attributive proposition involving the referring expression \emph{deer}.  
 
-The equivalent of lexical modifiers, as illustrated in \figref{fig:fig2}, would be represented as independent propositions.  What about non-lexical, i.e. grammatical, modifiers?  It is highly unlikely that there are any grammatical modifiers of this kind found in a $G_1$ grammar of the type posited for \emph{Homo Erectus}.  Hence there would not be an operator projection in the representation of utterances.  However, there are two operators which are found in the grammar of every $G_2$ and $G_3$ human language and must have been part of any possible \emph{Homo Erectus} $G_1$ system: negation and illocutionary force. Negation is essential for reasoning as well as for important speech acts like negative imperatives and warnings.  The ability to make assertions, ask questions and give commands is an essential part of any human communication system.  It is for these reasons that RRG claims that negation and illocutionary force are the only universal operators.  Both can be expressed through non-grammatical means: illocutionary force can be signaled prosodically, while negation can be expressed gesturally.  Hence they would not motivate an operator projection in the structures.
+The equivalent of lexical modifiers, as illustrated in Figure \figref{fig:fig2}, would be represented as independent propositions.  What about non-lexical, i.e. grammatical, modifiers?  It is highly unlikely that there are any grammatical modifiers of this kind found in a $G_1$ grammar of the type posited for \emph{Homo Erectus}.  Hence there would not be an operator projection in the representation of utterances.  However, there are two operators which are found in the grammar of every $G_2$ and $G_3$ human language and must have been part of any possible \emph{Homo Erectus} $G_1$ system: negation and illocutionary force. Negation is essential for reasoning as well as for important speech acts like negative imperatives and warnings.  The ability to make assertions, ask questions and give commands is an essential part of any human communication system.  It is for these reasons that RRG claims that negation and illocutionary force are the only universal operators.  Both can be expressed through non-grammatical means: illocutionary force can be signaled prosodically, while negation can be expressed gesturally.  Hence they would not motivate an operator projection in the structures.
 
 \section{Information structure, argument realization, and cooperation}\label{sec:vanvalin:4}
 
-In the hypothetical $G_1$ example in \REF{vanvalin_example_3} and \figref{fig:fig2}, after the first mention of a referent, there are three possibilities for subsequent mentions: (1) repetition of the referring expression, (2) using a \textsc{pro} form, or  (3) simple omission, as is often the case in many $G_3$ languages today.  Option 1 requires no special machinery; it is the most redundant.  Option 2 is the least likely, since the development of \textsc{pro} forms seems to be more likely a trait of the advanced systems.  The most interesting option is (3).  It was argued in \citet{van1990functionalism} and \citet{van1997syntax}, following Kuno, Bolinger and Bickerton, that information structure plays a central role in the analysis of intrasentential pronominalization, regardless as to whether it involves overt \textsc{pro} forms or zero anaphora.  For example, a referent cannot be realized as zero if it is part of the actual focus 
+In the hypothetical $G_1$ example in \REF{vanvalin_example_3} and Figure \figref{fig:fig2}, after the first mention of a referent, there are three possibilities for subsequent mentions: (1) repetition of the referring expression, (2) using a \textsc{pro} form, or  (3) simple omission, as is often the case in many $G_3$ languages today.  Option 1 requires no special machinery; it is the most redundant.  Option 2 is the least likely, since the development of \textsc{pro} forms seems to be more likely a trait of the advanced systems.  The most interesting option is (3).  It was argued in \citet{van1990functionalism} and \citet{van1997syntax}, following Kuno, Bolinger and Bickerton, that information structure plays a central role in the analysis of intrasentential pronominalization, regardless as to whether it involves overt \textsc{pro} forms or zero anaphora.  For example, a referent cannot be realized as zero if it is part of the actual focus 
 domain of the clause but can be if it is part of the background.  So in the earlier example, it would be nonsensical to introduce \emph{the deer} using zero coding.  Hence overt occurrence vs. omission would likely not be beyond the means of \emph{Homo Erectus}.  Thus possibility 3 is very much an option.
 
 If \emph{Homo Erectus} is sensitive to some aspects of information structure, then this has significant consequences for the issues raised at the outset of this discussion.  It was argued in \citet{van1993synopsis}, following \citet{kempson1975presupposition}, that the notions of topic and focus, which are fundamental to information structure, are ultimately derived from Grice’s Cooperative Principle and the maxim of quantity, which are general (i.e. not domain-specific) rational principles of human behavior.  Cooperation is a hallmark of language users, and despite the fact that it is certain that \emph{Homo Erectus} did not wield the Cooperative Principle in the same way as modern $G_3$ language users do, it nevertheless was a necessary part of \emph{Homo Erectus} cognition.  An example where cooperation would be vital is trying to reach islands separated from them by a significant body of water; cooperation is essential in the constructing and operation of the primitive watercraft on which they traveled and on which their lives depended.
 
 \section{The transition from $G_1$ to $G_2$}\label{sec:vanvalin:5}
 
-A $G_2$ grammar would differ from a $G_1$ grammar in significant ways.  To begin with, the combination of adjunct modifiers and referring expressions yields \textsc{reference phrases}, which are necessarily syntactic, because a reference phrase potentially consists of two or more units that are not of the same semantic type, e.g. [$_{RP}$ [$_{PRED}$ big ]—>[$_{RE}$ deer] ].  In the same vein, the coocurrence of syntactic reference phrases in a proposition triggers a reanalysis of the proposition as a syntactic entity, a core.  In addition, the occurrence of adjunct modifiers taking a propositional unit as an argument, e.g ‘I see big deer near river’ (i.e. \textbf{near}´ (river, [\textsc{spkr} see big deer])), further motivated the reanalysis, as the predicate+argument(s) unit is now functioning as an argument and filling a slot that could also be filled by a syntactic entity, namely a reference phrase (e.g. ‘Big deer near river’).  The predicator underwent reanalysis as a syntactic nucleus due to, among other things, the occurrence of syntactic entities as the predicator, e.g. ‘\textsc{spkr} good hunter’.  Thus, the introduction of embedding had profound implications, because it created semantically mixed units which led to the reanalysis of the fundamental semantic entities as syntactic, as illustrated in \figref{fig:fig3}.
+A $G_2$ grammar would differ from a $G_1$ grammar in significant ways.  To begin with, the combination of adjunct modifiers and referring expressions yields \textsc{reference phrases}, which are necessarily syntactic, because a reference phrase potentially consists of two or more units that are not of the same semantic type, e.g. [$_{RP}$ [$_{PRED}$ big ]—>[$_{RE}$ deer] ].  In the same vein, the coocurrence of syntactic reference phrases in a proposition triggers a reanalysis of the proposition as a syntactic entity, a core.  In addition, the occurrence of adjunct modifiers taking a propositional unit as an argument, e.g ‘I see big deer near river’ (i.e. \textbf{near}´ (river, [\textsc{spkr} see big deer])), further motivated the reanalysis, as the predicate+argument(s) unit is now functioning as an argument and filling a slot that could also be filled by a syntactic entity, namely a reference phrase (e.g. ‘Big deer near river’).  The predicator underwent reanalysis as a syntactic nucleus due to, among other things, the occurrence of syntactic entities as the predicator, e.g. ‘\textsc{spkr} good hunter’.  Thus, the introduction of embedding had profound implications, because it created semantically mixed units which led to the reanalysis of the fundamental semantic entities as syntactic, as illustrated in Figure \figref{fig:fig3}.
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{vanvalin_figure3.png}
+\includegraphics[width=0.8\textwidth]{vanvalin_figure3.png}
 \caption{\label{fig:fig3}The transition from $G_1$ to $G_2$}
 \end{figure}
 
 The two most salient changes are the transformation of the attributive predicator big into a part of the referring expression \emph{deer}, thereby creating a syntactic reference phrase, and the reanalysis of the locative proposition \emph{by the river} into a propositional modifier.  The result is more compact expressions with modification relations directly coded.  
 
 \section{Conclusion}\label{sec:vanvalin:6}
-In this brief note I have sketched out what an RRG analysis of a $G_1$ linguistic system which could have been employed by \emph{Homo Erectus} might have looked like, based on the account given in \citet{everett2017language}.  Dubbed a ‘linear grammar’ by Everett, it would specify a linear string of propositions, as in \figref{fig:fig2}, which would be semantic in nature.  There is nothing to motivate the positing of syntactic categories or structure.  Of particular interest is the role of information structure, which gives evidence that Upright Man had a rudimentary understanding of Grice’s Cooperative Principle and at least the the maxim of quantity, since it underlies the important notions of topic and focus.  
+In this brief note I have sketched out what an RRG analysis of a $G_1$ linguistic system which could have been employed by \emph{Homo Erectus} might have looked like, based on the account given in \citet{everett2017language}.  Dubbed a ‘linear grammar’ by Everett, it would specify a linear string of propositions, as in Figure \figref{fig:fig2}, which would be semantic in nature.  There is nothing to motivate the positing of syntactic categories or structure.  Of particular interest is the role of information structure, which gives evidence that Upright Man had a rudimentary understanding of Grice’s Cooperative Principle and at least the the maxim of quantity, since it underlies the important notions of topic and focus.  
 
 There is little agreement among researchers investigating primate cognition as to whether non-human primates have shared intentionality, i.e. the ability to recognize con-specifics as being intentional and mental agents.  It is clear, however, that early humans, including \emph{Homo Erectus}, had shared intentionality.  They were, so to speak, “Gricean apes”.
 
