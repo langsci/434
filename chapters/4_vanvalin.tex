@@ -53,6 +53,69 @@ The constituent projection contains lexical items functioning as predicators, ar
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{vanvalin_figure1.png}
+\fittable{
+\begin{forest}
+  [SENTENCE,xshift=10mm
+   [PrDP, tier=core
+      [ADV, tier=v
+         [Yesterday, tier=word]
+      ]
+   ]
+   [CLAUSE, name=clause1,xshift=-4mm
+      [PrCS, tier=core
+         [RP, tier=v
+            [~, text width=1cm, tier=word, no edge]
+            [what, text width=1cm, tier=word]
+            [did, text width=1cm, tier=word, no edge, name=did]
+         ]
+      ]
+      [CORE, name=core, tier=core
+         [RP, text width=1cm, text centered
+            [John, tier=word]
+         ]
+         [NUC, text width=1cm, text centered
+            [PRED
+               [V, tier=v
+                  [give, tier=word
+                     [\textsc{nuc},s=-5mm
+                        [\textsc{core}
+                           [\textsc{clause}, name=clause2
+                              [\textsc{clause}, name=clause3
+                                 [\textsc{sentence}
+                              ]
+                           ]
+                        ]
+                     ]
+                  ]
+               ]
+            ]
+            ]
+         ]
+         [PP, text width=1cm, text centered
+            [to Mary, tier=word]
+         ]
+   ]
+      [PERIPHERY, name=periphery, tier=core, no edge
+         [PP, tier=v
+            [in the library?, tier=word]
+         ]
+      ]
+   [~, tier=core, no edge]
+  ]
+   [~, tier=core, no edge]
+]
+\node(TNS)[left=0.5cm of clause2]{\textsc{tns}};
+\node(IF)[left=1cm of clause3]{\textsc{if}};
+\node(cp)[left=9cm of clause1]{\textbf{Constituent projection}};
+\node[below=9.5cm of cp]{\textbf{Operator projection}};
+\draw[dotted,thick](did.south)--(TNS);
+\draw[dotted,thick](did.south)--(IF);
+\draw[->](TNS)--(clause2);
+\draw[->](IF)--(clause3);
+\draw[->](periphery)--(core);
+\end{forest}
+}
+
 \caption{\label{fig:fig1}Clause structure in a $G_3$ language}
 \end{figure}
 
