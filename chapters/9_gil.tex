@@ -35,7 +35,7 @@ Indeed, in Riau Indonesian, the grammar permits the formation of sentences such 
 \ea\label{ex:gil:1}
 \gll Ali	pukul	orang	yang	suka	anjing	yang	kejar	anak.\\
  Ali	hit	person	\textsc{prtc}	like	dog	\textsc{prtc}	chase	child\\
-\glt 'Ali hit the person who likes the dog that chased the child.'
+\glt `Ali hit the person who likes the dog that chased the child.'
 \z
 
 Moreover, if one really wants to, one can go on adding relative clauses at the end of the construction indefinitely. So in this respect, Riau Indonesian is clearly syntactically recursive, like English, not like Pirahã.
@@ -43,7 +43,7 @@ In previous work, my focus was largely on the grammar of simple word combination
 
 \begin{figure}
 % % \centering
-\includegraphics[width=0.8\textwidth]{gil_figure1.png}
+% \includegraphics[width=0.8\textwidth]{gil_figure1.png}
 \begin{forest}
 [S
   [S\\Ali,tier=word]
@@ -72,13 +72,13 @@ In previous work, my focus was largely on the grammar of simple word combination
 \caption{\label{fig:gil:fig1}Syntactic structure of \REF{ex:gil:1}}
 \end{figure}
 
-In Riau Indonesian, almost all words belong to the single open syntactic category S, for Sentence; this includes, among others, words denoting things, such as \textit{anak} 'child', as well as words denoting activities, such as \textit{kejar} 'chase'. The combination of the two, as in \textit{kejar anak} above, is thus an instance of sentential coordination. Similarly, complex Ss may combine with other simple or complex Ss to yield hierarchical structures such as that in \figref{fig:gil:fig1}. While most words belong to the category S, a handful of grammatical items belong to a closed class, S/S, whose name, following the conventions of categorial grammar, stipulates that they cannot occur on their own but rather must combine with Ss to yield superordinate Ss. \figref{fig:gil:fig1} contains two occurrences of the S/S word \textit{yang}; in one case it combines with the S expression \textit{kejar anak} to yield a superordinate S expression \textit{yang kejar anak}, while in the other case it takes the S expression \textit{suka anjing yang kejar anak} to yield a superordinate S expression \textit{yang suka anjing yang kejar anak}. As suggested by the above, the syntax of Riau Indonesian is thus fully recursive, allowing for hierarchical syntactic structures of arbitrary depth.
+In Riau Indonesian, almost all words belong to the single open syntactic category S, for Sentence; this includes, among others, words denoting things, such as \textit{anak} `child', as well as words denoting activities, such as \textit{kejar} `chase'. The combination of the two, as in \textit{kejar anak} above, is thus an instance of sentential coordination. Similarly, complex Ss may combine with other simple or complex Ss to yield hierarchical structures such as that in \figref{fig:gil:fig1}. While most words belong to the category S, a handful of grammatical items belong to a closed class, S/S, whose name, following the conventions of categorial grammar, stipulates that they cannot occur on their own but rather must combine with Ss to yield superordinate Ss. \figref{fig:gil:fig1} contains two occurrences of the S/S word \textit{yang}; in one case it combines with the S expression \textit{kejar anak} to yield a superordinate S expression \textit{yang kejar anak}, while in the other case it takes the S expression \textit{suka anjing yang kejar anak} to yield a superordinate S expression \textit{yang suka anjing yang kejar anak}. As suggested by the above, the syntax of Riau Indonesian is thus fully recursive, allowing for hierarchical syntactic structures of arbitrary depth.
 
 As shown in \figref{fig:gil:fig2} below, the basic compositional semantics of sentence \REF{ex:gil:1} makes reference to a hierarchical structure that is completely isomorphic to that of its syntax.
 
 \begin{figure}
-\includegraphics[width=0.8\textwidth]{gil_figure2.png}
-\begin{forest}
+% \includegraphics[width=0.8\textwidth]{gil_figure2.png}
+\resizebox{\textwidth}{!}{\begin{forest}
 for tree={font=\scshape}
 [{a(ali hit a(person prtc[a(like a(dog prtc[a(chase child)]))]))},parent anchor=-175, anchor=west
     [ali,tier=word]
@@ -103,11 +103,11 @@ for tree={font=\scshape}
         ]
     ]
 ]
-\end{forest}
+\end{forest}}
 \caption{\label{fig:gil:fig2}Semantic structure of \REF{ex:gil:1}}
 \end{figure}
 
-As represented in \figref{fig:gil:fig2}, the semantics of sentence \REF{ex:gil:1} makes reference to two operators. First and foremost is the Association Operator A, which underlies the overwhelming majority of the compositional semantics. In its polyadic guise, illustrated above, it is a generalization of the monadic Association Operator, familiar as a semantic representation for genitive markers and various other possessive and associative constructions in many languages. Applying to two meanings, X and Y, A(X,Y) simply means 'entity associated with X and Y', or 'something to do with X and Y'. For example, in the above representation, A(CHASE CHILD), the meaning of \textit{kejar anak}, means 'entity associated with chase and child'; among many other things, it is unspecified for a variety of semantic categories such as number, definiteness, tense-aspect, and thematic role assignment (e.g. whether the child is the agent or patient of the chasing). The second operator is the Participant Operator \textsc{prtc}, which, when applied to a meaning X, creates a new meaning \textsc{prtc}(X), picking out a participant in the semantic frame of X. The Participant Operator underlies the semantic representation of grammatical markers in several languages, which, under alternative analyses, are sometimes characterized as relativizers, nominalizers or reifiers. For example, in the above representation, \textsc{prtc}[A(CHASE CHILD)] denotes a participant associated with the entity associated with \textit{chase} and \textit{child}, without any further specification of thematic role (i.e. whether it is the agent, the patient, or perhaps some other thematic role). The above analysis captures the fact that sentence \REF{ex:gil:1} is massively underspecified with respect to categories such as number, definiteness, tense-aspect and thematic roles, with respect to which the English translation in \REF{ex:gil:1}, 'Ali hit the person who likes the dog that chased the child', is just one of myriad alternative available translations.
+As represented in \figref{fig:gil:fig2}, the semantics of sentence \REF{ex:gil:1} makes reference to two operators. First and foremost is the Association Operator A, which underlies the overwhelming majority of the compositional semantics. In its polyadic guise, illustrated above, it is a generalization of the monadic Association Operator, familiar as a semantic representation for genitive markers and various other possessive and associative constructions in many languages. Applying to two meanings, X and Y, \textsc{a}(X,Y) simply means `entity associated with X and Y', or `something to do with X and Y'. For example, in the above representation, \textsc{a(chase child)}, the meaning of \textit{kejar anak}, means `entity associated with chase and child'; among many other things, it is unspecified for a variety of semantic categories such as number, definiteness, tense-aspect, and thematic role assignment (e.g. whether the child is the agent or patient of the chasing). The second operator is the Participant Operator \textsc{prtc}, which, when applied to a meaning X, creates a new meaning \textsc{prtc}(X), picking out a participant in the semantic frame of X. The Participant Operator underlies the semantic representation of grammatical markers in several languages, which, under alternative analyses, are sometimes characterized as relativizers, nominalizers or reifiers. For example, in the above representation, \textsc{prtc[a(chase child)]} denotes a participant associated with the entity associated with \textit{chase} and \textit{child}, without any further specification of thematic role (i.e. whether it is the agent, the patient, or perhaps some other thematic role). The above analysis captures the fact that sentence \REF{ex:gil:1} is massively underspecified with respect to categories such as number, definiteness, tense-aspect and thematic roles, with respect to which the English translation in \REF{ex:gil:1}, `Ali hit the person who likes the dog that chased the child', is just one of myriad alternative available translations.
 
 The above analysis may be contrasted with the alternative approach proposed by \citet{jackendoff2014syntax,jackendoff2017linear}. One feature shared by both approaches is monocategoriality, the claim that Riau Indonesian has but a single open syntactic category.  However, there are at least two significant differences between the two approaches.  One pertains to the semantics, with respect to which \citet{jackendoff2014syntax,jackendoff2017linear} propose a more conventional analysis, based not on the Association Operator but rather on the familiar predicate-argument relationship.  However, it is the second difference between the two approaches, pertaining to the syntax, that is of relevance to us here.  In contrast to the above analysis, \citet{jackendoff2014syntax,jackendoff2017linear} assign Riau Indonesian to their class of Multi-Word Phrase Grammars, whose structures are flatter and non-recursive, making reference to just three categories, W(ord), P(hrase) and U(tterance).  In fact, in their view, even these categories are more appropriately viewed as phonological, or prosodic, rather than syntactic.  An analysis of sentence \REF{ex:gil:1} in accordance with \citet{jackendoff2014syntax,jackendoff2017linear}, whose approach is presented in \figref{fig:gil:fig3}.
 
@@ -155,7 +155,7 @@ Consider, for example, the substring of words \textit{anjing yang kejar anak} (d
 \ea \label{ex:gil:2}
 \gll Anjing	yang	kejar	anak	Ali	pukul	orang	yang	suka.\\
  dog	\textit{prtc}	chase	child	Ali	hit	person	\textit{prtc}	like	\\
-\glt 'The dog that chased the child, Ali hit the person who likes it.'
+\glt `The dog that chased the child, Ali hit the person who likes it.'
 \z
 
 Conversely, it also correctly predicts that \textit{yang suka anjing}, a constituent in \figref{fig:gil:fig3} but not in \figref{fig:gil:fig1}, cannot be moved to the beginning of the sentence, as in \REF{ex:gil:3} below, without a massive change in meaning:
@@ -163,7 +163,7 @@ Conversely, it also correctly predicts that \textit{yang suka anjing}, a constit
 \ea \label{ex:gil:3}
 \gll Yang	suka	anjing	Ali	pukul	orang	yang	kejar	anak.\\
  \textsc{prtc}	like	dog	Ali	hit	person	\textit{prtc}	chase	child\\
-\glt 'As for the one who likes the dog, Ali hit the person who chased the child.' \\
+\glt `As for the one who likes the dog, Ali hit the person who chased the child.' \\
 *	'Ali hit the person who likes the dog that chased the child.' [= \REF{ex:gil:1}]
 \z
 
@@ -230,7 +230,7 @@ The independence of linguistic perspective from lexicon and grammar can be seem 
 
 The strangeness of examples \REF{ex:gil:7} and \REF{ex:gil:8} is indicated above by the use of the symbol \#.  Sentence \REF{ex:gil:7} in Riau Indonesian is as precise a rendition as is possible of sentence \REF{ex:gil:6} in English, leaving out the term of address, but including expression of time, with \textit{tadi}, number, with the numeral \textit{satu}, participant, with the pronoun \textit{kamu}, and possession, with the second occurrence of \textit{kamu} in a possessive construction.  Sentence \REF{ex:gil:7} is perfectly grammatical in Riau Indonesian, but is hopelessly long-winded; nobody would ever say anything like that in real life.  Conversely, sentence \REF{ex:gil:8} in English is perhaps as close as one can get to sentence \REF{ex:gil:5} in Riau Indonesian, leaving out the expression of time, number, participant and possession, but including instead the kinship term \textit{bro}.  While the bare verb \textit{drop} is of marginal grammaticality in the given syntactic environment, a further major problem in \REF{ex:gil:8} involves the use of inappropriate and clashing registers: whereas the bare noun phrase \textit{wallet} is associated with the telegrammatic language of newspaper headlines and the like, the address term \textit{bro} is restricted in its occurrence to certain speech styles of particular subcultures.  In summary, what is strange about sentence \REF{ex:gil:7} and in large part also \REF{ex:gil:8} is a matter of linguistic perspective, not lexicon or grammar.
 
-The notion of linguistic perspective provides the basis for a proper understanding of how Riau Indonesian can be syntactically recursive in one respect but not syntactically recursive in another.  Specifically, sentence \REF{ex:gil:1} is strange in a similar way to sentences \REF{ex:gil:7} and \REF{ex:gil:8} above; it should also have been marked with a \#.  While illustrating the recursive potential of Riau Indonesian syntax, it violates the linguistic perspective of Riau Indonesian.  Specifically, in Riau Indonesian, speakers systematically choose not to afford overt morphosyntactic expression to the kind of logical subordination that is commonly expressed in English by multiple syntactic embedding.  Thus, in a situation that might prompt a speaker of English to say something like 'Ali hit the person who likes the dog that chased the child', a speaker of Riau Indonesian is much less likely to produce a sentence such as \REF{ex:gil:1}, and instead more likely to produce one that might broadly resemble the following:
+The notion of linguistic perspective provides the basis for a proper understanding of how Riau Indonesian can be syntactically recursive in one respect but not syntactically recursive in another.  Specifically, sentence \REF{ex:gil:1} is strange in a similar way to sentences \REF{ex:gil:7} and \REF{ex:gil:8} above; it should also have been marked with a \#.  While illustrating the recursive potential of Riau Indonesian syntax, it violates the linguistic perspective of Riau Indonesian.  Specifically, in Riau Indonesian, speakers systematically choose not to afford overt morphosyntactic expression to the kind of logical subordination that is commonly expressed in English by multiple syntactic embedding.  Thus, in a situation that might prompt a speaker of English to say something like `Ali hit the person who likes the dog that chased the child', a speaker of Riau Indonesian is much less likely to produce a sentence such as \REF{ex:gil:1}, and instead more likely to produce one that might broadly resemble the following:
 
 \ea \label{ex:gil:9}
 \gll Ada	anak	kan,	dia	kejar	anjing,	terus	ada	orang	suka	anjing	tu orangnya	kena	pukul	Ali. \\
@@ -253,7 +253,7 @@ In \figref{fig:gil:fig4}, the area enclosed by the dashed line represents our co
 The preceding discussion thus provides an answer to Jim Hurford's question posed at the beginning of this section, namely, what was meant by ``idiomaticity''.  In doing so, it underscores the fact that knowing a languages involves mastery not only of lexicon, phonetics, phonology, morphology, syntax, semantics and discourse/pragmatics, but, crucially, also linguistic perspective.  In particular, in order to be able to speak Riau Indonesian properly, it is not enough to know how to construct multiple embeddings; in addition, one must also know that the actual use of such multiple embeddings is, in almost all cases, inappropriate~– it's just not the Riau Indonesian way of speaking.
 
 \section{Quantitative comparison}
-It may reasonably be objected that it is unfair to compare a standardized language such as English with a colloquial variety such as Riau Indonesian.  After all, there is substantial evidence that within many a language, subordination occurs more frequently in higher registers than in lower ones, and in written as opposed to oral modalities \citep[and others]{givon1979understanding,deutscher2000syntactic,karlsson2009aorigin,karlsson2009bsyntactic}. Indeed, corpora of spoken English are also likely to contain constructions similar to the English rendition of \REF{ex:gil:9}, 'There was a child, right, he was chased by a dog, then there was a man who liked the dog, and the man got hit by Ali'. 
+It may reasonably be objected that it is unfair to compare a standardized language such as English with a colloquial variety such as Riau Indonesian.  After all, there is substantial evidence that within many a language, subordination occurs more frequently in higher registers than in lower ones, and in written as opposed to oral modalities \citep[and others]{givon1979understanding,deutscher2000syntactic,karlsson2009aorigin,karlsson2009bsyntactic}. Indeed, corpora of spoken English are also likely to contain constructions similar to the English rendition of \REF{ex:gil:9}, `There was a child, right, he was chased by a dog, then there was a man who liked the dog, and the man got hit by Ali'. 
 
 Nevertheless, abstracting away from such language-internal variation, English as a whole is much more tolerant of multiple embedding than Malay\slash Indonesian, the macro-language of which Riau Indonesian is just one typical exemplar.  In order to support this claim empirically, a rough and ready corpus study was conducted making use of Google searches.  In both English and Malay\slash Indonesian, Google searches produce material representative not only of a range of different dialects, but also of a variety of registers ranging from the colloquial language of social media to the more formal language of written works.  Thus, it is reasonable to believe that comparing the results of Google searches in English and Malay\slash Indonesian abstracts away not only from modality effects but also from the effects of language-internal register-governed variation; such searches may thus potentially offer a fair and well-founded comparison of the two languages.
 
@@ -262,12 +262,12 @@ Some results of a comparative corpus study of English and Malay\slash Indonesian
 \begin{table}
 \caption{First comparison: English}
 \label{tab:first-english}
- \begin{tabularx}{.8\textwidth}{X rrrr}
+ \begin{tabularx}{.8\textwidth}{X rr}
  \lsptoprule
- he thinks he said & $13,840,000$ & {} \\
- he & $4,870,000,000$     & \num{7e-4} \\
- thinks & $4,260,000,000$ & \num{9e-4}\\
- said & $4,560,000,000$   & \num{8e-4}\\
+ he thinks he said & 13,840,000 & {} \\
+ he & 4,870,000,000     & \num{7e-4} \\
+ thinks & 4,260,000,000 & \num{9e-4}\\
+ said & 4,560,000,000   & \num{8e-4}\\
  \lspbottomrule
  \end{tabularx}
 \end{table}
@@ -275,12 +275,12 @@ Some results of a comparative corpus study of English and Malay\slash Indonesian
 \begin{table}
 \caption{First comparison: Malay\slash Indonesian}
 \label{tab:first-malay}
- \begin{tabularx}{.8\textwidth}{X rrrr}
+ \begin{tabularx}{.8\textwidth}{X rr}
  \lsptoprule
- dia pikir dia bilang & $7$ & {} \\
- dia (3\textsc{sg}) & $4,060,000,000$ & \num{2e-9}\\
- pikir (think) & $38,000,000$         & \num{2e-7}\\
- bilang (say) & $1,210,000,000$       & \num{6e-9}\\
+ dia pikir dia bilang & 7 & {} \\
+ dia (3\textsc{sg}) & 4,060,000,000 & \num{2e-9}\\
+ pikir (think) & 38,000,000         & \num{2e-7}\\
+ bilang (say) & 1,210,000,000       & \num{6e-9}\\
  \lspbottomrule
  \end{tabularx}
 \end{table}
@@ -288,12 +288,12 @@ Some results of a comparative corpus study of English and Malay\slash Indonesian
 \begin{table}
 \caption{Second comparison: English}
 \label{tab:second-english}
- \begin{tabularx}{.8\textwidth}{X rrrr}
+ \begin{tabularx}{.8\textwidth}{X rr}
  \lsptoprule
- he said he thinks & $10,200,000$ & {} \\
- he & $4,870,000,000$     & \num{2e-3}\\
- thinks & $4,260,000,000$ & \num{2e-3}\\
- said & $4,560,000,000$   & \num{2e-3}\\
+ he said he thinks & 10,200,000 & {} \\
+ he & 4,870,000,000     & \num{2e-3}\\
+ thinks & 4,260,000,000 & \num{2e-3}\\
+ said & 4,560,000,000   & \num{2e-3}\\
  \lspbottomrule
  \end{tabularx}
 \end{table}
@@ -301,12 +301,12 @@ Some results of a comparative corpus study of English and Malay\slash Indonesian
 \begin{table}
 \caption{Second comparison: Malay\slash Indonesian}
 \label{tab:second-malay}
- \begin{tabularx}{.8\textwidth}{X rrrr}
+ \begin{tabularx}{.8\textwidth}{X rr}
  \lsptoprule
- dia bilang dia pikir & $37,800$ & {} \\
- dia (3\textsc{sg}) & $4,060,000,000$ & \num{9e-6} \\
- pikir (think) & $38,000,000$         & \num{1e-3}\\
- bilang (say) & $1,210,000,000$       & \num{3e-5}\\
+ dia bilang dia pikir & 37,800 & {} \\
+ dia (3\textsc{sg}) & 4,060,000,000 & \num{9e-6} \\
+ pikir (think) & 38,000,000         & \num{1e-3}\\
+ bilang (say) & 1,210,000,000       & \num{3e-5}\\
  \lspbottomrule
  \end{tabularx}
 \end{table}
@@ -350,10 +350,12 @@ Solange sich der Gläubiger noch durch die nachgeholte Leistung in Natur, ggf. e
 
 According to \citet{cysouw2023hierarchical}, such sentences, complex to the point of unintelligibility for the average reader, are more common in German than in English.  To the extent that this observation holds water, it would seem to indicate that German may be characterized by a greater propensity for multiple embedding than English.  Some further discussion of stylistic variation with respect to the propensity for various kinds of subordination in the languages of Europe can be found in \citet{karlsson2007aconstraints, karlsson2007bconstraints}, suggesting, inter alia, that contemporary English might represent the outcome of recent processes of reduction in the extent to which such constructions, involving multiple embedding, are used.
 
-At the other end of the scale represented in \figref{fig:gil:fig5} are languages whose grammars do not allow syntactic recursion, or whose linguistic perspectives and associated patterns of usage disfavour it.  Again, one may ask whether and to what extent Malay\slash Indonesian and Pirahã are weird outliers, and the answer, surprising perhaps only to those whose primary concern is English and its representation within certain contemporary syntactic theories, is that they are not at all exceptional.  Thus, \citet[298]{givon1979understanding} writes that ``there are some languages extant to this day~– all in preindustrial, illiterate societies with relatively small, homogenous social units~– where one could demonstrate that subordination does not really exist  \ldots ''.  Givón's assertion is cited approvingly by \citet{pullum2010recursion} and \crossrefchaptert{3_pullum}, who go on to adduce several descriptions of languages reported as lacking subordination, among which are Amazonian languages such as Hixkaryana
+At the other end of the scale represented in \figref{fig:gil:fig5} are languages whose grammars do not allow syntactic recursion, or whose linguistic perspectives and associated patterns of usage disfavour it.  Again, one may ask whether and to what extent Malay\slash Indonesian and Pirahã are weird outliers, and the answer, surprising perhaps only to those whose primary concern is English and its representation within certain contemporary syntactic theories, is that they are not at all exceptional.  Thus, \citet[298]{givon1979understanding} writes that ``there are some languages extant to this day~– all in preindustrial, illiterate societies with relatively small, homogenous social units~– where one could demonstrate that subordination does not really exist  \ldots''.  Givón's assertion is cited approvingly by \citet{pullum2010recursion} and \crossrefchaptert{3_pullum}, who go on to adduce several descriptions of languages reported as lacking subordination, among which are Amazonian languages such as Hixkaryana
 \citep{derbyshire1979hixkaryana} and Apalaí \citep{koehn1986apalai}, Australian languages such as Dyirbal \citep{dixon1972dyirbal} and Wargamay \citep{dixon1981wargamay}, and various ancient languages, either attested, such as Old Akkadian \citep{deutscher2000syntactic}, or reconstructed, such as Proto-Uralic \citep{collinder1960comparative}.  And doubtlessly there are many more such languages, whose existence may have been obscured by a common analytical bias that leads us to seek out complex structures where none actually exist.  Thus, with respect to syntactic recursion, at least, Pirahã is in good company, and is anything but some kind of strange outlandish creature, or, as intimated by some of Dan Everett's critics, something even worse than that.  Indeed, given the large number of languages still associated with such ``preindustrial, illiterate societies'', one is even led to wonder whether such languages might constitute the cross-linguistic norm.
 
+\begin{sloppypar}
 And what of Riau Indonesian?  As suggested above, its extreme disfavouring of subordination is quite unexceptional; this is true not only within Malay\slash Indonesian (see \cite{englebretson2003searching} for a similar take on another colloquial variety of Indonesian, spoken on the island of Java) but also cross-linguistically. Nevertheless, the availability, however dispreferred,  of constructions such as that in \REF{ex:gil:1} shows that Riau Indonesian is not quite like Pirahã or any of the other languages cited above.  This rather extreme clash between what people can say and how people do actually speak is due, at least in part, to the much more complex sociolinguistic circumstances associated with Riau Indonesian, and other similar colloquial varieties of Malay\slash Indonesian. Such colloquial varieties of Malay\slash Indonesian occupy the bottom reaches of a lectal cline, at whose upper end are the two standardized versions of the language, Standard Indonesian and Standard Malay.  Although structurally quite distinct from one another, colloquial and standard versions of Malay\slash Indonesian are both present in the minds of diglossic speakers, and as a result, each of the two ends of the cline, colloquial and standard, exerts a substantial effect on its counterpart at the opposite end.  On the one hand, it is the presence of multiple embedding in Standard Indonesian that allows a speaker of Riau Indonesian to accept, however reluctantly, constructions such as that in \REF{ex:gil:1}, thereby supporting the characterization of Riau Indonesian grammar as syntactically recursive. In this respect, then, Riau Indonesian differs from Pirahã and other similar languages lacking a standardized acrolect that might be more conducive to such recursion.  On the other hand, it is the extreme disfavouring of subordination in Riau and other colloquial varieties of Indonesian that percolates upwards along the lectal cline, resulting in a relative disfavouring of subordination also in Standard Indonesian and Malay, as reflected by the differential results of the Google searches reported on in Section 4 earlier.  In this regard, Malay\slash Indonesian presents a clear contrast to English.  Standard Malay and Indonesian constitute special registers, not acquired natively by speakers through the usual processes of first language acquisition; they are thus parasitic on their colloquial counterparts. In contrast, Standard English is a more natural language variety that is indeed acquired natively by a large population of speakers, and is therefore relatively more resistant to influences from basilectal varieties of English, as, for example, might be manifest in the disfavouring of subordination.
+\end{sloppypar}
 
 The existence of cross-linguistic variation with respect to syntactic recursion and the proclivity for subordination raises the question what the determining factors might be that underlie such variation.  Givón, in the above-cited passage, alludes to ``preindustrial, illiterate societies with relatively small, homogenous social units''~– a plausible hypothesis, but one still in need of solid empirical cross-linguistic support.  As suggested earlier, a major challenge faced by any attempt to seek such support is that whether or not a language has syntactic recursion is very much dependent on how it is analyzed.  What is needed, therefore, is a common yardstick by which different languages can be uniformly and objectively assessed with respect to their relative proclivities for syntactic subordination.
 
@@ -375,7 +377,7 @@ Veata hakadoš barux hu vešaħat lemalʔax hamavet,\\
  deaxla legadya,\\
  dezabin aba bitrey zuzey.\\
 
- 'Then the Holy One, Blessed be He, came and slaughtered the angel of death,\\
+ `Then the Holy One, Blessed be He, came and slaughtered the angel of death,\\
  who slaughtered the butcher,\\
  who slaughtered the ox, \\
  that drank the water, \\
@@ -417,7 +419,7 @@ The baker gave me a bun, \\
 The bun I gave to my father, \\
 My father gave me a stick, \\
 The stick I gave to my teacher, \\
-My teacher hit my hand  \ldots ' \\
+My teacher hit my hand  \ldots' \\
 
 \z
 
@@ -437,7 +439,9 @@ One centrally important aspect of societal complexity mentioned earlier is modal
 
 Nevertheless, literacy is just one of an array of features generally associated with societal complexity, and there is good reason to believe that several of these other features may also be associated with a greater propensity for recursion.  A series of recent studies have demonstrated positive correlations between various aspects of societal and linguistic complexity.  Thus, recent experiments by \citet{raviv2019larger,raviv2020role} and \citet{raviv2020language} show that in artificial languages, larger speech communities entail more conventionalization, which is tantamount to greater grammatical complexity. Similarly, in sign languages, \citet{meir2012influence} and \citet{ergin2020community} argue that an increase in the size of the signing community entails a greater degree of conventionalization.  In phonology, \citet{hay2007phoneme,atkinson2011phonemic,wichmann2011phonological} and \citet{nettle2012social} argue that larger languages tend to have larger phonemic inventories than smaller languages. In the domain of metaphor comprehension, \citet{gil2021metaphors} present evidence to the effect that more highly complex polities tend to be associated with languages whose metaphors are of more complex directional structure.  With respect to Tense-Aspect-Mood marking, \citet{gil2021tense} demonstrates that languages belonging to larger families, the product of demographic spread, are associated with more complex systems characterized by obligatory as opposed to optional marking.  Finally, in the realm of basic clause structure, work in progress, some initial results of which are summarized in \citet{gil2019grammar}, shows that more highly complex polities tend to be associated with languages endowed with a greater degree of grammaticalization of thematic-role assignment.  Admittedly, though, a range of other studies support an opposite negative correlation between societal and linguistic complexity.  As argued by \citet{mcwhorter2018creole,mcwhorter2005defining,mcwhorter2011linguistic,dahl2004growth,wray2007consequences,lupyan2010language,trudgill2011sociolinguistic} and others, larger political entities, typically associated with various modes of exoteric communication, and in particular imperfect adult second-language acquisition, are conducive to linguistic simplification, whereas smaller societies, generally characterized by more esoteric forms of communication, are fertile grounds for the accretion of linguistic complexity.  A way of reconciling these apparently divergent results is proposed in \citet{chen2023linguistic}, who demonstrate, in a quantitative study based on data from the World Atlas of Language Structures, or WALS \citep{haspelmath2005atlas}, that many of the linguistic features associated with a positive correlation between linguistic and societal complexity tend to be of a syntactic nature; in addition, they speculate that such features will tend to rely more on procedural as opposed to declarative memory. Since recursion was not included in the features examined in WALS, it is not mentioned in the \citet{chen2023linguistic} study.  However, the generalizations emerging from that study strongly suggest that, as manifestations par excellence of syntactic complexity, syntactic subordination and recursion should also exhibit a positive correlation with societal complexity.
 
-Viewed in the light of the covariance of societal and syntactic complexity, the facts regarding recursion in Malay\slash Indonesian, Pirahã and English, as summarized in \figref{fig:gil:fig5}, make perfect sense.  In terms of societal complexity, Malay\slash Indonesian occupies an intermediate position between Pirahã and English.  Whereas Pirahã is spoken by a single small group of people with relatively little contact with the outside world, Malay\slash Indonesian, in all of its varieties, is spoken by well over two hundred million people and is an official language of four different countries.  No wonder, then, that, unlike Pirahã, Malay\slash Indonesian allows for syntactic recursion, a fact that is true also for colloquial varieties such as Riau Indonesian.  However, in contrast to Malay\slash Indonesian, English is a world language, a vehicle not only of national but also international communication; moreover, unlike Malay\slash Indonesian, its standardized versions are spoken natively by large populations of speakers.  It is this difference that accounts for the massively greater frequency of subordination, a reflection of syntactic recursion, in actual English usage, as contrasted with Malay\slash Indonesian.
+\begin{sloppypar}
+Viewed in the light of the covariance of societal and syntactic complexity, the facts regarding recursion in Malay\slash Indonesian, Pirahã and English, as summarized in \figref{fig:gil:fig5}, make perfect sense.  In terms of societal complexity, Malay\slash Indonesian occupies an intermediate position between Pirahã and English.  Where\-as Pirahã is spoken by a single small group of people with relatively little contact with the outside world, Malay\slash Indonesian, in all of its varieties, is spoken by well over two hundred million people and is an official language of four different countries.  No wonder, then, that, unlike Pirahã, Malay\slash Indonesian allows for syntactic recursion, a fact that is true also for colloquial varieties such as Riau Indonesian.  However, in contrast to Malay\slash Indonesian, English is a world language, a vehicle not only of national but also international communication; moreover, unlike Malay\slash Indonesian, its standardized versions are spoken natively by large populations of speakers.  It is this difference that accounts for the massively greater frequency of subordination, a reflection of syntactic recursion, in actual English usage, as contrasted with Malay\slash Indonesian.
+\end{sloppypar}
 
 \section*{Abbreviations}
 \begin{tabularx}{.5\textwidth}{@{}lQ@{}}
