@@ -49,7 +49,7 @@
 %   \- Miscellaneous
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{langscibook}[2022/02/08 Language Science Press]
+\ProvidesClass{langscibook}[2024/02/07 Language Science Press]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    Early load packages
@@ -109,7 +109,8 @@
 \newcommand{\newlineCover}{\\}  % \newline only on cover
 \newcommand{\newlineSpine}{\\}  % \newline only on spine
 \newcommand{\newlineTOC}{\\}    % \newline only in TOC entry
-\newcommand{\affiliation}[1]{}     % A dummy command to process the affiliation info.
+\newcommand{\affiliation}[1]{}  % A dummy command to process the affiliation info.
+\newcommand{\orcid}[1]{}        % A dummy command to process ORCiDs.
 
 \newcommand{\lsSpineTitle}{\@title}
 \newcommand{\lsSpineAuthor}
@@ -140,13 +141,11 @@
 \newbool{babelshorthands}
 \newbool{multiauthors}
 \newbool{showindex}
-\newbool{newtxmath}
 \newbool{minimal}
 \newbool{collection}
 \newbool{collectiontoclong}
 \newbool{uniformtopskip}
 \newbool{oldstylenumbers}
-\newbool{tblseight}%for chinesefonts in tbls series page
 \newbool{lsISBNTwoDigitAddon}
 \newbool{lsFloatCounterWithoutChapter}
     \booltrue{lsFloatCounterWithoutChapter}
@@ -193,8 +192,6 @@
 \DeclareVoidOption{babelshorthands}{\booltrue{babelshorthands}}
 \DeclareVoidOption{multiauthors}{\booltrue{multiauthors}}
 \DeclareVoidOption{showindex}{\booltrue{showindex}}
-\DeclareVoidOption{nonewtxmath}{\boolfalse{newtxmath}}
-\DeclareVoidOption{newtxmath}{\booltrue{newtxmath}}
 \DeclareVoidOption{minimal}{\booltrue{minimal}}
 \DeclareVoidOption{collection}{\booltrue{collection}}
 \DeclareVoidOption{proofs}
@@ -275,7 +272,6 @@
 	\AdditionalFontImprint{Estrangelo Edessa}
   }
 
-\DeclareVoidOption{tblseight}{\booltrue{tblseight}}
 \DeclareVoidOption{infn}{\booltrue{infn}}
 
 \ProcessKeyvalOptions*
@@ -627,6 +623,9 @@
         \ifx\lsSeries\eotms
         \renewcommand{\sectref}[1]{Section~\ref{#1}}
         \fi
+        \ifx\lsSeries\ahl
+        \renewcommand{\sectref}[1]{Section~\ref{#1}}
+        \fi
     } %% \AtBeginDocument
 }{} %notbool paper
 
@@ -659,14 +658,14 @@
     
     \str_case:nn {#2}
       {
-      	{hardcover} % Determine 
+      	{hardcover} % Determine hardcover spine dimensions with 90g white paper
       	  {
         	\int_compare:nTF 
 		      { \l__langsci_bookblock_page_count < 300 }
 		      { \int_set:Nn \l_langsci_spine_width_modifier {5} } 
 		      { \int_set:Nn \l_langsci_spine_width_modifier {6} }
       	  }
-      	{softcover}
+      	{softcover} % Determine softcover spine dimensions with 90g white paper
       	  {
         	\int_set:Nn \l_langsci_spine_width_modifier {0}
       	  }
@@ -732,7 +731,6 @@
 \usepackage{amsmath} % has to be loaded before mathspec/unicode-math
 
 \notbool{minimal}{% The minimal mode skips font loading
-    \notbool{newtxmath}{
     %% There is a known problem in the interplay between \binom, unicode-math, and OTF
     %% https://tex.stackexchange.com/questions/269980/wrong-parentheses-size-in-binom-with-xelatex-and-unicode-math-in-displaystyle
     \ifx\Umathcode\@undefined\else
@@ -758,10 +756,6 @@
     \fi%umathcode
     %% Provides \setmathfont
     \usepackage{unicode-math}
-    }{%else newtxmath
-    %% Deprecated:
-    \PassOptionsToPackage{no-math}{fontspec} % must appear before metalogo or any fontspec stuff; deactivates fontspec's math settings, which is necessary to let newtxmath do the job
-    }
 
     \usepackage{metalogo}\newcommand{\xelatex}{\XeLaTeX\xspace}
 
@@ -780,12 +774,10 @@
     ItalicFont = Arimo-Italic.ttf,
     BoldItalicFont = Arimo-BoldItalic.ttf
     ]{Arimo-Regular.ttf}
-
-    \notbool{newtxmath}{
+    
     \setmathfont[AutoFakeBold]{LibertinusMath-Regular.otf}
     \setmathfont[range={cal},StylisticSet=1]{XITSMath-Regular.otf}
     \setmathfont[range={bfcal},StylisticSet=1]{XITSMath-Bold.otf}
-    }{}
 
     \ifbool{oldstylenumbers}{
     \defaultfontfeatures[LibertinusSerif-Semibold.otf,LibertinusSerif-Italic.otf,LibertinusSerif-SemiboldItalic.otf,LibertinusSerif-Regular.otf]{SmallCapsFeatures={Numbers=OldStyle}}
@@ -806,26 +798,11 @@
       ]
       {LibertinusSerif-Regular.otf}
 
-    %% Deprecated:
-    \ifbool{newtxmath}{
-            \usepackage[libertine]{newtxmath}
-            %% following http://tex.stackexchange.com/questions/297328/xelatex-does-not-load-newtxmath-with-linuxlibertine-sometimes
-            %% due to a bug in XeTeX. This also seems to fix an issue with \url in footnotes.
-    %% Unfortunately, this is NOT extensively tested!
-            \usepackage{xpatch}
-            \xpretocmd{\textsuperscript}
-            {{\sbox0{$\textstyle x$}}}
-            {}{}
-            \AtBeginDocument{%
-            \DeclareSymbolFont{operators}{\encodingdefault}{\familydefault}{m}{n}%
-            \SetSymbolFont{operators}{bold}{\encodingdefault}{\familydefault}{b}{n}%
-            }
-    }{}
     % Improve the appearance of numbers in tables and the TOC 
     % In those places, they should come out monospaced, unlike in main text.
-    \AtBeginEnvironment{tabular}{\addfontfeatures{Numbers={Monospaced,Lining}}\selectfont}
-    \AtBeginEnvironment{tabularx}{\addfontfeatures{Numbers={Monospaced,Lining}}\selectfont}
-    \AtBeginEnvironment{longtable}{\addfontfeatures{Numbers={Monospaced,Lining}}\selectfont}
+    \AtBeginEnvironment{tabular}{\ifmmode\else\addfontfeatures{Numbers={Monospaced,Lining}}\selectfont\fi}
+    \AtBeginEnvironment{tabularx}{\ifmmode\else\addfontfeatures{Numbers={Monospaced,Lining}}\selectfont\fi}
+    \AtBeginEnvironment{longtable}{\ifmmode\else\addfontfeatures{Numbers={Monospaced,Lining}}\selectfont\fi}
     
     \DeclareTOCStyleEntry
       [  
@@ -1069,19 +1046,13 @@
 %    Series history
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\tblseight}{{\color{red}Chinese fonts for TBLS 8 not loaded! Please set the option \textsc{tblseight} in main.tex for final production}}
-
-\ifbool{tblseight}
-  {
-    \newfontfamily\cn
-      [
-        Scale=MatchLowercase,
-        BoldFont=SourceHanSerifSC-Bold.otf
-      ]
-      {SourceHanSerifSC-Regular.otf}
-
-    \renewcommand{\tblseight}{{\cn 语法理论: 从转换语法到基于约束的理论}}
-  }{}
+% Load Chinese font for TBLS history display (from CTAN package "fandol")
+\AtEndPreamble
+  {%
+    \ifx\lsSeries\tbls
+      \newfontfamily{\lsSeriesHistoryFandolSong}{FandolSong-Regular.otf}
+    \fi
+  }
   
 \ExplSyntaxOn
 % A command to output a limited number of items on the series history page.
@@ -1493,12 +1464,12 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
 \def\epigramsource#1{\gdef\@epigramsource{#1}}
 \epigramsource{}
 
-\usepackage{epigraph}
-\setlength{\epigraphrule}{0pt}
-\renewcommand{\textflush}{flushepinormal}
-\setlength{\epigraphwidth}{.618\textwidth}% Set to the longer part of golden ratio
-\setlength{\afterepigraphskip}{0\baselineskip}
-\setlength{\beforeepigraphskip}{0\baselineskip}
+% Apply settings to dictum from scrbook
+\setkomafont{dictum}{\normalfont\small}
+\setkomafont{dictumauthor}{\normalfont\small}
+\renewcommand*{\dictumauthorformat}[1]{#1}
+\renewcommand{\dictumwidth}{.618\textwidth} % longer part of golden ratio
+\renewcommand*{\dictumrule}{\smallskip\par}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    Footnotes
@@ -1599,7 +1570,6 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
 \usepackage[
 	natbib=true,
 	style=langsci-unified,
-	datamodel=langsci,   % add authauthor and autheditor as possible fields to bibtex entries
 	%refsection=chapter,
 	maxbibnames=99,
 	uniquename=false,
@@ -1669,6 +1639,7 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
 \usepackage{caption}
 \captionsetup{font={stretch=.8,small},width=.8\textwidth}
 \setcapindent{0pt}
+\AtBeginEnvironment{floatrow}{\captionsetup{margin=.05\linewidth}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2017,10 +1988,11 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
             % and their affiliation(s) are part of the \chapter block.
             \CountAuthorsFromAffiliations{\@author}
             \lsDeterminePaperAuthorAffiliationIndexing{}
-            \setchapterpreamble[u]{\ResolveAffiliations{\@author}\\}
+            \setchapterpreamble[u]{\ResolveAffiliations{\@author}}
             \chapter
             [tocentry={\titleToToC~\newline{\normalfont\ResolveAffiliations{\@author}}}]
             {\titleTemp}
+            \vskip1.15\baselineskip plus .1\baselineskip minus .167\baselineskip
             \begin{quote}
                 \small\lsCollectionPaperAbstract
             \end{quote}
@@ -2033,8 +2005,8 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
                 \ifbool{draft}{Draft of \today, \currenttime}{}
                     }
             \ifx\@epigram\empty
-              \else {\epigraph{\@epigram\\[-2\baselineskip]}{\@epigramsource}
-                \epigram{}\epigramsource{}}
+                  \else \dictum[\@epigramsource]{\@epigram}%
+                        \epigram{}\epigramsource{}
             \fi
             \enlargethispage{-1\baselineskip}
         }
@@ -2242,7 +2214,7 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
     \renewcommand{\lsLanguageIndexTitle}{语言索引}
     \renewcommand{\lsPrefaceTitle}{前言}
     \renewcommand{\lsAcknowledgementTitle}{致谢}
-    \renewcommand{\lsAbbreviationsTitle}{\colorbox{red}{Translation info for Abbv missing}}
+    \renewcommand{\lsAbbreviationsTitle}{缩写}
 \fi
 
 
