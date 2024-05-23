@@ -1,4 +1,3 @@
-
 \SetupAffiliations{output in groups = false,
                    orcid placement = after,
                    separator between two = {\bigskip\\},
@@ -19,26 +18,6 @@
 \let\theauthor\@author
 \makeatother
 
-\newcommand{\togglepaper}[1][0]{
-   \bibliography{../localbibliography}
-   \papernote{\scriptsize\normalfont
-     \theauthor.
-     \titleTemp.
-     To appear in:
-     E. Di Tor \& Herr Rausgeberin (ed.).
-     Booktitle in localcommands.tex.
-     Berlin: Language Science Press. [preliminary page numbering]
-   }
-   \pagenumbering{roman}
-   \setcounter{chapter}{#1}
-   \addtocounter{chapter}{-1}
-}
-
-\newbool{bookcompile}
-\booltrue{bookcompile}
-\newcommand{\bookorchapter}[2]{\ifbool{bookcompile}{#1}{#2}}
-
-
 % Cite and cross-reference other chapters
 \newcommand{\crossrefchaptert}[2][]{\citet*[#1]{chapters/#2}, Chapter~\ref{chap-#2} of this volume} 
 \newcommand{\crossrefchapterp}[2][]{(\citealp*[#1]{chapters/#2}, Chapter~\ref{chap-#2} of this volume)}
@@ -52,31 +31,21 @@
 
 
 \newcommand{\sub}[1]{\textsubscript{\scriptsize\textrm{#1}}}
-
 % Müller
-
 \newcommand{\page}{}
 
 \let\citew\citet
-
 \def\underRevision{Revise and resubmit}
-
 \let\textbfemph\emph
-
 \newcommand{\textbfremoved}[1]{#1}
-
 \newcommand{\todostefan}[1]{\todo[color=orange!80]{\footnotesize #1}\xspace}
 \newcommand{\todosatz}[1]{\todo[color=red!40]{\footnotesize #1}\xspace}
-
 \newcommand{\inlinetodostefan}[1]{\todo[color=green!40,inline]{\footnotesize #1}\xspace}
-
 \newcommand{\inlinetodoopt}[1]{\todo[color=green!40,inline]{\footnotesize #1}\xspace}
 \newcommand{\inlinetodoobl}[1]{\todo[color=red!40,inline]{\footnotesize #1}\xspace}
-
 \newcommand{\itd}[1]{\inlinetodoobl{#1}}
 \newcommand{\itdobl}[1]{\inlinetodoobl{#1}}
 \newcommand{\itdopt}[1]{\inlinetodoopt{#1}}
-
 \newcommand{\addpages}{\todostefan{add pages}}
 
 %% % taken from https://tex.stackexchange.com/a/95079/18561
@@ -204,282 +173,34 @@
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 
-
-
-% 3_pullum.tex
-
-
-% %%%  GKP:  I put in these pointless commands to kill off a bug elsewhere
-% %%%        that tries to \newcommand \it (etc.) as \itshape (etc.), but
-% %%%        fails because they haven't been defined.
-% \newcommand{\it}{\relax}
-% \newcommand{\bf}{\relax}
-% \newcommand{\sc}{\relax}
-% \newcommand{\rm}{\relax}
-
-%%% GKP:  Two additional commands that I need
 \newcommand{\data}[1]{\textit{#1}}
-
-% no no, the house rule says no italics for data, St. Mü. 14.03.2024
-% In examples I replaced \data by \nodata
 \newcommand{\nodata}[1]{#1}
-
-
 \newcommand{\blank}{\rule{1.2em}{0.5pt}}
-
-
-
-% 8_levine
-
-% ???
-%\renewcommand{\emph}{\textit}
-%\renewcommand{\em}{\it}
-
-% not used \newcommand{\cites}[1]{\citeauthor{#1}'s~\citeyearpar{#1}}
-
-% \renewcommand{\SetInfLen}{\setpremisesend{0pt}\setpremisesspace{10pt}\setnamespace{0pt}}
-
 \newcommand{\pt}[1]{\ensuremath{\mathsf{#1}}}
 \newcommand{\ptv}[1]{\ensuremath{\textsf{\textsl{#1}}}}
-
-%\newcommand{\sv}[1]{\ensuremath{\bm{\mathcal{#1}}}}
 \newcommand{\sv}[1]{\ensuremath{\mathcal{#1}}}
 
 \newcommand{\sX}{\sv{X}}
 \newcommand{\sF}{\sv{F}}
 \newcommand{\sG}{\sv{G}}
-%
-% \renewcommand{\lex}{\SF}
-% \renewcommand{\syncat}[1]{\ensuremath{\mathrm{#1}}}
-% \newcommand{\syncatVar}[1]{\ensuremath{\mathit{#1}}}
-%
-% \newcommand{\RuleName}[1]{\textrm{#1}}
-%
-% \newcommand{\SemTyp}{\textsf{Sem}}
-%
-% \newcommand{\something}{\vdots\,\,\,\,\,\,\vdots}
-%
-% \newcommand{\pb}{\phantom{[}}
-%
-% \renewcommand{\E}{\ensuremath{\bm{\epsilon}}\xspace}
-%
-% \newcommand{\greeka}{\upalpha}
-% \newcommand{\greekb}{\upbeta}
-% \newcommand{\greekd}{\updelta}
 \newcommand{\greekp}{\upvarphi}
 \newcommand{\greekr}{\uprho}
 \newcommand{\greeks}{\upsigma}
-% \newcommand{\greekt}{\uptau}
-% \newcommand{\greeko}{\upomega}
-% \newcommand{\greekz}{\upzeta}
-%
-% % Do not do this!!!!!
-% % \renewcommand{\labelenumi}{(\roman{enumi})}
-%
-% \newcommand{\upa}[2]{\ensuremath{\syncat{#1}|\syncat{#2}}}
-% \newcommand{\dna}[2]{\upa{#2}{#1}}
-%
-
-%
-% \newcommand{\Lemma}{\ensuremath{\vdots\hskip.5cm\vdots}\noLine}
-%
-% \newcommand{\la}{\ensuremath{\langle}}
-% \newcommand{\ra}{\ensuremath{\rangle}}
-%
-% \renewcommand{\I}{\iota}
-%
-% \renewcommand{\sem}{\ensuremath}
-%
-% \newcommand{\LemmaShort}{\ensuremath{\vdots\hskip.2cm\vdots\hskip.2cm\vdots}\noLine}
-% \newcommand{\LemmaShortAlt}{\ensuremath{\vdots\hskip.2cm\vdots}}
-%
-%
-% \newcommand{\NoSem}{%
-% \renewcommand{\LexEnt}[3]{##1; \syncat{##3}}
-% \renewcommand{\LexEntTwoLine}[3]{\renewcommand{\arraystretch}{.8}%
-% \begin{array}[b]{l} ##1;  \\ \syncat{##3} \end{array}}
-% \renewcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
-% \begin{array}[b]{l} ##1; \\ \syncat{##3} \end{array}}}
-%
-%
-% \newcommand{\NoSemVar}{%
-% \renewcommand{\LexEnt}[3]{##1; \syncat{##3}}
-% \renewcommand{\LexEntTwoLine}[3]{\renewcommand{\arraystretch}{.8}%
-% \begin{array}{l} ##1;  \\ \syncat{##3} \end{array}}
-% \renewcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
-% \begin{array}{l} ##1; \\ \syncat{##3} \end{array}}}
-%
-% \newcommand{\vs}{\raisebox{.05em}{\ensuremath{\upharpoonright}}}
-%
-% \newcommand{\AXX}[1]{\raisebox{-7mm}{\ensuremath{#1}}}
-%
-% \newcommand{\hypml}[2]{\left[\!\!#1\!\!\right]^{#2}}
-%
-% \newcommand{\alt}[2]{$\left\{\begin{array}{c}
-% \hskip-.7ex\textrm{#1}\hskip-.7ex \\
-% \hskip-.7ex\textrm{#2}\hskip-.7ex
-%         \end{array}
-% \right\}$}
-%
-% \newcommand{\altalt}[2]{\{#1/#2\}}
-%
-%
-%
-% \newcommand{\altt}[3]{$\left\{\begin{array}{c}
-% \hskip-.7ex\textrm{#1}\hskip-.7ex \\
-% \hskip-.7ex\textrm{#2}\hskip-.7ex \\
-% \hskip-.7ex\textrm{#3}\hskip-.7ex
-% \end{array}
-% \right\}$}
-%
-% \newcommand{\alttt}[4]{$\left\{\begin{array}{c}
-% \hskip-.7ex\textrm{#1}\hskip-.7ex \\
-% \hskip-.7ex\textrm{#2}\hskip-.7ex \\
-% \hskip-.7ex\textrm{#3}\hskip-.7ex \\
-% \hskip-.7ex\textrm{#4}\hskip-.7ex
-% \end{array}
-% \right\}$}
-%
-%
-% %%%%for bussproof
-%
-% \def\defaultHypSeparation{\hskip0.1in}
-% \def\ScoreOverhang{0pt}
-%
-%
-% %%\newcommand{\MultiLine}[1]{\renewcommand{\arraystretch}{.8}%
-% %%\ensuremath{\begin{array}{l} #1 \end{array}}}
-%
 \newcommand{\MultiLine}[1]{\renewcommand{\arraystretch}{.8}%
 \ensuremath{\begin{array}[b]{l} #1 \end{array}}}
-
-%
-%
-% \newcommand{\MultiLineMod}[1]{%
-% \ensuremath{\begin{array}[t]{l} #1 \end{array}}}
-%
-%
-% %%%%%\AFourMargin
-% %%\JLSubmissionMargin
-%
-% %%\setlength\topmargin{-1cm}
-% %%\setlength\textheight{23cm}
-% %%%%%\setlength\textwidth{13.5cm}
-%
-% %\setstretch{1.2}
-%
-% % not used \newcommand{\hyp}[2]{[ #]^{#2}}
-%
 \newcommand{\LexEnt}[3]{#1; \ensuremath{#2}; \syncat{#3}}
-%
-% \newcommand{\LexEntTwoLine}[3]{\renewcommand{\arraystretch}{.8}%
-% \begin{array}[b]{l} #1; \\ \ensuremath{#2};  \syncat{#3} \end{array}}
-%
-% \newcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
-% \begin{array}[b]{l} #1; \\ \ensuremath{#2}; \\ \syncat{#3} \end{array}}
-%
-%
-% \newcommand{\LexEntFiveLine}[5]{\renewcommand{\arraystretch}{.8}%
-% \begin{array}{l} #1 \\ #2; \\ \ensuremath{#3} \\ \ensuremath{#4}; \\ \syncat{#5} \end{array}}
-%
-%
-% \newcommand{\LexEntFourLine}[4]{\renewcommand{\arraystretch}{.8}%
-% \begin{array}{l} \pt{#1} \\ \pt{#2}; \\ \syncat{#4} \end{array}}
-%
-% \newcommand{\ManySomething}{\renewcommand{\arraystretch}{.8}%
-% \raisebox{-3mm}{\begin{array}[b]{c} \vdots \,\,\,\,\,\, \vdots \\
-% \vdots \,\,\,\,\,\, \vdots \end{array}}}
-%
-%
-% \newcommand{\lemma}[1]{\renewcommand{\arraystretch}{.8}%
-% \begin{array}[b]{c} \vdots \,\,\,\,\,\, \vdots \\ #1 \end{array}}
-%
-% \newcommand{\lemmarev}[1]{\renewcommand{\arraystretch}{.8}%
-% \begin{array}[b]{c} #1 \\ \vdots \,\,\,\,\,\, \vdots \end{array}}
-%
-% \newcommand{\p}{\ensuremath{\upvarphi}}
-%
-% \newcommand{\Not}{\leavevmode\llap{\textbf{\smc{NOT:}} }}
-%
-% \newcommand{\Conj}{\fs{\bsp{\mathit{X}}{\mathit{X}}}{\mathit{X}}}
-% \newcommand{\ConjY}{\fs{\bsp{\mathit{Y}}{\mathit{Y}}}{\mathit{Y}}}
-% \newcommand{\sameLE}{\dna{(\upa{(\upa{S}{\mathit{X}})}{NP})}{(\upa{S}{\mathit{X}})}}
-%
-% \newcommand{\derivcenter}[2][1.1]{%
-% \SetInfLen
-% \attop{\vskip3ex
-% \resizebox{#1\linewidth}{!}{\hskip-#1in
-% #2}}}
-%
-% \newcommand{\derivcenterAlt}[2][.98]{%
-% \SetInfLen
-% \attop{\vskip3ex
-% \resizebox{#1\linewidth}{!}{\hskip-#1in \hskip.5in
-% #2}}\vspace{.5ex}}
-%
-% \renewcommand{\O}{\circ}  Do not recommand!
 \newcommand{\BobsO}{\circ}
-%
-% \newcommand{\derivcenterMod}[2][1.1]{%
-% \renewcommand{\LexEntThreeLine}[3]{\renewcommand{\arraystretch}{.8}%
-% \raisebox{.4ex}{\ensuremath{\begin{array}{l} ##1; \\ \ensuremath{##2}; \\ \syncat{##3} \end{array}}}}
-% \SetInfLen
-% \attop{\vskip3ex
-% \resizebox{#1\linewidth}{!}{\hskip-#1in
-% #2}}}
-%
-%
-% \newcommand{\shortarrow}{\xspace\hskip-1.2ex\scalebox{.5}[1]{\ensuremath{\bm{\rightarrow}}}\hskip-.5ex\xspace}
-%
-% \newcommand{\SemInt}[1]{\mbox{$[\![ \textrm{#1} ]\!]$}}
-%
-% \def\maru#1{{\ooalign{\hfil
-%   \ifnum#1>999 \resizebox{.25\width}{\height}{#1}\else%
-%   \ifnum#1>99 \resizebox{.33\width}{\height}{#1}\else%
-%   \ifnum#1>9 \resizebox{.5\width}{\height}{#1}\else #1%
-%   \fi\fi\fi%
-% \/\hfil\crcr%
-% \raise.167ex\hbox{\mathhexbox20D}}}}
-%
 \newcommand{\HypSpace}{\hskip-.8ex}
 \newcommand{\RaiseHeight}{\raisebox{2.2ex}}
-% \newcommand{\RaiseHeightLess}{\raisebox{1ex}}
-%
-% \newcommand{\fW}{\ensuremath{\mathfrak{W}}}
-%
 \newcommand{\ThreeColHyp}[1]{\RaiseHeight{\Bigg[}\HypSpace#1\HypSpace\RaiseHeight{\Bigg]}}
-% \newcommand{\TwoColHyp}[1]{\RaiseHeightLess{\Big[}\HypSpace#1\HypSpace\RaiseHeightLess{\Big]}}
-%
-%
-% %\newcommand{\maskref}[1]{\textsl{\textbf{[reference omitted for refereeing]}}}
-% \newcommand{\maskref}[1]{#1}
-%
-% \newcommand{\DerivSize}{\small}
-% \newcommand{\AppDerivSize}{\footnotesize}
-%
-% \renewcommand{\sem}{\ensuremath}
-
-
-% \newcommand{\greekp}{{\color{green}π}}
-% \newcommand{\greekr}{{\color{green}\textrho}}
-% \newcommand{\greeks}{{\color{green}\textsigma}}
 \newcommand{\ptfont}[1]{\texttt{#1}}
                                 % Question
-%\newcommand{\ptfont}{\ttfamily}
-
-%\newcommand{\grey}{\color{gray}}
 \newcommand{\grey}[1]{\colorbox{mycolor}{#1}}
 \definecolor{mycolor}{gray}{0.8}
 
 \newcommand{\gap}{\longrule}
 \newcommand{\gp}{\gap}
 \newcommand{\vs}{\raisebox{.05em}{\ensuremath{\,\upharpoonright}}}
-% \newcommand{\sub}[1]{\textsubscript[#1]}
-%\newcommand{\E}{\emph}
-% Absolutely messy code.
-% \renewcommand{\E}{\SL}
-%
-% \newcommand{\SL}[1]{\textsl{#1}}
 
 \newcommand{\E}{ε}
 
@@ -504,15 +225,9 @@
 
 %
 \newcommand{\trns}[1]{\textbf{#1}\xspace}
-
 \newcommand{\bs}{{\textbackslash}}
 \newcommand{\bsl}{{\bs}}
-
-
 \newcommand{\fb}[1]{\textsubscript{#1}}
-
 \newcommand{\syncat}[1]{\ensuremath{\mathrm{#1}}}
 \newcommand{\term}[1]{\textit{#1}}
 \newcommand{\LemmaAlt}{\ensuremath{\vdots\hskip.5cm\vdots}}
-
-%\renewcommand{\O}{ø}
