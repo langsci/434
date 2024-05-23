@@ -42,18 +42,68 @@ Moreover, if one really wants to, one can go on adding relative clauses at the e
 In previous work, my focus was largely on the grammar of simple word combinations, such as \textit{ayam makan} (chicken eat), and thus, while making it clear that combinations of words can be grouped together to form ever larger combinations, this particular aspect of Riau Indonesian was not textitasized. This, then, is the appropriate time to redress the balance, by presenting an explicit analysis of hierarchical structure in Riau Indonesian. A syntactic analysis of sentence \REF{ex:gil:1}, following the theoretical framework laid out in \citet{gil2000syntactic}, is presented in \figref{fig:gil:fig1}.
 
 \begin{figure}
-\centering
+% % \centering
 \includegraphics[width=0.8\textwidth]{gil_figure1.png}
+\begin{forest}
+[S
+  [S\\Ali,tier=word]
+  [S\\pukul,tier=word]
+  [S
+    [S\\orang,tier=word]
+    [S
+      [S/S\\yang,tier=word]
+      [S
+        [S\\suka,tier=word]
+        [S
+          [S\\anjing,tier=word]
+          [S
+            [S/S\\yang,tier=word]
+            [S
+              [S\\kejar,tier=word]
+              [S\\anak,tier=word]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+]
+\end{forest}
 \caption{\label{fig:gil:fig1}Syntactic structure of \REF{ex:gil:1}}
 \end{figure}
 
 In Riau Indonesian, almost all words belong to the single open syntactic category S, for Sentence; this includes, among others, words denoting things, such as \textit{anak} 'child', as well as words denoting activities, such as \textit{kejar} 'chase'. The combination of the two, as in \textit{kejar anak} above, is thus an instance of sentential coordination. Similarly, complex Ss may combine with other simple or complex Ss to yield hierarchical structures such as that in \figref{fig:gil:fig1}. While most words belong to the category S, a handful of grammatical items belong to a closed class, S/S, whose name, following the conventions of categorial grammar, stipulates that they cannot occur on their own but rather must combine with Ss to yield superordinate Ss. \figref{fig:gil:fig1} contains two occurrences of the S/S word \textit{yang}; in one case it combines with the S expression \textit{kejar anak} to yield a superordinate S expression \textit{yang kejar anak}, while in the other case it takes the S expression \textit{suka anjing yang kejar anak} to yield a superordinate S expression \textit{yang suka anjing yang kejar anak}. As suggested by the above, the syntax of Riau Indonesian is thus fully recursive, allowing for hierarchical syntactic structures of arbitrary depth.
 
-As shown in \figref{fig:gil:fig2} below, the basic compositional semantics of sentence \REF{ex:gil:1} makes reference to a hierarchical structure that is completely isomorphic to that of its syntax:
+As shown in \figref{fig:gil:fig2} below, the basic compositional semantics of sentence \REF{ex:gil:1} makes reference to a hierarchical structure that is completely isomorphic to that of its syntax.
 
 \begin{figure}
-\centering
 \includegraphics[width=0.8\textwidth]{gil_figure2.png}
+\begin{forest}
+for tree={font=\scshape}
+[{a(ali hit a(person prtc[a(like a(dog prtc[a(chase child)]))]))},parent anchor=-175, anchor=west
+    [ali,tier=word]
+    [hit,tier=word]
+    [{a(person prtc[a(like a(dog prtc[a(chase child)]))])},parent anchor=-174, anchor=west
+        [person,tier=word]
+        [{prtc[a(like a(dog prtc[a(chase child)]))]},parent anchor=-173, anchor=west
+            [prtc,tier=word]
+            [{a(like a(dog prtc[a(chase child)]))}, parent anchor=-172, anchor=west
+                [like,tier=word]
+                [{a(dog prtc[a(chase child)])}, parent anchor=-170, anchor=west
+                    [dog,tier=word]
+                    [{prtc[a(chase child)]}, parent anchor=-165, anchor=west
+                        [prtc,tier=word]
+                        [{a(chase child)}, anchor=base,align=left,xshift=2cm
+                            [chase,tier=word,xshift=2cm]
+                            [child,tier=word,xshift=2cm]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+\end{forest}
 \caption{\label{fig:gil:fig2}Semantic structure of \REF{ex:gil:1}}
 \end{figure}
 
@@ -62,14 +112,32 @@ As represented in \figref{fig:gil:fig2}, the semantics of sentence \REF{ex:gil:1
 The above analysis may be contrasted with the alternative approach proposed by \citet{jackendoff2014syntax,jackendoff2017linear}. One feature shared by both approaches is monocategoriality, the claim that Riau Indonesian has but a single open syntactic category.  However, there are at least two significant differences between the two approaches.  One pertains to the semantics, with respect to which \citet{jackendoff2014syntax,jackendoff2017linear} propose a more conventional analysis, based not on the Association Operator but rather on the familiar predicate-argument relationship.  However, it is the second difference between the two approaches, pertaining to the syntax, that is of relevance to us here.  In contrast to the above analysis, \citet{jackendoff2014syntax,jackendoff2017linear} assign Riau Indonesian to their class of Multi-Word Phrase Grammars, whose structures are flatter and non-recursive, making reference to just three categories, W(ord), P(hrase) and U(tterance).  In fact, in their view, even these categories are more appropriately viewed as phonological, or prosodic, rather than syntactic.  An analysis of sentence \REF{ex:gil:1} in accordance with \citet{jackendoff2014syntax,jackendoff2017linear}, whose approach is presented in \figref{fig:gil:fig3}.
 
 \begin{figure}
-\centering
-\includegraphics[width=0.8\textwidth]{gil_figure3.png}
+% \includegraphics[width=0.8\textwidth]{gil_figure3.png}
+\begin{forest}
+[U
+  [P
+      [W\\Ali]
+      [W\\pukul]
+      [W\\orang]
+  ]
+  [P
+      [W\\yang]
+      [W\\suka]
+      [W\\anjing]
+  ]
+  [P
+      [W\\yang]
+      [W\\kejar]
+      [W\\anak]
+  ]
+]
+\end{forest}
 \caption{\label{fig:gil:fig3}Semantic structure of \REF{ex:gil:1}}
 \end{figure}
 
 In accordance with the analysis in \figref{fig:gil:fig3}, sentence \REF{ex:gil:1} does not exhibit multiple layers of hierarchical structure; instead it consists of a flat sequence of phrases, each consisting of a flat sequence of words.  For \citet{jackendoff2014syntax,jackendoff2017linear}, the obviously hierarchical nature of sentence \REF{ex:gil:1} is a fact about its semantics, not its syntax.
 
-How might one adjudicate between the alternative analyses of sentence \REF{ex:gil:1} as represented in Figures \figref{fig:gil:fig1} and \figref{fig:gil:fig3} respectively?  Given the flexibility of Riau Indonesian syntax as described in my earlier publications, Jackendoff and Wittenberg had good prima facie reason to invoke Occam's Razor and assign Riau Indonesian to their class of Multi-Word Phrase Grammars, entailing analyses such as that represented in \figref{fig:gil:fig3}.  Thus, with reference to Riau Indonesian, Jackendoff and Wittenberg (p.c.) argue that:
+How might one adjudicate between the alternative analyses of sentence \REF{ex:gil:1} as represented in Figures~\ref{fig:gil:fig1} and~\ref{fig:gil:fig3} respectively?  Given the flexibility of Riau Indonesian syntax as described in my earlier publications, Jackendoff and Wittenberg had good prima facie reason to invoke Occam's Razor and assign Riau Indonesian to their class of Multi-Word Phrase Grammars, entailing analyses such as that represented in \figref{fig:gil:fig3}.  Thus, with reference to Riau Indonesian, Jackendoff and Wittenberg (p.c.) argue that:
 
 \begin{quote}
       its grammar relates the semantic structure of sentences directly to linear order and
@@ -187,9 +255,9 @@ The preceding discussion thus provides an answer to Jim Hurford's question posed
 \section{Quantitative comparison}
 It may reasonably be objected that it is unfair to compare a standardized language such as English with a colloquial variety such as Riau Indonesian.  After all, there is substantial evidence that within many a language, subordination occurs more frequently in higher registers than in lower ones, and in written as opposed to oral modalities \citep[and others]{givon1979understanding,deutscher2000syntactic,karlsson2009aorigin,karlsson2009bsyntactic}. Indeed, corpora of spoken English are also likely to contain constructions similar to the English rendition of \REF{ex:gil:9}, 'There was a child, right, he was chased by a dog, then there was a man who liked the dog, and the man got hit by Ali'. 
 
-Nevertheless, abstracting away from such language-internal variation, English as a whole is much more tolerant of multiple embedding than Malay/Indonesian, the macro-language of which Riau Indonesian is just one typical exemplar.  In order to support this claim empirically, a rough and ready corpus study was conducted making use of Google searches.  In both English and Malay/Indonesian, Google searches produce material representative not only of a range of different dialects, but also of a variety of registers ranging from the colloquial language of social media to the more formal language of written works.  Thus, it is reasonable to believe that comparing the results of Google searches in English and Malay/Indonesian abstracts away not only from modality effects but also from the effects of language-internal register-governed variation; such searches may thus potentially offer a fair and well-founded comparison of the two languages.
+Nevertheless, abstracting away from such language-internal variation, English as a whole is much more tolerant of multiple embedding than Malay\slash Indonesian, the macro-language of which Riau Indonesian is just one typical exemplar.  In order to support this claim empirically, a rough and ready corpus study was conducted making use of Google searches.  In both English and Malay\slash Indonesian, Google searches produce material representative not only of a range of different dialects, but also of a variety of registers ranging from the colloquial language of social media to the more formal language of written works.  Thus, it is reasonable to believe that comparing the results of Google searches in English and Malay\slash Indonesian abstracts away not only from modality effects but also from the effects of language-internal register-governed variation; such searches may thus potentially offer a fair and well-founded comparison of the two languages.
 
-Some results of a comparative corpus study of English and Malay/Indonesian are presented in Tables \tabref{tab:first-english}--\tabref{tab:second-malay} below:
+Some results of a comparative corpus study of English and Malay\slash Indonesian are presented in Tables~\ref{tab:first-english}--\ref{tab:second-malay} below.
 
 \begin{table}
 \caption{First comparison: English}
@@ -197,22 +265,22 @@ Some results of a comparative corpus study of English and Malay/Indonesian are p
  \begin{tabularx}{.8\textwidth}{X rrrr}
  \lsptoprule
  he thinks he said & $13,840,000$ & {} \\
- he & $4,870,000,000$ & $7 x 10^{-4}$ \\
- thinks & $4,260,000,000$ & $9 x 10^{-4}$\\
- said & $4,560,000,000$ & $8 x 10^{-4}$\\
+ he & $4,870,000,000$     & \num{7e-4} \\
+ thinks & $4,260,000,000$ & \num{9e-4}\\
+ said & $4,560,000,000$   & \num{8e-4}\\
  \lspbottomrule
  \end{tabularx}
 \end{table}
 
 \begin{table}
-\caption{First comparison: Malay/Indonesian}
+\caption{First comparison: Malay\slash Indonesian}
 \label{tab:first-malay}
  \begin{tabularx}{.8\textwidth}{X rrrr}
  \lsptoprule
  dia pikir dia bilang & $7$ & {} \\
- dia (3\textsc{sg}) & $4,060,000,000$ & $2 x 10^{-9}$ \\
- pikir (think) & $38,000,000$ & $2 x 10^{-7}$\\
- bilang (say) & $1,210,000,000$ & $6 x 10^{-9}$\\
+ dia (3\textsc{sg}) & $4,060,000,000$ & \num{2e-9}\\
+ pikir (think) & $38,000,000$         & \num{2e-7}\\
+ bilang (say) & $1,210,000,000$       & \num{6e-9}\\
  \lspbottomrule
  \end{tabularx}
 \end{table}
@@ -223,47 +291,46 @@ Some results of a comparative corpus study of English and Malay/Indonesian are p
  \begin{tabularx}{.8\textwidth}{X rrrr}
  \lsptoprule
  he said he thinks & $10,200,000$ & {} \\
- he & $4,870,000,000$ & $2 x 10^{-3}$ \\
- thinks & $4,260,000,000$ & $2 x 10^{-3}$\\
- said & $4,560,000,000$ & $2 x 10^{-3}$\\
+ he & $4,870,000,000$     & \num{2e-3}\\
+ thinks & $4,260,000,000$ & \num{2e-3}\\
+ said & $4,560,000,000$   & \num{2e-3}\\
  \lspbottomrule
  \end{tabularx}
 \end{table}
 
 \begin{table}
-\caption{Second comparison: Malay/Indonesian}
+\caption{Second comparison: Malay\slash Indonesian}
 \label{tab:second-malay}
  \begin{tabularx}{.8\textwidth}{X rrrr}
  \lsptoprule
  dia bilang dia pikir & $37,800$ & {} \\
- dia (3\textsc{sg}) & $4,060,000,000$ & $9 x 10^{-6}$ \\
- pikir (think) & $38,000,000$ & $1 x 10^{-3}$\\
- bilang (say) & $1,210,000,000$ & $3 x 10^{-5}$\\
+ dia (3\textsc{sg}) & $4,060,000,000$ & \num{9e-6} \\
+ pikir (think) & $38,000,000$         & \num{1e-3}\\
+ bilang (say) & $1,210,000,000$       & \num{3e-5}\\
  \lspbottomrule
  \end{tabularx}
 \end{table}
 
-Tables \tabref{tab:first-english}--\tabref{tab:second-malay} present two comparisons of English and Malay/Indonesian, the first in Tables \tabref{tab:first-english} and \tabref{tab:first-malay} and the second in Tables \tabref{tab:second-english} and \tabref{tab:second-malay}.  In Tables \tabref{tab:first-english}--\tabref{tab:second-malay}, the first column presents the search criterion, and the second column the rough number of hits (accessed on the 5th of June 2022).  Within each table, the first row presents a string, part of a complex construction which, when adding some following text, involves two levels of embedding, while the subsequent rows present the individual words occurring within the complex construction.
+Tables \ref{tab:first-english}--\ref{tab:second-malay} present two comparisons of English and Malay\slash Indonesian, the first in Tables~\ref{tab:first-english} and \ref{tab:first-malay} and the second in Tables~\ref{tab:second-english} and~\ref{tab:second-malay}.  In Tables~\ref{tab:first-english}--\ref{tab:second-malay}, the first column presents the search criterion, and the second column the rough number of hits (accessed on the 5th of June 2022).  Within each table, the first row presents a string, part of a complex construction which, when adding some following text, involves two levels of embedding, while the subsequent rows present the individual words occurring within the complex construction.
 
-By examining the ratio of hits for the complex construction in the first line to that of the individual words in the subsequent lines, it is possible to abstract away both from the different sizes of the two corpora and also from possible frequency effects associated with the individual words, and in so doing measure the propensity of the language to form multiple embeddings making use of the words in question.  These ratios are presented in rounded form in the third column of each table.  For example, in \tabref{tab:first-english}, the ratio of \textit{he} in line 2 to \textit{he thinks he said} in line 1 is $3,840,000 / 4,870,000,000 = 7 x 10^{-4}$.  On its own, this figure does not mean much; what is significant is its comparison to the corresponding figure in \tabref{tab:first-malay}, in which the the ratio of \textit{dia} in line 2 to \textit{dia pikir dia bilang} in line 1 is $7 / 4,060,000,000 = 2 x 10^{-9}$.  Comparing these two figures, $7 x 10^{-4}$ and $2 x 10^{-9}$, shows that with respect to the particular words chosen, English is 4 to 5 orders of magnitude more likely to form the multiple embedding construction than Malay/Indonesian.  Comparable order-of-magnitude differences are present for the remaining five comparisons between Tables \tabref{tab:first-english} and \tabref{tab:first-malay}, and for five out of six of the corresponding comparisons between Tables \tabref{tab:second-english} and \tabref{tab:second-malay} — the only case where there is not a order-of-magnitude difference being in the third lines of Tables \tabref{tab:second-english} and \tabref{tab:second-malay}, where the English is ``only'' about twice as likely to form a multiple embedding construction than the Malay/Indonesian.
+By examining the ratio of hits for the complex construction in the first line to that of the individual words in the subsequent lines, it is possible to abstract away both from the different sizes of the two corpora and also from possible frequency effects associated with the individual words, and in so doing measure the propensity of the language to form multiple embeddings making use of the words in question.  These ratios are presented in rounded form in the third column of each table.  For example, in \tabref{tab:first-english}, the ratio of \textit{he} in line 2 to \textit{he thinks he said} in line 1 is $3,840,000 / 4,870,000,000 = \num{7e-4}$.  On its own, this figure does not mean much; what is significant is its comparison to the corresponding figure in \tabref{tab:first-malay}, in which the the ratio of \textit{dia} in line 2 to \textit{dia pikir dia bilang} in line 1 is $7 / 4,060,000,000 = \num{2e-9}$.  Comparing these two figures, \num{7e-4} and \num{2e-9}, shows that with respect to the particular words chosen, English is 4 to 5 orders of magnitude more likely to form the multiple embedding construction than Malay\slash Indonesian.  Comparable order-of-magnitude differences are present for the remaining five comparisons between Tables \tabref{tab:first-english} and \tabref{tab:first-malay}, and for five out of six of the corresponding comparisons between Tables \tabref{tab:second-english} and \tabref{tab:second-malay} — the only case where there is not a order-of-magnitude difference being in the third lines of Tables \tabref{tab:second-english} and \tabref{tab:second-malay}, where the English is ``only'' about twice as likely to form a multiple embedding construction than the Malay\slash Indonesian.
 
-Thus, Tables \tabref{tab:first-english}--\tabref{tab:second-malay} show that English as a whole is massively more likely to form multiple embedding constructions than Malay/Indonesian.  In yet another comparison aimed at testing this generalization, the English string \textit{who do you think is going to win} yielded a total of $841,000$ hits, while there were no hits whatsoever for numerous potential equivalent sentences in Malay/Indonesian, the only exception being 3 hits for \textit{siapa anda pikir akan menang} (who 2 think FUT win), which actually occurred in an Indonesian website explaining the meaning of a similar English sentence — the exception that proves the rule.
+Thus, Tables \tabref{tab:first-english}--\tabref{tab:second-malay} show that English as a whole is massively more likely to form multiple embedding constructions than Malay\slash Indonesian.  In yet another comparison aimed at testing this generalization, the English string \textit{who do you think is going to win} yielded a total of $841,000$ hits, while there were no hits whatsoever for numerous potential equivalent sentences in Malay\slash Indonesian, the only exception being 3 hits for \textit{siapa anda pikir akan menang} (who 2 think FUT win), which actually occurred in an Indonesian website explaining the meaning of a similar English sentence — the exception that proves the rule.
 
-The above Google searches show that multiple embedding is massively more common in English than in Malay/Indonesian.  The similar nature of the searches in the two languages shows that the greater propensity for subordination in English as compared to Malay/Indonesian is  a cross-linguistic difference that is independent of both register and modality.  In particular, the more widespread use of embedding in English is observable notwithstanding a significant body of literature \citep{karlsson2007aconstraints,karlsson2007bconstraints,karlsson2009aorigin,karlsson2009bsyntactic} showing that such constructions are more highly constrained, and occur less frequently in real-life language use, than is commonly assumed to be the case under a simplistic characterization of English and other similar languages as syntactically recursive.
+The above Google searches show that multiple embedding is massively more common in English than in Malay\slash Indonesian.  The similar nature of the searches in the two languages shows that the greater propensity for subordination in English as compared to Malay\slash Indonesian is  a cross-linguistic difference that is independent of both register and modality.  In particular, the more widespread use of embedding in English is observable notwithstanding a significant body of literature \citep{karlsson2007aconstraints,karlsson2007bconstraints,karlsson2009aorigin,karlsson2009bsyntactic} showing that such constructions are more highly constrained, and occur less frequently in real-life language use, than is commonly assumed to be the case under a simplistic characterization of English and other similar languages as syntactically recursive.
 
-The results of the comparison between syntactic recursion in Malay/Indonesian and English is summarized in \figref{fig:gil:fig5}:
+The results of the comparison between syntactic recursion in Malay\slash Indonesian and English is summarized in \figref{fig:gil:fig5}.
 
 \begin{figure}
-\centering
 \includegraphics[width=0.8\textwidth]{gil_figure5.png}
 \caption{\label{fig:gil:fig5}Recursion in Riau Indonesian and English}
 \end{figure}
 
-In terms of grammar, the distinction between having recursion and not having it is categorical; Malay/Indonesian (including Riau Indonesian) like English, has it, while Pirahã does not.  In contrast, with respect to linguistic perspective, the propensity for syntactic subordination and the use of recursive strategies to effect such subordination is a scalar property; while English makes frequent use of such embedding, Malay/Indonesian does not, though perhaps — this remains an open question — not to quite the same extent as Pirahã.  Thus, \figref{fig:gil:fig5} shows why the question posed earlier, whether Riau Indonesian has syntactic recursion, is appropriately answered with a ``yes and no''.  Answering the question in this way underscores the importance, in any description of a language, not only of its lexicon and grammar, the things that one can say, but also of its linguistic perspective, the things that one actually does say.
+In terms of grammar, the distinction between having recursion and not having it is categorical; Malay\slash Indonesian (including Riau Indonesian) like English, has it, while Pirahã does not.  In contrast, with respect to linguistic perspective, the propensity for syntactic subordination and the use of recursive strategies to effect such subordination is a scalar property; while English makes frequent use of such embedding, Malay\slash Indonesian does not, though perhaps — this remains an open question — not to quite the same extent as Pirahã.  Thus, \figref{fig:gil:fig5} shows why the question posed earlier, whether Riau Indonesian has syntactic recursion, is appropriately answered with a ``yes and no''.  Answering the question in this way underscores the importance, in any description of a language, not only of its lexicon and grammar, the things that one can say, but also of its linguistic perspective, the things that one actually does say.
 
 \section{Towards a cross-linguistic typology}
 
-How do other languages fit into the above schema: are more languages like English, like Malay/Indonesian, or like Pirahã?  In addition, since linguistic perspective offers a scalar rather than a categorical take on recursion, there is also the potential for languages to occupy other points on the scale, possibly higher than English, or in-between English and Malay/Indonesian, with respect to their propensity for multiple embedding and their associated degrees of recursion.
+How do other languages fit into the above schema: are more languages like English, like Malay\slash Indonesian, or like Pirahã?  In addition, since linguistic perspective offers a scalar rather than a categorical take on recursion, there is also the potential for languages to occupy other points on the scale, possibly higher than English, or in-between English and Malay\slash Indonesian, with respect to their propensity for multiple embedding and their associated degrees of recursion.
 
 At present, we simply do not know enough to provide a systematic answer to the above question.  Recursion is in the eyes of the beholder, with different analyses pointing towards alternative conclusions with regard to whether a given construction constitutes an instantiation of subordination or not.  If linguist A says that language X is syntactically recursive, while linguist B argues that language Y is not, then is this a real difference between the two languages, or merely a difference in the ways the two linguists choose to pursue their trade?  Indeed, for many individual languages, different linguists offer different answers to the question whether the language is syntactically recursive, as we saw earlier with the contrasting analyses of Riau Indonesian offered by myself and by Jackendoff and Wittenberg. In fact, in some cases, it is not different linguists proposing different analyses but the same linguist modifying their views over time, an apparent instance of this being Dan Everett on Pirahã, as described in detail by \crossrefchaptert{3_pullum}.
 
@@ -283,10 +350,10 @@ Solange sich der Gläubiger noch durch die nachgeholte Leistung in Natur, ggf. e
 
 According to \citet{cysouw2023hierarchical}, such sentences, complex to the point of unintelligibility for the average reader, are more common in German than in English.  To the extent that this observation holds water, it would seem to indicate that German may be characterized by a greater propensity for multiple embedding than English.  Some further discussion of stylistic variation with respect to the propensity for various kinds of subordination in the languages of Europe can be found in \citet{karlsson2007aconstraints, karlsson2007bconstraints}, suggesting, inter alia, that contemporary English might represent the outcome of recent processes of reduction in the extent to which such constructions, involving multiple embedding, are used.
 
-At the other end of the scale represented in \figref{fig:gil:fig5} are languages whose grammars do not allow syntactic recursion, or whose linguistic perspectives and associated patterns of usage disfavour it.  Again, one may ask whether and to what extent Malay/Indonesian and Pirahã are weird outliers, and the answer, surprising perhaps only to those whose primary concern is English and its representation within certain contemporary syntactic theories, is that they are not at all exceptional.  Thus, \citet[298]{givon1979understanding} writes that ``there are some languages extant to this day — all in preindustrial, illiterate societies with relatively small, homogenous social units — where one could demonstrate that subordination does not really exist  \ldots ''.  Givón's assertion is cited approvingly by \citet{pullum2010recursion} and \crossrefchaptert{3_pullum}, who go on to adduce several descriptions of languages reported as lacking subordination, among which are Amazonian languages such as Hixkaryana
+At the other end of the scale represented in \figref{fig:gil:fig5} are languages whose grammars do not allow syntactic recursion, or whose linguistic perspectives and associated patterns of usage disfavour it.  Again, one may ask whether and to what extent Malay\slash Indonesian and Pirahã are weird outliers, and the answer, surprising perhaps only to those whose primary concern is English and its representation within certain contemporary syntactic theories, is that they are not at all exceptional.  Thus, \citet[298]{givon1979understanding} writes that ``there are some languages extant to this day — all in preindustrial, illiterate societies with relatively small, homogenous social units — where one could demonstrate that subordination does not really exist  \ldots ''.  Givón's assertion is cited approvingly by \citet{pullum2010recursion} and \crossrefchaptert{3_pullum}, who go on to adduce several descriptions of languages reported as lacking subordination, among which are Amazonian languages such as Hixkaryana
 \citep{derbyshire1979hixkaryana} and Apalaí \citep{koehn1986apalai}, Australian languages such as Dyirbal \citep{dixon1972dyirbal} and Wargamay \citep{dixon1981wargamay}, and various ancient languages, either attested, such as Old Akkadian \citep{deutscher2000syntactic}, or reconstructed, such as Proto-Uralic \citep{collinder1960comparative}.  And doubtlessly there are many more such languages, whose existence may have been obscured by a common analytical bias that leads us to seek out complex structures where none actually exist.  Thus, with respect to syntactic recursion, at least, Pirahã is in good company, and is anything but some kind of strange outlandish creature, or, as intimated by some of Dan Everett's critics, something even worse than that.  Indeed, given the large number of languages still associated with such ``preindustrial, illiterate societies'', one is even led to wonder whether such languages might constitute the cross-linguistic norm.
 
-And what of Riau Indonesian?  As suggested above, its extreme disfavouring of subordination is quite unexceptional; this is true not only within Malay/Indonesian (see \cite{englebretson2003searching} for a similar take on another colloquial variety of Indonesian, spoken on the island of Java) but also cross-linguistically. Nevertheless, the availability, however dispreferred,  of constructions such as that in \REF{ex:gil:1} shows that Riau Indonesian is not quite like Pirahã or any of the other languages cited above.  This rather extreme clash between what people can say and how people do actually speak is due, at least in part, to the much more complex sociolinguistic circumstances associated with Riau Indonesian, and other similar colloquial varieties of Malay/Indonesian. Such colloquial varieties of Malay/Indonesian occupy the bottom reaches of a lectal cline, at whose upper end are the two standardized versions of the language, Standard Indonesian and Standard Malay.  Although structurally quite distinct from one another, colloquial and standard versions of Malay/Indonesian are both present in the minds of diglossic speakers, and as a result, each of the two ends of the cline, colloquial and standard, exerts a substantial effect on its counterpart at the opposite end.  On the one hand, it is the presence of multiple embedding in Standard Indonesian that allows a speaker of Riau Indonesian to accept, however reluctantly, constructions such as that in \REF{ex:gil:1}, thereby supporting the characterization of Riau Indonesian grammar as syntactically recursive. In this respect, then, Riau Indonesian differs from Pirahã and other similar languages lacking a standardized acrolect that might be more conducive to such recursion.  On the other hand, it is the extreme disfavouring of subordination in Riau and other colloquial varieties of Indonesian that percolates upwards along the lectal cline, resulting in a relative disfavouring of subordination also in Standard Indonesian and Malay, as reflected by the differential results of the Google searches reported on in Section 4 earlier.  In this regard, Malay/Indonesian presents a clear contrast to English.  Standard Malay and Indonesian constitute special registers, not acquired natively by speakers through the usual processes of first language acquisition; they are thus parasitic on their colloquial counterparts. In contrast, Standard English is a more natural language variety that is indeed acquired natively by a large population of speakers, and is therefore relatively more resistant to influences from basilectal varieties of English, as, for example, might be manifest in the disfavouring of subordination.
+And what of Riau Indonesian?  As suggested above, its extreme disfavouring of subordination is quite unexceptional; this is true not only within Malay\slash Indonesian (see \cite{englebretson2003searching} for a similar take on another colloquial variety of Indonesian, spoken on the island of Java) but also cross-linguistically. Nevertheless, the availability, however dispreferred,  of constructions such as that in \REF{ex:gil:1} shows that Riau Indonesian is not quite like Pirahã or any of the other languages cited above.  This rather extreme clash between what people can say and how people do actually speak is due, at least in part, to the much more complex sociolinguistic circumstances associated with Riau Indonesian, and other similar colloquial varieties of Malay\slash Indonesian. Such colloquial varieties of Malay\slash Indonesian occupy the bottom reaches of a lectal cline, at whose upper end are the two standardized versions of the language, Standard Indonesian and Standard Malay.  Although structurally quite distinct from one another, colloquial and standard versions of Malay\slash Indonesian are both present in the minds of diglossic speakers, and as a result, each of the two ends of the cline, colloquial and standard, exerts a substantial effect on its counterpart at the opposite end.  On the one hand, it is the presence of multiple embedding in Standard Indonesian that allows a speaker of Riau Indonesian to accept, however reluctantly, constructions such as that in \REF{ex:gil:1}, thereby supporting the characterization of Riau Indonesian grammar as syntactically recursive. In this respect, then, Riau Indonesian differs from Pirahã and other similar languages lacking a standardized acrolect that might be more conducive to such recursion.  On the other hand, it is the extreme disfavouring of subordination in Riau and other colloquial varieties of Indonesian that percolates upwards along the lectal cline, resulting in a relative disfavouring of subordination also in Standard Indonesian and Malay, as reflected by the differential results of the Google searches reported on in Section 4 earlier.  In this regard, Malay\slash Indonesian presents a clear contrast to English.  Standard Malay and Indonesian constitute special registers, not acquired natively by speakers through the usual processes of first language acquisition; they are thus parasitic on their colloquial counterparts. In contrast, Standard English is a more natural language variety that is indeed acquired natively by a large population of speakers, and is therefore relatively more resistant to influences from basilectal varieties of English, as, for example, might be manifest in the disfavouring of subordination.
 
 The existence of cross-linguistic variation with respect to syntactic recursion and the proclivity for subordination raises the question what the determining factors might be that underlie such variation.  Givón, in the above-cited passage, alludes to ``preindustrial, illiterate societies with relatively small, homogenous social units'' — a plausible hypothesis, but one still in need of solid empirical cross-linguistic support.  As suggested earlier, a major challenge faced by any attempt to seek such support is that whether or not a language has syntactic recursion is very much dependent on how it is analyzed.  What is needed, therefore, is a common yardstick by which different languages can be uniformly and objectively assessed with respect to their relative proclivities for syntactic subordination.
 
@@ -366,11 +433,11 @@ The second hypothesis offers one such factor of a sociolinguistic orientation, a
 
 However interesting in its own right, the examination of the distribution of syntactically recursive cumulative tales is of course intended here as a mere proxy for a more general investigation into the cross-linguistic distribution of syntactic recursion.  While much harder to ascertain in an objective systematic manner, there is good reason to believe that the distribution of syntactic recursion more generally may be sensitive to the variegated aspects of societal complexity alluded to in the second hypothesis above.  That is to say, syntactic recursion is more likely to be found in societies of greater complexity. 
 
-One centrally important aspect of societal complexity mentioned earlier is modality.  As already noted, syntactic recursion is more commonly found in writing than in speech; moreover, this tendency may be manifest in two distinct ways, online and conventionalized. To begin with, multiple embedding and associated syntactic recursion are more likely to occur in writing than in speech within a single language or even speaker.  But in addition, within the same modality, languages with an overall higher rate of literacy are more likely to make use of multiple embedding and allow syntactic recursion.  Evidence for this latter correlation was provided earlier by the contrasting results of the Google searches in English, with a higher rate of literacy, and Malay/Indonesian, which, as suggested in \citet[30]{gil2009grammar}, is characterized by a lower rate of literacy and correspondingly lower functional range of written communication.
+One centrally important aspect of societal complexity mentioned earlier is modality.  As already noted, syntactic recursion is more commonly found in writing than in speech; moreover, this tendency may be manifest in two distinct ways, online and conventionalized. To begin with, multiple embedding and associated syntactic recursion are more likely to occur in writing than in speech within a single language or even speaker.  But in addition, within the same modality, languages with an overall higher rate of literacy are more likely to make use of multiple embedding and allow syntactic recursion.  Evidence for this latter correlation was provided earlier by the contrasting results of the Google searches in English, with a higher rate of literacy, and Malay\slash Indonesian, which, as suggested in \citet[30]{gil2009grammar}, is characterized by a lower rate of literacy and correspondingly lower functional range of written communication.
 
 Nevertheless, literacy is just one of an array of features generally associated with societal complexity, and there is good reason to believe that several of these other features may also be associated with a greater propensity for recursion.  A series of recent studies have demonstrated positive correlations between various aspects of societal and linguistic complexity.  Thus, recent experiments by \citet{raviv2019larger,raviv2020role} and \citet{raviv2020language} show that in artificial languages, larger speech communities entail more conventionalization, which is tantamount to greater grammatical complexity. Similarly, in sign languages, \citet{meir2012influence} and \citet{ergin2020community} argue that an increase in the size of the signing community entails a greater degree of conventionalization.  In phonology, \citet{hay2007phoneme,atkinson2011phonemic,wichmann2011phonological} and \citet{nettle2012social} argue that larger languages tend to have larger phonemic inventories than smaller languages. In the domain of metaphor comprehension, \citet{gil2021metaphors} present evidence to the effect that more highly complex polities tend to be associated with languages whose metaphors are of more complex directional structure.  With respect to Tense-Aspect-Mood marking, \citet{gil2021tense} demonstrates that languages belonging to larger families, the product of demographic spread, are associated with more complex systems characterized by obligatory as opposed to optional marking.  Finally, in the realm of basic clause structure, work in progress, some initial results of which are summarized in \citet{gil2019grammar}, shows that more highly complex polities tend to be associated with languages endowed with a greater degree of grammaticalization of thematic-role assignment.  Admittedly, though, a range of other studies support an opposite negative correlation between societal and linguistic complexity.  As argued by \citet{mcwhorter2018creole,mcwhorter2005defining,mcwhorter2011linguistic,dahl2004growth,wray2007consequences,lupyan2010language,trudgill2011sociolinguistic} and others, larger political entities, typically associated with various modes of exoteric communication, and in particular imperfect adult second-language acquisition, are conducive to linguistic simplification, whereas smaller societies, generally characterized by more esoteric forms of communication, are fertile grounds for the accretion of linguistic complexity.  A way of reconciling these apparently divergent results is proposed in \citet{chen2023linguistic}, who demonstrate, in a quantitative study based on data from the World Atlas of Language Structures, or WALS \citep{haspelmath2005atlas}, that many of the linguistic features associated with a positive correlation between linguistic and societal complexity tend to be of a syntactic nature; in addition, they speculate that such features will tend to rely more on procedural as opposed to declarative memory. Since recursion was not included in the features examined in WALS, it is not mentioned in the \citet{chen2023linguistic} study.  However, the generalizations emerging from that study strongly suggest that, as manifestations par excellence of syntactic complexity, syntactic subordination and recursion should also exhibit a positive correlation with societal complexity.
 
-Viewed in the light of the covariance of societal and syntactic complexity, the facts regarding recursion in Malay/Indonesian, Pirahã and English, as summarized in \figref{fig:gil:fig5}, make perfect sense.  In terms of societal complexity, Malay/Indonesian occupies an intermediate position between Pirahã and English.  Whereas Pirahã is spoken by a single small group of people with relatively little contact with the outside world, Malay/Indonesian, in all of its varieties, is spoken by well over two hundred million people and is an official language of four different countries.  No wonder, then, that, unlike Pirahã, Malay/Indonesian allows for syntactic recursion, a fact that is true also for colloquial varieties such as Riau Indonesian.  However, in contrast to Malay/Indonesian, English is a world language, a vehicle not only of national but also international communication; moreover, unlike Malay/Indonesian, its standardized versions are spoken natively by large populations of speakers.  It is this difference that accounts for the massively greater frequency of subordination, a reflection of syntactic recursion, in actual English usage, as contrasted with Malay/Indonesian.
+Viewed in the light of the covariance of societal and syntactic complexity, the facts regarding recursion in Malay\slash Indonesian, Pirahã and English, as summarized in \figref{fig:gil:fig5}, make perfect sense.  In terms of societal complexity, Malay\slash Indonesian occupies an intermediate position between Pirahã and English.  Whereas Pirahã is spoken by a single small group of people with relatively little contact with the outside world, Malay\slash Indonesian, in all of its varieties, is spoken by well over two hundred million people and is an official language of four different countries.  No wonder, then, that, unlike Pirahã, Malay\slash Indonesian allows for syntactic recursion, a fact that is true also for colloquial varieties such as Riau Indonesian.  However, in contrast to Malay\slash Indonesian, English is a world language, a vehicle not only of national but also international communication; moreover, unlike Malay\slash Indonesian, its standardized versions are spoken natively by large populations of speakers.  It is this difference that accounts for the massively greater frequency of subordination, a reflection of syntactic recursion, in actual English usage, as contrasted with Malay\slash Indonesian.
 
 \section*{Abbreviations}
 \begin{tabularx}{.5\textwidth}{@{}lQ@{}}
@@ -380,7 +447,7 @@ Viewed in the light of the covariance of societal and syntactic complexity, the 
 \end{tabularx}
 
 \section*{Acknowledgements}
-It is a pleasure to dedicate this paper to Dan Everett, in some ways a kindred soul.  I am also grateful to Ted Gibson for inviting me to be part of this festschrift.  For discussions of some of the issues dealt with in this paper I am indebted to Jim Hurford, Ray Jackendoff and Eva Wittenberg.  Thanks are due also to Caleb Everett for his comments on an earlier draft.  Some of the material in this paper was presented at the International Symposium on Malay/Indonesian Linguistics (ISMIL), in the 14th meeting in Minneapolis on 30 April 2010, the 19th meeting in Jambi on 2015, and at the 26th meeting in Honolulu on 19 May 2023; I am grateful to participants at those events for helpful comments and criticisms.  Finally, the work reported on here would not have been possible without the generous support of the Department of Linguistics of the Max Planck Institute of Evolutionary Anthropology and its director Bernard Comrie.
+It is a pleasure to dedicate this paper to Dan Everett, in some ways a kindred soul.  I am also grateful to Ted Gibson for inviting me to be part of this festschrift.  For discussions of some of the issues dealt with in this paper I am indebted to Jim Hurford, Ray Jackendoff and Eva Wittenberg.  Thanks are due also to Caleb Everett for his comments on an earlier draft.  Some of the material in this paper was presented at the International Symposium on Malay\slash Indonesian Linguistics (ISMIL), in the 14th meeting in Minneapolis on 30 April 2010, the 19th meeting in Jambi on 2015, and at the 26th meeting in Honolulu on 19 May 2023; I am grateful to participants at those events for helpful comments and criticisms.  Finally, the work reported on here would not have been possible without the generous support of the Department of Linguistics of the Max Planck Institute of Evolutionary Anthropology and its director Bernard Comrie.
 
 \printbibliography[heading=subbibliography,notkeyword=this]
 \end{document}
