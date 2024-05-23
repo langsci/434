@@ -5,7 +5,7 @@
    \input{../localcommands}
    \togglepaper[23]%%chaptern
    \input{../localhyphenation}
-   \boolfalse{bookcompile}umber
+   \boolfalse{bookcompile}
 }{}
 
 \title{A Peircean turn in linguistics: syntactic-semantic composition as logical inference}
@@ -14,12 +14,12 @@
 \author{Robert Levine\affiliation{Ohio State University}}
 
 \abstract{In the late 19th century Charles Sanders Peirce proposed what can be seen as a model of
-  natural language in which the combinatoric affinity of lexical items—which he characterizes as
-  their respective valence—drove the composition of sentences. In this paper I argue that Peirce’s
+  natural language in which the combinatoric affinity of lexical items -- which he characterizes as
+  their respective valence -- drove the composition of sentences. In this paper I argue that Peirce’s
   conception of valence as the basis of linguistic composition, incorporated into a logic of types
   in which valence is interpreted as implication, finds its formal realization in a species of
   categorial grammar. I further show the power of this conception in capturing a complex interaction
-  of filler-gap connectivity with ellipsis which has been claimed to be one of the strongest pieces
+  of filler-gap connectivity with ellipsis, which has been claimed to be one of the strongest pieces
   of evidence for covert structure analyses treatment of ellipsis patterns. The type-logical
   treatment of this supposed pattern of extraction from ellipsis sites undercuts such claims, and
   reinforces Joachim Lambek’s invocation of Peirce as perhaps the earliest intellectual ancestor of
@@ -37,7 +37,7 @@ The work of Charles Sanders Peirce -- a long-time research focus of Dan
 Everett, whom this festschrift honors -- spans a range of interests in,
 and major contributions to, a range of mathematical and scientific
 domains that may well be unique in the history of human
-accomplishent. Pearce's work is widely recognized as seminal in
+accomplishent. Peirce's work is widely recognized as seminal in
 mathematics, logic, the philosophy of knowledge, chemistry, astronomy
 and many other fields, but it is not generally recognized that he was
 the source of an analytic concept, \textsl{valence}, which has become
@@ -48,22 +48,22 @@ linguistic form, or for being the first scholar to use the term
 ``valence'', which he borrowed from chemistry as a close analogue of
 this linguistic concept. It is still common to see linguistic
 applications of valence as having been ``founded in 1959 by Lucien
-Tesnière'' \citet{hollein2022}. There were, as noted in \citet{AdamP-Peirce}, a
+Tesnière'' \citep{hollein2022}. There were, as noted in \citet{AdamP-Peirce}, a
 number of earlier invocations of the metaphor referencing the
 electrons needed by atoms of an element in order to attain a stable
 state. But the earliest such appeal to this metaphor, as \citet{askedal91}
 and Przepi\'{o}rkowski document, was \citet{peirce1897}, where the word
 \textit{gives} is explicitly identified as having the same number of
 ``unsaturated bonds'' as the nitrogen atom, which combines with three
-hydrogen atoms to form the ammonia molecule NH\fb{\,\,\textrm{3}}, and
+hydrogen atoms to form the ammonia molecule NH$_3$, and
 Przepi{\'o}rkowski considers it likely that Tesnière and the
 others who introduced valence into the parlance of grammarians were
 all influenced by Peirce's original invocation of the
 concept. \citet[155]{AdamP-Peirce} notes that ``four linguists working
-in four different countries independently came up with the valency
+in four different countries independently came up with the valence
 metaphor'', within the space of a single decade, and suggests that the
 common source for their exposure to Peirce's metaphor was not Peirce
-himself, but Roman Jacobson, who was probably the earliest
+himself, but Roman Jakobson, who was probably the earliest
 grammarian of the modern era to recognize the depth of Peirce's
 insights on natural language, particularly \citet{peirce1897}, and actively
 promoted Peirce's work in conversations and international gatherings,
@@ -74,7 +74,7 @@ It is generally conceded among those who have studied Peirce's work as
 it bears on natural languages that his perspective was primarily
 rooted in their semiotic capabilities, as systems of signs. But as
 Nöth observes, for Peirce, ``the key to syntactic structure is the
-predicate and its valency'' \citeyearpar[7]{nothPeirce}. Peirce
+predicate and its valence'' \citeyearpar[7]{nothPeirce}. Peirce
 seems to have regarded the valence of sentences in both a syntactic
 and semantic way: on the one hand, the places in which names can
 appear (whose occupants he called ``subjects'') and on the other, as the
@@ -154,13 +154,13 @@ comprises a phonological and semantic annotation which is said to
 the grammar are homologous to the implicational subsystem of
 substructural intuitionistic propositional logic (SIPL), i.e.,
 IPL lacking rules of permutation, contraction or weakening, with implication
-corresponding to types of the form \syncat{\textit{Y}/\textit{X}}, \syncat{\textit{X}\bsl{}\textit{Y}} and \syncat{\textit{Y} \vs \textit{X}} The
+corresponding to types of the form \syncat{\textit{Y}/\textit{X}}, \syncat{\textit{X}\bsl{}\textit{Y}} and \syncat{\textit{Y} \vs \textit{X}}. The
 first of these can be thought of as something like, ``give me a sign of
 type \textit{X} on my right and you'll get back a sign of type  \textit{Y}'', and the
 second is the same with ``left'' in place of ``right''. The third is a bit
 more complex: it tells you that, if there is a sign of type \textit{X} it can be
 realized in a certain designated position ``within'' the sign typed
-\textit{Y} \vs \textit{X}. We refer to inhabitants of slashed types as
+\textit{Y}\vs\textit{X}. We refer to inhabitants of slashed types as
 \textsl{functional} terms, in view of their semantics, as we discuss below.
 
 What are the syntactic types that can instantiate \textit{Y} and \textit{X}? For our
@@ -181,7 +181,7 @@ N  & property & $\langle e,t\rangle$ \\
 \end{tabular}
 \end{exe}
 Clauses then correspond to propositions, and NPs to Peirce's
-``subjects'', so that in (\REF{example}a), for example, we would assign \textit{give}
+``subjects'', so that in \REF{examplea}, for example, we would assign \textit{give}
 the type \syncat{(NP\bsl{}S)/NP/NP}:\footnote{We will also take PP to be a basic type,
 although here matters are a bit more complex: typically, inhabitants of
 the type PP have the same semantic type as those typed NP.}
@@ -190,20 +190,20 @@ the type PP have the same semantic type as those typed NP.}
 \begin{exe}
  \ex\label{example}
   \begin{xlist}
- \ex\label{}
+ \ex\label{examplea}
     John gave Mary the manuscript.
- \ex\label{}
+ \ex\label{exampleb}
     \LexEnt{\pt{gave}}{\sem{ \trns{give} }}{\syncat{(NP\bsl{}S)/NP/NP }}
   \end{xlist}
 \end{exe}
-The rules under which (\REF{example}b) composes with its argument terms to
-yield the sentence in (\REF{example}a) are, as noted, the elimination and
+The rules under which \REF{exampleb} composes with its argument terms to
+yield the sentence in \REF{examplea} are, as noted, the elimination and
 introduction rules for implication of intuitionistic propositional
 logic, where implication takes the three forms noted earlier. There
 are a number of different formats for logical rules; the system I
 introduce here belongs to a subfamily of type-logical frameworks which
 uses the Natural Deduction conventions. In the Prawitz notation followed
-below, the ordinary IPL rule would take the form in (\REF{prawitz}b):
+below, the ordinary IPL rule would take the form in (\ref{prawitz}b):
 
 \begin{exe}
  \ex\label{prawitz}
@@ -227,10 +227,10 @@ below, the ordinary IPL rule would take the form in (\REF{prawitz}b):
 }
 \end{tabular}
 \end{exe}
-(\REF{prawitz}a) is nothing other than the ancient principle of Modus
+(\ref{prawitz}a) is nothing other than the ancient principle of Modus
 Ponens, where there is an antecedent ($\phi$) and a consequent
 ($\psi$), such that the truth of $\phi$ is a guarantor of the truth of
-$\psi$ (or, under the more appropriate intuitionistic interpretation, a proof of $\psi$ follows from a proof of $\phi$). (\REF{prawitz}b) is the slightly less transparent rule of
+$\psi$ (or, under the more appropriate intuitionistic interpretation, a proof of $\psi$ follows from a proof of $\phi$). (\ref{prawitz}b) is the slightly less transparent rule of
 hypothetical reasoning: if, in some context of established results,
 introducing an hypothesis $\phi$ allows us to deduce $\psi$, then in
 that same context, we know that the implication $\phi\supset\psi$
@@ -343,13 +343,13 @@ introduction of the variable. \ptv{a,b} are metavariables over
 strings -- lexical items or sequences of lexical items -- while \pt{φ} is a variable, supplied not by the lexicon, or as a stand-in for
 some actual string whose value is irrelevant in the context of the
 rule.  Rather, they are part of the logic itself, representing, in
-effect.a space in a prosodic or semantic expression that could be
+effect, a space in a prosodic or semantic expression that could be
 occupied by any term of the same type as the variable. Each variable
 sign is introduced with a specific index, and each application of an
-Introduction rule is keyed to the index of the variable which is
+introduction rule is keyed to the index of the variable which is
 removed in the introduction of the directional slashes or \L-bound in
-\ensuremath{\vs} introduction.  The Elimination rules shown are, again, different
-avatars of (\REF{prawitz}a): a slashed term seeks a term of the antecedent
+\ensuremath{\vs} introduction.  The elimination rules shown are, again, different
+avatars of (\ref{prawitz}a): a slashed term seeks a term of the antecedent
 type to give us a consequent type, and the result of composing the
 slashed term with the antecedent term is necessarily a term of the
 consequent type. One can see these inference rules as inversions of
@@ -370,7 +370,7 @@ lockstep with the type composition: the prosody of directionally
 slashed types -- $\!\!\!$ \syncat{\textit{Y}/\textit{X}} and \syncat{\textit{X}\bsl{}\textit{Y}} -- reflects the
 direction of the slash: the former precedes the prosody of its type \textit{X}
 argument, the latter follows it\footnote{I defer discussion of
-vertically slashed terms till we get to the Introduction rules}. The
+vertically slashed terms till we get to the introduction rules}. The
 semantics, however, does not reflect the direction of the slash: for
 all functional types, the semantic term is a function which takes the
 denotation of the syntactic argument as its own arguent.
@@ -395,7 +395,8 @@ theorem. We start with a lexicon, as in \REF{lexicon}:
 \LexEnt{\pt{the}}{\sem{ \iota}}{\syncat{NP/N}} \\
 \LexEnt{\pt{committee}}{\sem{ comm}}{\syncat{N}} & &
 \LexEnt{\pt{over}}{\sem{ \trns{over} }}{\syncat{(VP\bsl{}VP)/NP}} \\
-\LexEnt{\pt{weekend}}{\sem{ \trns{wknd} }}{\syncat{N}} & &
+\LexEnt{\pt{the}}{\sem{ \iota}}{\syncat{NP/N}} & &
+\LexEnt{\pt{weekend}}{\sem{ \trns{wknd} }}{\synca{N}} 
 \end{tabular}
 \end{exe}
 Lexical entries are axioms of the type logic (though other axioms are
@@ -477,7 +478,7 @@ such structure: what we have in \REF{sentProof} is a demonstration that
 the closure of the axioms of the system -- the English lexicon -- under
 the inference rules of the logic allows a valid inference of a prosodic
 string
-\pt{john \BobsO sent} \pt{\BobsO the \BobsO documents \BobsO to \BobsO the \BobsO committee \BobsO over \BobsO the \BobsO weekend}
+\pt{john \BobsO sent} \pt{ \BobsO  the \BobsO documents \BobsO to \BobsO the \BobsO committee \BobsO over \BobsO the \BobsO weekend}
 which signifies a proposition
 \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs})))(\iota(\trns{comm}))(\trns{j}) } and that the
 linguistic expression which has those prosodic and semantic values is
@@ -547,7 +548,7 @@ completely parallel proof will derive the sign in \REF{baked}:
   \LexEnt{\pt{bill \BobsO baked}}{\sem{ λu. \trns{bake}(u)(\trns{b})}}{\syncat{S/NP}}
 \end{exe}
 Application of the standard generalized conjunction operator
-\sem{  \ensuremath{ \sqcap\xspace }  } \trns{introduced} \trns{in} \citet{partee-rooth1983a}, which we take to be the
+\sem{  \ensuremath{ \sqcap\xspace }  } introduced in \citet{partee-rooth1983a}, which we take to be the
 denotation of \textit{and}, with the type (\syncat{\textit{X}\bsl{}\textit{X}})/\textit{X}, will then lead to the
 inference in \REF{rnrSign}:
 
@@ -603,7 +604,7 @@ operator. This makes the resulting prosodic object a function, not a
 string, and when the prosody of a sign typed \syncat{\textit{Y}\ \vs \textit{X}} composes with
 the prosody of a type $X$ sign, the former takes the latter as an
 argument (as aptly illustrated by \REF{cleopatra} below).  It is worth
-noting that the introduction rules repesent a formal expression of
+noting that the introduction rules represent a formal expression of
 Peirce's observation, quoted in \citet[8]{nothPeirce}: ``in the proposition
 {`}Anthony gave a ring to Cleopatra', Cleopatra is as much a subject of what is
 meant and expressed as is the ring or Anthony. A proposition, then,
@@ -634,7 +635,7 @@ some object; that object is in the set of things given to Cleopatra to
 Antony, and the proposition in the passage Noth quotes from Peirce is
 decomposable into λ-terms along these lines just as much as it is the
 composition of \textit{Antony} with the denotation of the VP \textit{gave a ring to
-Cleopatra}. In this sense, \ensuremath{\vs} Introduction is the logical warrant for
+Cleopatra}. In this sense, \ensuremath{\vs} introduction is the logical warrant for
 Peirce's view that \textit{Anthony gave a ring to Cleopatra} is ``about''
 any (or all) of its ``subject'', not just the NP which carries the
 grammatical function ``subject''.
@@ -656,7 +657,7 @@ the use of meaning postulates; post-SpellOut
 movement operations (``Quantifier Raising'', originating in
 \citet{may_r1985a}) in the most recent incarnations of transformational
 grammar; Cooper's \citeyearpar{cooper75,Cooper83}
-storage mechanism, adopted in \citet{pollardsag94}, and may others. In
+storage mechanism, adopted in \citet{pollardsag94}, and many others. In
 some cases the solutions involve formal devices that seem to be
 purpose-built for the description of quantifier's syntactic and
 semantic behavior, with little use outside the specific problem they
@@ -749,7 +750,7 @@ details).
 
 Oehrle's solution to the parallelism of NP and quantifed expression
 distibutions plays on the independent but linked relationship of
-prosody and semantics in type-logical grammar—a relationship made
+prosody and semantics in type-logical grammar -- a relationship made
 possible by the \ensuremath{\vs} connnective. Quantified expressions parallel NPs
 precisely because they are in a sense parasitic on NP variables: they
 only appear in parts of the string where such variables can appear,
@@ -762,7 +763,7 @@ phenomena, one of which is considered in detail in \sectref{sec-extraction} as
 a dramatic illustration of the way effects which require recourse to
 operations on phrase structure in other approaches can be reduced to
 mappings between valence values in type-logical grammar, with no need
-to posit syntactic configuation.
+to posit syntactic configuration.
 
 
 %\subsection{Interlude}
@@ -784,7 +785,7 @@ the proof-theoretic architecture of type-logical frameworks, valence
 satisfaction is the source of all observed grammatical regularities,
 as well as constructional idiosyncrasies.\footnote{For
 a demonstration of how these eccentries can be elegantly accounted
-for, see \citet{kubota-levine2022a}}. In the case of scopal operators, such
+for, see \citet{kubota-levine2022a}.} In the case of scopal operators, such
 as generalized quantifiers -- as well as symmetrical predicates such as
 \textit{same}, \textit{similar}, \textit{different}, and various other varieties, the
 relationship between semantics and syntax is immediate and
@@ -795,7 +796,7 @@ cases, truth-conditional meaning is composed in accord with the
 valence of predicates and operators.
 
 What about genuinely long-distance dependencies, of the sort
-exemplified by topicalization, \textit{wh} displacement, \textit{tough}
+exemplified by topicalization, wh-displacement, \textit{tough}
 constructions and many others? These are standardly treated by
 machinery which ``localizes'' the dependency, but in neither
 derivational nor monostratal phrase-structure frameworks is the same
@@ -938,12 +939,12 @@ there \emph{has} been a certain amount of research devoted to them (see, for exa
 The problem for (i) is that whereas there is now a deep body of
 results constituting compelling evidence against the structural
 origins of island effects (for recent overviews of the relevant
-literature, see, e.g., \citet{chaves-putnam2020}, \citet{kubotalevineBook}, \citet{liu-et-al2022}),
+literature, see, e.g., \citet{chaves-putnam2020}, \citet{kubotalevineBook}, \citet{liu2022structural}),
 most frameworks take filler-gap connectivity itself as irreducibly
 syntactic in nature. And while there are deep consequences that follow
 from rejecting movement operations as the source of extraction, this
 theoretical position does not, on its own, give us any particular help
-in explaining what the \textit{wh} word is doing in \REF{extrac-from-VPE}. In
+in explaining what the wh-word is doing in \REF{extrac-from-VPE}. In
 GPSG and its descendent HPSG, for example, a feature carrying
 information about the syntactic and semantic content of a \textit{wh}
 constituent must be carried through the structure to the point where a
@@ -983,10 +984,10 @@ a distinct class of categorial grammar frameworks, see \citet{jacobson1992}.}
 
 
 
-\citet{muskens03} outlines a treatment of unbounded \textit{wh} dependencies,
+\citet{muskens03} outlines a treatment of unbounded wh-dependencies,
 readily extendable to topicalization, which differs radically from
 previous analyses of extraction within both phrase-structure-based
-approaches and categorial grammar. In terms of \textit{wh} relatives,
+approaches and categorial grammar. In terms of wh-relatives,
 Muskens' proposal takes the form of the lexical sign in \REF{whrel}:
 
 \begin{exe}
@@ -1067,7 +1068,7 @@ the proof line in \REF{length} to the sign below the line:
 Essentially the same proof storyline in \REF{bookProof1}--\REF{bookProof3}
 will give us \textit{book which Mary thinks Bill remembers Ann saying
 John lost}. There is no local registration of the information linking
-the filler to the gap -- nothing analagous to cyclic \textit{wh} movement, no
+the filler to the gap -- nothing analagous to cyclic wh-movement, no
 SLASH feature shared between vertically adjacent nodes in a
 phrase-structure tree that gets realized at the tail end of the
 chain. Properly speaking, there isn't even anything that can be
@@ -1077,7 +1078,7 @@ the model theory for the prosodic calculus interprets \ptfont{a\BobsO b\BobsO \E
 \ptfont{a\BobsO b}; nor is there any representation in the semantics or the
 syntactic type of something we would want to call a ``gap''. In a way,
 this treatment of extraction is an echo of the view in extraction in
-the earliest phase of transformational grammar, when \textit{wh} movement
+the earliest phase of transformational grammar, when wh-movement
 shifted a constituent to the left over an unconstrained variable. The
 appearance of \citet{ross67} resulted in the almost universal rejection of
 this view, but the most recent research on the island effects that
@@ -1334,7 +1335,7 @@ VP, as we show below. Treatments such as Hardt's, or that given in
 such as \REF{extrac-from-VPE}; under the analysis which follows, in
 contrast, these constructions are predicted to conform to whatever
 conditions hold on extraction in general without any concomitant
-assumption of covert structure corresponding to an ``ellipsed'' VP.
+assumption of covert structure corresponding to an ellipsed VP.
 
 What is distinctive about the filler-gap relationship, as vs.\  the
 standard picture of valence, is that while in both cases we have material
@@ -1367,9 +1368,9 @@ on such an approach the well-formedness of e.g.,
     Kollberg suspects Petrus, who Beck does {\gp}\xspace as well \citep[666]{kennedy1995}
   \end{xlist}
 \end{exe}
-\REF{generalized} will not do the trick here here, since it only gives us
+\REF{generalized} will not do the trick here, since it only gives us
 the possibility of elements missing on the right, not medially. What's
-needed, clearly is some way to extend the generalized ellipsis rule
+needed, clearly, is some way to extend the generalized ellipsis rule
 still further. Fortunately, just as we were able to show that terms
 typed VP/VP can, by the Geach theorem proof given in \REF{GeachRule}, be
 extended to the type (VP/NP)/(VP/NP), we can prove that for any term
@@ -1499,7 +1500,7 @@ a proof along the lines of that began along the lines of
 This would then be an ordinary instance of pseudogapping as in \textit{John
 ate lunch much faster than he did breakfast}. The upshot is that
 apparent extraction from ellipsis sites as in \REF{extrac-from-VPE} is nothing other than
-the interaction of Muskens-style \textit{wh} operators with the object of a
+the interaction of Muskens-style wh-operators with the object of a
 transitive auxiliary -- a possibility that we would predict in advance
 on the analysis given above.
 
@@ -1507,7 +1508,7 @@ The reader might suppose that the possibility of this kind of
 extraction depends on some kind of parallel interpretation between the
 antecedent and the ellipsed clauses in \REF{extrac-from-VPE}, based on the
 extraction already visible in the former. But we also have examples
-where the there is no extraction in the antecedent, such as \REF{internal}c) and (\REF{noparallel}:
+where there is no extraction in the antecedent, such as \REF{internal} and \REF{noparallel}:
 
 \begin{exe}
  \ex\label{noparallel}
@@ -1554,18 +1555,18 @@ presented in this section, no extraction from a subsequently deleted
 of linguistic expressions, as in a phrase structure tree. Rather, an
 auxiliary is licensed whose type and semantics correspond to a VP
 missing an NP, and which composes by hypothetical reasoning to the
-type of a clause missing an NP. A \textit{wh} operator along the lines
+type of a clause missing an NP. A wh-operator along the lines
 proposed by Muskens can then take this clause as an argument. The
 appearance in \REF{extrac-from-VPE} of an extraction from a subsequently
 ellipsed constituent is, on this view, a illusion due to the
 string-identity of a VP ellipsis on the one hand and displacement of a
 pseudogapping remnant on the other.
 
-\section{Conclusion: Peirce' linguistics, logic, and mathematics and the sources of type logical grammar}
+\section{Conclusion: Peirce's linguistics, logic, and mathematics and the sources of type logical grammar}
 
 It is important at this point to consider how the results reported
 above have been achieved. Fundamentally, treatment of syntactic
-categories \textsl{as} valence specifications means that grammatical
+categories as valence specifications means that grammatical
 rules and operations can map the combinatorial possibilites of signs
 to different possibilities without ever requiring those possibilities
 to be realized as actual structures e.g., the operators for auxiliary
@@ -1577,7 +1578,7 @@ above can apply to a sign typed \syncat{S\vs NP}, an object itself seeking an NP
 to yield a clause of arbitrary depth. Since on the analysis in
 \sectref{subsubsec:pseudoextrac} the auxiliary \textit{did} in \REF{extrac-from-VPE} is a VP
 missing an NP and thus, by hypothetical reasoning, \textit{Bill did} is an S
-missing an NP, a \textit{wh} operator such as \textit{what} can take the latter as
+missing an NP, a wh-operator such as \textit{what} can take the latter as
 an argument without there ever having been any material in its
 licensing corresponding to the transitive verb \textit{eat} per
 \REF{extractionVPE-rep}. The interpretation of \REF{extrac-from-VPE} involves
@@ -1600,7 +1601,7 @@ denoting metalogical equivalence:
   \sem{ (\psi  \ensuremath{\vdash\xspace } \psi\supset\varrho)\Lleftarrow\!\Rrightarrow (\psi,\phi  \ensuremath{\vdash\xspace } \varrho)\Lleftarrow\!\Rrightarrow (\phi  \ensuremath{\vdash\xspace } \psi\supset\varrho) }
 \end{exe}
 (For detailed discussion, see \citealt{sep-logic-substructural}). Residuation
-is a property of the type-constructors /,$\bsl$ introduced in
+is a property of the type-constructors $/$,$\bsl$ introduced in
 \citet{lambek58}, for all practical purposes the founding document of
 contemporary type-logical formalisms, and so far as type-logic is
 concerned, can be understood in the following way: there is a natural
@@ -1669,7 +1670,7 @@ The system exhibited in \REF{rules} combines Lambek's earliest formulation
 of a type-based logic for linguistic composition with the version of
 type-logic developed in \citet{oehrle1994}; but note that Oehrle's system is
 presented as itself an outcome of enriching the associated type-logic
-of Lambek's 1958 paper with the structural rule of permutation; this
+of \citegen{lambek58} paper with the structural rule of permutation; this
 of course then requires word order to be somehow separated from type
 combinatorics, and Oehrle's own deep insight was to allow the prosody
 to contain functional operators. It is not unreasonable to see
