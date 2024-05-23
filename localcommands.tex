@@ -81,18 +81,11 @@
 % 1_intro.tex
 
 % For the block quote:
-
-\usepackage[most]{tcolorbox}
 \definecolor{linequote}{RGB}{224,215,188}
 \definecolor{backquote}{RGB}{249,245,233}
-\newtcolorbox{myquote}[1][]{%
-    enhanced, breakable, 
-    size=minimal,
-    frame hidden, boxrule=0pt,
-    sharp corners,
-    colback=backquote,
-    #1
-}
+
+\NewDocumentEnvironment{myquote}{ +m }
+  {\begin{tblsfilled}{}[backquote]#1}{\end{tblsfilled}}
 
 % 2_gibson.tex
 
