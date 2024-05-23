@@ -85,7 +85,11 @@
 \definecolor{backquote}{RGB}{249,245,233}
 
 \NewDocumentEnvironment{myquote}{ +m }
-  {\begin{tblsfilled}{}[backquote]#1}{\end{tblsfilled}}
+  {%
+    \begin{tblsfilled}{}[backquote]\parskip=0.5\baselineskip\parindent=0pt
+    #1%
+  }
+  {\end{tblsfilled}}
 
 % 2_gibson.tex
 
