@@ -126,8 +126,36 @@ What would a sequence of utterances in a $G_1$ language look like?  Consider the
 
 \ea \label{vanvalin_example_3}Near river \ldots{}  I see deer \ldots{}  (It/deer) big \ldots{}  (I) spear (it/deer) \ldots\z
 It would have the following structure.
+
 \begin{figure}
-\includegraphics[width=\textwidth]{vanvalin_figure2.png}
+% % % \includegraphics[width=\textwidth]{vanvalin_figure2.png}
+\footnotesize
+  \begin{forest}
+		[\textsc{prop}
+		  [\textsc{pred} [near]]
+		  [\textsc{re} [river]]
+		]
+ \end{forest}\quad
+ \begin{forest}
+		[\textsc{prop},calign=child, calign child=2
+		  [\textsc{re} [\textsc{Spkr}]]
+		  [\textsc{pred} [see]]
+		  [\textsc{re} [deer]]
+		]
+ \end{forest}\quad
+ \begin{forest}
+		[\textsc{prop}
+		  [\textsc{(re)} [\textsc{pro}/deer]]
+		  [\textsc{pred} [big]]
+		]
+ \end{forest}\quad
+ \begin{forest}
+		[\textsc{prop},calign=child, calign child=2
+		  [\textsc{(re)} [\textsc{Spkr}]]
+		  [\textsc{pred} [spear]]
+		  [\textsc{(re)} [\textsc{pro}/deer]]
+		]
+ \end{forest}
 \caption{\label{fig:fig2}Structure of utterances in $G_1$ language}
 \end{figure}
 
