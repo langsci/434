@@ -51,17 +51,16 @@ On p. 198 of \citew{everett2017language} there is a partial RRG tree diagram ill
 The constituent projection contains lexical items functioning as predicators, arguments, adjuncts and modifiers.  The layered structure of the clause consists of the \textsc{nucleus}, the syntactic unit housing the predicating element, typically, but not necessarily, a verb.  The nucleus plus the semantic arguments of the predicator constitute the \textsc{core} of the clause.  The English verb \textit{give} has three semantic arguments, yet there are only two arguments in the core in \figref{fig:fig1}. The third semantic argument is a WH-expression, and occurs displaced in the \textsc{pre-core slot}, the normal position for displaced WH-expressions in many languages. Locative and temporal adjuncts normally appear in the core-level periphery, since they specify where and when the event coded in the core takes place.  In this example the temporal adjunct \textit{yesterday} functions as a frame-setting topic and occurs in the \textsc{pre-detached position}.  The \textsc{clause} contains the core plus the \textsc{pre-core slot} and the core-level periphery, while the \textsc{sentence} includes the clause, the clause-level periphery, and the pre-detached position.\footnote{Some languages have a  \textsc{post-core slot} and/or a \textsc{post-detached position}.}
 
 \begin{figure}
-\centering
-\includegraphics[width=0.8\textwidth]{vanvalin_figure1.png}
-\fittable{%
+\small
+% % \includegraphics[width=0.8\textwidth]{vanvalin_figure1.png}
 \begin{forest}
-  [SENTENCE,calign=child, calign child=2
-   [PrDP, tier=core
+  [\textsc{sentence}, calign=child, calign child=2
+   [PrDP, tier=core,before computing xy={s=-175pt}
       [ADV, tier=v
          [Yesterday, tier=word]
       ]
    ]
-   [CLAUSE, name=clause1,calign=child, calign child=2
+   [\textsc{clause}, name=clause1,calign=child, calign child=2
       [PrCS, tier=core
          [RP, tier=v
             [~, text width=1cm, tier=word, no edge]
@@ -69,16 +68,16 @@ The constituent projection contains lexical items functioning as predicators, ar
             [did, text width=1cm, tier=word, no edge, name=did]
          ]
       ]
-      [CORE, name=core, tier=core
+      [\textsc{core}, name=core, tier=core
          [RP, text width=1cm, text centered
             [John, tier=word]
          ]
-         [NUC, text width=1cm, text centered
-            [PRED
+         [\textsc{nuc}, text width=1cm, text centered,name=nuc
+            [\textsc{pred}
                [V, tier=v
                   [give, tier=word
                      [\textsc{nuc},s=-5mm
-                        [\textsc{core}
+                        [\textsc{core},name=core2
                            [\textsc{clause}, name=clause2
                               [\textsc{clause}, name=clause3
                                  [\textsc{sentence}
@@ -95,7 +94,7 @@ The constituent projection contains lexical items functioning as predicators, ar
             [to Mary, tier=word]
          ]
    ]
-      [PERIPHERY, name=periphery, tier=core, no edge
+      [\textsc{periphery}, name=periphery, tier=core, no edge
          [PP, tier=v
             [in the library?, tier=word]
          ]
@@ -106,16 +105,14 @@ The constituent projection contains lexical items functioning as predicators, ar
 ]
 \node(TNS)[left=0.5cm of clause2]{\textsc{tns}};
 \node(IF)[left=1cm of clause3]{\textsc{if}};
-\node(cp)[left=9cm of clause1]{\textbf{Constituent projection}};
-\node[below=9.5cm of cp]{\textbf{Operator projection}};
+\node(cp)[left=7.5cm of core.base,rotate=90]{Constituent projection};
+\node[left=7.5cm of core2.base,rotate=90]{Operator projection};
 \draw[dotted,thick](did.south)--(TNS);
 \draw[dotted,thick](did.south)--(IF);
 \draw[->](TNS)--(clause2);
 \draw[->](IF)--(clause3);
 \draw[->](periphery)--(core);
 \end{forest}
-}
-
 \caption{\label{fig:fig1}Clause structure in a $G_3$ language}
 \end{figure}
 
@@ -129,33 +126,33 @@ It would have the following structure.
 
 \begin{figure}
 % % % \includegraphics[width=\textwidth]{vanvalin_figure2.png}
-\footnotesize
+\small%
   \begin{forest}
 		[\textsc{prop}
 		  [\textsc{pred} [near]]
 		  [\textsc{re} [river]]
 		]
- \end{forest}\quad
+ \end{forest}\hfill%
  \begin{forest}
 		[\textsc{prop},calign=child, calign child=2
 		  [\textsc{re} [\textsc{Spkr}]]
 		  [\textsc{pred} [see]]
 		  [\textsc{re} [deer]]
 		]
- \end{forest}\quad
+ \end{forest}\hfill%
  \begin{forest}
 		[\textsc{prop}
 		  [\textsc{(re)} [\textsc{pro}/deer]]
 		  [\textsc{pred} [big]]
 		]
- \end{forest}\quad
+ \end{forest}\hfill%
  \begin{forest}
 		[\textsc{prop},calign=child, calign child=2
 		  [\textsc{(re)} [\textsc{Spkr}]]
 		  [\textsc{pred} [spear]]
 		  [\textsc{(re)} [\textsc{pro}/deer]]
 		]
- \end{forest}
+ \end{forest}%
 \caption{\label{fig:fig2}Structure of utterances in $G_1$ language}
 \end{figure}
 
@@ -172,7 +169,7 @@ If \emph{Homo erectus} is sensitive to some aspects of information structure, th
 
 \section{The transition from $G_1$ to $G_2$}\label{sec:vanvalin:5}
 
-A $G_2$ grammar would differ from a $G_1$ grammar in significant ways.  To begin with, the combination of adjunct modifiers and referring expressions yields \textsc{reference phrases}, which are necessarily syntactic, because a reference phrase potentially consists of two or more units that are not of the same semantic type, e.g. [$_{RP}$ [$_{PRED}$ big] → [$_{RE}$ deer] ].  In the same vein, the coocurrence of syntactic reference phrases in a proposition triggers a reanalysis of the proposition as a syntactic entity, a core.  In addition, the occurrence of adjunct modifiers taking a propositional unit as an argument, e.g. \textit{I see big deer near river} (i.e. \textbf{near}´ (river, [\textsc{spkr} see big deer])), further motivated the reanalysis, as the predicate+argument(s) unit is now functioning as an argument and filling a slot that could also be filled by a syntactic entity, namely a reference phrase (e.g. \textit{Big deer near river}).  The predicator underwent reanalysis as a syntactic nucleus due to, among other things, the occurrence of syntactic entities as the predicator, e.g. ‘\textsc{spkr} good hunter’.  Thus, the introduction of embedding had profound implications, because it created semantically mixed units which led to the reanalysis of the fundamental semantic entities as syntactic, as illustrated in \figref{fig:fig3}.
+A $G_2$ grammar would differ from a $G_1$ grammar in significant ways.  To begin with, the combination of adjunct modifiers and referring expressions yields \textsc{reference phrases}, which are necessarily syntactic, because a reference phrase potentially consists of two or more units that are not of the same semantic type, e.g. [\textsubscript{\scshape rp}~[\textsubscript{\scshape pred}~big]~→ [\textsubscript{\scshape re} deer] ].  In the same vein, the coocurrence of syntactic reference phrases in a proposition triggers a reanalysis of the proposition as a syntactic entity, a core.  In addition, the occurrence of adjunct modifiers taking a propositional unit as an argument, e.g. \textit{I see big deer near river} (i.e. \textbf{near}´ (river, [\textsc{spkr} see big deer])), further motivated the reanalysis, as the predicate+argument(s) unit is now functioning as an argument and filling a slot that could also be filled by a syntactic entity, namely a reference phrase (e.g. \textit{Big deer near river}).  The predicator underwent reanalysis as a syntactic nucleus due to, among other things, the occurrence of syntactic entities as the predicator, e.g. ‘\textsc{spkr} good hunter’.  Thus, the introduction of embedding had profound implications, because it created semantically mixed units which led to the reanalysis of the fundamental semantic entities as syntactic, as illustrated in \figref{fig:fig3}.
 
 \begin{figure}
 \centering
@@ -192,12 +189,13 @@ The transition from a semantic $G_1$ to a syntactic $G_2$ was briefly discussed.
 Thus, Everett’s proposals regarding the linguistic abilities of \emph{Homo erectus} together with the well-motivated theoretical constructs of RRG yield important insights into how language began.
 
 \section*{Abbreviations}
-\begin{tabularx}{.5\textwidth}{@{}lQ@{}}
+\begin{tabularx}{.5\textwidth}{@{}lQ}
 \textsc{if} & illocutionary force \\
 \textsc{nuc} & nucleus \\
 \textsc{p}r\textsc{cs} & pre-core slot \\
 \textsc{p}r\textsc{dp} & pre-detached position \\
 \textsc{pred} & predicator \\
+\end{tabularx}\begin{tabularx}{.5\textwidth}{lQ@{}}
 \textsc{prop} & propositional \\
 \textsc{re} & referring expression \\
 \textsc{rp} & reference phrase \\
