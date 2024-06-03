@@ -388,12 +388,12 @@ theorem. We start with a lexicon, as in \REF{lexicon}:
  \ex\label{lexicon}
 \begin{tabular}{lll}
 \LexEnt{\pt{john}}{\sem{ \trns{j} }}{\syncat{NP}} & &
-\LexEnt{\pt{sent}}{\sem{ send}}{\syncat{VP/PP\fb{to}/NP}} \\
+\LexEnt{\pt{sent}}{\sem{ \trns{send} }}{\syncat{VP/PP\fb{to}/NP}} \\
 \LexEnt{\pt{those}}{\sem{ \iota}}{\syncat{NP/N\fb{pl}}} & &
 \LexEnt{\pt{documents}}{\sem{ \trns{docs} }}{\syncat{N\fb{pl}}} \\
 \LexEnt{\pt{to}}{\sem{ λx.x}}{\syncat{PP\fb{to}/NP}} & &
 \LexEnt{\pt{the}}{\sem{ \iota}}{\syncat{NP/N}} \\
-\LexEnt{\pt{committee}}{\sem{ comm}}{\syncat{N}} & &
+\LexEnt{\pt{committee}}{\sem{ \trns{comm} }}{\syncat{N}} & &
 \LexEnt{\pt{over}}{\sem{ \trns{over} }}{\syncat{(VP\bsl{}VP)/NP}} \\
 \LexEnt{\pt{the}}{\sem{ \iota}}{\syncat{NP/N}} & &
 \LexEnt{\pt{weekend}}{\sem{ \trns{wknd} }}{\syncat{N}} 
@@ -823,7 +823,7 @@ find, for example, patterns such as the following:
  \ex\label{ellipsis}
   \begin{xlist}
  \ex\label{VPE}
-    John likes pizza, but Bill doesn't $\varnothing$\bsl\xspace\
+    John likes pizza, but Bill doesn't $\varnothing$ \bsl\xspace\
     `John likes pizza, but Bill doesn't like pizza'. \\
     (VP/Post-auxiliary ellipsis)
  \ex\label{pseudo}
@@ -832,7 +832,7 @@ find, for example, patterns such as the following:
     (Pseudogapping)
  \ex\label{sluice}
     John was arguing with someone, but I don't know who
-  $\varnothing$\bsl\xspace\
+  $\varnothing$ \bsl\xspace\
     `John was arguing with someone, but I don't know who John was
   arguing with.' \\
     (Sluicing)
@@ -1026,11 +1026,11 @@ proof line in \REF{bookProof1}, giving us \textit{which John lost yesterday}:
 \begin{exe}
  \ex\label{bookProof2}
 \oneline{%
-\AxiomC{\MultiLine{\ptfont{λ\ensuremath{\greeks}. which \BobsO \ensuremath{\greeks}(\E);} \\ \sem{ λP λQ λw. P(w) \ensuremath{ \wedge\xspace } Q(w)}; \\\syncat{  (N\bsl{}N)\vs (S\vs NP)}}}
-\AxiomC{\MultiLine{\ptfont{λ\ensuremath{\greekp_0}. john \BobsO lost \BobsO \ensuremath{\greekp_0} \BobsO yesterday;} \\ \sem{ λu.  \trns{yst}(\trns{lose}(u))(\trns{j})}; \\\syncat{  S\vs NP}}}
-\BinaryInfC{\MultiLine{\ptfont{λ\ensuremath{\greeks} [which \BobsO \ensuremath{\greeks}(\E)](λ\ensuremath{\greekp_0}. john \BobsO lost \BobsO \ensuremath{\greekp_0} \BobsO yesterday);} \\ \sem{ λP [ λQ λx. P(w) \ensuremath{ \wedge\xspace } Q(w)](λu.  \trns{yst}(\trns{lose}(u))(\trns{j}))}; \\\syncat{  N\bsl{}N}}}
+\AxiomC{\MultiLine{\ptfont{λ\ensuremath{\greeks}. which \BobsO \ \ensuremath{\greeks}(\E);} \\ \sem{ λP λQ λw. P(w) \ensuremath{ \wedge\xspace } Q(w)}; \\\syncat{  (N\bsl{}N)\vs (S\vs NP)}}}
+\AxiomC{\MultiLine{\ptfont{λ\ensuremath{\greekp_0}. john \BobsO lost\ \BobsO \ \ensuremath{\greekp_0} \BobsO \ yesterday;} \\ \sem{ λu.  \trns{yst}(\trns{lose}(u))(\trns{j})}; \\\syncat{  S\vs NP}}}
+\BinaryInfC{\MultiLine{\ptfont{λ\ensuremath{\greeks} [which \BobsO \ \ensuremath{\greeks}(\E)](λ\ensuremath{\greekp_0}. john \BobsO \ lost \ \BobsO \ \ensuremath{\greekp_0} \ \BobsO \ yesterday);} \\ \sem{ λP [ λQ λx. P(w) \ensuremath{ \wedge\xspace } Q(w)](λu.  \trns{yst}(\trns{lose}(u))(\trns{j}))}; \\\syncat{  N\bsl{}N}}}
 \dottedLine
-\UnaryInfC{\LexEnt{\pt{which \BobsO λ \ensuremath{\greekp_0} [john \BobsO lost \BobsO \ensuremath{\greekp_0} \BobsO yesterday](\E)}}{\sem{ λQ. [ λw.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } Q(w)]}}{\syncat{N\bsl{}N}}}
+\UnaryInfC{\LexEnt{\pt{which \BobsO λ \ensuremath{\greekp_0} [john \BobsO lost \BobsO \ensuremath{\greekp_0} \BobsO \ yesterday](\E)}}{\sem{ λQ. [ λw.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } Q(w)]}}{\syncat{N\bsl{}N}}}
 \dottedLine
 \UnaryInfC{\LexEnt{\pt{which \BobsO john \BobsO lost \BobsO \E \BobsO yesterday}}{\sem{ λQ [ λw.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } Q(w)]}}{\syncat{N\bsl{}N}}}
 \DisplayProof}
@@ -1222,7 +1222,7 @@ implication in standard logics, and is simply demonstrated as follows
 The point is that VP/VP \sem{  \ensuremath{\vdash\xspace } } (VP/NP)/(VP/NP), and  a completely parallel
 entailment can be proven between VP/VP and terms of type VP/NP/NP,
 VP/PP/NP, etc. In general, then, for any auxiliary, we have an entailment
-VP/VP\sem{ ,  \ensuremath{\vdash\xspace } \, } VP\$/VP\$. It follows that if we generalize the VP ellipsis
+VP/VP\sem{  \ensuremath{\:\vdash\xspace } \, } VP\$/VP\$. It follows that if we generalize the VP ellipsis
 operator to the type VP\$\ensuremath{\vs}(VP\$/VP\$), we derive an
 operator that yields a form of the auxiliary as a transitive verb, a
 ditransitive verb and so on. And such an operator enables us to extend the coverage of
@@ -1233,7 +1233,7 @@ acceptable) \textit{but}-conjunction in \REF{conjPseudo}:
 
 \begin{exe}
  \ex\label{conjPseudo}
-  For some reasons, John will read \textsc{essays} but he won't \textsc{novels}.
+  For some reason, John will read \textsc{essays} but he won't \textsc{novels}.
 \end{exe}
 Generalizing the VP ellipsis operator to the form in \REF{generalized}
 would have the effect of taking \textit{won't}, typed
@@ -1613,8 +1613,8 @@ we can compose each member of $A$ with each member of $B$ to yield a
 term belonging to type $C$, i.e., \sem{ A\bullet B\,  \ensuremath{\vdash\xspace } \,\textit{C}  }. Then
 necessarily every member of $A$ belongs to the set of terms which form
 a member of $C$ when they compose with a member of $B$ on the right;
-if we call this set \sem{ B/C } then
-\sem{ A{}  \ensuremath{\vdash\xspace } B/C}, and likewise for
+if we call this set \sem{ C/B } then
+\sem{ A{}  \ensuremath{\vdash\xspace } C/B}, and likewise for
 \textit{B}. We thus have the relations
 
 \begin{exe}
@@ -1639,7 +1639,7 @@ partial orderings).\footnote{Specifically, assume that for any two
 types $A,B$, $A\bullet B \leqslant C$, i.e., every inhabitant of the
 concatenation of the types $A, B$ is an inhabitant of $C$. Then with
 $f_\ast = λ\alpha. \alpha\bullet B$ and $f^\ast = λ\beta. \beta/B$,
-there is a Galois connection between $f^\ast$ and $f^\ast \textrm{\,
+there is a Galois connection between $f_\ast$ and $f^\ast \textrm{\,
 iff\,} f_\ast(A) \leqslant C \Leftrightarrow A\leqslant f^\ast(C)$,
 which, if we also define an upper adjoint $f\,^{\ast\ast} = λ\gamma. A\bsl\gamma$, and take the entailement relation $X\vdash
 Y$ to define a partial ordering $X\leqslant Y$, gives us exactly the
