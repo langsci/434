@@ -171,11 +171,68 @@ If \emph{Homo erectus} is sensitive to some aspects of information structure, th
 
 A $G_2$ grammar would differ from a $G_1$ grammar in significant ways.  To begin with, the combination of adjunct modifiers and referring expressions yields \textsc{reference phrases}, which are necessarily syntactic, because a reference phrase potentially consists of two or more units that are not of the same semantic type, e.g. [\textsubscript{\scshape rp}~[\textsubscript{\scshape pred}~big]~→ [\textsubscript{\scshape re} deer] ].  In the same vein, the coocurrence of syntactic reference phrases in a proposition triggers a reanalysis of the proposition as a syntactic entity, a core.  In addition, the occurrence of adjunct modifiers taking a propositional unit as an argument, e.g. \textit{I see big deer near river} (i.e. \textbf{near}´ (river, [\textsc{spkr} see big deer])), further motivated the reanalysis, as the predicate+argument(s) unit is now functioning as an argument and filling a slot that could also be filled by a syntactic entity, namely a reference phrase (e.g. \textit{Big deer near river}).  The predicator underwent reanalysis as a syntactic nucleus due to, among other things, the occurrence of syntactic entities as the predicator, e.g. ‘\textsc{spkr} good hunter’.  Thus, the introduction of embedding had profound implications, because it created semantically mixed units which led to the reanalysis of the fundamental semantic entities as syntactic, as illustrated in \figref{fig:fig3}.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.8\textwidth]{vanvalin_figure3.png}
+\begin{sidewaysfigure}
+% \includegraphics[width=0.8\textwidth]{vanvalin_figure3.png}
+\begin{forest}
+[,phantom, for children={s sep=2em}
+  [\textsc{prop}
+    [\textsc{pred},name=pred [near,name=near1]]
+    [\textsc{re} [river,name=river1]]
+  ]
+  [\textsc{prop}, calign=child, calign child=2
+    [\textsc{re} [\textsc{Spkr}]]
+    [\textsc{pred} [see, l sep=10\baselineskip
+    	[\textsc{core},tier=lowtier,edge=-{Triangle[]}, calign=child, calign child=2,name=core
+    		[\textsc{rp} [\textsc{Spkr}]]
+    		[\textsc{nucleus} [see]]
+    		[\textsc{rp},name=rp2 [big deer]]
+    	]
+    ]]
+    [\textsc{re} [deer,name=deer1]]
+  ]
+  [\textsc{prop}
+    [(\textsc{re}) [\textsc{pro}/deer
+    	[\textsc{rp},tier=midtier,no edge, calign=child, calign child=2,name=rp1, s sep=1em
+    	  [\textsc{pred}, name=midpred, no edge [big,name=big2]]
+    	  [\textsc{re}, name=midre [deer,name=deer2]]
+    	]
+    ]]
+    [\textsc{pred} [big,name=big1
+   	 [\textsc{periphery},no edge,tier=lowtier,edge=-{Triangle[]}, calign=child, calign child=2,before computing xy={s=-20pt},name=periphery
+   	   [\textsc{core}
+   	     [\textsc{nucleus} [near]]
+   	     [\textsc{rp} [river]]
+   	   ]
+   	 ]
+    ]
+    ]
+  ]
+  [\textsc{prop}, calign=child, calign child=2
+    [(\textsc{re}) [\textsc{Spkr}]]
+    [\textsc{pred} [spear
+    	[\textsc{core},tier=lowtier,edge=-{Triangle[]}, calign=child, calign child=2
+    	  [(\textsc{rp}) [\textsc{Spkr}]]
+    	  [\textsc{nucleus} [spear]]
+    	  [(\textsc{rp}) [\textsc{pro}/big deer]]
+    	]
+    ]]
+    [(\textsc{re}) [\textsc{pro}/deer]]
+  ]
+]
+\node (g1) [left=2em of pred] {$G_1$};
+\path let \p1=(g1), \p2=(rp2) in node at (\x1,\y2) {$G_2$};
+\node (anchor) at ($ (near1) !0.5! (river1) $) {};
+\begin{scope}[>={Triangle[]}]
+\draw [->] (anchor) to[out=270,in=90,out control={+(0,-7)}] (periphery);
+\draw [->, dashed] (midpred) to (midre);
+\draw [->] (deer1.south) to[out=270,in=90] (rp1.110);
+\draw [->] (big1.south) to[out=270,in=90] (rp1.70);
+\draw [->] (deer2.south) to[out=270,in=90] (rp2.70);
+\draw [->, dashed] (periphery) to (core);
+\end{scope}
+\end{forest}
 \caption{\label{fig:fig3}The transition from $G_1$ to $G_2$}
-\end{figure}
+\end{sidewaysfigure}
 
 The two most salient changes are the transformation of the attributive predicator \textit{big} into a part of the referring expression \emph{deer}, thereby creating a syntactic reference phrase, and the reanalysis of the locative proposition \emph{by the river} into a propositional modifier.  The result is more compact expressions with modification relations directly coded.  
 
