@@ -40,7 +40,7 @@ domains that may well be unique in the history of human
 accomplishent. Peirce's work is widely recognized as seminal in
 mathematics, logic, the philosophy of knowledge, chemistry, astronomy
 and many other fields, but it is not generally recognized that he was
-the source of an analytic concept, \textsl{valence}, which has become
+the source of an analytic concept, \emph{valence}, which has become
 a foundational tool in linguistic theory. But until quite recently,
 Peirce has not been credited with his identification of the
 combinatorial potential of lexical items as one of the key drivers of
@@ -150,18 +150,19 @@ standard truth conditional logic, with inference from valid type(s) to
 valid type in place of inference from true premise(s) to true
 premise. In the framework described below, each linguistic sign
 comprises a phonological and semantic annotation which is said to
-\textsl{label} the sign's syntactic type. The compositional rules of
+\emph{label} the sign's syntactic type. The compositional rules of
 the grammar are homologous to the implicational subsystem of
 substructural intuitionistic propositional logic (SIPL), i.e.,
 IPL lacking rules of permutation, contraction or weakening, with implication
-corresponding to types of the form \syncat{\textit{Y}/\textit{X}}, \syncat{\textit{X}\bsl{}\textit{Y}} and \syncat{\textit{Y} \vs \textit{X}}. The
+corresponding to types of the form \syncat{\textit{Y}/\textit{X}}, 
+\syncat{\textit{X}\bsl{}\textit{Y}} and \syncat{\textit{Y} \vs \textit{X}}. The
 first of these can be thought of as something like, ``give me a sign of
 type \textit{X} on my right and you'll get back a sign of type  \textit{Y}'', and the
 second is the same with ``left'' in place of ``right''. The third is a bit
 more complex: it tells you that, if there is a sign of type \textit{X} it can be
 realized in a certain designated position ``within'' the sign typed
 \textit{Y}\vs\textit{X}. We refer to inhabitants of slashed types as
-\textsl{functional} terms, in view of their semantics, as we discuss below.
+\emph{functional} terms, in view of their semantics, as we discuss below.
 
 What are the syntactic types that can instantiate \textit{Y} and \textit{X}? For our
 purposes, we can posit three atomic types, which are in a
@@ -171,10 +172,9 @@ $\langle\tau_1,\tau_2\rangle$ to indicate a function from some object
 of semantic type $\tau_1$ to an object of semantic type $\tau_2$.}
 
 \begin{exe}
- \ex\label{types}
-\begin{tabular}{clc}
-\textsf{Type} & \textsf{Semantic object} & \textsf{Semantic type} \\
- & & \\
+\ex\label{types}
+\begin{tabular}[t]{llc}
+Type & Semantic object & Semantic type\\
 S & proposition & $t$\\
 NP & referring expression & $e$ \\
 N  & property & $\langle e,t\rangle$ \\
@@ -206,12 +206,12 @@ uses the Natural Deduction conventions. In the Prawitz notation followed
 below, the ordinary IPL rule would take the form in (\ref{prawitz}b):
 
 \begin{exe}
- \ex\label{prawitz}
-\begin{tabular}{cccc}
+\ex\label{prawitz}
+\begin{tabular}[t]{cccc}
 {a.
 \AxiomC{$\phi\supset\psi$}
 \AxiomC{$\phi$}
-\RightLabel{\mbox{\tiny $\scriptstyle \supset\,$}\tiny Elim}
+\RightLabel{\mbox{$\supset\,$} Elim}
 \BinaryInfC{$\psi$}
 \DisplayProof
 } & & &
@@ -221,14 +221,14 @@ below, the ordinary IPL rule would take the form in (\ref{prawitz}b):
 \UnaryInfC{$\vdots$}
 \noLine
 \UnaryInfC{$\psi$}
-\RightLabel{\mbox{\tiny $\scriptstyle \supset\,$}\tiny Intro}
+\RightLabel{\mbox{$\supset\,$} Intro}
 \UnaryInfC{$\phi \supset \psi$}
 \DisplayProof
 }
 \end{tabular}
 \end{exe}
-(\ref{prawitz}a) is nothing other than the ancient principle of Modus
-Ponens, where there is an antecedent ($\phi$) and a consequent
+(\ref{prawitz}a) is nothing other than the ancient principle of modus
+ponens, where there is an antecedent ($\phi$) and a consequent
 ($\psi$), such that the truth of $\phi$ is a guarantor of the truth of
 $\psi$ (or, under the more appropriate intuitionistic interpretation, a proof of $\psi$ follows from a proof of $\phi$). (\ref{prawitz}b) is the slightly less transparent rule of
 hypothetical reasoning: if, in some context of established results,
@@ -510,15 +510,16 @@ Dependent Cluster Coordination in \REF{DCC} are pointed examples:
   \end{xlist}
   Saturday.
 \end{exe}
-Both of the patterns in \REF{NCC} are essentially embarrassments to
+\begin{sloppypar}
+\noindent Both of the patterns in \REF{NCC} are essentially embarrassments to
 frameworks based on phrase structure configurations, requiring either
 transformational grammar's complex arrangements of structure-altering
 operations, including movement and\slash or deletion (along with the purely
 stipulative constraints on the linear output of these operations
 required to get the facts right), or essentially stipulative
 constructional templates, as in later developments of HPSG (for
-detailed critques of these approaches, see \citet{levine11},
-\citet{kubota-levine-coord}, \citet{kubotalevineBook}). For proof-theoretic
+detailed critques of these approaches, see \citet{levine11, kubota-levine-coord, 
+kubotalevineBook}). For proof-theoretic
 approaches, on the other hands, where valence satisfaction is driven
 by the inference rules of standard logics, the data in \REF{NCC} are
 almost trivial to obtain with the correct semantics, once we've
@@ -526,6 +527,7 @@ generalized the system based only on the elimination rules to the
 introduction rules that are their logical duals, as in all Natural
 Deduction systems. For example, we have the following straightforward
 application of the / Elimination rule:
+\end{sloppypar}
 
 \begin{exe}
  \ex\label{rnrSubproof}
@@ -610,7 +612,7 @@ Peirce's observation, quoted in \citet[8]{nothPeirce}: ``in the proposition
 meant and expressed as is the ring or Anthony. A proposition, then,
 has one predicate and any number of subjects.'' The significant insight
 here -- that a sentence expressing a proposition can be composed as the
-ascription of some property to \textsl{any} of the argument
+ascription of some property to \emph{any} of the argument
 terms -- corresponds exactly to the possibility of deriving a predicate
 by composing a predicate with one variable term, with constants for
 all the other arguments, and then abstracting on that
@@ -729,10 +731,10 @@ and we have the simple proof in \REF{someoneProof}:
 \AxiomC{\LexEnt{\pt{λ \ensuremath{\greeks}. \ensuremath{\greeks}(someone)}}{\sem{ λP. \trns{\raisebox{1.5ex}{\ensuremath{\rotatebox{180}{\textbf{E}}}}}(\trns{person})(P)}}{\syncat{S\vs (S\vs NP)}}}
 \BinaryInfC{\MultiLine{\ptfont{λ\ensuremath{\greeks} [\ensuremath{\greeks}(someone)](λ\ensuremath{\greekp}. john \BobsO gave \BobsO \ensuremath{\greekp} \BobsO that \BobsO book);} \\ \sem{ λP[ \trns{\raisebox{1.5ex}{\ensuremath{\rotatebox{180}{\textbf{E}}}}}(\trns{person})(P)](λx. \trns{gave}(x)(\iota(\trns{book})))}; \syncat{ S}}}
 \dottedLine
-\RightLabel{\mbox{\tiny{$\beta$}-conversion}}
+\RightLabel{\mbox{$\beta$-conversion}}
 \UnaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp} [john \BobsO gave \BobsO \ensuremath{\greekp} \BobsO that \BobsO book](someone)}}{\sem{ \trns{\raisebox{1.5ex}{\ensuremath{\rotatebox{180}{\textbf{E}}}}}(\trns{person})(λx. \trns{gave}(x)(\iota(\trns{book})))}}{\syncat{S}}}
 \dottedLine
-\RightLabel{\mbox{\tiny{$\beta$}-conversion}}
+\RightLabel{\mbox{$\beta$-conversion}}
 \UnaryInfC{\LexEnt{\pt{john \BobsO gave \BobsO someone \BobsO that \BobsO book)}}{\sem{ \trns{\raisebox{1.5ex}{\ensuremath{\rotatebox{180}{\textbf{E}}}}}(\trns{person})(λx. \trns{gave}(x)(\iota(\trns{book})))}}{\syncat{S}}}
 \DisplayProof}
 \end{exe}
@@ -776,7 +778,7 @@ and the operations of abstraction and function application in the
 semantics and prosody via independent type hierarchies with their own
 respective \L-calculi, guarantee a fully compositional derivation of
 signs, with the syntactic types guiding the composition on the basis
-of the familiar logic of Modus Ponens and hypothetical reasoning. The
+of the familiar logic of modus ponens and hypothetical reasoning. The
 critical point here is that not only obviously local dependencies
 involving argument structure, but arbitrarily long-distance
 effects -- in particular, the interpretation of quantifier scope -- are
@@ -837,8 +839,8 @@ find, for example, patterns such as the following:
   arguing with.' \\
     (Sluicing)
  \ex\label{shortans}
-   \textsf{Q:} Who was John talking to? \\
-   \textsf{A:} $\varnothing$ Someone from his department.\\
+   Q: Who was John talking to? \\
+   A: $\varnothing$ Someone from his department.\\
    `John was talking to someone from his department'\\
    (Fragment answers)
   \end{xlist}
@@ -865,7 +867,8 @@ deletion process suggested in \REF{pseudodeletion}:
  \ex\label{pseudodeletion}
   John eats way more junk food than he does [\sub{VP} [\sub{VP} \sout{eat} {\gp}\xspace ] real food]
 \end{exe}
-and so on. Most of the arguments in favor of this approach are
+\begin{sloppypar}
+\noindent and so on. Most of the arguments in favor of this approach are
 necessarily indirect, based on patterns of acceptability judgments which seem to
 mirror judgments of corresponding non\hyp ellipsed data; in \citet{kubotalevineBook}, a
 detailed examination of what appear to be the most persuasive of these
@@ -879,6 +882,7 @@ nature. Building this assumption into any argument that parallel
 judgments of ellpsis and corresponding non-ellipsed data reflects the
 need to posit covert phrase structure which is deleted in the course
 of derivations thus appears to be a textbook instance of begging the question.
+\end{sloppypar}
 
 Defenders of the view that what you don't see in ellipsis was never
 there in the first place still have their work cut out for them, of
@@ -899,7 +903,7 @@ particularly challenging insofar as (i) is concerned;
     I'm acutely aware of what I can do and what I
   can't. \citep[735]{mahoney2004}.
  \ex\label{extrac-from-VPE_c}
-    John is certain \textsl{he} would buy \textsl{this} kind of sports car, but I have no idea what kind \textsl{I} would.
+    John is certain \emph{he} would buy \emph{this} kind of sports car, but I have no idea what kind \emph{I} would.
   \end{xlist}
 \end{exe}
 Although examples of the sort displayed in \REF{extrac-from-VPE} are not
@@ -1068,7 +1072,7 @@ the proof line in \REF{length} to the sign below the line:
 Essentially the same proof storyline in \REF{bookProof1}--\REF{bookProof3}
 will give us \textit{book which Mary thinks Bill remembers Ann saying
 John lost}. There is no local registration of the information linking
-the filler to the gap -- nothing analagous to cyclic wh-movement, no
+the filler to the gap -- nothing analagous to cyclic wh\hyp movement, no
 SLASH feature shared between vertically adjacent nodes in a
 phrase-structure tree that gets realized at the tail end of the
 chain. Properly speaking, there isn't even anything that can be
@@ -1191,7 +1195,7 @@ is the fact that the operator in \REF{ellipseOp1} applies to a functional
 term taking a complete \syncat{NP\bsl{}S} to a complete \syncat{NP\bsl{}S} -- which we can
 abbreviate as VP/VP -- and returns a complete VP. But suppose
 we generalize the operator so that it applies to a functional term
-taking \textsl{partial} VP to a partial VP, and returns a partial VP?
+taking \emph{partial} VP to a partial VP, and returns a partial VP?
 This seems perhaps like a question completely orthogonal to the
 phenomena we're looking at, because auxiliaries are, in
 non-transformational frameworks generally, taken to apply to VPs and
@@ -1396,7 +1400,7 @@ order to lay out most clearly the proof narrative.}
 \end{exe}
 With this result in hand, all that is needed to derive any given
 auxiliary as a VP seeking a gap-filling NP constituent
-\textsl{somewhere} is a further extension of
+\emph{somewhere} is a further extension of
 the already-generalized ellipsis operator to such ``vertically Geached''
 auxiliaries, mapping them to type \syncat{VP\vs XP}, anaphorically supplying the
 meaning of the gapped VP. In \REF{zzzz}, I give a ``local'' form of this
@@ -1512,8 +1516,8 @@ where there is no extraction in the antecedent, such as \REF{internal} and \REF{
 
 \begin{exe}
  \ex\label{noparallel}
-  John is certain he would buy \textsl{this} kind of sports car, but I have no
-  idea what kind \textsl{I} would.
+  John is certain he would buy \emph{this} kind of sports car, but I have no
+  idea what kind \emph{I} would.
 \end{exe}
 To obtain such examples, we derive the antecedent by a derivation
 which includes the following subproof.
@@ -1663,7 +1667,7 @@ the pregroup grammar formalism that the essential combinatorics ``may
 even be implicit in the ideas of C.S. Peirce [i.e. \citet{peirce1897}
  -- RDL]'', noting that certain combinators in this ``rudimentary'' version
 may have been seen by Peirce as comparable to ``the unsaturated bonds
-of an atom. \textsl{I believe pregroup grammars developed from this
+of an atom. \emph{I believe pregroup grammars developed from this
 rudimentary setup}.'' (\citealt[352]{lambek2007a}; emphasis added).
 
 The system exhibited in \REF{rules} combines Lambek's earliest formulation
@@ -1690,8 +1694,6 @@ grammatical composition and language as an extension of logic -- would
 be unified so precisely and rigorously in Lambek's brilliant fusion
 of developments in logic and mathematics that can be traced, to a large
 extent, back to Peirce himself.
-
-
 
 
 \section*{Acknowledgements}
