@@ -12,7 +12,6 @@
     \,\orcidlink{#1}%
   }
 
-
 \makeatletter
 \let\thetitle\@title
 \let\theauthor\@author
@@ -86,7 +85,7 @@
 
 \NewDocumentEnvironment{myquote}{ +m }
   {%
-    \begin{tblsfilled}{}[backquote]\parskip=0.5\baselineskip\parindent=0pt
+    \begin{tblsfilled}{}[black!12]
     #1%
   }
   {\end{tblsfilled}}

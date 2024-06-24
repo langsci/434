@@ -8,7 +8,7 @@
    \boolfalse{bookcompile}
 }{}
 
-\title{A Peircean turn in linguistics: syntactic-semantic composition as logical inference}
+\title{A Peircean turn in linguistics: Syntactic-semantic composition as logical inference}
 
 
 \author{Robert Levine\affiliation{Ohio State University}}
@@ -265,7 +265,7 @@ presented in that order.
 \begin{exe}
  \ex\label{rules}
 \oneline{%
-\begin{tabular}{ccc}
+\begin{tabular}[t]{@{}ccc@{}}
 \term{Connective} & \term{Introduction} & \term{Elimination} \\
 / &
 {
@@ -294,8 +294,7 @@ presented in that order.
 \AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
 \RightLabel{\scalebox{.8}{\ensuremath{/}E}}
 \BinaryInfC{\LexEnt{\pt{\ptv{b} \BobsO \ptv{a}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
-\DisplayProof}\\
-& & \\[-1ex]
+\DisplayProof}\\\addlinespace
 \bsl &
 {
 \AxiomC{\Lemma}
@@ -314,8 +313,7 @@ presented in that order.
 \AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{A}\bsl{}\textit{B}}}}
 \RightLabel{\scalebox{.8}{\bsl E}}
 \BinaryInfC{\LexEnt{\pt{\ptv{a} \BobsO \ptv{b}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
-\DisplayProof}\\
- & & \\
+\DisplayProof}\\\addlinespace
 \ensuremath{\vs} &
 {
 \AxiomC{\Lemma}
@@ -355,22 +353,23 @@ slashed term with the antecedent term is necessarily a term of the
 consequent type. One can see these inference rules as inversions of
 ordinary context-free PS rules; for example, taking VP to be an
 abbreviation for \syncat{NP\bsl{}S} -- a clause modulo an NP term on its left
-edge -- we have S \ensuremath{ \rightarrow } NP \syncat{NP\bsl{}S} on the one hand and a deduction\bigskip
+edge -- we have S \ensuremath{ \rightarrow } NP \syncat{NP\bsl{}S} on the one hand and a deduction
 
+\begin{center}
 \AxiomC{NP}
 \AxiomC{NP$\bsl$S}
-\RightLabel{\scalebox{.8}{\bsl E}}
+\RightLabel{\bsl E}
 \BinaryInfC{S}
 \DisplayProof
-\bigskip
+\end{center}
 
 \noindent on the other.\footnote{However, as noted below, this view leaves
 the nature of a type-logical proof open to a foundational misinterpretation.} The prosodic and semantic sectors combine in
 lockstep with the type composition: the prosody of directionally
 slashed types -- $\!\!\!$ \syncat{\textit{Y}/\textit{X}} and \syncat{\textit{X}\bsl{}\textit{Y}} -- reflects the
 direction of the slash: the former precedes the prosody of its type \textit{X}
-argument, the latter follows it\footnote{I defer discussion of
-vertically slashed terms till we get to the introduction rules}. The
+argument, the latter follows it.\footnote{I defer discussion of
+vertically slashed terms till we get to the introduction rules} The
 semantics, however, does not reflect the direction of the slash: for
 all functional types, the semantic term is a function which takes the
 denotation of the syntactic argument as its own arguent.
@@ -386,7 +385,7 @@ theorem. We start with a lexicon, as in \REF{lexicon}:
 \end{exe}
 \begin{exe}
  \ex\label{lexicon}
-\begin{tabular}{lll}
+\begin{tabular}[t]{@{}lll@{}}
 \LexEnt{\pt{john}}{\sem{ \trns{j} }}{\syncat{NP}} & &
 \LexEnt{\pt{sent}}{\sem{ \trns{send} }}{\syncat{VP/PP\fb{to}/NP}} \\
 \LexEnt{\pt{those}}{\sem{ \iota}}{\syncat{NP/N\fb{pl}}} & &
@@ -413,13 +412,10 @@ type-logical terms a function composing with an NP to yield a function
 which applies a temporal semantics to a property, corresponding to a
 restriction of the event instantiating that property.
 
-The rules of the logic apply to the lexical axioms to yield the proof
-in \REF{sentProof}:
 
-\begin{exe}
- \ex\label{sentProof}
-%\hspace{-8ex}
-\oneline{
+\begin{sidewaysfigure}
+ \caption{\color{red}Please provide a caption.}\label{sentProof}
+\oneline{%
 \AxiomC{\MultiLine{\ptfont{sent;} \\ \sem{ \trns{send} }; \\\syncat{  VP/PP\fb{to}/NP}}}
 \AxiomC{\MultiLine{\ptfont{the;} \\ \sem{ \iota}; \\\syncat{  NP/N}}}
 \AxiomC{\MultiLine{\ptfont{documents;} \\ \sem{ \trns{docs} }; \\\syncat{  N}}}
@@ -448,9 +444,10 @@ in \REF{sentProof}:
 \AxiomC{\MultiLine{\ptfont{john;} \\ \sem{ \trns{j} }; \\\syncat{  NP}}}
 \RightLabel{\scalebox{.8}{\bsl E}}
 \BinaryInfC{\MultiLine{\ptfont{john \BobsO sent \BobsO the \BobsO documents \BobsO to \BobsO the \BobsO    {}}\\ \ptfont{  \hspace{3ex}committee \BobsO over \BobsO the \BobsO weekend;} \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  S}}}
-\DisplayProof
-}
-\end{exe}
+\DisplayProof}
+\end{sidewaysfigure}
+
+The rules of the logic apply to the lexical axioms to yield the proof in \figref{sentProof}.
 This proof can be seen as a realization of Peirce's emphasis on
 argument structure, and its satisfaction, as the ``engine'' of syntactic
 combinatorics. As noted at the beginning of this chapter, the types
@@ -471,10 +468,10 @@ nothing more than a recasting of a standard hierarchical
 representation licensed by context-free phrase structure rules. This
 would be however a fundamental error: note that, in contrast to the
 hierarchical realization of phrase-structure rules in branching tree
-representations of constituent syntax, the proof steps in \REF{sentProof}
+representations of constituent syntax, the proof steps in \figref{sentProof}
 have no representational status so far as the structure of the
 sentence is concerned. Indeed, strictly speaking there \textit{is} no
-such structure: what we have in \REF{sentProof} is a demonstration that
+such structure: what we have in \figref{sentProof} is a demonstration that
 the closure of the axioms of the system -- the English lexicon -- under
 the inference rules of the logic allows a valid inference of a prosodic
 string
@@ -490,10 +487,10 @@ number of ways to prove that \sem{  \ensuremath{\vdash\xspace } \phi\supset(\neg
 in classical logic, but the content of the implication is
 altogether independent of proof narrative.}
 
-The difference between the logical composition of terms in \REF{sentProof} and
+The difference between the logical composition of terms in \figref{sentProof} and
 a tree representation of \REF{sent} under a set of phrase structure rules
 becomes far more stark when we turn from the elimination rules, which
-are the only ones in play in \REF{sentProof}, to the introduction rules
+are the only ones in play in \figref{sentProof}, to the introduction rules
 shown in \REF{rules}. There is nothing in phrase structure grammmar which
 corresponds to the introduction rules, and here the advantages of the
 proof-theoretic framework become apparent. So-called non-constituent
@@ -530,7 +527,7 @@ application of the / Elimination rule:
 \end{sloppypar}
 
 \begin{exe}
- \ex\label{rnrSubproof}
+\ex\label{rnrSubproof}
 \AxiomC{\LexEnt{\pt{bought}}{\sem{ \trns{buy} }}{\syncat{VP/NP}}}
 \AxiomC{\LexEnt{\pt{φ}}{\sem{ x}}{\syncat{NP}}}
 \BinaryInfC{\LexEnt{\pt{bought \BobsO p}}{\sem{ \trns{buy}(x)}}{\syncat{VP}}}
@@ -781,7 +778,7 @@ signs, with the syntactic types guiding the composition on the basis
 of the familiar logic of modus ponens and hypothetical reasoning. The
 critical point here is that not only obviously local dependencies
 involving argument structure, but arbitrarily long-distance
-effects -- in particular, the interpretation of quantifier scope -- are
+effects -- in particular, the interpretation of quantifier scope~-- are
 reducible to the satisfaction of argument requirements; in effect, in
 the proof-theoretic architecture of type-logical frameworks, valence
 satisfaction is the source of all observed grammatical regularities,
@@ -1064,12 +1061,13 @@ the proof line in \REF{length} to the sign below the line:
 
 \begin{exe}
  \ex\label{length}
-\oneline{%
+% \oneline{%
 \AxiomC{\MultiLine{\ptfont{mary\BobsO thinks\BobsO bill\BobsO remembers\BobsO ann\BobsO saying\BobsO john\BobsO lost\BobsO \ensuremath{\greekp};} \\ \sem{ \trns{think}(\trns{remember}(\trns{saying}(\trns{yest}(\trns{lost}(u))(\trns{j}))(\trns{a})))(\trns{b})))(\trns{m})}; \\\syncat{  S}}}
 \UnaryInfC{\MultiLine{\ptfont{λ\ensuremath{\greekp}. mary\BobsO thinks\BobsO bill\BobsO remembers\BobsO ann\BobsO saying\BobsO john\BobsO lost\BobsO \ensuremath{\greekp};} \\ \sem{ \trns{think}(\trns{remember}(\trns{saying}(\trns{yest}(\trns{lost}(u))(\trns{j}))(\trns{a})))(\trns{b})))(\trns{m})}; \\\syncat{  S}}}
-\DisplayProof}
+\DisplayProof
+% }
 \end{exe}
-Essentially the same proof storyline in \REF{bookProof1}--\REF{bookProof3}
+Essentially the same proof storyline in (\ref{bookProof1}--\ref{bookProof3})
 will give us \textit{book which Mary thinks Bill remembers Ann saying
 John lost}. There is no local registration of the information linking
 the filler to the gap -- nothing analagous to cyclic wh\hyp movement, no
