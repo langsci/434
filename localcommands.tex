@@ -182,15 +182,18 @@
 \newcommand{\greekp}{\upvarphi}
 \newcommand{\greekr}{\uprho}
 \newcommand{\greeks}{\upsigma}
-\newcommand{\MultiLine}[1]{\renewcommand{\arraystretch}{.8}%
-\ensuremath{\begin{array}[b]{l} #1 \end{array}}}
+\newcommand{\MultiLine}[1]{\ensuremath{\begin{array}[b]{@{}l@{}}#1\end{array}}}
 \newcommand{\LexEnt}[3]{#1; \ensuremath{#2}; \syncat{#3}}
-\newcommand{\BobsO}{\circ}
-\newcommand{\HypSpace}{\hskip-.8ex}
-\newcommand{\RaiseHeight}{\raisebox{2.2ex}}
-\newcommand{\ThreeColHyp}[1]{\RaiseHeight{\Bigg[}\HypSpace#1\HypSpace\RaiseHeight{\Bigg]}}
-\newcommand{\ptfont}[1]{\texttt{#1}}
-                                % Question
+
+\newcommand{\LexEntBroken}[3]
+  {\Shortstack
+      {%
+        {#1;} 
+        {\ensuremath{#2};} 
+        {\syncat{#3}}%
+      }%
+  }
+
 \newcommand{\grey}[1]{\colorbox{mycolor}{#1}}
 \definecolor{mycolor}{gray}{0.8}
 

@@ -123,7 +123,7 @@ well.
 This is not just a walk through some rarely visited pages of the mathematical
 logic bestiary. There are sophisticated attempts at using combinatory logic in
 semantics since the 1980s \citep{Szabolcsi:1987,Steedman:1987,Jacobson:1999,Baldridge:2002}, with
-important links to mild context sensitivity/polynomial parsability
+important links to mild context sensitivity\slash polynomial parsability
 \citep{Joshi:1990}. Clearly, neither FOPC nor higher order intensional calculi
 such as those employed in Montague Grammar have a privileged status as the One True
 Formalism (OTF) for semantics, and the search for OTF is not a trivial one. Our
@@ -183,10 +183,22 @@ language but also their constituents and derivation histories (see discussion
 of D4 below).
 
 \begin{figure}[h]
-\centering
-\mbox{\xymatrix{
-L \ar[r]^d &D\ar[r]^t &F\ar[r]^I & \mathcal{M}\ar[r]^g &W\\
-}}
+% % \centering
+% % \mbox{\xymatrix{
+% % L \ar[r]^d &D\ar[r]^t &F\ar[r]^I & \mathcal{M}\ar[r]^g &W\\
+% % }}
+\begin{tikzpicture}[>={Stealth[round]}]
+    \node (L) at (0,0) {$L$};
+    \node (D) at (2,0) {$D$};
+    \node (F) at (4,0) {$F$};
+    \node (M) at (6,0) {$\mathcal{M}$};
+    \node (W) at (8,0) {$W$};
+    
+    \draw[->] (L) -- (D) node [midway,above] {$d$};
+    \draw[->] (D) -- (F) node [midway,above] {$t$};
+    \draw[->] (F) -- (M) node [midway,above] {$I$};
+    \draw[->] (M) -- (W) node [midway,above] {$g$};
+\end{tikzpicture}
 \caption{Information objects associated with MG}
 \label{fig:information_objects}
 \end{figure}
@@ -227,9 +239,10 @@ untenable \citep{Bruening:2018}, and in its place we offer our own
 desideratum:
 
 \begin{itemize}
+\sloppy 
 \item[D7] 
   Compositional (syntactic) and non-compositional (morphological)
-  process\-es must be part of the same continuum
+  processes must be part of the same continuum
 \end{itemize}
 
 In other words, there cannot be a different semantics for morphology and for
@@ -245,7 +258,7 @@ products, which contain the fully compositional direct products as a limiting
 case.
 
 D3, while in principle compatible with many theories, is
-seriously underresearch\-ed. Using a natural language (typically English) as
+seriously underresearched. Using a natural language (typically English) as
 pivot (intermediary) between two languages is common both in manual and in
 machine translation. The use of a formal language is almost unheard of: the
 only proposal with actual translations is Universal Networking Language
@@ -487,7 +500,7 @@ compositionality appears as a special case, \textit{direct} products
     \begin{subfigure}[t]{0.5\textwidth}
 	\centering
         \begin{tikzpicture}[scale=0.5]
-                        \filldraw[fill=blue!40!white, draw=black] (0,0) rectangle (12,8);
+                        \filldraw[fill=black!40!white, draw=black] (0,0) rectangle (12,8);
                 \end{tikzpicture}
         \caption{Direct product}
     \end{subfigure}%    
@@ -495,7 +508,7 @@ compositionality appears as a special case, \textit{direct} products
         \centering
                 \begin{tikzpicture}[scale=0.5]
                         \draw (0,0) rectangle (12,8);
-                        \filldraw[fill=blue!40!white, draw=black] (2,8) -- (12,1) -- (11,0) -- (0,6) -- (2,8);
+                        \filldraw[fill=black!40!white, draw=black] (2,8) -- (12,1) -- (11,0) -- (0,6) -- (2,8);
                 \end{tikzpicture}
                 \caption{Subdirect product}
     \end{subfigure}
@@ -522,7 +535,7 @@ semantics? One, perhaps the most important one, is the notion of containment,
 \textsc{IsA}, which we see as essential for the reconstruction of Aristotelian
 \textit{genus}. Whatever definition we provide for \textit{dachshund} or \textit{labrador}, the first thing in the definiens will be \textit{dog}. Given that we
 use polytopes (polyhedra-line $n$-dimensional regions) around the word
-vectors, \textsc{IsA} comes for free as the set-theoretical inclusion `$\subset$'
+vectors, \textsc{IsA} comes for free as the set-theoretical inclusion “$\subset$”
 relation. This works well for ordinary (intersective) adjectival modifiers
 as well: a \textit{brown dog} is in the intersection of the \textit{brown} and the
 \textit{dog} polytopes. (For non-intersective adjectives like \textit{former}, see
