@@ -1,5 +1,5 @@
 \documentclass[output=paper,colorlinks,citecolor=brown]{langscibook}
-\author{Robert D. Van Valin, Jr.\orcid{}\affiliation{The State University of New York at Buffalo \& Heinrich Heine University Düsseldorf}}
+\author[Robert D. {Van Valin, Jr.}]{Robert D. Van Valin, Jr.\orcid{}\affiliation{The State University of New York at Buffalo \& Heinrich Heine University Düsseldorf}}
 \title{How language began: A theoretical interpretation}
 \abstract{In his book \citew{everett2017language}, Daniel Everett argued that linguistic communication did not originate with \textit{Homo sapiens sapiens} but rather began two million years earlier with \textit{Homo erectus} [\textit{HE}]. The linguistic system proposed by Everett for \textit{HE} is not as complex as modern language but is more than adequate for the demands of \textit{HE}’s sociocultural and technological needs. This paper presents an analysis of the linguistic system of \textit{HE} in terms of a theory of grammar, namely Role and Reference Grammar \citep{van2005exploring}.}
 
@@ -29,7 +29,7 @@ The analysis to be presented is agnostic with respect to whether the communicati
 One of the immediate difficulties in discussing the possible linguistic abilities of early humans is the obvious fact that they are very different from those of modern humans, and accordingly, if the question is phrased “did early humans have language?”, where “language” is understood as being like contemporary linguistic systems, the answer is obviously “no”.  Everett avoids this trap by talking instead of grammars and proposing a hierarchy of grammars in terms of their formal complexity: $G_3 \Rightarrow G_2 \Rightarrow G_1$.  The simplest grammar, $G_1$, is dubbed a “linear grammar” by Everett, because it permits only sequences of expressions without any embedding of one expression in another. An example is given in \REF{vanvalin_example_1}.
 
 \ea \label{vanvalin_example_1}
-Output of a $G_1$ linear grammar: “Man see deer \ldots{}  Deer big \ldots{}  Man spear deer \ldots”\footnote{It is irrelevant for this discussion whether the word order is Actor-\textsc{pred}-Undergoer, Actor-Undergoer-\textsc{pred}, or \textsc{pred}-Actor-Undergoer.}
+Output of a $G_1$ linear grammar: “Man see deer \ldots{}  Deer big \ldots{}  Man spear deer \ldots”\footnote{It is irrelevant for this discussion whether the word order is Actor-\VanLabel{pred}-Undergoer, Actor-Undergoer-\VanLabel{pred}, or \VanLabel{pred}-Actor-Undergoer.}
 \z
 
 Each of the expressions is a simple proposition, which may be juxtaposed linearly with other simple propositions to form more semantically complex utterances.
@@ -54,13 +54,13 @@ The constituent projection contains lexical items functioning as predicators, ar
 \small
 % % \includegraphics[width=0.8\textwidth]{vanvalin_figure1.png}
 \begin{forest}
-  [\textsc{sentence}, calign=child, calign child=2
+  [\VanLabel{sentence}, calign=child, calign child=2
    [PrDP, tier=core,before computing xy={s=-175pt}
       [ADV, tier=v
          [Yesterday, tier=word]
       ]
    ]
-   [\textsc{clause}, name=clause1,calign=child, calign child=2
+   [\VanLabel{clause}, name=clause1,calign=child, calign child=2
       [PrCS, tier=core
          [RP, tier=v
             [~, text width=1cm, tier=word, no edge]
@@ -68,19 +68,19 @@ The constituent projection contains lexical items functioning as predicators, ar
             [did, text width=1cm, tier=word, no edge, name=did]
          ]
       ]
-      [\textsc{core}, name=core, tier=core
+      [\VanLabel{core}, name=core, tier=core
          [RP, text width=1cm, text centered
             [John, tier=word]
          ]
-         [\textsc{nuc}, text width=1cm, text centered,name=nuc
-            [\textsc{pred}
+         [\VanLabel{nuc}, text width=1cm, text centered,name=nuc
+            [\VanLabel{pred}
                [V, tier=v
                   [give, tier=word
-                     [\textsc{nuc},s=-5mm
-                        [\textsc{core},name=core2
-                           [\textsc{clause}, name=clause2
-                              [\textsc{clause}, name=clause3
-                                 [\textsc{sentence}
+                     [\VanLabel{nuc},s=-5mm
+                        [\VanLabel{core},name=core2
+                           [\VanLabel{clause}, name=clause2
+                              [\VanLabel{clause}, name=clause3
+                                 [\VanLabel{sentence}
                               ]
                            ]
                         ]
@@ -94,7 +94,7 @@ The constituent projection contains lexical items functioning as predicators, ar
             [to Mary, tier=word]
          ]
    ]
-      [\textsc{periphery}, name=periphery, tier=core, no edge
+      [\VanLabel{periphery}, name=periphery, tier=core, no edge
          [PP, tier=v
             [in the library?, tier=word]
          ]
@@ -103,8 +103,8 @@ The constituent projection contains lexical items functioning as predicators, ar
   ]
    [~, tier=core, no edge]
 ]
-\node(TNS)[left=0.5cm of clause2]{\textsc{tns}};
-\node(IF)[left=1cm of clause3]{\textsc{if}};
+\node(TNS)[left=0.5cm of clause2]{\VanLabel{tns}};
+\node(IF)[left=1cm of clause3]{\VanLabel{if}};
 \node(cp)[left=7.5cm of core.base,rotate=90]{Constituent projection};
 \node[left=7.5cm of core2.base,rotate=90]{Operator projection};
 \draw[dotted,thick](did.south)--(TNS);
@@ -128,96 +128,96 @@ It would have the following structure.
 % % % \includegraphics[width=\textwidth]{vanvalin_figure2.png}
 \small%
   \begin{forest}
-		[\textsc{prop}
-		  [\textsc{pred} [near]]
-		  [\textsc{re} [river]]
+		[\VanLabel{prop}
+		  [\VanLabel{pred} [near]]
+		  [\VanLabel{re} [river]]
 		]
  \end{forest}\hfill%
  \begin{forest}
-		[\textsc{prop},calign=child, calign child=2
-		  [\textsc{re} [\textsc{Spkr}]]
-		  [\textsc{pred} [see]]
-		  [\textsc{re} [deer]]
+		[\VanLabel{prop},calign=child, calign child=2
+		  [\VanLabel{re} [Spkr]]
+		  [\VanLabel{pred} [see]]
+		  [\VanLabel{re} [deer]]
 		]
  \end{forest}\hfill%
  \begin{forest}
-		[\textsc{prop}
-		  [\textsc{(re)} [\textsc{pro}/deer]]
-		  [\textsc{pred} [big]]
+		[\VanLabel{prop}
+		  [\VanLabel{(re)} [\VanLabel{pro}/deer]]
+		  [\VanLabel{pred} [big]]
 		]
  \end{forest}\hfill%
  \begin{forest}
-		[\textsc{prop},calign=child, calign child=2
-		  [\textsc{(re)} [\textsc{Spkr}]]
-		  [\textsc{pred} [spear]]
-		  [\textsc{(re)} [\textsc{pro}/deer]]
+		[\VanLabel{prop},calign=child, calign child=2
+		  [\VanLabel{(re)} [Spkr]]
+		  [\VanLabel{pred} [spear]]
+		  [\VanLabel{(re)} [\VanLabel{pro}/deer]]
 		]
  \end{forest}%
 \caption{\label{fig:fig2}Structure of utterances in $G_1$ language}
 \end{figure}
 
-The first thing to note is the lack of syntactic categories.  There are no grounds for attributing syntactic categories or syntactic structure to these utterances.  The categories are all semantic: ‘\textsc{re}’ is \textsc{referring expression} and is not phrasal; ‘\textsc{pred}’ is \textsc{predicator}; and ‘\textsc{prop}’ is \textsc{proposition}.  A proposition consists of a predicator and its arguments. There are no adjuncts modifying the proposition or any of its constituents.  When a location needs to be mentioned, for example, it is expressed as an independent locative proposition, analogous to the independent attributive proposition involving the referring expression \emph{deer}.  
+The first thing to note is the lack of syntactic categories.  There are no grounds for attributing syntactic categories or syntactic structure to these utterances.  The categories are all semantic: \VanLabel{re} is \textsc{referring expression} and is not phrasal; \VanLabel{pred} is \textsc{predicator}; and \VanLabel{prop} is \textsc{proposition}.  A proposition consists of a predicator and its arguments. There are no adjuncts modifying the proposition or any of its constituents.  When a location needs to be mentioned, for example, it is expressed as an independent locative proposition, analogous to the independent attributive proposition involving the referring expression \emph{deer}.  
 
 The equivalent of lexical modifiers, as illustrated in \figref{fig:fig2}, would be represented as independent propositions.  What about non-lexical, i.e. grammatical, modifiers?  It is highly unlikely that there are any grammatical modifiers of this kind found in a $G_1$ grammar of the type posited for \emph{Homo erectus}.  Hence there would not be an operator projection in the representation of utterances.  However, there are two operators which are found in the grammar of every $G_2$ and $G_3$ human language and must have been part of any possible \emph{Homo erectus} $G_1$ system: negation and illocutionary force. Negation is essential for reasoning as well as for important speech acts like negative imperatives and warnings.  The ability to make assertions, ask questions and give commands is an essential part of any human communication system.  It is for these reasons that RRG claims that negation and illocutionary force are the only universal operators.  Both can be expressed through non-grammatical means: illocutionary force can be signaled prosodically, while negation can be expressed gesturally.  Hence they would not motivate an operator projection in the structures.
 
 \section{Information structure, argument realization, and cooperation}\label{sec:vanvalin:4}
 
-In the hypothetical $G_1$ example in \REF{vanvalin_example_3} and \figref{fig:fig2}, after the first mention of a referent, there are three possibilities for subsequent mentions: (1) repetition of the referring expression, (2) using a \textsc{pro} form, or  (3) simple omission, as is often the case in many $G_3$ languages today.  Option 1 requires no special machinery; it is the most redundant.  Option 2 is the least likely, since the development of \textsc{pro} forms seems to be more likely a trait of the advanced systems.  The most interesting option is (3).  It was argued in \citet{van1990functionalism} and \citet{van1997syntax}, following Kuno, Bolinger and Bickerton, that information structure plays a central role in the analysis of intrasentential pronominalization, regardless as to whether it involves overt \textsc{pro} forms or zero anaphora.  For example, a referent cannot be realized as zero if it is part of the actual focus 
+In the hypothetical $G_1$ example in \REF{vanvalin_example_3} and \figref{fig:fig2}, after the first mention of a referent, there are three possibilities for subsequent mentions: (1) repetition of the referring expression, (2) using a \VanLabel{pro} form, or  (3) simple omission, as is often the case in many $G_3$ languages today.  Option 1 requires no special machinery; it is the most redundant.  Option 2 is the least likely, since the development of \VanLabel{pro} forms seems to be more likely a trait of the advanced systems.  The most interesting option is (3).  It was argued in \citet{van1990functionalism} and \citet{van1997syntax}, following Kuno, Bolinger and Bickerton, that information structure plays a central role in the analysis of intrasentential pronominalization, regardless as to whether it involves overt \VanLabel{pro} forms or zero anaphora.  For example, a referent cannot be realized as zero if it is part of the actual focus 
 domain of the clause but can be if it is part of the background.  So in the earlier example, it would be nonsensical to introduce \emph{the deer} using zero coding.  Hence overt occurrence vs. omission would likely not be beyond the means of \emph{Homo erectus}.  Thus possibility (3) is very much an option.
 
 If \emph{Homo erectus} is sensitive to some aspects of information structure, then this has significant consequences for the issues raised at the outset of this discussion.  It was argued in \citet{van1993synopsis}, following \citet{kempson1975presupposition}, that the notions of topic and focus, which are fundamental to information structure, are ultimately derived from Grice’s Cooperative Principle and the maxim of quantity, which are general (i.e. not domain-specific) rational principles of human behavior.  Cooperation is a hallmark of language users, and despite the fact that it is certain that \emph{Homo erectus} did not wield the Cooperative Principle in the same way as modern $G_3$ language users do, it nevertheless was a necessary part of \emph{Homo erectus} cognition.  An example where cooperation would be vital is trying to reach islands separated from them by a significant body of water; cooperation is essential in the construction and operation of the primitive watercraft on which they traveled and on which their lives depended.
 
 \section{The transition from $G_1$ to $G_2$}\label{sec:vanvalin:5}
 
-A $G_2$ grammar would differ from a $G_1$ grammar in significant ways.  To begin with, the combination of adjunct modifiers and referring expressions yields \textsc{reference phrases}, which are necessarily syntactic, because a reference phrase potentially consists of two or more units that are not of the same semantic type, e.g. [\textsubscript{\scshape rp}~[\textsubscript{\scshape pred}~big]~→ [\textsubscript{\scshape re} deer] ].  In the same vein, the coocurrence of syntactic reference phrases in a proposition triggers a reanalysis of the proposition as a syntactic entity, a core.  In addition, the occurrence of adjunct modifiers taking a propositional unit as an argument, e.g. \textit{I see big deer near river} (i.e. \textbf{near}´ (river, [\textsc{spkr} see big deer])), further motivated the reanalysis, as the predicate+argument(s) unit is now functioning as an argument and filling a slot that could also be filled by a syntactic entity, namely a reference phrase (e.g. \textit{Big deer near river}).  The predicator underwent reanalysis as a syntactic nucleus due to, among other things, the occurrence of syntactic entities as the predicator, e.g. ‘\textsc{spkr} good hunter’.  Thus, the introduction of embedding had profound implications, because it created semantically mixed units which led to the reanalysis of the fundamental semantic entities as syntactic, as illustrated in \figref{fig:fig3}.
+A $G_2$ grammar would differ from a $G_1$ grammar in significant ways.  To begin with, the combination of adjunct modifiers and referring expressions yields \textsc{reference phrases}, which are necessarily syntactic, because a reference phrase potentially consists of two or more units that are not of the same semantic type, e.g. [\textsubscript{\scshape rp}~[\textsubscript{\scshape pred}~big]~→ [\textsubscript{\scshape re} deer] ].  In the same vein, the coocurrence of syntactic reference phrases in a proposition triggers a reanalysis of the proposition as a syntactic entity, a core.  In addition, the occurrence of adjunct modifiers taking a propositional unit as an argument, e.g. \textit{I see big deer near river} (i.e. \textbf{near}´ (river, [Spkr see big deer])), further motivated the reanalysis, as the predicate+argument(s) unit is now functioning as an argument and filling a slot that could also be filled by a syntactic entity, namely a reference phrase (e.g. \textit{Big deer near river}).  The predicator underwent reanalysis as a syntactic nucleus due to, among other things, the occurrence of syntactic entities as the predicator, e.g. ‘Spkr good hunter’.  Thus, the introduction of embedding had profound implications, because it created semantically mixed units which led to the reanalysis of the fundamental semantic entities as syntactic, as illustrated in \figref{fig:fig3}.
 
 \begin{sidewaysfigure}
 \small
 % \includegraphics[width=0.8\textwidth]{vanvalin_figure3.png}
 \begin{forest}
 [,phantom, for children={s sep=2em}
-  [\textsc{prop}
-    [\textsc{pred},name=pred [near,name=near1]]
-    [\textsc{re} [river,name=river1]]
+  [\VanLabel{prop}
+    [\VanLabel{pred},name=pred [near,name=near1]]
+    [\VanLabel{re} [river,name=river1]]
   ]
-  [\textsc{prop}, calign=child, calign child=2
-    [\textsc{re} [\textsc{Spkr}]]
-    [\textsc{pred} [see, l sep=10\baselineskip
-    	[\textsc{core},tier=lowtier,edge=-{Triangle[]}, calign=child, calign child=2,name=core
-    		[\textsc{rp} [\textsc{Spkr}]]
-    		[\textsc{nucleus} [see]]
-    		[\textsc{rp},name=rp2 [big deer]]
+  [\VanLabel{prop}, calign=child, calign child=2
+    [\VanLabel{re} [Spkr]]
+    [\VanLabel{pred} [see, l sep=10\baselineskip
+    	[\VanLabel{core},tier=lowtier,edge=-{Triangle[]}, calign=child, calign child=2,name=core
+    		[\VanLabel{rp} [Spkr]]
+    		[\VanLabel{nucleus} [see]]
+    		[\VanLabel{rp},name=rp2 [big deer]]
     	]
     ]]
-    [\textsc{re} [deer,name=deer1]]
+    [\VanLabel{re} [deer,name=deer1]]
   ]
-  [\textsc{prop}
-    [(\textsc{re}) [\textsc{pro}/deer
-    	[\textsc{rp},tier=midtier,no edge, calign=child, calign child=2,name=rp1, s sep=1em
-    	  [\textsc{pred}, name=midpred, no edge [big,name=big2]]
-    	  [\textsc{re}, name=midre [deer,name=deer2]]
+  [\VanLabel{prop}
+    [(\VanLabel{re}) [\VanLabel{pro}/deer
+    	[\VanLabel{rp},tier=midtier,no edge, calign=child, calign child=2,name=rp1, s sep=1em
+    	  [\VanLabel{pred}, name=midpred, no edge [big,name=big2]]
+    	  [\VanLabel{re}, name=midre [deer,name=deer2]]
     	]
     ]]
-    [\textsc{pred} [big,name=big1
-   	 [\textsc{periphery},no edge,tier=lowtier,edge=-{Triangle[]}, calign=child, calign child=2,before computing xy={s=-20pt},name=periphery
-   	   [\textsc{core}
-   	     [\textsc{nucleus} [near]]
-   	     [\textsc{rp} [river]]
+    [\VanLabel{pred} [big,name=big1
+   	 [\VanLabel{periphery},no edge,tier=lowtier,edge=-{Triangle[]}, calign=child, calign child=2,before computing xy={s=-20pt},name=periphery
+   	   [\VanLabel{core}
+   	     [\VanLabel{nucleus} [near]]
+   	     [\VanLabel{rp} [river]]
    	   ]
    	 ]
     ]
     ]
   ]
-  [\textsc{prop}, calign=child, calign child=2
-    [(\textsc{re}) [\textsc{Spkr}]]
-    [\textsc{pred} [spear
-    	[\textsc{core},tier=lowtier,edge=-{Triangle[]}, calign=child, calign child=2
-    	  [(\textsc{rp}) [\textsc{Spkr}]]
-    	  [\textsc{nucleus} [spear]]
-    	  [(\textsc{rp}) [\textsc{pro}/big deer]]
+  [\VanLabel{prop}, calign=child, calign child=2
+    [(\VanLabel{re}) [Spkr]]
+    [\VanLabel{pred} [spear
+    	[\VanLabel{core},tier=lowtier,edge=-{Triangle[]}, calign=child, calign child=2
+    	  [(\VanLabel{rp}) [Spkr]]
+    	  [\VanLabel{nucleus} [spear]]
+    	  [(\VanLabel{rp}) [\VanLabel{pro}/big deer]]
     	]
     ]]
-    [(\textsc{re}) [\textsc{pro}/deer]]
+    [(\VanLabel{re}) [\VanLabel{pro}/deer]]
   ]
 ]
 \node (g1) [left=2em of pred] {$G_1$};
@@ -248,17 +248,17 @@ Thus, Everett’s proposals regarding the linguistic abilities of \emph{Homo ere
 
 \section*{Abbreviations}
 \begin{tabularx}{.5\textwidth}{@{}lQ}
-\textsc{if} & illocutionary force \\
-\textsc{nuc} & nucleus \\
-\textsc{p}r\textsc{cs} & pre-core slot \\
-\textsc{p}r\textsc{dp} & pre-detached position \\
-\textsc{pred} & predicator \\
+\VanLabel{if} & illocutionary force \\
+\VanLabel{nuc} & nucleus \\
+\VanLabel{prcs} & pre-core slot \\
+\VanLabel{prdp} & pre-detached position \\
+\VanLabel{pred} & predicator \\
 \end{tabularx}\begin{tabularx}{.5\textwidth}{lQ@{}}
-\textsc{prop} & propositional \\
-\textsc{re} & referring expression \\
-\textsc{rp} & reference phrase \\
-\textsc{spkr} & speaker \\
-\textsc{tns} & tense \\
+\VanLabel{prop} & propositional \\
+\VanLabel{re} & referring expression \\
+\VanLabel{rp} & reference phrase \\
+\VanLabel{spkr} & speaker \\
+\VanLabel{tns} & tense \\
 \end{tabularx}
 
 \printbibliography[heading=subbibliography,notkeyword=this]

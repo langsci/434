@@ -278,7 +278,7 @@ presented in that order.
 \UnaryInfC{\Lemma}
 \TrinaryInfC{
   \LexEnt{
-  \pt{\ptv{b} \circ \pt{φ} }}
+  \pt{\ptv{b} \circ{} \pt{φ} }}
   {\sem{ \sF}}
   {\syncat{\textit{B}}}
 }
@@ -294,7 +294,7 @@ presented in that order.
 }
 \AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\LexEnt{\pt{\ptv{b} \circ \ptv{a}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
+\BinaryInfC{\LexEnt{\pt{\ptv{b} \circ{} \ptv{a}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
 \DisplayProof}\\\addlinespace
 \bsl &
 {
@@ -304,7 +304,7 @@ presented in that order.
 \UnaryInfC{\LemmaAlt}
 \AxiomC{\Lemma}
 \UnaryInfC{\Lemma}
-\TrinaryInfC{\LexEnt{\pt{\pt{φ} \circ \ptv{b}}}{\sem{ \sF}}{\syncat{\textit{B}}}}
+\TrinaryInfC{\LexEnt{\pt{\pt{φ} \circ{} \ptv{b}}}{\sem{ \sF}}{\syncat{\textit{B}}}}
 \RightLabel{\bsl I$^n$}x
 \UnaryInfC{\LexEnt{\pt{\ptv{b}}}{\sem{ λx. \sF}}{\syncat{\textit{A}\bsl{}\textit{B}}}}
 \DisplayProof}
@@ -313,7 +313,7 @@ presented in that order.
 \AxiomC{\LexEnt{\pt{\ptv{a}}}{\sem{ \alpha}}{\syncat{\textit{A}}}}
 \AxiomC{\LexEnt{\pt{\ptv{b}}}{\sem{ \calP}}{\syncat{\textit{A}\bsl{}\textit{B}}}}
 \RightLabel{\bsl E}
-\BinaryInfC{\LexEnt{\pt{\ptv{a} \circ \ptv{b}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
+\BinaryInfC{\LexEnt{\pt{\ptv{a} \circ{} \ptv{b}}}{\sem{ \calP(\alpha)}}{\syncat{\textit{B}}}}
 \DisplayProof}\\\addlinespace
 \ensuremath{\vs} &
 {
@@ -421,30 +421,30 @@ restriction of the event instantiating that property.
 \AxiomC{\MultiLine{\texttt{the;} \\ \sem{ \iota}; \\\syncat{  NP/N}}}
 \AxiomC{\MultiLine{\texttt{documents;} \\ \sem{ \trns{docs} }; \\\syncat{  N}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{the \circ documents;} \\ \sem{ \iota(\trns{docs})}; \\\syncat{  NP}}}
+\BinaryInfC{\MultiLine{\texttt{the \circ{} documents;} \\ \sem{ \iota(\trns{docs})}; \\\syncat{  NP}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{sent \circ the \circ documents;} \\ \sem{ \trns{send}(\iota(\trns{docs}))}; \\\syncat{  VP/PP\fb{to}}}}
+\BinaryInfC{\MultiLine{\texttt{sent \circ{} the \circ{} documents;} \\ \sem{ \trns{send}(\iota(\trns{docs}))}; \\\syncat{  VP/PP\fb{to}}}}
 \AxiomC{\MultiLine{\texttt{the;} \\ \sem{ \iota}; \\\syncat{  NP/N}}}
 \AxiomC{\MultiLine{\texttt{committee;} \\ \sem{ \trns{comm} }; \\\syncat{  N}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{the \circ committee;} \\ \sem{ \iota(\trns{comm})}; \\\syncat{  NP}}}
+\BinaryInfC{\MultiLine{\texttt{the \circ{} committee;} \\ \sem{ \iota(\trns{comm})}; \\\syncat{  NP}}}
 \AxiomC{\MultiLine{\texttt{to;} \\ \sem{ λx.x}; \\\syncat{  PP\fb{to}/NP}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{to \circ the \circ committee;} \\ \sem{ \iota(\trns{comm})}; \\\syncat{  PP\fb{to}}}}
+\BinaryInfC{\MultiLine{\texttt{to \circ{} the \circ{} committee;} \\ \sem{ \iota(\trns{comm})}; \\\syncat{  PP\fb{to}}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{sent \circ the \circ documents \circ to \circ the \circ committee;} \\ \sem{ \trns{send}(\iota(\trns{docs}))(\iota(\trns{comm}))}; \syncat{ VP}}}
+\BinaryInfC{\MultiLine{\texttt{sent \circ{} the \circ{} documents \circ{} to \circ{} the \circ{} committee;} \\ \sem{ \trns{send}(\iota(\trns{docs}))(\iota(\trns{comm}))}; \syncat{ VP}}}
 \AxiomC{\MultiLine{\texttt{ over;} \\ \sem{ \trns{over} }; \\\syncat{  VP\bsl{}VP/NP}}}
 \AxiomC{\MultiLine{\texttt{ the;} \\ \sem{ \iota}; \\\syncat{  NP/N}}}
 \AxiomC{\MultiLine{\texttt{ weekend;} \\ \sem{ \trns{wknd} }; \\\syncat{  N}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{the \circ weekend;} \\ \sem{ \iota(\trns{wknd})}; \syncat{ NP}}}
+\BinaryInfC{\MultiLine{\texttt{the \circ{} weekend;} \\ \sem{ \iota(\trns{wknd})}; \syncat{ NP}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{over \circ the \circ weekend;} \\ \sem{ \trns{over}(\iota(\trns{wknd}))}; \\\syncat{  VP\bsl{}VP}}}
+\BinaryInfC{\MultiLine{\texttt{over \circ{} the \circ{} weekend;} \\ \sem{ \trns{over}(\iota(\trns{wknd}))}; \\\syncat{  VP\bsl{}VP}}}
 \RightLabel{\bsl E}
-\BinaryInfC{\MultiLine{\texttt{sent \circ the \circ documents \circ to \circ the \circ    {}}\\ \texttt{  \hspace{3ex}committee \circ over \circ the \circ weekend;} \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  VP}}}
+\BinaryInfC{\MultiLine{\texttt{sent \circ{} the \circ{} documents \circ{} to \circ{} the \circ{}}\\ \texttt{  \hspace{3ex}committee \circ{} over \circ{} the \circ{} weekend;} \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  VP}}}
 \AxiomC{\MultiLine{\texttt{john;} \\ \sem{ \trns{j} }; \\\syncat{  NP}}}
 \RightLabel{\bsl E}
-\BinaryInfC{\MultiLine{\texttt{john \circ sent \circ the \circ documents \circ to \circ the \circ    {}}\\ \texttt{  \hspace{3ex}committee \circ over \circ the \circ weekend;} \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  S}}}
+\BinaryInfC{\MultiLine{\texttt{john \circ{} sent \circ{} the \circ{} documents \circ{} to \circ{} the \circ{}}\\ \texttt{  \hspace{3ex}committee \circ{} over \circ{} the \circ{} weekend;} \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  S}}}
 \DisplayProof}
 \end{sidewaysfigure}
 
@@ -476,7 +476,7 @@ such structure: what we have in \figref{sentProof} is a demonstration that
 the closure of the axioms of the system -- the English lexicon -- under
 the inference rules of the logic allows a valid inference of a prosodic
 string
-\pt{john \circ sent} \pt{ \circ \  the \circ documents \circ to \circ the \circ committee \circ over \circ the \circ weekend}
+\pt{john \circ{} sent} \pt{ \circ \  the \circ{} documents \circ{} to \circ{} the \circ{} committee \circ{} over \circ{} the \circ{} weekend}
 which signifies a proposition
 \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs})))(\iota(\trns{comm}))(\trns{j}) } and that the
 linguistic expression which has those prosodic and semantic values is
@@ -531,10 +531,10 @@ application of the / Elimination rule:
 \ex\label{rnrSubproof}
 \AxiomC{\LexEnt{\pt{bought}}{\sem{ \trns{buy} }}{\syncat{VP/NP}}}
 \AxiomC{\LexEnt{\pt{φ}}{\sem{ x}}{\syncat{NP}}}
-\BinaryInfC{\LexEnt{\pt{bought \circ p}}{\sem{ \trns{buy}(x)}}{\syncat{VP}}}
+\BinaryInfC{\LexEnt{\pt{bought \circ{} p}}{\sem{ \trns{buy}(x)}}{\syncat{VP}}}
 \AxiomC{\LexEnt{\pt{john}}{\sem{ \trns{j} }}{\syncat{NP}}}
-\BinaryInfC{\LexEnt{\pt{john \circ bought \circ p}}{\sem{ \trns{buy}(x)(\trns{j})}}{\syncat{S}}}
-\UnaryInfC{\LexEnt{\pt{john \circ bought}}{\sem{ λx. \trns{buy}(x)(\trns{j})}}{\syncat{S/NP}}}
+\BinaryInfC{\LexEnt{\pt{john \circ{} bought \circ{} p}}{\sem{ \trns{buy}(x)(\trns{j})}}{\syncat{S}}}
+\UnaryInfC{\LexEnt{\pt{john \circ{} bought}}{\sem{ λx. \trns{buy}(x)(\trns{j})}}{\syncat{S/NP}}}
 \DisplayProof
 \end{exe}
 The / Elimination rule allows us to obtain what in standard phrase
@@ -545,7 +545,7 @@ completely parallel proof will derive the sign in \REF{baked}:
 
 \begin{exe}
  \ex\label{baked}
-  \LexEnt{\pt{bill \circ baked}}{\sem{ λu. \trns{bake}(u)(\trns{b})}}{\syncat{S/NP}}
+  \LexEnt{\pt{bill \circ{} baked}}{\sem{ λu. \trns{bake}(u)(\trns{b})}}{\syncat{S/NP}}
 \end{exe}
 Application of the standard generalized conjunction operator
 \sem{  \ensuremath{ \sqcap\xspace }  } introduced in \citet{partee-rooth1983a}, which we take to be the
@@ -554,16 +554,16 @@ inference in \REF{rnrSign}:
 
 \begin{exe}
  \ex\label{rnrSign}
-  \LexEnt{\pt{john \circ bought \circ and \circ bill \circ baked}}{\sem{ λw. \trns{buy}(w)(\trns{j}) $\wedge$ \trns{bake}(w)(\trns{b})}}{\syncat{S/NP}}
+  \LexEnt{\pt{john \circ{} bought \circ{} and \circ{} bill \circ{} baked}}{\sem{ λw. \trns{buy}(w)(\trns{j}) $\wedge$ \trns{bake}(w)(\trns{b})}}{\syncat{S/NP}}
 \end{exe}
 The final step in the proof will then be \REF{rnrFinal}:
 
 \begin{exe}
  \ex\label{rnrFinal}
-\AxiomC{\MultiLine{\texttt{john \circ \ bought \circ \ and \circ    {}}\\ \texttt{  \hspace{3ex} bill \circ \ baked;} \\   \sem{ λw. \trns{buy}(w)(\trns{j}) \ensuremath{ \wedge\xspace } \trns{bake}(w)(\trns{b})}; \\\syncat{  S/NP}}}
+\AxiomC{\MultiLine{\texttt{john \circ{} bought \circ \ and \circ    {}}\\ \texttt{  \hspace{3ex} bill \circ \ baked;} \\   \sem{ λw. \trns{buy}(w)(\trns{j}) \ensuremath{ \wedge\xspace } \trns{bake}(w)(\trns{b})}; \\\syncat{  S/NP}}}
 \AxiomC{\Lemma}
-\UnaryInfC{\MultiLine{\texttt{the \circ \ pizza \circ \ margherita;} \\ \sem{ \iota(\trns{pzzmarg})}; \syncat{ NP}}}
-\BinaryInfC{\MultiLine{\texttt{john \circ \ bought \circ \ and \circ    {}}\\ \texttt{  \hspace{3ex}bill \circ \ baked \circ \ the \circ \ pizza \circ \ margherita;} \\   \sem{  \trns{buy}(\iota(\trns{pzzmarg}))(\trns{j}) \ensuremath{ \wedge\xspace } \trns{bake}(\iota(\trns{pzzmarg}))(\trns{b})}; \\\syncat{  S}}}
+\UnaryInfC{\MultiLine{\texttt{the \circ\ pizza \circ\ margherita;} \\ \sem{ \iota(\trns{pzzmarg})}; \syncat{ NP}}}
+\BinaryInfC{\MultiLine{\texttt{john \circ\ bought \circ\ and \circ{} bill \circ\ baked \circ\ the \circ\ pizza \circ\ margherita;} \\   \sem{  \trns{buy}(\iota(\trns{pzzmarg}))(\trns{j}) \ensuremath{ \wedge\xspace } \trns{bake}(\iota(\trns{pzzmarg}))(\trns{b})}; \\\syncat{  S}}}
 \DisplayProof
 \end{exe}
 \REF{DCC} can be similarly derived via a somewhat tedious but
@@ -620,13 +620,13 @@ variable.
 \caption{\color{red}Please provide a caption}\label{cleopatra}
 \AxiomC{\LexEnt{\pt{gave}}{\sem{\trns{give}}}{\syncat{VP/PP\fb{to}/NP}}}
 \AxiomC{\LexEnt{\pt{φ}}{\sem{x}}{\syncat{NP}}}
-\BinaryInfC{\LexEnt{\pt{gave \circ \ensuremath{\greekp}}}{\sem{ \trns{give}(x)}}{\syncat{VP/PP\fb{to}}}}
+\BinaryInfC{\LexEnt{\pt{gave \circ{} \ensuremath{\greekp}}}{\sem{ \trns{give}(x)}}{\syncat{VP/PP\fb{to}}}}
 \AxiomC{\Lemma}
-\UnaryInfC{\MultiLine{\texttt{to \circ cleopatra;} \\ \sem{ \trns{cleop} }; \syncat{ PP\fb{to}}}}
-\BinaryInfC{\LexEnt{\pt{gave \circ \ensuremath{\greekp} \circ to \circ cleopatra}}{\sem{ \trns{give}(x)(\trns{cleop})}}{\syncat{VP}}}
+\UnaryInfC{\MultiLine{\texttt{to \circ{} cleopatra;} \\ \sem{ \trns{cleop} }; \syncat{ PP\fb{to}}}}
+\BinaryInfC{\LexEnt{\pt{gave \circ{} \ensuremath{\greekp} \circ{} to \circ{} cleopatra}}{\sem{ \trns{give}(x)(\trns{cleop})}}{\syncat{VP}}}
 \AxiomC{\LexEntBroken{\pt{antony}}{\sem{\trns{ant}}}{\syncat{NP}}}
-\BinaryInfC{\LexEnt{\pt{antony \circ gave \circ \ensuremath{\greekp} \circ to \circ cleopatra}}{\sem{ \trns{give}(x)(\trns{cleop})(\trns{ant})}}{\syncat{S}}}
-\UnaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp}.antony \circ gave \circ \ensuremath{\greekp} \circ to \circ cleopatra}}{\sem{ λx. \trns{give}(x)(\trns{cleop})(\trns{ant})}}{\syncat{S\vs NP}}}
+\BinaryInfC{\LexEnt{\pt{antony \circ{} gave \circ{} \ensuremath{\greekp} \circ{} to \circ{} cleopatra}}{\sem{ \trns{give}(x)(\trns{cleop})(\trns{ant})}}{\syncat{S}}}
+\UnaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp}.antony \circ{} gave \circ{} \ensuremath{\greekp} \circ{} to \circ{} cleopatra}}{\sem{ λx. \trns{give}(x)(\trns{cleop})(\trns{ant})}}{\syncat{S\vs NP}}}
 \DisplayProof
 \end{figure}
 
@@ -694,7 +694,7 @@ sign in \REF{gaveTerm}:
 
 \begin{exe}
  \ex\label{gaveTerm}
-  \LexEnt{\pt{ λ \ensuremath{\greekp}. john \circ gave \circ \ensuremath{\greekp} \circ that \circ book}}{\sem{ λx. \trns{gave}(x)(\iota(\trns{book}))}}{\syncat{S\vs NP }}
+  \LexEnt{\pt{ λ \ensuremath{\greekp}. john \circ{} gave \circ{} \ensuremath{\greekp} \circ{} that \circ{} book}}{\sem{ λx. \trns{gave}(x)(\iota(\trns{book}))}}{\syncat{S\vs NP }}
 \end{exe}
 The semantics here is just what we need: the characteristic function
 of the set of entities who received some discoure-prominent (and in
@@ -710,7 +710,7 @@ irreconcilable cross-purposes.
 Oehrle's ingenious solution to this seeming contradiction takes the
 prosody of \textit{someone} to be, not \pt{someone}, but a function that
 applies the prosody of its \syncat{S\vs NP} argument to \pt{someone}. Since
-\pt{λ \ensuremath{\greekp}. john \circ gave \circ \ensuremath{\greekp} \circ that \circ book} is a string-to-string
+\pt{λ \ensuremath{\greekp}. john \circ{} gave \circ{} \ensuremath{\greekp} \circ{} that \circ{} book} is a string-to-string
 function, \textit{someone} is given a prosody which applies to such functions
 and positions them to take a string argument \pt{someone} to the
 pronunciation of \REF{someone}. The lexical entry for \textit{someone} is then
@@ -725,15 +725,15 @@ and we have the simple proof in \figref{someoneProof}.
 \caption{\color{red}Please provide a caption}
 \label{someoneProof}
 \AxiomC{\Lemma}
-\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp}. john \circ gave \circ \ensuremath{\greekp} \circ that \circ book;} \\ \sem{ λx. \trns{gave}(x)(\iota(\trns{book}))}; \syncat{ S\vs NP}}}
+\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp}. john \circ{} gave \circ{} \ensuremath{\greekp} \circ{} that \circ{} book;} \\ \sem{ λx. \trns{gave}(x)(\iota(\trns{book}))}; \syncat{ S\vs NP}}}
 \AxiomC{\LexEntBroken{\pt{λ \ensuremath{\greeks}. \ensuremath{\greeks}(someone)}}{\sem{ λP.\exists (\trns{person})(P)}}{\syncat{S\vs (S\vs NP)}}}
-\BinaryInfC{\MultiLine{\texttt{λ\ensuremath{\greeks} [\ensuremath{\greeks}(someone)](λ\ensuremath{\greekp}. john \circ gave \circ \ensuremath{\greekp} \circ that \circ book);} \\ \sem{ λP[ \exists (\trns{person})(P)](λx. \trns{gave}(x)(\iota(\trns{book})))}; \syncat{ S}}}
+\BinaryInfC{\MultiLine{\texttt{λ\ensuremath{\greeks} [\ensuremath{\greeks}(someone)](λ\ensuremath{\greekp}. john \circ{} gave \circ{} \ensuremath{\greekp} \circ{} that \circ{} book);} \\ \sem{ λP[ \exists (\trns{person})(P)](λx. \trns{gave}(x)(\iota(\trns{book})))}; \syncat{ S}}}
 \dottedLine
 \RightLabel{\mbox{$\beta$-conversion}}
-\UnaryInfC{\LexEntBroken{\pt{λ \ensuremath{\greekp} [john \circ gave \circ \ensuremath{\greekp} \circ that \circ book](someone)}}{\sem{ \exists (\trns{person})(λx. \trns{gave}(x)(\iota(\trns{book})))}}{\syncat{S}}}
+\UnaryInfC{\LexEntBroken{\pt{λ \ensuremath{\greekp} [john \circ{} gave \circ{} \ensuremath{\greekp} \circ{} that \circ{} book](someone)}}{\sem{ \exists (\trns{person})(λx. \trns{gave}(x)(\iota(\trns{book})))}}{\syncat{S}}}
 \dottedLine
 \RightLabel{\mbox{$\beta$-conversion}}
-\UnaryInfC{\LexEntBroken{\pt{john \circ gave \circ someone \circ that \circ book)}}{\sem{\exists (\trns{person})(λx. \trns{gave}(x)(\iota(\trns{book})))}}{\syncat{S}}}
+\UnaryInfC{\LexEntBroken{\pt{john \circ{} gave \circ{} someone \circ{} that \circ{} book)}}{\sem{\exists (\trns{person})(λx. \trns{gave}(x)(\iota(\trns{book})))}}{\syncat{S}}}
 \DisplayProof
 \end{figure}
 
@@ -994,7 +994,7 @@ Muskens' proposal takes the form of the lexical sign in \REF{whrel}:
 
 \begin{exe}
  \ex\label{whrel}
-  \LexEnt{\pt{λ \ensuremath{\greeks}. which \circ \ensuremath{\greeks}(\E)}}{\sem{ λP λQ λw. P(w) \ensuremath{ \wedge\xspace } Q(w)}}{\syncat{(N\bsl{}N)\vs (S\vs NP)}}
+  \LexEnt{\pt{λ \ensuremath{\greeks}. which \circ{} \ensuremath{\greeks}(\E)}}{\sem{ λP λQ λw. P(w) \ensuremath{ \wedge\xspace } Q(w)}}{\syncat{(N\bsl{}N)\vs (S\vs NP)}}
 \end{exe}
 Unpacking this operator a bit, we can see that its argument structure
 seeks a clause missing an NP, and its denotation is predicated of
@@ -1013,13 +1013,13 @@ with the subproof in \figref{bookProof1}.
 \label{bookProof1}
 \AxiomC{\LexEntBroken{\pt{lost}}{\sem{ λx λy \trns{lose}(x)(y)}}{\syncat{(NP\bsl{}S)/NP}}}
 \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_0}}}{\sem{ u}}{\syncat{NP}}]^1\,\,}}
-\BinaryInfC{\LexEnt{\pt{lost \circ \ensuremath{\greekp_0}}}{\sem{ λy \trns{lose}(u)(y)}}{\syncat{NP\bsl{}S}}}
+\BinaryInfC{\LexEnt{\pt{lost \circ{} \ensuremath{\greekp_0}}}{\sem{ λy \trns{lose}(u)(y)}}{\syncat{NP\bsl{}S}}}
 \AxiomC{\LexEntBroken{\pt{yesterday}}{\sem{ λP λv.yst(P)(v) }}{\syncat{(NP\bsl{}S)\bsl{}(NP\bsl{}S)}}}
-\BinaryInfC{\MultiLine{\texttt{lost \circ \ensuremath{\greekp_0} \circ yesterday;} \\ \sem{ λv. \trns{yst}(\trns{lose}(u))(v)}; \syncat{ NP\bsl{}S}}}
+\BinaryInfC{\MultiLine{\texttt{lost \circ{} \ensuremath{\greekp_0} \circ{} yesterday;} \\ \sem{ λv. \trns{yst}(\trns{lose}(u))(v)}; \syncat{ NP\bsl{}S}}}
 \AxiomC{\MultiLine{\texttt{john;} \\ \sem{ \trns{j} }; \\\syncat{  NP}}}
-\BinaryInfC{\LexEnt{\pt{john \circ lost \circ \ensuremath{\greekp_0}}}{\sem{ \trns{yst}(\trns{lose}(u))(\trns{j})}}{\syncat{S}}}
+\BinaryInfC{\LexEnt{\pt{john \circ{} lost \circ{} \ensuremath{\greekp_0}}}{\sem{ \trns{yst}(\trns{lose}(u))(\trns{j})}}{\syncat{S}}}
 \LeftLabel{①\ensuremath{\rightarrow}}
-\UnaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp_0}. john \circ lost \circ \ensuremath{\greekp_0} \circ yesterday}}{\sem{ λu.  \trns{yst}(\trns{lose}(u))(\trns{j})}}{\syncat{S\vs NP}}}
+\UnaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp_0}. john \circ{} lost \circ{} \ensuremath{\greekp_0} \circ{} yesterday}}{\sem{ λu.  \trns{yst}(\trns{lose}(u))(\trns{j})}}{\syncat{S\vs NP}}}
 \DisplayProof
 \end{figure}
 
@@ -1030,13 +1030,13 @@ proof line in \figref{bookProof1}, giving us \textit{which John lost yesterday}.
 
 \begin{figure}
 \caption{\color{red}Please provide a caption}\label{bookProof2}
-\AxiomC{\MultiLine{\texttt{λ\ensuremath{\greeks}. which \circ \ \ensuremath{\greeks}(\E);} \\ \sem{ λP λQ λw. P(w) \ensuremath{ \wedge\xspace } Q(w)}; \\\syncat{  (N\bsl{}N)\vs (S\vs NP)}}}
-\AxiomC{\MultiLine{\texttt{λ\ensuremath{\greekp_0}. john \circ lost\ \circ \ \ensuremath{\greekp_0} \circ \ yesterday;} \\ \sem{ λu.  \trns{yst}(\trns{lose}(u))(\trns{j})}; \\\syncat{  S\vs NP}}}
-\BinaryInfC{\MultiLine{\texttt{λ\ensuremath{\greeks} [which \circ \ \ensuremath{\greeks}(\E)](λ\ensuremath{\greekp_0}. john \circ \ lost \ \circ \ \ensuremath{\greekp_0} \ \circ \ yesterday);} \\ \sem{ λP [ λQ λx. P(w) \ensuremath{ \wedge\xspace } Q(w)](λu.  \trns{yst}(\trns{lose}(u))(\trns{j}))}; \\\syncat{  N\bsl{}N}}}
+\AxiomC{\MultiLine{\texttt{λ\ensuremath{\greeks}. which \circ\ \ensuremath{\greeks}(\E);} \\ \sem{ λP λQ λw. P(w) \ensuremath{ \wedge\xspace } Q(w)}; \\\syncat{  (N\bsl{}N)\vs (S\vs NP)}}}
+\AxiomC{\MultiLine{\texttt{λ\ensuremath{\greekp_0}. john \circ{} lost\ \circ\ \ensuremath{\greekp_0} \circ\ yesterday;} \\ \sem{ λu.  \trns{yst}(\trns{lose}(u))(\trns{j})}; \\\syncat{  S\vs NP}}}
+\BinaryInfC{\MultiLine{\texttt{λ\ensuremath{\greeks} [which \circ\ \ensuremath{\greeks}(\E)](λ\ensuremath{\greekp_0}. john \circ\ lost \circ\ \ensuremath{\greekp_0} \ \circ\ yesterday);} \\ \sem{ λP [ λQ λx. P(w) \ensuremath{ \wedge\xspace } Q(w)](λu.  \trns{yst}(\trns{lose}(u))(\trns{j}))}; \\\syncat{  N\bsl{}N}}}
 \dottedLine
-\UnaryInfC{\LexEnt{\pt{which \circ λ \ensuremath{\greekp_0} [john \circ lost \circ \ensuremath{\greekp_0} \circ \ yesterday](\E)}}{\sem{ λQ. [ λw.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } Q(w)]}}{\syncat{N\bsl{}N}}}
+\UnaryInfC{\LexEnt{\pt{which \circ{} λ \ensuremath{\greekp_0} [john \circ{} lost \circ{} \ensuremath{\greekp_0} \circ{} yesterday](\E)}}{\sem{ λQ. [ λw.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } Q(w)]}}{\syncat{N\bsl{}N}}}
 \dottedLine
-\UnaryInfC{\LexEnt{\pt{which \circ john \circ lost \circ \E \circ yesterday}}{\sem{ λQ [ λw.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } Q(w)]}}{\syncat{N\bsl{}N}}}
+\UnaryInfC{\LexEnt{\pt{which \circ{} john \circ{} lost \circ{} \E \circ{} yesterday}}{\sem{ λQ [ λw.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } Q(w)]}}{\syncat{N\bsl{}N}}}
 \DisplayProof
 \end{figure}
 
@@ -1047,8 +1047,8 @@ term in the last proof line in \figref{bookProof2}.
 \caption{\color{red}Please provide a caption}
 \label{bookProof3}
 \AxiomC{\LexEnt{\pt{book}}{\sem{ \trns{book} }}{\syncat{N}}}
-\AxiomC{\LexEntBroken{\pt{which \circ john \circ lost \circ \E \circ yesterday}}{\sem{ λQ [ λw.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } Q(w)]}}{\syncat{N\bsl{}N}}}
-\BinaryInfC{\LexEnt{\pt{book \circ  which \circ john \circ lost \circ \E \circ yesterday}}{\sem{  λw.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } \trns{book}(w)]}}{\syncat{N}}}
+\AxiomC{\LexEntBroken{\pt{which \circ{} john \circ{} lost \circ{} \E \circ{} yesterday}}{\sem{ λQ [ λw.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } Q(w)]}}{\syncat{N\bsl{}N}}}
+\BinaryInfC{\LexEnt{\pt{book \circ{}  which \circ{} john \circ{} lost \circ{} \E \circ{} yesterday}}{\sem{  λw.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } \trns{book}(w)]}}{\syncat{N}}}
 \DisplayProof
 \end{figure}
 
@@ -1066,8 +1066,8 @@ the proof line in \REF{length} to the sign below the line:
 \begin{exe}
  \ex\label{length}
 % \oneline{%
-\AxiomC{\MultiLine{\texttt{mary\circ thinks\circ bill\circ remembers\circ ann\circ saying\circ john\circ lost\circ \ensuremath{\greekp};} \\ \sem{ \trns{think}(\trns{remember}(\trns{saying}(\trns{yest}(\trns{lost}(u))(\trns{j}))(\trns{a})))(\trns{b})))(\trns{m})}; \\\syncat{  S}}}
-\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp}. mary\circ thinks\circ bill\circ remembers\circ ann\circ saying\circ john\circ lost\circ \ensuremath{\greekp};} \\ \sem{ \trns{think}(\trns{remember}(\trns{saying}(\trns{yest}(\trns{lost}(u))(\trns{j}))(\trns{a})))(\trns{b})))(\trns{m})}; \\\syncat{  S}}}
+\AxiomC{\MultiLine{\texttt{mary\circ{} thinks\circ{} bill\circ{} remembers\circ{} ann\circ{} saying\circ{} john\circ{} lost\circ{} \ensuremath{\greekp};} \\ \sem{ \trns{think}(\trns{remember}(\trns{saying}(\trns{yest}(\trns{lost}(u))(\trns{j}))(\trns{a})))(\trns{b})))(\trns{m})}; \\\syncat{  S}}}
+\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp}. mary\circ{} thinks\circ{} bill\circ{} remembers\circ{} ann\circ{} saying\circ{} john\circ{} lost\circ{} \ensuremath{\greekp};} \\ \sem{ \trns{think}(\trns{remember}(\trns{saying}(\trns{yest}(\trns{lost}(u))(\trns{j}))(\trns{a})))(\trns{b})))(\trns{m})}; \\\syncat{  S}}}
 \DisplayProof
 % }
 \end{exe}
@@ -1080,8 +1080,8 @@ phrase-structure tree that gets realized at the tail end of the
 chain. Properly speaking, there isn't even anything that can be
 properly identified as a gap ``site''. We have a prosodic component of
 the sign with no marker corresponding to some missing substring, since
-the model theory for the prosodic calculus interprets \texttt{a\circ b\circ \E{}} as
-\texttt{a\circ b}; nor is there any representation in the semantics or the
+the model theory for the prosodic calculus interprets \texttt{a\circ{} b\circ{} \E{}} as
+\texttt{a\circ{} b}; nor is there any representation in the semantics or the
 syntactic type of something we would want to call a ``gap''. In a way,
 this treatment of extraction is an echo of the view in extraction in
 the earliest phase of transformational grammar, when wh-movement
@@ -1162,12 +1162,12 @@ in \REF{ellipseOp1} works, is given in \REF{simpleVPE}.
 \AxiomC{\MultiLine{\texttt{call;} \\ \sem{ \trns{call} }; \\\syncat{  (NP\bsl{}S)/NP}}}
 \AxiomC{\MultiLine{\texttt{ann;} \\ \sem{ \trns{a} }; \\\syncat{  NP}}}
 \LeftLabel{①\ensuremath{\rightarrow}}
-\BinaryInfC{\MultiLine{\texttt{call\circ ann;} \\ \sem{ \trns{call}(\trns{a})}; \\\syncat{  NP\bsl{}S}}}
+\BinaryInfC{\MultiLine{\texttt{call\circ{} ann;} \\ \sem{ \trns{call}(\trns{a})}; \\\syncat{  NP\bsl{}S}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{should\circ call\circ ann ;} \\ \sem{ λy. \ensuremath{\square} \trns{call}(\trns{a})(y)}; \\\syncat{  NP\bsl{}S}}}
+\BinaryInfC{\MultiLine{\texttt{should\circ{} call\circ{} ann ;} \\ \sem{ λy. \ensuremath{\square} \trns{call}(\trns{a})(y)}; \\\syncat{  NP\bsl{}S}}}
 \AxiomC{\LexEnt{\pt{mary}}{\sem{ \trns{m} }}{\syncat{NP}}}
 \RightLabel{\bsl E}
-\BinaryInfC{\MultiLine{\texttt{mary\circ should\circ call\circ ann ;} \\ \sem{  \ensuremath{\square} \trns{call}(\trns{a})(\trns{m})}; \\\syncat{  S}}}
+\BinaryInfC{\MultiLine{\texttt{mary\circ{} should\circ{} call\circ{} ann ;} \\ \sem{  \ensuremath{\square} \trns{call}(\trns{a})(\trns{m})}; \\\syncat{  S}}}
 \DisplayProof
 \medskip\\
 \AxiomC{\MultiLine{\texttt{bill ;} \\ \sem{ \trns{b} }; \\\syncat{  NP}}}
@@ -1177,7 +1177,7 @@ in \REF{ellipseOp1} works, is given in \REF{simpleVPE}.
 \RightLabel{\ensuremath{\vs}E}
 \BinaryInfC{\LexEnt{\pt{should't }}{\sem{ λy. \neg \ensuremath{\square}\, \trns{call}(y)()}}{\syncat{ NP\bsl{}S}}}
 \RightLabel{\bsl E}
-\BinaryInfC{\LexEnt{\pt{bill\circ should't }}{\sem{  \neg \ensuremath{\square}\, \trns{call}(\trns{a})(\trns{b})}}{\syncat{S}}}
+\BinaryInfC{\LexEnt{\pt{bill\circ{} should't }}{\sem{  \neg \ensuremath{\square}\, \trns{call}(\trns{a})(\trns{b})}}{\syncat{S}}}
 \DisplayProof
 \end{exe}
 
@@ -1211,12 +1211,12 @@ implication in standard logics, and is simply demonstrated as follows
 \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_2}}}{\sem{ R}}{\syncat{VP/NP}}]^2\,\,}}
 \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_1}}}{\sem{ u}}{\syncat{NP}}]^1\,\,}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\LexEnt{\pt{\ensuremath{\greekp_2}\circ \ensuremath{\greekp_1}}}{\sem{  R(u)}}{\syncat{VP}}}
+\BinaryInfC{\LexEnt{\pt{\ensuremath{\greekp_2}\circ{} \ensuremath{\greekp_1}}}{\sem{  R(u)}}{\syncat{VP}}}
 \AxiomC{\grey{\LexEnt{\pt{\ptv{a}}}{\sem{ λT. λz.\bigcirc T(z) }}{\syncat{VP/VP}}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\LexEnt{\pt{\ptv{a}\circ \ensuremath{\greekp_2}\circ \ensuremath{\greekp_1}}}{\sem{ λz. \bigcirc \,R(u)(z))}}{\syncat{VP}}}
+\BinaryInfC{\LexEnt{\pt{\ptv{a}\circ{} \ensuremath{\greekp_2}\circ{} \ensuremath{\greekp_1}}}{\sem{ λz. \bigcirc \,R(u)(z))}}{\syncat{VP}}}
 \RightLabel{\ensuremath{/}I\ensuremath{^1}}
-\UnaryInfC{\LexEnt{\pt{\ptv{a}\circ \ensuremath{\greekp_2}}}{\sem{ λu λz. \bigcirc \,R(u)(z)}}{\syncat{VP/NP}}}
+\UnaryInfC{\LexEnt{\pt{\ptv{a}\circ{} \ensuremath{\greekp_2}}}{\sem{ λu λz. \bigcirc \,R(u)(z)}}{\syncat{VP/NP}}}
 \RightLabel{\ensuremath{/}I\ensuremath{^2}}
 \UnaryInfC{\grey{\LexEnt{\pt{\ptv{a}}}{\sem{ λR λu λz. \bigcirc \,R(u)(z)}}{\syncat{(VP/NP)/(VP/NP)}}}}
 \DisplayProof
@@ -1273,12 +1273,12 @@ We can now derive \figref{conjPseudo-b} directly.
 \AxiomC{\grey{\MultiLine{\texttt{read;} \\ \sem{ \trns{read} }; \\\syncat{  VP/NP}}}}
 \AxiomC{  essays}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{read\circ essays;} \\ \sem{ \trns{read}(\trns{essays})}; \\\syncat{  VP}}}
+\BinaryInfC{\MultiLine{\texttt{read\circ{} essays;} \\ \sem{ \trns{read}(\trns{essays})}; \\\syncat{  VP}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{will\circ read\circ essays;} \\ \sem{  λy.\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}}\, \trns{read}(\trns{essays})(y)}; \\\syncat{  VP}}}
+\BinaryInfC{\MultiLine{\texttt{will\circ{} read\circ{} essays;} \\ \sem{  λy.\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}}\, \trns{read}(\trns{essays})(y)}; \\\syncat{  VP}}}
 \AxiomC{\MultiLine{\texttt{john;} \\ \sem{ \trns{j} }; \\\syncat{  NP}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{john\circ will\circ read\circ essays;} \\ \sem{ \textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}}\, \trns{read}(\trns{essays})(\trns{j})}; \\\syncat{  S}}}
+\BinaryInfC{\MultiLine{\texttt{john\circ{} will\circ{} read\circ{} essays;} \\ \sem{ \textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}}\, \trns{read}(\trns{essays})(\trns{j})}; \\\syncat{  S}}}
 \DisplayProof
 \medskip\\
 \AxiomC{\LexEntBroken{\pt{won't}}{\sem{ λQ [L u λv.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} Q(u)(v)](P')}}{\syncat{VP/NP}}}
@@ -1289,10 +1289,10 @@ We can now derive \figref{conjPseudo-b} directly.
 \UnaryInfC{\LexEntBroken{\pt{won't}}{\sem{ λu λv.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} \trns{read}(u)(v)}}{\syncat{VP/NP}}}
 \AxiomC{\MultiLine{\texttt{novels;} \\ \sem{ \trns{novels} }; \\\syncat{  NP}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{won't\circ novels;} \\ \sem{ λv.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} \trns{read}(\trns{novels})(v)}; \\\syncat{  VP}}}
+\BinaryInfC{\MultiLine{\texttt{won't\circ{} novels;} \\ \sem{ λv.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} \trns{read}(\trns{novels})(v)}; \\\syncat{  VP}}}
 \AxiomC{\MultiLine{\texttt{he;} \\ \sem{ 3 \trns{masc} }; \\\syncat{  NP}}}
 \RightLabel{\bsl E}
-\BinaryInfC{\MultiLine{\texttt{he\circ won't\circ novels;} \\ \sem{ \neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} \trns{read}(\trns{novels})(3 \trns{masc})}; \\\syncat{  S}}}
+\BinaryInfC{\MultiLine{\texttt{he\circ{} won't\circ{} novels;} \\ \sem{ \neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} \trns{read}(\trns{novels})(3 \trns{masc})}; \\\syncat{  S}}}
 \DisplayProof
 \end{figure}
 
@@ -1380,11 +1380,11 @@ order to lay out most clearly the proof narrative.}
 \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greeks_1}}}{\sem{ f}}{\syncat{VP\vs NP}}]^1\,\,}}
 \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_2}}}{\sem{ x}}{\syncat{NP}}]^2\,\,}}
 \BinaryInfC{\LexEnt{\pt{\ensuremath{\greeks_1}(\ensuremath{\greekp_2}) }}{\sem{ f(x)}}{\syncat{VP}}}
-\BinaryInfC{\LexEnt{\pt{\ensuremath{\greekp_1}\circ \ensuremath{\greeks_1}(\ensuremath{\greekp_2})}}{\sem{ \ensuremath{\mathcal{O}}(f(x))}}{\syncat{VP}}}
+\BinaryInfC{\LexEnt{\pt{\ensuremath{\greekp_1}\circ{} \ensuremath{\greeks_1}(\ensuremath{\greekp_2})}}{\sem{ \ensuremath{\mathcal{O}}(f(x))}}{\syncat{VP}}}
 \RightLabel{\ensuremath{\vs}I\ensuremath{^2}}
-\UnaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp_2}. \ensuremath{\greekp_1}\circ \ensuremath{\greeks_1}(\ensuremath{\greekp_2})}}{\sem{ λx. \ensuremath{\mathcal{O}}(f(x))}}{\syncat{VP\vs NP}}}
+\UnaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp_2}. \ensuremath{\greekp_1}\circ{} \ensuremath{\greeks_1}(\ensuremath{\greekp_2})}}{\sem{ λx. \ensuremath{\mathcal{O}}(f(x))}}{\syncat{VP\vs NP}}}
 \RightLabel{\ensuremath{\vs}I\ensuremath{^1}}
-\UnaryInfC{\LexEnt{\pt{λ \ensuremath{\greeks_1} λ \ensuremath{\greekp_2}. \ensuremath{\greekp_1}\circ \ensuremath{\greeks_1}(\ensuremath{\greekp_2})}}{\sem{ λf λx. \ensuremath{\mathcal{O}}(f(x))}}{\syncat{(VP\vs NP)\vs (VP\vs NP)}}}
+\UnaryInfC{\LexEnt{\pt{λ \ensuremath{\greeks_1} λ \ensuremath{\greekp_2}. \ensuremath{\greekp_1}\circ{} \ensuremath{\greeks_1}(\ensuremath{\greekp_2})}}{\sem{ λf λx. \ensuremath{\mathcal{O}}(f(x))}}{\syncat{(VP\vs NP)\vs (VP\vs NP)}}}
 \DisplayProof
 \end{exe}
 With this result in hand, all that is needed to derive any given
@@ -1421,10 +1421,10 @@ in the ellipsed clause, per \figref{part1}.
 \noLine
 \UnaryInfC{\Lemma}
 \noLine
-\UnaryInfC{\MultiLine{\texttt{ate\circ \ensuremath{\greekp_1}\circ for\circ lunch;} \\ \sem{ \trns{ate}(x)(\trns{lunch})}; \syncat{ VP}}}
+\UnaryInfC{\MultiLine{\texttt{ate\circ{} \ensuremath{\greekp_1}\circ{} for\circ{} lunch;} \\ \sem{ \trns{ate}(x)(\trns{lunch})}; \syncat{ VP}}}
 \LeftLabel{①\ensuremath{\rightarrow}}
 \RightLabel{\ensuremath{\vs}I\ensuremath{^1}}
-\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp_1}.ate\circ \ensuremath{\greekp_1}\circ for\circ lunch;} \\ \sem{ \mbox{\grey{\sem{ λx. \trns{ate}(x)(\trns{lunch}) }}} }; \syncat{ VP\vs NP}}}
+\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp_1}.ate\circ{} \ensuremath{\greekp_1}\circ{} for\circ{} lunch;} \\ \sem{ \mbox{\grey{\sem{ λx. \trns{ate}(x)(\trns{lunch}) }}} }; \syncat{ VP\vs NP}}}
 \AxiomC{\raisebox{\baselineskip}{%
         \ensuremath{\left[
         \begin{array}{@{}l@{}}
@@ -1434,13 +1434,13 @@ in the ellipsed clause, per \figref{part1}.
         \end{array}
         \right]^2}}
        }
-\BinaryInfC{\LexEnt{\pt{ate\circ \ensuremath{\greekp_2}\circ for\circ lunch}}{\sem{ \trns{ate}(u)(\trns{lunch})}}{\syncat{VP}}}
+\BinaryInfC{\LexEnt{\pt{ate\circ{} \ensuremath{\greekp_2}\circ{} for\circ{} lunch}}{\sem{ \trns{ate}(u)(\trns{lunch})}}{\syncat{VP}}}
 \AxiomC{\MultiLine{\texttt{john;} \\ \sem{ \trns{j} }; \\\syncat{  NP}}}
-\BinaryInfC{\LexEnt{\pt{john\circ ate\circ \ensuremath{\greekp_2}\circ for\circ lunch}}{\sem{ \trns{ate}(u)(\trns{lunch})(\trns{j})}}{\syncat{S}}}
+\BinaryInfC{\LexEnt{\pt{john\circ{} ate\circ{} \ensuremath{\greekp_2}\circ{} for\circ{} lunch}}{\sem{ \trns{ate}(u)(\trns{lunch})(\trns{j})}}{\syncat{S}}}
 \RightLabel{\ensuremath{\vs}I\ensuremath{^2}}
-\UnaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp_2}. john\circ ate\circ \ensuremath{\greekp_2}\circ for\circ lunch}}{\sem{ λu. \trns{ate}(u)(\trns{lunch})(\trns{j})}}{\syncat{S\vs NP}}}
-\AxiomC{\MultiLine{\texttt{λ\ensuremath{\greeks}. what\circ \ensuremath{\greeks}(\E);} \\ \sem{  λP. \trns{what}(P) }; \\\syncat{  Q\vs (S\vs NP)}}}
-\BinaryInfC{\LexEnt{\pt{what\circ john\circ ate\circ \E\circ for\circ lunch}}{\sem{ \trns{what}(λu. \trns{ate}(u)(\trns{lunch})(\trns{j}))}}{\syncat{Q}}}
+\UnaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp_2}. john\circ{} ate\circ{} \ensuremath{\greekp_2}\circ{} for\circ{} lunch}}{\sem{ λu. \trns{ate}(u)(\trns{lunch})(\trns{j})}}{\syncat{S\vs NP}}}
+\AxiomC{\MultiLine{\texttt{λ\ensuremath{\greeks}. what\circ{} \ensuremath{\greeks}(\E);} \\ \sem{  λP. \trns{what}(P) }; \\\syncat{  Q\vs (S\vs NP)}}}
+\BinaryInfC{\LexEnt{\pt{what\circ{} john\circ{} ate\circ{} \E\circ{} for\circ{} lunch}}{\sem{ \trns{what}(λu. \trns{ate}(u)(\trns{lunch})(\trns{j}))}}{\syncat{Q}}}
 \DisplayProof
 \end{figure}
 
@@ -1452,9 +1452,9 @@ Bill did} then takes the following form:
 \begin{figure}
 \caption{\color{red}Please provide a caption}\label{extractionVPE-drv-part2}
 \AxiomC{\Lemma}
-\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greeks} λ\ensuremath{\greekp}. did\circ \ensuremath{\greeks}(\ensuremath{\greekp});} \\ \sem{ λf λx λy. f(x)(y)}; \\\syncat{  (VP\vs NP)\vs (VP\vs NP)}}}
+\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greeks} λ\ensuremath{\greekp}. did\circ{} \ensuremath{\greeks}(\ensuremath{\greekp});} \\ \sem{ λf λx λy. f(x)(y)}; \\\syncat{  (VP\vs NP)\vs (VP\vs NP)}}}
 \AxiomC{\MultiLine{\texttt{λ\ensuremath{\greekr} λ\ensuremath{\greekp}. \ensuremath{\greekr}(λ\ensuremath{\greekp_0}. \ensuremath{\greekp_0})(\ensuremath{\greekp});} \\ \sem{ λ\ensuremath{\mathcal{F}}. \ensuremath{\mathcal{F}}(λx. \trns{ate}(x)(\trns{lunch}))}; \\\syncat{  (VP\vs NP)\vs }\\ \hspace{2ex}\syncat{((VP\vs NP)\vs (VP\vs NP))}}}
-\BinaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp}.did\circ \ensuremath{\greekp}}}{\sem{ λx λy. \trns{ate}(x)(\trns{lunch})(y)}}{\syncat{VP\vs NP}}}
+\BinaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp}.did\circ{} \ensuremath{\greekp}}}{\sem{ λx λy. \trns{ate}(x)(\trns{lunch})(y)}}{\syncat{VP\vs NP}}}
 \AxiomC{\raisebox{\baselineskip}{%
         \ensuremath{\left[
         \begin{array}{@{}l@{}}
@@ -1464,11 +1464,11 @@ Bill did} then takes the following form:
         \end{array}
         \right]^3}}
        }
-\BinaryInfC{\LexEnt{\pt{did\circ \ensuremath{\greekp_3}}}{\sem{ λy. \trns{ate}(v)(\trns{lunch})(y)}}{\syncat{VP}}}
+\BinaryInfC{\LexEnt{\pt{did\circ{} \ensuremath{\greekp_3}}}{\sem{ λy. \trns{ate}(v)(\trns{lunch})(y)}}{\syncat{VP}}}
 \AxiomC{\MultiLine{\texttt{bill;} \\ \sem{ \trns{b} }; \\\syncat{  NP}}}
-\BinaryInfC{\LexEnt{\pt{bill\circ did\circ \ensuremath{\greekp_3}}}{\sem{ \trns{ate}(v)(\trns{lunch})(\trns{b})}}{\syncat{S}}}
+\BinaryInfC{\LexEnt{\pt{bill\circ{} did\circ{} \ensuremath{\greekp_3}}}{\sem{ \trns{ate}(v)(\trns{lunch})(\trns{b})}}{\syncat{S}}}
 \RightLabel{\ensuremath{\vs}I\ensuremath{^3}}
-\UnaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp_3}. bill\circ did\circ \ensuremath{\greekp_3}}}{\sem{ λv. \trns{ate}(v)(\trns{lunch})(\trns{b})}}{\syncat{S\vs NP}}}
+\UnaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp_3}. bill\circ{} did\circ{} \ensuremath{\greekp_3}}}{\sem{ λv. \trns{ate}(v)(\trns{lunch})(\trns{b})}}{\syncat{S\vs NP}}}
 \DisplayProof
 \end{figure}
 
@@ -1476,7 +1476,7 @@ Bill did} then takes the following form:
 argument to the extraction operator, yields an interpretation
 identical to the unellipsed embedded question \textit{what Bill ate for
 lunch}. Note that the prosodic term derived in the last proof step,
-\pt{λ \ensuremath{\greekp_3}. bill\circ did\circ \ensuremath{\greekp_3}}, is exactly what we would have obtained via
+\pt{λ \ensuremath{\greekp_3}. bill\circ{} did\circ{} \ensuremath{\greekp_3}}, is exactly what we would have obtained via
 the earlier version of the generalized ellipsis operator; the
 associated type would however been S/NP, and therefore ineligible to
 compose with \textit{what}. Moreover, as noted above, only the
@@ -1491,13 +1491,13 @@ a proof along the lines of that began along the lines of
 \begin{figure}
 \caption{\color{red}Please provide a caption}\label{other}
 \AxiomC{\Lemma}
-\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greeks} λ\ensuremath{\greekp}. did\circ \ensuremath{\greeks}(\ensuremath{\greekp});} \\ \sem{ λf λx λy. f(x)(y)}; \\\syncat{  (VP\vs NP)\vs (VP\vs NP)}}}
+\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greeks} λ\ensuremath{\greekp}. did\circ{} \ensuremath{\greeks}(\ensuremath{\greekp});} \\ \sem{ λf λx λy. f(x)(y)}; \\\syncat{  (VP\vs NP)\vs (VP\vs NP)}}}
 \AxiomC{\MultiLine{\texttt{λ\ensuremath{\greekr} λ\ensuremath{\greekp}. \ensuremath{\greekr}(λ\ensuremath{\greekp_0}. \ensuremath{\greekp_0})(\ensuremath{\greekp});} \\ \sem{ λ\ensuremath{\mathcal{F}}. \ensuremath{\mathcal{F}}(λx. \trns{ate}(x)(\trns{lunch}))}; \\\syncat{  (VP\vs NP)\vs }\\ \hspace{2ex}\syncat{((VP\vs NP)\vs (VP\vs NP))}}}
-\BinaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp}.did\circ \ensuremath{\greekp}}}{\sem{ λx λy. \trns{ate}(x)(\trns{lunch})(y)}}{\syncat{VP\vs NP}}}
+\BinaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp}.did\circ{} \ensuremath{\greekp}}}{\sem{ λx λy. \trns{ate}(x)(\trns{lunch})(y)}}{\syncat{VP\vs NP}}}
 \AxiomC{\LexEntBroken{\pt{breakfast}}{\sem{ \trns{brkfst} }}{\syncat{NP}}}
-\BinaryInfC{\LexEnt{\pt{did\circ breakfast}}{\sem{ λy. \trns{ate}(x)(\trns{brkfst})(y)}}{\syncat{VP}}}
+\BinaryInfC{\LexEnt{\pt{did\circ{} breakfast}}{\sem{ λy. \trns{ate}(x)(\trns{brkfst})(y)}}{\syncat{VP}}}
 \AxiomC{\LexEntBroken{\pt{he}}{\sem{ 3masc }}{\syncat{S}}}
-\BinaryInfC{\LexEnt{\pt{he\circ did\circ breakfast}}{\sem{ \trns{ate}(\trns{brkfst})(3masc)}}{\syncat{S}}}
+\BinaryInfC{\LexEnt{\pt{he\circ{} did\circ{} breakfast}}{\sem{ \trns{ate}(\trns{brkfst})(3masc)}}{\syncat{S}}}
 \DisplayProof
 \end{figure}
 
@@ -1526,13 +1526,13 @@ which includes the subproof in \figref{subproof}.
 \caption{\color{red}Please provide a caption}\label{subproof}
 \AxiomC{\LexEntBroken{\pt{buy}}{\sem{ \trns{buy} }}{\syncat{VP/NP}}}
 \AxiomC{\LexEntBroken{\pt{\ensuremath{\greekp_1}}}{\sem{ x}}{\syncat{NP}}}
-\BinaryInfC{\MultiLine{\texttt{buy\circ \ensuremath{\greekp_1};} \\ \sem{ \trns{buy}(x)}; \\\syncat{  VP}}}
-\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp_1}. buy\circ \ensuremath{\greekp_1};} \\ \sem{ \mbox{\grey{\sem{ λx. \trns{buy}(x) }}} }; \\\syncat{  VP\vs NP}}}
+\BinaryInfC{\MultiLine{\texttt{buy\circ{} \ensuremath{\greekp_1};} \\ \sem{ \trns{buy}(x)}; \\\syncat{  VP}}}
+\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp_1}. buy\circ{} \ensuremath{\greekp_1};} \\ \sem{ \mbox{\grey{\sem{ λx. \trns{buy}(x) }}} }; \\\syncat{  VP\vs NP}}}
 \AxiomC{\Lemma}
-\UnaryInfC{\MultiLine{\texttt{this\circ kind\circ of\circ sports\circ car;} \\ \sem{ \iota(\trns{kind}(\trns{spcr}))}; \\\syncat{  NP}}}
-\BinaryInfC{\MultiLine{\texttt{buy\circ this\circ kind\circ of\circ sports\circ car;} \\ \sem{ \trns{buy}(\iota(\trns{kind}(\trns{spcr})))}; \\\syncat{  VP}}}
+\UnaryInfC{\MultiLine{\texttt{this\circ{} kind\circ{} of\circ{} sports\circ{} car;} \\ \sem{ \iota(\trns{kind}(\trns{spcr}))}; \\\syncat{  NP}}}
+\BinaryInfC{\MultiLine{\texttt{buy\circ{} this\circ{} kind\circ{} of\circ{} sports\circ{} car;} \\ \sem{ \trns{buy}(\iota(\trns{kind}(\trns{spcr})))}; \\\syncat{  VP}}}
 \AxiomC{\MultiLine{\texttt{would;} \\ \sem{ λP λy.\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{D}}}\, P(y)}; \\\syncat{  VP/VP}}}
-\BinaryInfC{\MultiLine{\texttt{would\circ buy\circ this\circ kind\circ of\circ sports\circ car;} \\ \sem{ λy.\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{D}}}\,\trns{buy}(\iota(\trns{kind}(\trns{spcr})))(y)}; \\\syncat{VP}}}
+\BinaryInfC{\MultiLine{\texttt{would\circ{} buy\circ{} this\circ{} kind\circ{} of\circ{} sports\circ{} car;} \\ \sem{ λy.\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{D}}}\,\trns{buy}(\iota(\trns{kind}(\trns{spcr})))(y)}; \\\syncat{VP}}}
 \DisplayProof
 \end{figure}
 
