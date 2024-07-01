@@ -1061,16 +1061,17 @@ The critical point for us is what happens at ① in
 terms superscripted as 1 -- an operation completely indifferent to
 the length of the string in which the variable \pt{ \ensuremath{\greekp_0} }
 appears. Exactly the same step would take us from the expression above
-the proof line in \REF{length} to the sign below the line:
+the proof line in \figref{length} to the sign below the line.
 
-\begin{exe}
- \ex\label{length}
+\begin{figure}
+\caption{\color{red}Please provide a caption}\label{length}
 % \oneline{%
-\AxiomC{\MultiLine{\texttt{mary\circ{} thinks\circ{} bill\circ{} remembers\circ{} ann\circ{} saying\circ{} john\circ{} lost\circ{} \ensuremath{\greekp};} \\ \sem{ \trns{think}(\trns{remember}(\trns{saying}(\trns{yest}(\trns{lost}(u))(\trns{j}))(\trns{a})))(\trns{b})))(\trns{m})}; \\\syncat{  S}}}
-\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp}. mary\circ{} thinks\circ{} bill\circ{} remembers\circ{} ann\circ{} saying\circ{} john\circ{} lost\circ{} \ensuremath{\greekp};} \\ \sem{ \trns{think}(\trns{remember}(\trns{saying}(\trns{yest}(\trns{lost}(u))(\trns{j}))(\trns{a})))(\trns{b})))(\trns{m})}; \\\syncat{  S}}}
+\AxiomC{\MultiLine{\texttt{mary\circ thinks\circ bill\circ remembers\circ ann\circ saying\circ john\circ lost\circ \ensuremath{\greekp};} \\ \sem{ \trns{think}(\trns{remember}(\trns{saying}(\trns{yest}(\trns{lost}(u))(\trns{j}))(\trns{a})))(\trns{b})))(\trns{m})}; \\\syncat{  S}}}
+\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp}. mary\circ thinks\circ bill\circ remembers\circ ann\circ saying\circ john\circ lost\circ \ensuremath{\greekp};} \\ \sem{ \trns{think}(\trns{remember}(\trns{saying}(\trns{yest}(\trns{lost}(u))(\trns{j}))(\trns{a})))(\trns{b})))(\trns{m})}; \\\syncat{  S}}}
 \DisplayProof
 % }
-\end{exe}
+\end{figure}
+
 Essentially the same proof storyline in Figures~\ref{bookProof1}--\ref{bookProof3}
 will give us \textit{book which Mary thinks Bill remembers Ann saying
 John lost}. There is no local registration of the information linking
@@ -1080,8 +1081,8 @@ phrase-structure tree that gets realized at the tail end of the
 chain. Properly speaking, there isn't even anything that can be
 properly identified as a gap ``site''. We have a prosodic component of
 the sign with no marker corresponding to some missing substring, since
-the model theory for the prosodic calculus interprets \texttt{a\circ{} b\circ{} \E{}} as
-\texttt{a\circ{} b}; nor is there any representation in the semantics or the
+the model theory for the prosodic calculus interprets \texttt{a\circ b\circ \E{}} as
+\texttt{a\circ b}; nor is there any representation in the semantics or the
 syntactic type of something we would want to call a ``gap''. In a way,
 this treatment of extraction is an echo of the view in extraction in
 the earliest phase of transformational grammar, when wh-movement
@@ -1162,12 +1163,12 @@ in \REF{ellipseOp1} works, is given in \REF{simpleVPE}.
 \AxiomC{\MultiLine{\texttt{call;} \\ \sem{ \trns{call} }; \\\syncat{  (NP\bsl{}S)/NP}}}
 \AxiomC{\MultiLine{\texttt{ann;} \\ \sem{ \trns{a} }; \\\syncat{  NP}}}
 \LeftLabel{①\ensuremath{\rightarrow}}
-\BinaryInfC{\MultiLine{\texttt{call\circ{} ann;} \\ \sem{ \trns{call}(\trns{a})}; \\\syncat{  NP\bsl{}S}}}
+\BinaryInfC{\MultiLine{\texttt{call\circ ann;} \\ \sem{ \trns{call}(\trns{a})}; \\\syncat{  NP\bsl{}S}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{should\circ{} call\circ{} ann ;} \\ \sem{ λy. \ensuremath{\square} \trns{call}(\trns{a})(y)}; \\\syncat{  NP\bsl{}S}}}
+\BinaryInfC{\MultiLine{\texttt{should\circ call\circ ann ;} \\ \sem{ λy. \ensuremath{\square} \trns{call}(\trns{a})(y)}; \\\syncat{  NP\bsl{}S}}}
 \AxiomC{\LexEnt{\pt{mary}}{\sem{ \trns{m} }}{\syncat{NP}}}
 \RightLabel{\bsl E}
-\BinaryInfC{\MultiLine{\texttt{mary\circ{} should\circ{} call\circ{} ann ;} \\ \sem{  \ensuremath{\square} \trns{call}(\trns{a})(\trns{m})}; \\\syncat{  S}}}
+\BinaryInfC{\MultiLine{\texttt{mary\circ should\circ call\circ ann ;} \\ \sem{  \ensuremath{\square} \trns{call}(\trns{a})(\trns{m})}; \\\syncat{  S}}}
 \DisplayProof
 \medskip\\
 \AxiomC{\MultiLine{\texttt{bill ;} \\ \sem{ \trns{b} }; \\\syncat{  NP}}}
@@ -1177,7 +1178,7 @@ in \REF{ellipseOp1} works, is given in \REF{simpleVPE}.
 \RightLabel{\ensuremath{\vs}E}
 \BinaryInfC{\LexEnt{\pt{should't }}{\sem{ λy. \neg \ensuremath{\square}\, \trns{call}(y)()}}{\syncat{ NP\bsl{}S}}}
 \RightLabel{\bsl E}
-\BinaryInfC{\LexEnt{\pt{bill\circ{} should't }}{\sem{  \neg \ensuremath{\square}\, \trns{call}(\trns{a})(\trns{b})}}{\syncat{S}}}
+\BinaryInfC{\LexEnt{\pt{bill\circ should't }}{\sem{  \neg \ensuremath{\square}\, \trns{call}(\trns{a})(\trns{b})}}{\syncat{S}}}
 \DisplayProof
 \end{exe}
 
