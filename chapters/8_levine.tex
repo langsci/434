@@ -354,8 +354,7 @@ slashed term with the antecedent term is necessarily a term of the
 consequent type. One can see these inference rules as inversions of
 ordinary context-free PS rules; for example, taking VP to be an
 abbreviation for \syncat{NP\bsl{}S} -- a clause modulo an NP term on its left
-edge -- we have S \ensuremath{ \rightarrow } NP \syncat{NP\bsl{}S} on the one hand and a deduction
-
+edge -- we have S \ensuremath{ \rightarrow } NP \syncat{NP\bsl{}S} on the one hand and a deduction\largerpage{}
 \begin{center}
 \AxiomC{NP}
 \AxiomC{NP$\bsl$S}
@@ -370,7 +369,7 @@ lockstep with the type composition: the prosody of directionally
 slashed types -- $\!\!\!$ \syncat{\textit{Y}/\textit{X}} and \syncat{\textit{X}\bsl{}\textit{Y}} -- reflects the
 direction of the slash: the former precedes the prosody of its type \textit{X}
 argument, the latter follows it.\footnote{I defer discussion of
-vertically slashed terms till we get to the introduction rules} The
+vertically slashed terms till we get to the introduction rules.} The
 semantics, however, does not reflect the direction of the slash: for
 all functional types, the semantic term is a function which takes the
 denotation of the syntactic argument as its own arguent.
@@ -484,7 +483,7 @@ a sentence. The steps involved in the proof have no representational
 status, any more than, given a set of premises $\Gamma$, the steps in
 the proof of \sem{ \Gamma  \ensuremath{\vdash\xspace } \phi } in some stardard logic have any
 bearing on the content of $\phi$.\footnote{For example, there are any
-number of ways to prove that \sem{  \ensuremath{\vdash\xspace } \phi\supset(\neg\phi\supset\psi) }
+number of ways to prove that \sem{\ensuremath{\vdash\xspace } \phi\supset(\neg\phi\supset\psi)}
 in classical logic, but the content of the implication is
 altogether independent of proof narrative.}
 
@@ -499,15 +498,13 @@ coordination patterns such as Right Node Raising in \REF{RNR} and
 Dependent Cluster Coordination in \REF{DCC} are pointed examples:
 
 \begin{exe}
- \ex\label{NCC}
-  \begin{xlist}
- \ex\label{RNR}
-    John bought, and Bill baked, the pizza margherita.
- \ex\label{DCC}
-    John sent that message to Bill on Thursday and Mary on
-  \end{xlist}
-  Saturday.
+\ex\label{NCC}
+\begin{xlist}
+ \ex\label{RNR} John bought, and Bill baked, the pizza margherita.
+ \ex\label{DCC} John sent that message to Bill on Thursday and Mary on Saturday.
+\end{xlist}
 \end{exe}
+
 \begin{sloppypar}
 \noindent Both of the patterns in \REF{NCC} are essentially embarrassments to
 frameworks based on phrase structure configurations, requiring either
@@ -516,8 +513,8 @@ operations, including movement and\slash or deletion (along with the purely
 stipulative constraints on the linear output of these operations
 required to get the facts right), or essentially stipulative
 constructional templates, as in later developments of HPSG (for
-detailed critques of these approaches, see \citet{levine11, kubota-levine-coord, 
-kubotalevineBook}). For proof-theoretic
+detailed critques of these approaches, see \citealt{levine11} and 
+\citealt{kubota-levine-coord, kubotalevineBook}). For proof-theoretic
 approaches, on the other hands, where valence satisfaction is driven
 by the inference rules of standard logics, the data in \REF{NCC} are
 almost trivial to obtain with the correct semantics, once we've
@@ -764,7 +761,7 @@ phenomena, one of which is considered in detail in \sectref{sec-extraction} as
 a dramatic illustration of the way effects which require recourse to
 operations on phrase structure in other approaches can be reduced to
 mappings between valence values in type-logical grammar, with no need
-to posit syntactic configuration.
+to posit syntactic configuration.\largerpage
 
 
 %\subsection{Interlude}
@@ -784,9 +781,9 @@ effects -- in particular, the interpretation of quantifier scope~-- are
 reducible to the satisfaction of argument requirements; in effect, in
 the proof-theoretic architecture of type-logical frameworks, valence
 satisfaction is the source of all observed grammatical regularities,
-as well as constructional idiosyncrasies.\footnote{For
+as well as constructional idiosyncrasies.{\interfootnotelinepenalty=10000\footnote{For
 a demonstration of how these eccentries can be elegantly accounted
-for, see \citet{kubota-levine2022a}.} In the case of scopal operators, such
+for, see \citet{kubota-levine2022a}.}} In the case of scopal operators, such
 as generalized quantifiers -- as well as symmetrical predicates such as
 \textit{same}, \textit{similar}, \textit{different}, and various other varieties, the
 relationship between semantics and syntax is immediate and
@@ -917,19 +914,12 @@ Google search results, for example.
 \begin{exe}
  \ex\label{antecDel}
   \begin{xlist}
- \ex\label{}
-    I hate feeling like everyone knows something I don't {\gp}\xspace
-    .\footnote{\url{https://twitter.com/therealkimj/status/1640857002896396288}, 2024--03--14.}
+ \ex I hate feeling like everyone knows something I don't {\gp}.\footnote{\url{https://twitter.com/therealkimj/status/1640857002896396288}, 2024--03--14.}
  \ex\label{antecDel_a}
     And perhaps they would nod with understanding at what a senior
-  once told me: ``Everyone knows something that I don't {\gp}\xspace . I keep
-  asking until I find out what that is.''\footnote{
-  \url{https://www.ciomastermind.com/blog/the-arrogance-of-the-arrived},
-  2024--03--16.}
- \ex\label{}
-    However, 4 months ago i said something which i shouldn't have.\footnote{
-    \url{http://disq.us/p/1dhjjmu}, 2024--03--16.}
-
+  once told me: ``Everyone knows something that I don't {\gp}. I keep
+  asking until I find out what that is.''\footnote{\url{https://www.ciomastermind.com/blog/the-arrogance-of-the-arrived},  2024--03--16.}
+ \ex However, 4 months ago i said something which i shouldn't have.\footnote{\url{http://disq.us/p/1dhjjmu}, 2024--03--16.}
   \end{xlist}
 \end{exe}
 Dozens of such instances of the construction can be found in Google
@@ -1132,7 +1122,7 @@ description is \ensuremath{\vs} rather than /.}
 
    -- where $P'$ is a free variable whose value is
   resolved anaphorically
- \ex\label{Acondition}
+ \ex
   Anaphora resolution condition on the VP ellipsis/pseudogapping
   operator:
   \begin{enumerate}
@@ -1151,14 +1141,11 @@ An example of simple VP ellipsis, illustrating how the ellipsis operator
 in \REF{ellipseOp1} works, is given in \REF{simpleVPE}.
 
 \begin{exe}
- \ex\label{simpleVPE}
-  \begin{xlist}
- \ex\label{simpleVPEex}
-    Mary should call Ann, but Bill shouldn't.
-  \end{xlist}
+ \ex\label{simpleVPE}    Mary should call Ann, but Bill shouldn't.
 \end{exe}
-\begin{exe}
- \ex\label{simpleVPEproof}
+
+\begin{figure}
+\caption{\color{red}Please provide a caption. Please reference this Figure somewhere in your main text.}\label{simpleVPEproof}
 \AxiomC{\MultiLine{\texttt{should ;} \\ \sem{ λQ λy. \ensuremath{\square} Q(y)}; \\\syncat{   (NP\bsl{}S)/(NP\bsl{}S)}}}
 \AxiomC{\MultiLine{\texttt{call;} \\ \sem{ \trns{call} }; \\\syncat{  (NP\bsl{}S)/NP}}}
 \AxiomC{\MultiLine{\texttt{ann;} \\ \sem{ \trns{a} }; \\\syncat{  NP}}}
@@ -1180,9 +1167,9 @@ in \REF{ellipseOp1} works, is given in \REF{simpleVPE}.
 \RightLabel{\bsl E}
 \BinaryInfC{\LexEnt{\pt{bill\circ should't }}{\sem{  \neg \ensuremath{\square}\, \trns{call}(\trns{a})(\trns{b})}}{\syncat{S}}}
 \DisplayProof
-\end{exe}
+\end{figure}
 
-\noindent At the grayed-in proof line, the free variable $P$ is instantiated as
+At the grayed-in proof line, the free variable $P$ is instantiated as
 the prominent contextually available property \sem{ \trns{call}(\trns{a}) }.
 
 More complex cases, e.g. those involving sloppy identity (\textit{John thinks
@@ -1203,12 +1190,12 @@ that every VP/VP type has a prosodically identical counterpart which
 applies to VP/NP objects and returns a VP/NP object -- i.e., maps a
 transitive verb to a transitive verb. This is nothing more than a
 conversion into type logic of one consequence of the transitivity of
-implication in standard logics, and is simply demonstrated as follows
-(where $\bigcirc$ is a variable over arbitrary operators):
+implication in standard logics, and is simply demonstrated as in \figref{GeachRule}
+(where $\bigcirc$ is a variable over arbitrary operators).
 
-\begin{exe}
- \ex\label{GeachRule}
-\textbfremoved{Geach Theorem}:\\
+\begin{figure}
+% % \textbfremoved{Geach Theorem}:\\
+\caption{\color{red}Please provide a caption}\label{GeachRule}
 \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_2}}}{\sem{ R}}{\syncat{VP/NP}}]^2\,\,}}
 \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_1}}}{\sem{ u}}{\syncat{NP}}]^1\,\,}}
 \RightLabel{\ensuremath{/}E}
@@ -1221,7 +1208,8 @@ implication in standard logics, and is simply demonstrated as follows
 \RightLabel{\ensuremath{/}I\ensuremath{^2}}
 \UnaryInfC{\grey{\LexEnt{\pt{\ptv{a}}}{\sem{ λR λu λz. \bigcirc \,R(u)(z)}}{\syncat{(VP/NP)/(VP/NP)}}}}
 \DisplayProof
-\end{exe}
+\end{figure}
+
 The point is that VP/VP \sem{  \ensuremath{\vdash\xspace } } (VP/NP)/(VP/NP), and  a completely parallel
 entailment can be proven between VP/VP and terms of type VP/NP/NP,
 VP/PP/NP, etc. In general, then, for any auxiliary, we have an entailment
@@ -1251,7 +1239,7 @@ can be stated as in \REF{generalized}:
 
    -- where $P$ is a free variable whose value is
   resolved anaphorically
- \ex\label{Acondition}
+ \ex
   Anaphora resolution condition on the VP ellipsis/pseudogapping
   operator:
   \begin{enumerate}
@@ -1354,24 +1342,22 @@ on such an approach the well-formedness of e.g.,
 \begin{exe}
  \ex\label{internal}
   \begin{xlist}
- \ex\label{}
-    Do you think the British know something (about this) that we don't
+ \ex Do you think the British know something (about this) that we don't
 (at this point)? (Penn Treebank/Wall Street Journal corpus, cited in
 \citet{bos-spenader2011}, slightly modified)
- \ex\label{}
-    Kollberg suspects Petrus, who Beck does {\gp}\xspace as well \citep[666]{kennedy1995}
+ \ex Kollberg suspects Petrus, who Beck does {\gp}\xspace as well \citep[666]{kennedy1995}
   \end{xlist}
 \end{exe}
 \REF{generalized} will not do the trick here, since it only gives us
 the possibility of elements missing on the right, not medially. What's
 needed, clearly, is some way to extend the generalized ellipsis rule
 still further. Fortunately, just as we were able to show that terms
-typed VP/VP can, by the Geach theorem proof given in \REF{GeachRule}, be
+typed VP/VP can, by the Geach theorem proof given in \figref{GeachRule}, be
 extended to the type (VP/NP)/(VP/NP), we can prove that for any term
 inhabiting VP/VP, there is a corresponding term with functional
 prosody having the schematic form \syncat{(VP\vs XP)\vs (VP\vs XP)} for any type XP.
 The structure of the proof is essentially the same as that of
-\REF{GeachRule}, but involving higher order terms.\footnote{In
+\figref{GeachRule}, but involving higher order terms.\footnote{In
 \REF{vertical-proof}, I gloss over certain important technical details in
 order to lay out most clearly the proof narrative.}
 
@@ -1627,8 +1613,6 @@ if we call this set \sem{ C/B } then
    \Lleftarrow\!\Rrightarrow (B \vdash A\bsl C)$
 \end{exe}
 
-%\vspace{10mm}
-
 \noindent
 \REF{typeResiduation} is nothing more than the residuated implication
 relationship of standard logic displayed in residuation.  But as
@@ -1696,7 +1680,7 @@ of developments in logic and mathematics that can be traced, to a large
 extent, back to Peirce himself.
 
 
-\section*{Acknowledgements}
+\section*{Acknowledgments}
 The analyses and results
 presented in this chapter represent joint work with Yusuke Kubota, with whom I
 have collaborated on research on the theory and empirical application of
@@ -1708,6 +1692,3 @@ the presentation that I needed to compile out a bit more clearly.
 {\sloppy\printbibliography[heading=subbibliography,notkeyword=this]}
 
 \end{document}
-
-
-%      <!-- Local IspellDict: en_US-w_accents -->

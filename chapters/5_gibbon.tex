@@ -108,20 +108,20 @@ Speech rhythms in the Ega parable distinguish different kinds of prosodic cohesi
 
 \subsection{Cyclic models for multiple rhythms}
 
-The aim of the present section is to present a viable \textit{dynamic functional model} for the static participant model of [\,[\,[\textit{narrator-caller}, \textit{responder}\,], \textit{audience-choir}\,], \textit{observer-fieldworker}\,], in the sense that transitions between states in the dialogue are modelled, and map to long-term rhythms in the interlocution.
+The aim of the present section is to present a viable \textit{dynamic functional model} for the static participant model of [[[\textit{narrator-caller}, \textit{responder}], \textit{audience-choir}], \textit{observer-fieldworker}], in the sense that transitions between states in the dialogue are modelled, and map to long-term rhythms in the interlocution.
 
-In structural terms, a rhythm is an iterative sequence of beats or waves which can be modelled by an iterative finite machine (finite state automaton, FSA), with multiple cycles, and which functions as a system of coupled oscillators \citep{cumminsport1998, odellnieminen1999, barbosa2002}. A little justification for using cyclical linear models is in order, since more powerful but less realistic models tend to be preferred in linguistics. However, many grammatical word and phrase structures are right-branching or left-branching, indicating that in computational formal grammar terms a fully centre-recursive Chomsky Type 2 (context-free, phrase structure) grammar is not necessary, and that a Type 3 (linear, regular) grammar is sufficient.
+In structural terms, a rhythm is an iterative sequence of beats or waves which can be modelled by an iterative finite machine (finite state automaton, FSA), with multiple cycles, and which functions as a system of coupled oscillators \citep{cumminsport1998, odellnieminen1999, barbosa2002}. A little justification for using cyclical linear models is in order, since more powerful but less realistic models tend to be preferred in linguistics. However, many grammatical word and phrase structures are right-branching or left-branching, indicating that in computational formal grammar terms a fully centre-recursive Chomsky Type~2 (context-free, phrase structure) grammar is not necessary, and that a Type~3 (linear, regular) grammar is sufficient.
 
-Type 3 recursion can be efficiently implemented as iteration with linear time and finite memory space process; this is not the case with general Type 2 languages. This has been clearly demonstrated in the “recursion debate” \citep{karlsson2010}. General recursion as a property of thought rather than language is proposed by \citet{everett2016}; other scholars (overview in \citew{gibbongriffiths2017}) suggest that communication with the more general recursion of thought was made possible partly by ritual rehearsal and (as in mathematics) by the invention of writing, which allows for extended processing time and permits the use of additional memory space in external media.
+Type 3 recursion can be efficiently implemented as iteration with linear time and finite memory space process; this is not the case with general Type~2 languages. This has been clearly demonstrated in the “recursion debate” \citep{karlsson2010}. General recursion as a property of thought rather than language is proposed by \citet{everett2016}; other scholars (overview in \citealt{gibbongriffiths2017}) suggest that communication with the more general recursion of thought was made possible partly by ritual rehearsal and (as in mathematics) by the invention of writing, which allows for extended processing time and permits the use of additional memory space in external media.
 
-Another key difference is that for any Type 3 grammar there is an equivalent FSA (or FS transducer, FST, if tree output is also desired), with realistic processing properties of finite memory and linear time as a function of the size of the input. Cyclical FSAs are ubiquitous in many areas of computational linguistics, especially in morphology, phonology and prosody. It is assumed here, until the contrary is demonstrated, that FSAs and FSTs are the formal devices needed for the description of rhythms.
+Another key difference is that for any Type~3 grammar there is an equivalent FSA (or FS transducer, FST, if tree output is also desired), with realistic processing properties of finite memory and linear time as a function of the size of the input. Cyclical FSAs are ubiquitous in many areas of computational linguistics, especially in morphology, phonology and prosody. It is assumed here, until the contrary is demonstrated, that FSAs and FSTs are the formal devices needed for the description of rhythms.
  
 \begin{figure}
 \includegraphics[width=0.8\textwidth]{gibbon_figure03.pdf}
 \caption{\label{fig:fig03}Sketch of discourse grammar for interactive orature as an iterative transition network.}
 \end{figure}
 
-The cyclical linear grammar approach suits the Ega parable very well. In \figref{fig:fig03} the iterative dialogue flow is represented in transition network format, showing inclusive cyclic patterning, i.e. a system with one cycle fully enclosed inside another (there are many other types but they do not apply in this context). The sequence of iterations can be formalised by means of a weakly equivalent right branching (or left branching) linear grammar.\footnote{Right-branching Type 3 grammar (‘|’ for options):
+The cyclical linear grammar approach suits the Ega parable very well. In \figref{fig:fig03} the iterative dialogue flow is represented in transition network format, showing inclusive cyclic patterning, i.e. a system with one cycle fully enclosed inside another (there are many other types but they do not apply in this context). The sequence of iterations can be formalised by means of a weakly equivalent right branching (or left branching) linear grammar.\footnote{Right-branching Type~3 grammar (‘|’ for options):
 $\newline
 \hspace*{30pt}S0 → narrator ~ S1 \newline
 \hspace*{30pt}S1 → pause ~ S3 \newline
@@ -210,24 +210,26 @@ FM and AM in speech have specific properties and also different roles in communi
 \subsection{Rhythm Formant Theory (RFT): Spectral patterning}
 
 \begin{figure}
-\includegraphics[trim={1.5cm 1.5cm 0 0}, clip, width=\textwidth]{gibbon_figure05.png}
+\includegraphics[width=\textwidth]{gibbon_figure05.png}
 \caption{\label{fig:fig05}Modulated waveform (upper panel), demodulated LF AM information signal (centre panel), demodulated LF FM information signal (lower panel).}
 \end{figure}
 
 \begin{figure}
-%\includegraphics[trim={1.5cm 1.5cm 0 0}, clip, width=0.95\textwidth]{GGMfirstnarration.png}
-%\includegraphics[trim={1.5cm 1.5cm 0 0}, clip, width=0.95\textwidth]{GGMfirstcall.png}
-{\footnotesize A. \textit{narrator-responder} exchanges following first \textit{caller-choir} exchanges (23\,s FFT window)}
-
-\includegraphics[width=\textwidth]{gibbon_figure06A.png}
-
-{\footnotesize B. First \textit{caller-choir} exchanges (23\,s FFT window)}
-
-\includegraphics[width=\textwidth]{gibbon_figure06B.png}
-
-{\footnotesize C. Complete parable (300\,s FFT window)}
-
-\includegraphics[width=\textwidth]{gibbon_figure06C.png}
+    \begin{subfigure}{\textwidth}
+    \includegraphics[width=\textwidth]{gibbon_figure06A.png}
+    \caption{\textit{narrator-responder} exchanges following first \textit{caller-choir} exchanges (23\,s FFT window)}
+    \label{fig:fig06a}
+    \end{subfigure}\medskip\\
+    \begin{subfigure}{\textwidth}
+    \includegraphics[width=\textwidth]{gibbon_figure06B.png}
+    \caption{First \textit{caller-choir} exchanges (23\,s FFT window)}
+    \label{fig:fig06b}
+    \end{subfigure}\medskip\\
+    \begin{subfigure}{\textwidth}
+    \includegraphics[width=\textwidth]{gibbon_figure06C.png}
+    \caption{Complete parable (300\,s FFT window)}
+    \label{fig:fig06c}
+    \end{subfigure}
 \caption{\label{fig:fig06}RFA: upper panels, waveform and amplitude envelope; lower panels, long-term spectrum of the selected event with conspicuous rhythm formants and smaller higher frequency formants.}
 \end{figure}
 
@@ -258,13 +260,13 @@ Taking up the concepts introduced in the discussion of discourse functionality i
 The information provided by the long-term LF spectrum is solely in the frequency domain, a generalisation over the whole temporal extent of the story-telling. The spectrum provides no information about possible variation of rhythm formants in time. For additional temporal information, a long-term LF spectrogram containing a sequence of many shorter spectral slices is needed, in which all of the \textit{narrator-responder} and \textit{caller-choir} exchanges can be placed. \figref{fig:fig07} shows an annotated segment, which includes 8\,s of following context for the \textit{caller-choir} exchange, required by the 8\,s long FFT window required by the low frequency analysis, and the low frequency spectrogram for the segment.
 
 \begin{figure}
-\includegraphics[trim={1.5cm 1cm 0 0}, clip, width=0.95\textwidth]{gibbon_figure07.png}
+\includegraphics[width=\textwidth]{gibbon_figure07.png}
 \caption{\label{fig:fig07}Low frequency spectrogram of the first \textit{caller-choir} sequence of the Ega parable (empty trailing context due to stride length; slight misalignment due to stride rounding).}
 \end{figure}
 
 The sampling frequency of 16\,kHz and the spectrogram spectral slice window of 8\,s provide adequate frequency resolution for the expected frequencies at around 0.2\,Hz (period 5\,s) and 0.4\,Hz (period 2.5\,s). However, the 8\,s FFT window comes at a cost, namely very low temporal resolution. This low temporal resolution is compensated by extremely short window strides of only 5\,ms. The long FFT window requires the inclusion of at least 8\,s of following context in order to capture the whole final signal segment, leaving a blank space in the spectrogram after the last full 8\,s window, corresponding to the duration of the FFT window. The final spectral slice appears at the beginning of the blank interval. However, the massively overlapping stride interval of 5\,ms, which is extremely short in relation to the duration of the 8\,s spectral slice window, recoups the lost time resolution. The very slight misalignment of the spectrogram bars and the waveform bars in the visualisation is due to uncorrected decimal rounding of the stride duration, but is not important for the present purpose.
 
-The vertical boundary bars in \figref{fig:fig07} mark the boundaries of exchange types, and are derived from the annotation shown in \figref{fig:fig04}. In the spectrogram the two expected rhythm formants at around 0.2\,Hz and 0.5\,Hz are clearly visible in the central section as two distinct narrow bandwidth horizontal bars, which merge into a broader bandwidth horizontal bar in the final section, and correspond to the rhythm formants shown in \figref{fig:fig06}, panel B. The \textit{caller} turns are shorter than the \textit{choir} turns and the first and fourth \textit{caller} turns do not share this degree of rhythmicity or resonance with the choir. The third \textit{choir} turn is also somewhat irregular.
+The vertical boundary bars in \figref{fig:fig07} mark the boundaries of exchange types, and are derived from the annotation shown in \figref{fig:fig04}. In the spectrogram the two expected rhythm formants at around 0.2\,Hz and 0.5\,Hz are clearly visible in the central section as two distinct narrow bandwidth horizontal bars, which merge into a broader bandwidth horizontal bar in the final section, and correspond to the rhythm formants shown in \figref{fig:fig06b}. The \textit{caller} turns are shorter than the \textit{choir} turns and the first and fourth \textit{caller} turns do not share this degree of rhythmicity or resonance with the choir. The third \textit{choir} turn is also somewhat irregular.
 
 The positions of the two \textit{caller-choir} rhythm formants in the timeline are very clear, in contrast to the \textit{narrator-responder} formant. The two rhythm formants are in a quasi-harmonic octave relationship to each other, one being twice the frequency of the other, due to the binary structure of the \textit{caller-choir} grouping. The quasi-harmonic two-formant pattern can be interpreted as a linearly organised prosodic hierarchy, represented by cycles in the oscillator automaton in \figref{fig:fig03}, along the lines of coupled oscillator theory.
 
@@ -290,11 +292,11 @@ Episodes	&	\_	&	297.499	&	300.434	&	2.935\\
 \end{table}
 
 \begin{figure}
-\includegraphics[trim={1.5cm 1cm 0 0}, clip, width=0.95\textwidth]{gibbon_figure08.png}
-\caption{\label{fig:fig08}Long-term LF spectrogram of the entire Ega parable; window size 8 s, strides 0.75\,s, with episode (narrator and chant turn) boundaries.}
+\includegraphics[width=\textwidth]{gibbon_figure08.png}
+\caption{\label{fig:fig08}Long-term LF spectrogram of the entire Ega parable; window size 8\,s, strides 0.75\,s, with episode (narrator and chant turn) boundaries.}
 \end{figure}
 
-In summary, the expected dual rhythm formant bars for the three \textit{caller-choir} exchanges are present, at about 30\,s, 180\,s and 220\,s, and provide further informal support for the hypotheses H2, H3, H4 and H5. The intervening \textit{narrator-responder} alternations are complementary to the \textit{caller-choir} cycles, and can be seen to have their own entirely different shorter-term timing properties. It is beyond the scope of the present study to investigate other details. It is sufficient for the present study to point out that there are in fact clear spectral differences in segments of the discourse, that they evidently relate to different kinds of turn in the interaction, and that pessimism about identifying rhythm in the physical signal, at least in its discourse functions, is not justified.
+In summary,\largerpage{} the expected dual rhythm formant bars for the three \textit{caller-choir} exchanges are present, at about 30\,s, 180\,s and 220\,s, and provide further informal support for the hypotheses H2, H3, H4 and H5. The intervening \textit{narrator-responder} alternations are complementary to the \textit{caller-choir} cycles, and can be seen to have their own entirely different shorter-term timing properties. It is beyond the scope of the present study to investigate other details. It is sufficient for the present study to point out that there are in fact clear spectral differences in segments of the discourse, that they evidently relate to different kinds of turn in the interaction, and that pessimism about identifying rhythm in the physical signal, at least in its discourse functions, is not justified.
 
 \section{Summary and conclusion}\label{sec:gibbon:conclusion}
 \begin{sloppypar}
