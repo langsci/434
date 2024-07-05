@@ -20,7 +20,7 @@
   in which valence is interpreted as implication, finds its formal realization in a species of
   categorial grammar. I further show the power of this conception in capturing a complex interaction
   of filler-gap connectivity with ellipsis, which has been claimed to be one of the strongest pieces
-  of evidence for covert structure analyses treatment of ellipsis patterns. The type-logical
+  of evidence for covert structure analyses of ellipsis patterns. The type-logical
   treatment of this supposed pattern of extraction from ellipsis sites undercuts such claims, and
   reinforces Joachim Lambek’s invocation of Peirce as perhaps the earliest intellectual ancestor of
   modern type-logical approaches to natural language architecture.}
@@ -38,7 +38,7 @@ The work of Charles Sanders Peirce -- a long-time research focus of Dan
 Everett, whom this festschrift honors -- spans a range of interests in,
 and major contributions to, a range of mathematical and scientific
 domains that may well be unique in the history of human
-accomplishent. Peirce's work is widely recognized as seminal in
+accomplishment. Peirce's work is widely recognized as seminal in
 mathematics, logic, the philosophy of knowledge, chemistry, astronomy
 and many other fields, but it is not generally recognized that he was
 the source of an analytic concept, \emph{valence}, which has become
@@ -113,7 +113,7 @@ combinatorial steps that had to apply to derive that sentence.  But
 there is a alternative approach available, one in which lexical items
 are regarded as inhabitants of different \textsc{types}, representing what
 is in effect the combinatorial ``destiny'' of the words inhabiting that
-type, and in which the mode of synactic composition and the mode of
+type, and in which the mode of syntactic composition and the mode of
 semantic composition are at a more abstract level the same
 operation. Such a theoretical architecture represents, in my view, one
 possible way in which contemporary formal linguistics reflects a
@@ -414,7 +414,7 @@ restriction of the event instantiating that property.
 
 
 \begin{sidewaysfigure}
- \caption{\color{red}Please provide a caption.}\label{sentProof}
+ \caption{Proof for \textit{John sent the documents to the committee over the weekend}.}\label{sentProof}
 \oneline{%
 \AxiomC{\MultiLine{\texttt{sent;} \\ \sem{ \trns{send} }; \\\syncat{  VP/PP\fb{to}/NP}}}
 \AxiomC{\MultiLine{\texttt{the;} \\ \sem{ \iota}; \\\syncat{  NP/N}}}
@@ -481,7 +481,7 @@ which signifies a proposition
 linguistic expression which has those prosodic and semantic values is
 a sentence. The steps involved in the proof have no representational
 status, any more than, given a set of premises $\Gamma$, the steps in
-the proof of \sem{ \Gamma  \ensuremath{\vdash\xspace } \phi } in some stardard logic have any
+the proof of \sem{ \Gamma  \ensuremath{\vdash\xspace } \phi } in some standard logic have any
 bearing on the content of $\phi$.\footnote{For example, there are any
 number of ways to prove that \sem{\ensuremath{\vdash\xspace } \phi\supset(\neg\phi\supset\psi)}
 in classical logic, but the content of the implication is
@@ -513,7 +513,7 @@ operations, including movement and\slash or deletion (along with the purely
 stipulative constraints on the linear output of these operations
 required to get the facts right), or essentially stipulative
 constructional templates, as in later developments of HPSG (for
-detailed critques of these approaches, see \citealt{levine11} and 
+detailed critiques of these approaches, see \citealt{levine11} and 
 \citealt{kubota-levine-coord, kubotalevineBook}). For proof-theoretic
 approaches, on the other hands, where valence satisfaction is driven
 by the inference rules of standard logics, the data in \REF{NCC} are
@@ -528,14 +528,14 @@ application of the / Elimination rule:
 \ex\label{rnrSubproof}
 \AxiomC{\LexEnt{\pt{bought}}{\sem{ \trns{buy} }}{\syncat{VP/NP}}}
 \AxiomC{\LexEnt{\pt{φ}}{\sem{ x}}{\syncat{NP}}}
-\BinaryInfC{\LexEnt{\pt{bought \circ{} p}}{\sem{ \trns{buy}(x)}}{\syncat{VP}}}
+\BinaryInfC{\LexEnt{\pt{bought \circ{} φ}}{\sem{ \trns{buy}(x)}}{\syncat{VP}}}
 \AxiomC{\LexEnt{\pt{john}}{\sem{ \trns{j} }}{\syncat{NP}}}
 \BinaryInfC{\LexEnt{\pt{john \circ{} bought \circ{} p}}{\sem{ \trns{buy}(x)(\trns{j})}}{\syncat{S}}}
 \UnaryInfC{\LexEnt{\pt{john \circ{} bought}}{\sem{ λx. \trns{buy}(x)(\trns{j})}}{\syncat{S/NP}}}
 \DisplayProof
 \end{exe}
 The / Elimination rule allows us to obtain what in standard phrase
-structure appoaches would be characterized as a partial constituent
+structure approaches would be characterized as a partial constituent
 (although, in the framework adopted here, it is no more
 ``partial'' than VPs, i.e., signs inhabiting the type \syncat{NP\bsl{}S}). A
 completely parallel proof will derive the sign in \REF{baked}:
@@ -579,7 +579,7 @@ of a variable, with all other components of the S realized as
 variables, and then eliminate the variable terms by successive
 applications of the relevant introduction rules. The result is that
 the apparent nonconstituent prosodic elements are assigned a type,
-with a corresponding semantics corresponding to the applicaton of
+with a corresponding semantics corresponding to the application of
 abstraction operators at each elimination step. They are thus, in our
 terms, full constituents, now with the status of functional terms, and
 can then be conjoined. The resulting conjunction, possibly with a
@@ -614,7 +614,7 @@ all the other arguments, and then abstracting on that
 variable.
 
 \begin{figure}
-\caption{\color{red}Please provide a caption}\label{cleopatra}
+\caption{Variable introduction}\label{cleopatra}
 \AxiomC{\LexEnt{\pt{gave}}{\sem{\trns{give}}}{\syncat{VP/PP\fb{to}/NP}}}
 \AxiomC{\LexEnt{\pt{φ}}{\sem{x}}{\syncat{NP}}}
 \BinaryInfC{\LexEnt{\pt{gave \circ{} \ensuremath{\greekp}}}{\sem{ \trns{give}(x)}}{\syncat{VP/PP\fb{to}}}}
@@ -701,7 +701,7 @@ the model, returns a value of 0 or 1. But in that case, the pronunciation
 \pt{someone} cannot itself be the prosody of \textit{someone}, since in that
 case it would be an argument of the prosody in \REF{gaveTerm} despite
 \textit{someone}'s semantics taking the latter's
-interpretation as its argument. Prosody and semantics would thuis be at
+interpretation as its argument. Prosody and semantics would thus be at
 irreconcilable cross-purposes.
 
 Oehrle's ingenious solution to this seeming contradiction takes the
@@ -719,7 +719,7 @@ pronunciation of \REF{someone}. The lexical entry for \textit{someone} is then
 and we have the simple proof in \figref{someoneProof}.
 
 \begin{figure}
-\caption{\color{red}Please provide a caption}
+\caption{Proof for \textit{John gave someone that book}.}
 \label{someoneProof}
 \AxiomC{\Lemma}
 \UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp}. john \circ{} gave \circ{} \ensuremath{\greekp} \circ{} that \circ{} book;} \\ \sem{ λx. \trns{gave}(x)(\iota(\trns{book}))}; \syncat{ S\vs NP}}}
@@ -747,9 +747,9 @@ rules in \REF{rules} (see \citealt[Section~2.3]{kubotalevineBook} for
 details).
 
 Oehrle's solution to the parallelism of NP and quantifed expression
-distibutions plays on the independent but linked relationship of
+distributions plays on the independent but linked relationship of
 prosody and semantics in type-logical grammar -- a relationship made
-possible by the \ensuremath{\vs} connnective. Quantified expressions parallel NPs
+possible by the \ensuremath{\vs} connective. Quantified expressions parallel NPs
 precisely because they are in a sense parasitic on NP variables: they
 only appear in parts of the string where such variables can appear,
 undergo abstraction and ultimately replacement by the string element
@@ -782,7 +782,7 @@ reducible to the satisfaction of argument requirements; in effect, in
 the proof-theoretic architecture of type-logical frameworks, valence
 satisfaction is the source of all observed grammatical regularities,
 as well as constructional idiosyncrasies.{\interfootnotelinepenalty=10000\footnote{For
-a demonstration of how these eccentries can be elegantly accounted
+a demonstration of how these eccentricities can be elegantly accounted
 for, see \citet{kubota-levine2022a}.}} In the case of scopal operators, such
 as generalized quantifiers -- as well as symmetrical predicates such as
 \textit{same}, \textit{similar}, \textit{different}, and various other varieties, the
@@ -874,7 +874,7 @@ the phenomena in  ellipsis and corresponding non-ellipsed example
 which evoke parallel judgments of acceptability -- e.g., island effects,
 restriction on anaphora, etc. -- are themselves syntactic in
 nature. Building this assumption into any argument that parallel
-judgments of ellpsis and corresponding non-ellipsed data reflects the
+judgments of ellipsis and corresponding non-ellipsed data reflects the
 need to posit covert phrase structure which is deleted in the course
 of derivations thus appears to be a textbook instance of begging the question.
 \end{sloppypar}
@@ -999,7 +999,7 @@ with the subproof in \figref{bookProof1}.
 
 
 \begin{figure}
-\caption{\color{red}Please provide a caption}
+\caption{Relative clause subproof 1}
 \label{bookProof1}
 \AxiomC{\LexEntBroken{\pt{lost}}{\sem{ λx λy \trns{lose}(x)(y)}}{\syncat{(NP\bsl{}S)/NP}}}
 \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_0}}}{\sem{ u}}{\syncat{NP}}]^1\,\,}}
@@ -1019,7 +1019,7 @@ zero-length string into the position occupied by \pt{\ensuremath{\greekp_0}} in 
 proof line in \figref{bookProof1}, giving us \textit{which John lost yesterday}.
 
 \begin{figure}
-\caption{\color{red}Please provide a caption}\label{bookProof2}
+\caption{Relative clause subproof 2}\label{bookProof2}
 \AxiomC{\MultiLine{\texttt{λ\ensuremath{\greeks}. which \circ\ \ensuremath{\greeks}(\E);} \\ \sem{ λP λQ λw. P(w) \ensuremath{ \wedge\xspace } Q(w)}; \\\syncat{  (N\bsl{}N)\vs (S\vs NP)}}}
 \AxiomC{\MultiLine{\texttt{λ\ensuremath{\greekp_0}. john \circ{} lost\ \circ\ \ensuremath{\greekp_0} \circ\ yesterday;} \\ \sem{ λu.  \trns{yst}(\trns{lose}(u))(\trns{j})}; \\\syncat{  S\vs NP}}}
 \BinaryInfC{\MultiLine{\texttt{λ\ensuremath{\greeks} [which \circ\ \ensuremath{\greeks}(\E)](λ\ensuremath{\greekp_0}. john \circ\ lost \circ\ \ensuremath{\greekp_0} \ \circ\ yesterday);} \\ \sem{ λP [ λQ λx. P(w) \ensuremath{ \wedge\xspace } Q(w)](λu.  \trns{yst}(\trns{lose}(u))(\trns{j}))}; \\\syncat{  N\bsl{}N}}}
@@ -1034,7 +1034,7 @@ The final part of the proof supplies an N argument to the functional
 term in the last proof line in \figref{bookProof2}.
 
 \begin{figure}
-\caption{\color{red}Please provide a caption}
+\caption{Relative clause subproof 3}
 \label{bookProof3}
 \AxiomC{\LexEnt{\pt{book}}{\sem{ \trns{book} }}{\syncat{N}}}
 \AxiomC{\LexEntBroken{\pt{which \circ{} john \circ{} lost \circ{} \E \circ{} yesterday}}{\sem{ λQ [ λw.  \trns{yst}(\trns{lose}(w))(\trns{j}) \ensuremath{ \wedge\xspace } Q(w)]}}{\syncat{N\bsl{}N}}}
@@ -1054,7 +1054,7 @@ appears. Exactly the same step would take us from the expression above
 the proof line in \figref{length} to the sign below the line.
 
 \begin{figure}
-\caption{\color{red}Please provide a caption}\label{length}
+\caption{ Long-distance relative clause subproof}\label{length}
 % \oneline{%
 \AxiomC{\MultiLine{\texttt{mary\circ thinks\circ bill\circ remembers\circ ann\circ saying\circ john\circ lost\circ \ensuremath{\greekp};} \\ \sem{ \trns{think}(\trns{remember}(\trns{saying}(\trns{yest}(\trns{lost}(u))(\trns{j}))(\trns{a})))(\trns{b})))(\trns{m})}; \\\syncat{  S}}}
 \UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp}. mary\circ thinks\circ bill\circ remembers\circ ann\circ saying\circ john\circ lost\circ \ensuremath{\greekp};} \\ \sem{ \trns{think}(\trns{remember}(\trns{saying}(\trns{yest}(\trns{lost}(u))(\trns{j}))(\trns{a})))(\trns{b})))(\trns{m})}; \\\syncat{  S}}}
@@ -1145,31 +1145,31 @@ in \REF{ellipseOp1} works, is given in \REF{simpleVPE}.
 \end{exe}
 
 \begin{figure}
-\caption{\color{red}Please provide a caption. Please reference this Figure somewhere in your main text.}\label{simpleVPEproof}
-\AxiomC{\MultiLine{\texttt{should ;} \\ \sem{ λQ λy. \ensuremath{\square} Q(y)}; \\\syncat{   (NP\bsl{}S)/(NP\bsl{}S)}}}
+\caption{VP ellipsis proof}\label{simpleVPEproof}
+\AxiomC{\MultiLine{\texttt{should ;} \\ \sem{ λQ λy. \ensuremath{\square}\, Q(y)}; \\\syncat{   (NP\bsl{}S)/(NP\bsl{}S)}}}
 \AxiomC{\MultiLine{\texttt{call;} \\ \sem{ \trns{call} }; \\\syncat{  (NP\bsl{}S)/NP}}}
 \AxiomC{\MultiLine{\texttt{ann;} \\ \sem{ \trns{a} }; \\\syncat{  NP}}}
 \LeftLabel{①\ensuremath{\rightarrow}}
 \BinaryInfC{\MultiLine{\texttt{call\circ ann;} \\ \sem{ \trns{call}(\trns{a})}; \\\syncat{  NP\bsl{}S}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{should\circ call\circ ann ;} \\ \sem{ λy. \ensuremath{\square} \trns{call}(\trns{a})(y)}; \\\syncat{  NP\bsl{}S}}}
+\BinaryInfC{\MultiLine{\texttt{should\circ call\circ ann ;} \\ \sem{ λy. \ensuremath{\square}\, \trns{call}(\trns{a})(y)}; \\\syncat{  NP\bsl{}S}}}
 \AxiomC{\LexEnt{\pt{mary}}{\sem{ \trns{m} }}{\syncat{NP}}}
 \RightLabel{\bsl E}
-\BinaryInfC{\MultiLine{\texttt{mary\circ should\circ call\circ ann ;} \\ \sem{  \ensuremath{\square} \trns{call}(\trns{a})(\trns{m})}; \\\syncat{  S}}}
+\BinaryInfC{\MultiLine{\texttt{mary\circ should\circ call\circ ann ;} \\ \sem{  \ensuremath{\square}\, \trns{call}(\trns{a})(\trns{m})}; \\\syncat{  S}}}
 \DisplayProof
 \medskip\\
 \AxiomC{\MultiLine{\texttt{bill ;} \\ \sem{ \trns{b} }; \\\syncat{  NP}}}
 \RightLabel{per ①}
 \AxiomC{\grey{\MultiLine{\texttt{λ\ensuremath{\greekp}. \ensuremath{\greekp} ;} \\ \sem{ λ\ensuremath{\mathcal{F}}. \ensuremath{\mathcal{F}}(\trns{call}(\trns{a}))}; \\\syncat{  (NP\bsl{}S)\vs (NP\bsl{}S/NP\bsl{}S)}}}}
-\AxiomC{\MultiLine{\texttt{ should't ;} \\ \sem{ λP λy. \neg \ensuremath{\square}\, P(y)}; \\\syncat{  (NP\bsl{}S)/(NP\bsl{}S)}}}
+\AxiomC{\MultiLine{\texttt{ shouldn't ;} \\ \sem{ λP λy. \neg\, \ensuremath{\square}\, P(y)}; \\\syncat{  (NP\bsl{}S)/(NP\bsl{}S)}}}
 \RightLabel{\ensuremath{\vs}E}
-\BinaryInfC{\LexEnt{\pt{should't }}{\sem{ λy. \neg \ensuremath{\square}\, \trns{call}(y)()}}{\syncat{ NP\bsl{}S}}}
+\BinaryInfC{\LexEnt{\pt{shouldn't }}{\sem{ λy. \neg\, \ensuremath{\square}\, \trns{call}(y)(b)}}{\syncat{ NP\bsl{}S}}}
 \RightLabel{\bsl E}
-\BinaryInfC{\LexEnt{\pt{bill\circ should't }}{\sem{  \neg \ensuremath{\square}\, \trns{call}(\trns{a})(\trns{b})}}{\syncat{S}}}
+\BinaryInfC{\LexEnt{\pt{bill\circ shouldn,'t }}{\sem{  \neg\, \ensuremath{\square}\, \trns{call}\,(\trns{a})(\trns{b})}}{\syncat{S}}}
 \DisplayProof
 \end{figure}
 
-At the grayed-in proof line, the free variable $P$ is instantiated as
+At the grayed-in proof line in Figure 8, the free variable $P$ is instantiated as
 the prominent contextually available property \sem{ \trns{call}(\trns{a}) }.
 
 More complex cases, e.g. those involving sloppy identity (\textit{John thinks
@@ -1195,7 +1195,7 @@ implication in standard logics, and is simply demonstrated as in \figref{GeachRu
 
 \begin{figure}
 % % \textbfremoved{Geach Theorem}:\\
-\caption{\color{red}Please provide a caption}\label{GeachRule}
+\caption{Type-logical Geach theorem proof}\label{GeachRule}
 \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_2}}}{\sem{ R}}{\syncat{VP/NP}}]^2\,\,}}
 \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_1}}}{\sem{ u}}{\syncat{NP}}]^1\,\,}}
 \RightLabel{\ensuremath{/}E}
@@ -1257,7 +1257,7 @@ can be stated as in \REF{generalized}:
 We can now derive \figref{conjPseudo-b} directly.
 
 \begin{figure}
-\caption{\color{red}Please provide a caption}\label{conjPseudo-b}
+\caption{Pseudogapping proof}\label{conjPseudo-b}
 \AxiomC{\MultiLine{\texttt{will;} \\ \sem{ λP λy.\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}}\, P(y)}; \\\syncat{  VP/VP}}}
 \AxiomC{\grey{\MultiLine{\texttt{read;} \\ \sem{ \trns{read} }; \\\syncat{  VP/NP}}}}
 \AxiomC{  essays}
@@ -1270,18 +1270,18 @@ We can now derive \figref{conjPseudo-b} directly.
 \BinaryInfC{\MultiLine{\texttt{john\circ{} will\circ{} read\circ{} essays;} \\ \sem{ \textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}}\, \trns{read}(\trns{essays})(\trns{j})}; \\\syncat{  S}}}
 \DisplayProof
 \medskip\\
-\AxiomC{\LexEntBroken{\pt{won't}}{\sem{ λQ [L u λv.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} Q(u)(v)](P')}}{\syncat{VP/NP}}}
+\AxiomC{\LexEntBroken{\pt{won't}}{\sem{ λQ [λu λv.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}}\, Q(u)(v)](P')}}{\syncat{VP/NP}}}
 \dottedLine
-\UnaryInfC{\LexEntBroken{\pt{won't}}{\sem{ λu λv.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} P'(u)(v)}}{\syncat{VP/NP}}}
+\UnaryInfC{\LexEntBroken{\pt{won't}}{\sem{ λu λv.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}}\, P'(u)(v)}}{\syncat{VP/NP}}}
 \dottedLine
 \RightLabel{\Shortstack{anaphoric retrieval}}
-\UnaryInfC{\LexEntBroken{\pt{won't}}{\sem{ λu λv.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} \trns{read}(u)(v)}}{\syncat{VP/NP}}}
+\UnaryInfC{\LexEntBroken{\pt{won't}}{\sem{ λu λv.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}}\, \trns{read}(u)(v)}}{\syncat{VP/NP}}}
 \AxiomC{\MultiLine{\texttt{novels;} \\ \sem{ \trns{novels} }; \\\syncat{  NP}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{won't\circ{} novels;} \\ \sem{ λv.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} \trns{read}(\trns{novels})(v)}; \\\syncat{  VP}}}
+\BinaryInfC{\MultiLine{\texttt{won't\circ{} novels;} \\ \sem{ λv.\neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}}\, \trns{read}(\trns{novels})(v)}; \\\syncat{  VP}}}
 \AxiomC{\MultiLine{\texttt{he;} \\ \sem{ 3 \trns{masc} }; \\\syncat{  NP}}}
 \RightLabel{\bsl E}
-\BinaryInfC{\MultiLine{\texttt{he\circ{} won't\circ{} novels;} \\ \sem{ \neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}} \trns{read}(\trns{novels})(3 \trns{masc})}; \\\syncat{  S}}}
+\BinaryInfC{\MultiLine{\texttt{he\circ{} won't\circ{} novels;} \\ \sem{ \neg\,\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{ILL}}}\, \trns{read}(\trns{novels})(3 \trns{masc})}; \\\syncat{  S}}}
 \DisplayProof
 \end{figure}
 
@@ -1325,7 +1325,7 @@ that is missing other material required to compose a constituent, in
 the case of the former, the gap can be missing from anywhere within
 the partial constituent. That is, while \textit{Y/X} is a sign that must
 compose on the left with a sign of type \textit{X}, and $X\bsl Y$ is the same
-but seeking an \textit{X} arguent on its left to yield an object typed \textit{Y},
+but seeking an \textit{X} argument on its left to yield an object typed \textit{Y},
 the material missing from the string that is required for \textit{Y} in
 \textit{Y} \ensuremath{\vs}\textit{X} can, as noted in \sectref{sec:argstruc}, appear
 anywhere. Thus, in \textit{I wonder what John said to Mary}, the
@@ -1403,15 +1403,15 @@ in the ellipsed clause, per \figref{part1}.
 
 \begin{figure}
 \small
-\caption{\color{red}Please provide a caption}\label{part1}
+\caption{Ellipsis pseudo-extraction antecedent proof}\label{part1}
 \AxiomC{\ensuremath{[\LexEnt{\pt{\ensuremath{\greekp_1}}}{\sem{ x }}{\syncat{NP}}]^1\,\,}}
 \noLine
 \UnaryInfC{\Lemma}
 \noLine
-\UnaryInfC{\MultiLine{\texttt{ate\circ{} \ensuremath{\greekp_1}\circ{} for\circ{} lunch;} \\ \sem{ \trns{ate}(x)(\trns{lunch})}; \syncat{ VP}}}
+\UnaryInfC{\MultiLine{\texttt{ate\,\circ{} \ensuremath{\greekp_1}\,\circ{} for\,\circ{} lunch;} \\ \sem{ \trns{ate}(x)(\trns{lunch})}; \syncat{ VP}}}
 \LeftLabel{①\ensuremath{\rightarrow}}
 \RightLabel{\ensuremath{\vs}I\ensuremath{^1}}
-\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp_1}.ate\circ{} \ensuremath{\greekp_1}\circ{} for\circ{} lunch;} \\ \sem{ \mbox{\grey{\sem{ λx. \trns{ate}(x)(\trns{lunch}) }}} }; \syncat{ VP\vs NP}}}
+\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp_1}.ate\,\circ{} \ensuremath{\greekp_1}\,\circ{} for\circ{} lunch;} \\ \sem{ \mbox{\grey{\sem{ λx. \trns{ate}(x)(\trns{lunch}) }}} }; \syncat{ VP\vs NP}}}
 \AxiomC{\raisebox{\baselineskip}{%
         \ensuremath{\left[
         \begin{array}{@{}l@{}}
@@ -1423,7 +1423,7 @@ in the ellipsed clause, per \figref{part1}.
        }
 \BinaryInfC{\LexEnt{\pt{ate\circ{} \ensuremath{\greekp_2}\circ{} for\circ{} lunch}}{\sem{ \trns{ate}(u)(\trns{lunch})}}{\syncat{VP}}}
 \AxiomC{\MultiLine{\texttt{john;} \\ \sem{ \trns{j} }; \\\syncat{  NP}}}
-\BinaryInfC{\LexEnt{\pt{john\circ{} ate\circ{} \ensuremath{\greekp_2}\circ{} for\circ{} lunch}}{\sem{ \trns{ate}(u)(\trns{lunch})(\trns{j})}}{\syncat{S}}}
+\BinaryInfC{\LexEnt{\pt{john\circ{} ate\circ{} \ensuremath{\greekp_2}\,\circ{}\, for\,\circ{} lunch}}{\sem{ \trns{ate}(u)(\trns{lunch})(\trns{j})}}{\syncat{S}}}
 \RightLabel{\ensuremath{\vs}I\ensuremath{^2}}
 \UnaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp_2}. john\circ{} ate\circ{} \ensuremath{\greekp_2}\circ{} for\circ{} lunch}}{\sem{ λu. \trns{ate}(u)(\trns{lunch})(\trns{j})}}{\syncat{S\vs NP}}}
 \AxiomC{\MultiLine{\texttt{λ\ensuremath{\greeks}. what\circ{} \ensuremath{\greeks}(\E);} \\ \sem{  λP. \trns{what}(P) }; \\\syncat{  Q\vs (S\vs NP)}}}
@@ -1437,9 +1437,9 @@ can be anaphorically identified. The first part of the proof for \textit{what
 Bill did} then takes the following form:
 
 \begin{figure}
-\caption{\color{red}Please provide a caption}\label{extractionVPE-drv-part2}
+\caption{Ellipsis pseudo-extraction ‘gap’ site}\label{extractionVPE-drv-part2}
 \AxiomC{\Lemma}
-\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greeks} λ\ensuremath{\greekp}. did\circ{} \ensuremath{\greeks}(\ensuremath{\greekp});} \\ \sem{ λf λx λy. f(x)(y)}; \\\syncat{  (VP\vs NP)\vs (VP\vs NP)}}}
+\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greeks} λ\ensuremath{\greekp}. did\,\circ{} \ensuremath{\greeks}(\ensuremath{\greekp});} \\ \sem{ λf λx λy. f(x)(y)}; \\\syncat{  (VP\vs NP)\vs (VP\vs NP)}}}
 \AxiomC{\MultiLine{\texttt{λ\ensuremath{\greekr} λ\ensuremath{\greekp}. \ensuremath{\greekr}(λ\ensuremath{\greekp_0}. \ensuremath{\greekp_0})(\ensuremath{\greekp});} \\ \sem{ λ\ensuremath{\mathcal{F}}. \ensuremath{\mathcal{F}}(λx. \trns{ate}(x)(\trns{lunch}))}; \\\syncat{  (VP\vs NP)\vs }\\ \hspace{2ex}\syncat{((VP\vs NP)\vs (VP\vs NP))}}}
 \BinaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp}.did\circ{} \ensuremath{\greekp}}}{\sem{ λx λy. \trns{ate}(x)(\trns{lunch})(y)}}{\syncat{VP\vs NP}}}
 \AxiomC{\raisebox{\baselineskip}{%
@@ -1476,9 +1476,9 @@ a proof along the lines of that began along the lines of
 \REF{extractionVPE-drv-part2} might have continued as in \figref{other}.
 
 \begin{figure}
-\caption{\color{red}Please provide a caption}\label{other}
+\caption{Non-extraction pseudogapping }\label{other}
 \AxiomC{\Lemma}
-\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greeks} λ\ensuremath{\greekp}. did\circ{} \ensuremath{\greeks}(\ensuremath{\greekp});} \\ \sem{ λf λx λy. f(x)(y)}; \\\syncat{  (VP\vs NP)\vs (VP\vs NP)}}}
+\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greeks} λ\ensuremath{\greekp}. did\,\circ{} \ensuremath{\greeks}(\ensuremath{\greekp});} \\ \sem{ λf λx λy. f(x)(y)}; \\\syncat{  (VP\vs NP)\vs (VP\vs NP)}}}
 \AxiomC{\MultiLine{\texttt{λ\ensuremath{\greekr} λ\ensuremath{\greekp}. \ensuremath{\greekr}(λ\ensuremath{\greekp_0}. \ensuremath{\greekp_0})(\ensuremath{\greekp});} \\ \sem{ λ\ensuremath{\mathcal{F}}. \ensuremath{\mathcal{F}}(λx. \trns{ate}(x)(\trns{lunch}))}; \\\syncat{  (VP\vs NP)\vs }\\ \hspace{2ex}\syncat{((VP\vs NP)\vs (VP\vs NP))}}}
 \BinaryInfC{\LexEnt{\pt{λ \ensuremath{\greekp}.did\circ{} \ensuremath{\greekp}}}{\sem{ λx λy. \trns{ate}(x)(\trns{lunch})(y)}}{\syncat{VP\vs NP}}}
 \AxiomC{\LexEntBroken{\pt{breakfast}}{\sem{ \trns{brkfst} }}{\syncat{NP}}}
@@ -1510,16 +1510,16 @@ To obtain such examples, we derive the antecedent by a derivation
 which includes the subproof in \figref{subproof}.
 
 \begin{figure}
-\caption{\color{red}Please provide a caption}\label{subproof}
+\caption{Pseudo-extraction antecedent without parallel extraction}\label{subproof}
 \AxiomC{\LexEntBroken{\pt{buy}}{\sem{ \trns{buy} }}{\syncat{VP/NP}}}
 \AxiomC{\LexEntBroken{\pt{\ensuremath{\greekp_1}}}{\sem{ x}}{\syncat{NP}}}
-\BinaryInfC{\MultiLine{\texttt{buy\circ{} \ensuremath{\greekp_1};} \\ \sem{ \trns{buy}(x)}; \\\syncat{  VP}}}
-\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp_1}. buy\circ{} \ensuremath{\greekp_1};} \\ \sem{ \mbox{\grey{\sem{ λx. \trns{buy}(x) }}} }; \\\syncat{  VP\vs NP}}}
+\BinaryInfC{\MultiLine{\texttt{buy\,\circ{} \ensuremath{\greekp_1};} \\ \sem{ \trns{buy}(x)}; \\\syncat{  VP}}}
+\UnaryInfC{\MultiLine{\texttt{λ\ensuremath{\greekp_1}. buy\,\circ{} \ensuremath{\greekp_1};} \\ \sem{ \mbox{\grey{\sem{ λx. \trns{buy}(x) }}} }; \\\syncat{  VP\vs NP}}}
 \AxiomC{\Lemma}
 \UnaryInfC{\MultiLine{\texttt{this\circ{} kind\circ{} of\circ{} sports\circ{} car;} \\ \sem{ \iota(\trns{kind}(\trns{spcr}))}; \\\syncat{  NP}}}
-\BinaryInfC{\MultiLine{\texttt{buy\circ{} this\circ{} kind\circ{} of\circ{} sports\circ{} car;} \\ \sem{ \trns{buy}(\iota(\trns{kind}(\trns{spcr})))}; \\\syncat{  VP}}}
+\BinaryInfC{\MultiLine{\texttt{buy\,\circ{} this\circ{} kind\circ{} of\,\circ{} sports\,\circ{} car;} \\ \sem{ \trns{buy}(\iota(\trns{kind}(\trns{spcr})))}; \\\syncat{  VP}}}
 \AxiomC{\MultiLine{\texttt{would;} \\ \sem{ λP λy.\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{D}}}\, P(y)}; \\\syncat{  VP/VP}}}
-\BinaryInfC{\MultiLine{\texttt{would\circ{} buy\circ{} this\circ{} kind\circ{} of\circ{} sports\circ{} car;} \\ \sem{ λy.\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{D}}}\,\trns{buy}(\iota(\trns{kind}(\trns{spcr})))(y)}; \\\syncat{VP}}}
+\BinaryInfC{\MultiLine{\texttt{would\,\circ{} buy\circ{} this\,\circ{} kind\,\circ{} of\circ{} sports\circ{} car;} \\ \sem{ λy.\textrm{\textbf{W}}\scalebox{.75}{\textrm{\textbf{D}}}\,\trns{buy}(\iota(\trns{kind}(\trns{spcr})))(y)}; \\\syncat{VP}}}
 \DisplayProof
 \end{figure}
 
@@ -1533,15 +1533,15 @@ extraction of a pseudogapping remnant gives us, in effect, a
 proof-of-concept argument for rejecting the assumption that covert
 structures in VP ellipsis necessarily exist in order that a ``site of
 origin'' be available for filler/gap linkages that appear to implicate
-material missing from deleted VPs.\footnote{This approach has been
-challenged in \citet{johnson2001}, on the graounds that apparent extraction
-from ellipsis sites is subject to different contraints from
+material missing from deleted VPs.\footnote{While this approach has been
+challenged in \citet{johnson2001}, on the grounds that apparent extraction
+from ellipsis sites is subject to different constraints from
 pseudogapping, counterexamples to his claims are already familiar
 from, inter alia, examples from corpora or naturally occurring data
-presented in \citet{levin-diss}. For detailed discusson of this point, see
+presented in \citet{levin-diss}. For detailed discussion of this point, see
 \citet[Section~8.4.2]{kubotalevineBook}.} There is, on the analysis
 presented in this section, no extraction from a subsequently deleted
-(or phonologically supressed) subpart of some structural arrangement
+(or phonologically suppressed) subpart of some structural arrangement
 of linguistic expressions, as in a phrase structure tree. Rather, an
 auxiliary is licensed whose type and semantics correspond to a VP
 missing an NP, and which composes by hypothetical reasoning to the
@@ -1557,7 +1557,7 @@ pseudogapping remnant on the other.
 It is important at this point to consider how the results reported
 above have been achieved. Fundamentally, treatment of syntactic
 categories as valence specifications means that grammatical
-rules and operations can map the combinatorial possibilites of signs
+rules and operations can map the combinatorial possibilities of signs
 to different possibilities without ever requiring those possibilities
 to be realized as actual structures e.g., the operators for auxiliary
 type-shifting given above. But just as basic to this kind of solution
@@ -1615,7 +1615,7 @@ if we call this set \sem{ C/B } then
 
 \noindent
 \REF{typeResiduation} is nothing more than the residuated implication
-relationship of standard logic displayed in residuation.  But as
+relationship of standard logic displayed in sequent notation.  But as
 discussed at length in \citet{pratt92}, Peirce himself developed a theory of
 binary relations that incorporated the key components of residuated
 relationships between terms, including a kind of proto-version of the
@@ -1634,7 +1634,7 @@ Y$ to define a partial ordering $X\leqslant Y$, gives us exactly the
 ``triquivalence'' in \REF{typeResiduation}.} As Pratt notes, the upper and
 lower adjoint operators are effectively the functions corresponding to
 the composition and division connectives (which Peirce wrote with a
-semicon and a horizonal-line franction notation respectively).
+semicolon and a horizontal-line fraction notation respectively).
 
 It seems fair to say, then, that -- to extend Peirce's original
 chemical metaphor only slightly -- we can plausibly view Lambek's
