@@ -38,18 +38,18 @@
 
 The work of Charles Sanders Peirce -- a long-time research focus of Dan
 Everett, whom this festschrift honors -- spans a range of interests in,
-and major contributions to, a range of mathematical and scientific
+and major contributions to, a variety of mathematical and scientific
 domains that may well be unique in the history of human
 accomplishment. Peirce's work is widely recognized as seminal in
 mathematics, logic, the philosophy of knowledge, chemistry, astronomy
 and many other fields, but it is not generally recognized that he was
 the source of an analytic concept, \emph{valence}, which has become
-a foundational tool in linguistic theory. But until quite recently,
-Peirce has not been credited with his identification of the
+a foundational tool in linguistic theory. It is only recently that
+Peirce has been credited with his identification of the
 combinatorial potential of lexical items as one of the key drivers of
 linguistic form, or for being the first scholar to use the term
 ``valence'', which he borrowed from chemistry as a close analogue of
-this linguistic concept. It is still common to see linguistic
+this linguistic concept, and it is still common to see linguistic
 applications of valence as having been ``founded in 1959 by Lucien
 Tesnière'' \citep{hollein2022}. There were, as noted in \citet{AdamP-Peirce}, a
 number of earlier invocations of the metaphor referencing the
@@ -73,14 +73,14 @@ promoted Peirce's work in conversations and international gatherings,
 such as the 1948 International Congress of Linguists in Paris, among
 other venues.
 
-It is generally conceded among those who have studied Peirce's work as
-it bears on natural languages that his perspective was primarily
+Those who have studied Peirce's work as
+it bears on natural languages generally concede that his perspective was primarily
 rooted in their semiotic capabilities, as systems of signs. But as
 Nöth observes, for Peirce, ``the key to syntactic structure is the
 predicate and its valence'' \citeyearpar[7]{nothPeirce}. Peirce
 seems to have regarded the valence of sentences in both a syntactic
 and semantic way: on the one hand, the places in which names can
-appear (whose occupants he called ``subjects'') and on the other, as the
+appear (whose occupants he called ``subjects'') and, on the other, as the
 parts of propositions which the predicate sets into the relationship
 that the predicate denotes, and which point to particular
 individuals -- the referents of the names themselves.
@@ -164,8 +164,8 @@ type \textit{X} on my right and you'll get back a sign of type  \textit{Y}'', an
 second is the same with ``left'' in place of ``right''. The third is a bit
 more complex: it tells you that, if there is a sign of type \textit{X} it can be
 realized in a certain designated position ``within'' the sign typed
-\textit{Y}\vs\textit{X}. We refer to inhabitants of slashed types as
-\emph{functional} terms, in view of their semantics, as we discuss below.
+\textit{Y}\vs\textit{X}. I refer to inhabitants of slashed types as
+\emph{functional} terms, in view of their semantics, as discussed below.
 
 What are the syntactic types that can instantiate \textit{Y} and \textit{X}? For our
 purposes, we can posit three atomic types, which are in a
@@ -343,12 +343,12 @@ composition into the proof denote the proof history subsequent to the
 introduction of the variable. \ptv{a,b} are metavariables over
 strings -- lexical items or sequences of lexical items -- while \pt{φ} is a variable, supplied not by the lexicon, or as a stand-in for
 some actual string whose value is irrelevant in the context of the
-rule.  Rather, they are part of the logic itself, representing, in
+rule.  Rather, variables are part of the logic itself, representing, in
 effect, a space in a prosodic or semantic expression that could be
 occupied by any term of the same type as the variable. Each variable
 sign is introduced with a specific index, and each application of an
 introduction rule is keyed to the index of the variable which is
-removed in the introduction of the directional slashes or \L-bound in
+removed in the introduction of the directional slashes or $\lambda$-bound in
 \ensuremath{\vs} introduction.  The elimination rules shown are, again, different
 avatars of (\ref{prawitz}a): a slashed term seeks a term of the antecedent
 type to give us a consequent type, and the result of composing the
@@ -383,7 +383,7 @@ theorem. We start with a lexicon, as in \REF{lexicon}:
 
 \begin{exe}
  \ex\label{sent}
-  John sent those documents to the committee over the weekend.
+  John sent those documents to that committee over the weekend.
 \end{exe}
 \begin{exe}
  \ex\label{lexicon}
@@ -393,7 +393,7 @@ theorem. We start with a lexicon, as in \REF{lexicon}:
 \LexEnt{\pt{those}}{\sem{ \iota}}{\syncat{NP/N\fb{pl}}} & &
 \LexEnt{\pt{documents}}{\sem{ \trns{docs} }}{\syncat{N\fb{pl}}} \\
 \LexEnt{\pt{to}}{\sem{ λx.x}}{\syncat{PP\fb{to}/NP}} & &
-\LexEnt{\pt{the}}{\sem{ \iota}}{\syncat{NP/N}} \\
+\LexEnt{\pt{that}}{\sem{ \iota}}{\syncat{NP/N}} \\
 \LexEnt{\pt{committee}}{\sem{ \trns{comm} }}{\syncat{N}} & &
 \LexEnt{\pt{over}}{\sem{ \trns{over} }}{\syncat{(VP\bsl{}VP)/NP}} \\
 \LexEnt{\pt{the}}{\sem{ \iota}}{\syncat{NP/N}} & &
@@ -425,15 +425,15 @@ restriction of the event instantiating that property.
 \BinaryInfC{\MultiLine{\texttt{the \circ{} documents;} \\ \sem{ \iota(\trns{docs})}; \\\syncat{  NP}}}
 \RightLabel{\ensuremath{/}E}
 \BinaryInfC{\MultiLine{\texttt{sent \circ{} the \circ{} documents;} \\ \sem{ \trns{send}(\iota(\trns{docs}))}; \\\syncat{  VP/PP\fb{to}}}}
-\AxiomC{\MultiLine{\texttt{the;} \\ \sem{ \iota}; \\\syncat{  NP/N}}}
+\AxiomC{\MultiLine{\texttt{that;} \\ \sem{ \iota}; \\\syncat{  NP/N}}}
 \AxiomC{\MultiLine{\texttt{committee;} \\ \sem{ \trns{comm} }; \\\syncat{  N}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{the \circ{} committee;} \\ \sem{ \iota(\trns{comm})}; \\\syncat{  NP}}}
+\BinaryInfC{\MultiLine{\texttt{that \circ{} committee;} \\ \sem{ \iota(\trns{comm})}; \\\syncat{  NP}}}
 \AxiomC{\MultiLine{\texttt{to;} \\ \sem{ λx.x}; \\\syncat{  PP\fb{to}/NP}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{to \circ{} the \circ{} committee;} \\ \sem{ \iota(\trns{comm})}; \\\syncat{  PP\fb{to}}}}
+\BinaryInfC{\MultiLine{\texttt{to \circ{} that \circ{} committee;} \\ \sem{ \iota(\trns{comm})}; \\\syncat{  PP\fb{to}}}}
 \RightLabel{\ensuremath{/}E}
-\BinaryInfC{\MultiLine{\texttt{sent \circ{} the \circ{} documents \circ{} to \circ{} the \circ{} committee;} \\ \sem{ \trns{send}(\iota(\trns{docs}))(\iota(\trns{comm}))}; \syncat{ VP}}}
+\BinaryInfC{\MultiLine{\texttt{sent \circ{} the \circ{} documents \circ{} to \circ{} that \circ{} committee;} \\ \sem{ \trns{send}(\iota(\trns{docs}))(\iota(\trns{comm}))}; \syncat{ VP}}}
 \AxiomC{\MultiLine{\texttt{ over;} \\ \sem{ \trns{over} }; \\\syncat{  VP\bsl{}VP/NP}}}
 \AxiomC{\MultiLine{\texttt{ the;} \\ \sem{ \iota}; \\\syncat{  NP/N}}}
 \AxiomC{\MultiLine{\texttt{ weekend;} \\ \sem{ \trns{wknd} }; \\\syncat{  N}}}
@@ -442,10 +442,10 @@ restriction of the event instantiating that property.
 \RightLabel{\ensuremath{/}E}
 \BinaryInfC{\MultiLine{\texttt{over \circ{} the \circ{} weekend;} \\ \sem{ \trns{over}(\iota(\trns{wknd}))}; \\\syncat{  VP\bsl{}VP}}}
 \RightLabel{\bsl E}
-\BinaryInfC{\MultiLine{\texttt{sent \circ{} the \circ{} documents \circ{} to \circ{} the \circ{}}\\ \texttt{  \hspace{3ex}committee \circ{} over \circ{} the \circ{} weekend;} \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  VP}}}
+\BinaryInfC{\MultiLine{\texttt{sent \circ{} the \circ{} documents \circ{} to \circ{} that \circ{}}\\ \texttt{  \hspace{3ex}committee \circ{} over \circ{} the \circ{} weekend;} \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  VP}}}
 \AxiomC{\MultiLine{\texttt{john;} \\ \sem{ \trns{j} }; \\\syncat{  NP}}}
 \RightLabel{\bsl E}
-\BinaryInfC{\MultiLine{\texttt{john \circ{} sent \circ{} the \circ{} documents \circ{} to \circ{} the \circ{}}\\ \texttt{  \hspace{3ex}committee \circ{} over \circ{} the \circ{} weekend;} \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  S}}}
+\BinaryInfC{\MultiLine{\texttt{john \circ{} sent \circ{} the \circ{} documents \circ{} to \circ{} that \circ{}}\\ \texttt{  \hspace{3ex}committee \circ{} over \circ{} the \circ{} weekend;} \\   \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs}))(\iota(\trns{comm})))}; \\\syncat{  S}}}
 \DisplayProof}
 \end{sidewaysfigure}
 
@@ -477,7 +477,7 @@ such structure: what we have in \figref{sentProof} is a demonstration that
 the closure of the axioms of the system -- the English lexicon -- under
 the inference rules of the logic allows a valid inference of a prosodic
 string
-\pt{john \circ{} sent} \pt{ \circ \  the \circ{} documents \circ{} to \circ{} the \circ{} committee \circ{} over \circ{} the \circ{} weekend}
+\pt{john \circ{} sent} \pt{ \circ \  the \circ{} documents \circ{} to \circ{} that \circ{} committee \circ{} over \circ{} the \circ{} weekend}
 which signifies a proposition
 \sem{ \trns{over}(\iota(\trns{wknd}))(\trns{send}(\iota(\trns{docs})))(\iota(\trns{comm}))(\trns{j}) } and that the
 linguistic expression which has those prosodic and semantic values is
@@ -485,7 +485,7 @@ a sentence. The steps involved in the proof have no representational
 status, any more than, given a set of premises $\Gamma$, the steps in
 the proof of \sem{ \Gamma  \ensuremath{\vdash\xspace } \phi } in some standard logic have any
 bearing on the content of $\phi$.\footnote{For example, there are any
-number of ways to prove that \sem{\ensuremath{\vdash\xspace } \phi\supset(\neg\phi\supset\psi)}
+number of ways to prove that \sem{\ensuremath{\vdash\xspace } \phi\supset(\neg\,\phi\supset\psi)}
 in classical logic, but the content of the implication is
 altogether independent of proof narrative.}
 
@@ -629,14 +629,14 @@ variable.
 \DisplayProof
 \end{figure}
 
-The predicate in the final line of \figref{cleopatra} ascribes a property to
+\noindent The predicate in the final line of \figref{cleopatra} ascribes a property to
 some object; that object is in the set of things given to Cleopatra to
 Antony, and the proposition in the passage Noth quotes from Peirce is
 decomposable into λ-terms along these lines just as much as it is the
 composition of \textit{Antony} with the denotation of the VP \textit{gave a ring to
 Cleopatra}. In this sense, \ensuremath{\vs} introduction is the logical warrant for
 Peirce's view that \textit{Anthony gave a ring to Cleopatra} is ``about''
-any (or all) of its ``subject'', not just the NP which carries the
+any (or all) of its ``subjects'', not just the NP which carries the
 grammatical function ``subject''.
 
 But the empirical problem which led to \ensuremath{\vs} introduction (under a different
@@ -669,7 +669,7 @@ others are problematic in both respects.
 \citegen{oehrle1994} breakthrough, in contrast, is conceptually simple, of
 extremely broad application to problems of the syntax-semantics
 interface, and yields a directly interpretable expression in
-higher-order logic that is model-theoretically interpretable in a
+higher-order logic that is model-theoretically defined in a
 straightforward way. But this last point needs to be amplified: the
 basic approach is itself compatible with a wide range of explicit
 semantic frameworks, including proof-theoretic approaches that do not
@@ -677,7 +677,7 @@ appeal to any model. Oehrle's key innovation was the application of a
 higher-order logic in the prosodic sector, with a corresponding type
 hierarchy, allowing the semantics and the prosody to operate
 independently of each other so that quantified expressions, and scopal
-operators, generally, can in effect take the syntactic contexts in
+operators generally, can in effect take the syntactic contexts in
 which they appear as their own arguments. The following simple example
 is representative of the setup generally. We have
 
@@ -753,11 +753,11 @@ distributions plays on the independent but linked relationship of
 prosody and semantics in type-logical grammar -- a relationship made
 possible by the \ensuremath{\vs} connective. Quantified expressions parallel NPs
 precisely because they are in a sense parasitic on NP variables: they
-only appear in parts of the string where such variables can appear,
+only appear in parts of the string where such variables can appear,b
 undergo abstraction and ultimately replacement by the string element
 in the prosody of quantifiers. At the same time, their syntax targets
 sentences which are ``missing'' NPs, in the sense that some argument
-position in the semantics is occupied by a \L-bound variable. These
+position in the semantics is occupied by a $\lambda$-bound variable. These
 characteristics of \ensuremath{\vs} play an essential role across a wide range of
 phenomena, one of which is considered in detail in \sectref{sec-extraction} as
 a dramatic illustration of the way effects which require recourse to
@@ -774,7 +774,7 @@ global picture of the strategy embodied in an approach based on
 \REF{rules}. The explicit correspondence between the implicational syntax
 and the operations of abstraction and function application in the
 semantics and prosody via independent type hierarchies with their own
-respective \L-calculi, guarantee a fully compositional derivation of
+respective $\lambda$-calculi, guarantee a fully compositional derivation of
 signs, with the syntactic types guiding the composition on the basis
 of the familiar logic of modus ponens and hypothetical reasoning. The
 critical point here is that not only obviously local dependencies
@@ -938,7 +938,7 @@ most frameworks take filler-gap connectivity itself as irreducibly
 syntactic in nature. And while there are deep consequences that follow
 from rejecting movement operations as the source of extraction, this
 theoretical position does not, on its own, give us any particular help
-in explaining what the wh-word is doing in \REF{extrac-from-VPE}. In
+in explaining what the \textit{wh}-word is doing in \REF{extrac-from-VPE}. In
 GPSG and its descendent HPSG, for example, a feature carrying
 information about the syntactic and semantic content of a \textit{wh}
 constituent must be carried through the structure to the point where a
@@ -966,7 +966,7 @@ movement-and-deletion analysis assumed by transformationalists.
 But such an alternative is readily available. It rests however on a
 particular approach to extraction connectivity and assumes a specific
 analysis of VP ellipsis, both of which differ considerably from
-standard positions common to both transformational and monostratal
+standard positions shared by both transformational and monostratal
 frameworks. In the following section, I first outline a commonly
 assumed type-logical treatment of filler/gap linkage, and in the next
 section, recapitulate the treatment of VP ellipsis, and its
@@ -990,7 +990,7 @@ Muskens' proposal takes the form of the lexical sign in \REF{whrel}:
 \end{exe}
 Unpacking this operator a bit, we can see that its argument structure
 seeks a clause missing an NP, and its denotation is predicated of
-some entity, while the prosodic functor corresponding to its phonology
+some entity, while the prosodic functor corresponding to the S\ensuremath{\vs}NP argument
 applies to a string of length zero. To derive \REF{book}, then, we start
 with the subproof in \figref{bookProof1}.
 
@@ -1081,7 +1081,7 @@ the earliest phase of transformational grammar, when wh-movement
 shifted a constituent to the left over an unconstrained variable. The
 appearance of \citet{ross67} resulted in the almost universal rejection of
 this view, but the most recent research on the island effects that
-Ross first documented, as noted earlier, overwhelmingly support a view
+Ross first documented, as noted earlier, overwhelmingly supports a view
 of such effects which takes them to be epiphenomena of functional
 factors. Clearly, the nonlocal view of syntactic connectivity has an
 empirical claim on a second act.\footnote{This is not to say, of
@@ -1089,7 +1089,7 @@ course, that Muskens' operator is completely unproblematic. For one
 thing, it has an obvious failure in its coverage, since obviously
 there's no way that \REF{whrel} as given accounts for pied-piping. A
 second problem is that the linearity of the type logic shared by
-Muskens' \L-grammar and our own HTLG, inter alia, makes it difficult
+Muskens' $\lambda$-grammar and our own HTLG, inter alia, makes it difficult
 to derive multiple extractions linked to a single filler. In \citet{kubotalevineBook},
 we offer solutions for both problems, and are currently generalizing
 our proposal for pied-piping to take into account the interaction of
@@ -1120,7 +1120,7 @@ description is \ensuremath{\vs} rather than /.}
 \begin{exe}
  \ex\label{ellipseOp1}
   VP ellipsis operator\\
-  \LexEnt{\pt{ λ \ensuremath{\greekp}. \ensuremath{\greekp} }}{\sem{ λ\ensuremath{\mathcal{F}}. \ensuremath{\mathcal{F}}(P')}}{\syncat{(NP\bsl{}S)\vs ((NP\bsl{}S)\vs (NP\bsl{}S) }}
+  \LexEnt{\pt{ λ \ensuremath{\greekp}. \ensuremath{\greekp} }}{\sem{ λ\ensuremath{\mathcal{F}}. \ensuremath{\mathcal{F}}(P')}}{\syncat{((NP\bsl{}S){\$})\vs (((NP\bsl{}S)\$)\vs ((NP\bsl{}S)\$) }}
 
    -- where $P'$ is a free variable whose value is
   resolved anaphorically
@@ -1181,9 +1181,9 @@ straightforwardly on this approach, as shown in
 \citet[236--238]{kubota-levine-pseudo}. But for our purposes, what is relevant
 is the fact that the operator in \REF{ellipseOp1} applies to a functional
 term taking a complete \syncat{NP\bsl{}S} to a complete \syncat{NP\bsl{}S} -- which we can
-abbreviate as VP/VP -- and returns a complete VP. But suppose
+abbreviate as VP/VP -- and returns a complete VP. Suppose now that
 we generalize the operator so that it applies to a functional term
-taking \emph{partial} VP to a partial VP, and returns a partial VP?
+taking a \emph{partial} VP to a partial VP, and returns a partial VP.
 This seems perhaps like a question completely orthogonal to the
 phenomena we're looking at, because auxiliaries are, in
 non-transformational frameworks generally, taken to apply to VPs and
@@ -1585,7 +1585,7 @@ logic, i.e., a logic in which the connectives, viewed as
 type-constructors, have the property that, in the notation of
 classical implication (but necessarily modulo the directionality of the
 type-constructor slashes), and with $\Lleftarrow\!\Rrightarrow$
-denoting metalogical equivalence:
+denoting metalogical equivalence, is shown in \REF{residuation}:
 
 \begin{exe}
  \ex\label{residuation}
