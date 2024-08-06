@@ -221,3 +221,23 @@
 \newcommand{\term}[1]{\textit{#1}}
 \newcommand{\LemmaAlt}{\ensuremath{\vdots\hskip.5cm\vdots}}
 \NewDocumentCommand{\VanLabel}{m}{\MakeUppercase{#1}}
+
+
+\newcommand{\togglepaper}[1][0]{
+   \bibliography{../localbibliography}
+   \papernote{\scriptsize\normalfont
+     \theauthor.
+     \titleTemp.
+     To appear in:
+     Edward Gibson \& Moshe Poliak (eds.).
+     From fieldwork to linguistic theory: A tribute to Dan Everett.
+     Berlin: Language Science Press. [preliminary page numbering]
+   }
+   \pagenumbering{roman}
+   \setcounter{chapter}{#1}
+   \addtocounter{chapter}{-1}
+}
+
+\newbool{bookcompile}
+\booltrue{bookcompile}
+\newcommand{\bookorchapter}[2]{\ifbool{bookcompile}{#1}{#2}}

@@ -21,6 +21,14 @@
  are signalled in S\'eli\v{s}-Ql'isp\'e, and to propose an analysis
  that pulls apparently disparate facts together in a unified way.}
 
+\IfFileExists{../localcommands.tex}{
+   \addbibresource{../localbibliography.bib}
+   \input{../localpackages}
+   \input{../localcommands}
+   \input{../localhyphenation}
+   \boolfalse{bookcompile}
+   \togglepaper[23]%%chapternumber
+}{}
 
 \begin{document}
 \SetupAffiliations{output in groups = true,
