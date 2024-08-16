@@ -84,9 +84,8 @@ objects. This will of course complicate the graphs (in ways that will be
 familiar from generative semantics) but ensure that we will never need
 hyper\textit{edges} just hyper\textit{nodes}. The resulting system is rather similar
 to the
-\href{https://en.wikipedia.org/wiki/Resource_Description_Framework}{Resource
-  Description Framework} used in the
-\href{https://en.wikipedia.org/wiki/Semantic_Web}{Semantic Web} where binary
+Resource Description Framework\footnote{\url{https://en.wikipedia.org/wiki/Resource_Description_Framework}} used in the
+Semantic Web\footnote{\url{https://en.wikipedia.org/wiki/Semantic_Web}} where binary
 relations are encoded in a (subject verb object) triple. Since such
 triples can be substituted for one another, for \textit{give} we obtain an analysis
 ``cause to have'' so that \textit{x gives y to z} becomes \texttt{(x cause (z has
@@ -160,7 +159,7 @@ Let us begin with some standard desiderata:
 \end{enumerate}
 
 
-\noindent
+\medskip\noindent
 D1 is taken very seriously by proponents of logical
 semantics, who treat all other approaches (by natural language paraphrase, by
 diagrams, and by KR in general) as \textit{markerese} since \citet{Lewis:1970}.
@@ -222,6 +221,7 @@ disambiguation in the sense Montague urged, and the use of $d$ in semantics is
 more a promissory note than an actual algorithmic method. In this key respect,
 MG actually fails D4.
 
+\medskip\noindent
 D2 is also taken very seriously, so much so that important
 ranges of phenomena where it obviously fails, such as noun-noun compounding,
 are simply declared out of scope for semantics. \citet{Fodor:1998} is typical
@@ -258,6 +258,7 @@ mechanism that deals with the non-compositional aspects by means of subdirect
 products, which contain the fully compositional direct products as a limiting
 case.
 
+\medskip\noindent
 D3, while in principle compatible with many theories, is
 seriously underresearched. Using a natural language (typically English) as
 pivot (intermediary) between two languages is common both in manual and in
@@ -283,7 +284,7 @@ combinators by a single combinator $J$. This  $J$ is defined by cases:
   \end{cases}
 \]
 
-\noindent
+\medskip\noindent
 Therefore, we have $JJ = S; J(JJ)= JS = K$ eliminating the original $S$ and $K$
 entirely in favor of a single entity. Notice that the method would be just as
 applicable if we didn't have 2 things to reduce but 52. We would only need to
@@ -307,7 +308,7 @@ binary numbers (and finally converting the binaries to unaries) are not
 essential for this undertaking. As is well known to students of logic, every
 formula (e.g. the kinds of formulas used in Montague's intensional logic) can
 be converted to a number by
-Gödel numbering\footnote{\url{https://en.wikipedia.org/wiki/Gödel_numbering}}, and a
+Gödel numbering\footnote{\url{http://bit.ly/3S0zTcX}}, and a
 Turing-computable and invertible mapping of natural language meanings to
 numbers is not hard to define.
 
@@ -333,6 +334,7 @@ $8=2^3$):
   transparently compositional in both directions
 \end{itemize}
 
+\noindent
 D4 and D5 are part of the \citet{Katz:1963} criteria that
 for many years were (and in many ways remain) the standard statement regarding
 the adequacy of any semantic theory:
@@ -345,7 +347,7 @@ deciding on paraphrase relations between sentences, and by marking every other
 semantic property or relation that plays a role in this ability.
 \end{quote}
 
-\noindent 
+\medskip\noindent
 Over the years, as emphasis gradually shifted from lexical to compositional
 semantics, it became clear that these criteria are exceedingly hard to meet:
 D4 required some one-to-many mapping from form to ``disambiguated language'', a
@@ -525,10 +527,10 @@ noun-noun compounding. Whatever portion of the semantics is rule-governed is
 captured, e.g. that in N-N compounding we have `N$_2$ that is V-ed by N$_1$'
 with the V indeterminate: ladder \textit{made of} rope, slaughter \textit{undergone
   by} man, tube \textit{used for} test \citep{Kiparsky:1982b}, the
-non-compositional part is admitted as suChapter This seems to be the right approach
+non-compositional part is admitted as such. This seems to be the right approach
 not just for morphology, but also for the grey zone of \textit{constructions}
 between the purely morphological and the purely syntactic such as \textit{NP of
-  NP} studied in Berkeley Construction Grammar\footnote{\url{https://www1.icsi.berkeley.edu/~kay/bcg/ConGram.html} \citep{Kornai:1988a}}, taking care of our desideratum
+  NP} studied in Berkeley Construction Grammar \citep{Kornai:1988a}\footnote{\url{http://bit.ly/4cCkLe5} }, taking care of our desideratum
 D7.
 
 What are, then, the non-negotiable elements of vector
@@ -563,7 +565,7 @@ decomposition that go back to generative semantics \citep{Kornai:2012}.  (The
 written ``1'' and ``2'' as well -- the only theoretical claim here is that there
 is no ``3'' required.) The representation structures we obtain are best depicted
 as hypernode graphs that can contain other such graphs as nodes (but not as
-edges). These should be familiar from the Resource Description Framework\footnote{\url{https://en.wikipedia.org/wiki/Resource_Description_Framework}} that is standard on the WorldWideWeb.
+edges). These should be familiar from the Resource Description Framework that is standard on the WorldWideWeb.
 
 It is easy to check that the system presented here meets our
 desiderata D1 and D8 as well, so our work is done. Readers interested in how the
