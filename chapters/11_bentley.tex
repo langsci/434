@@ -715,13 +715,23 @@ are assigned to the argument variables in the semantic representation of the cla
 as seen in $\lbrack$ \textit{do}´ (∅,  \ldots) $\rbrack$ in \REF{bentley_example_50}, which is a simplified representation of \REF{bentley_example_45} (\textit{quel campanello si era arrugginito} ‘that doorbell had rusted’).\footnote{The definiteness properties of the argument and the aspectual properties of the predicate would be reflected in the full representation of the clause, which I do not provide here.}
 
 \ea  \label{bentley_example_50}
-    $\lbrack$ \textbf{do}´ ($\emptyset, \lbrack \emptyset \rbrack$ ) $\rbrack$ \textbf{CAUSE PROC becoming.higher. $\lbrack$ rust $\rbrack$ scale}´ (campanello) ∧ FIN \textbf{rusted.by.some.amount}´ (campanello)
+    $\lbrack$ \textbf{do}´ ($\emptyset, \lbrack \emptyset \rbrack$ ) $\rbrack$ CAUSE PROC \textbf{becoming.higher.on. $\lbrack$ rust $\rbrack$ scale}´ (campanello) ∧ FIN \textbf{rusted.by.some.amount}´ (campanello)
 \z
 
 Following suppression, the causer cannot be linked to syntax as an argument of the verb. The next argument down, the causee, is thus treated as the subject.\footnote{While rejecting the grammatical relations subject and object as primitives or universals of syntactic theory, my framework does allow for construction-specific grammatical relations, which are restrictions on the semantic relations or discourse roles that are admitted in the given construction (\cites[242--309]{vanvalin2023principles}{lapolla2023grammatical}). For simplicity, I shall use the term ‘subject’, referring primarily to the controller of the person and number agreement specifications on the main verb in the clause.}
 
 \begin{figure}
-\includegraphics[width=\textwidth]{figures/bentley_figure3.png}
+\begin{forest}
+for tree={edge={Triangle[]}-}
+[subject
+  [undergoer, s sep=6cm
+    [(campanello),name=campanello1]
+    [(campanello),name=campanello2]
+  ]
+]
+\node[right=0pt of campanello1.base east, anchor=base west, inner sep=0pt] {$\land$ FIN \textbf{rusted.by.some.amount}´};
+\node[left=6pt of campanello1.base west, anchor=base east,align=left] {[\textbf{do´} ($\emptyset$, [$\emptyset$])] \\CAUSE PROC\\ \textbf{becoming.higher.}\\\textbf{on.[rust]scale´}};
+\end{forest}
 \caption{Causer suppression and treatment of the causee as the subject.}
 \label{fig:bentley_figure_3}
 \end{figure}    
@@ -788,7 +798,7 @@ DISCOURSE-PRAGMATICS\\
 
 The intransitive and transitive occurrences of \textit{aumentare} ‘increase’ and \textit{migliorare} ‘improve’ are realizations of the inchoative and, respectively, causative LSs associated with their stem, as suggested by the selection of the expected perfect auxiliary \textit{essere} ‘be’ in the intransitive (cf. \ref{bentley_example_8}).\footnote{Not a single intransitive hit with \textit{aumentare} ‘increase’ or \textit{migliorare} ‘improve’ exhibited the perfect auxiliary \textit{avere} ‘have’ in my corpus.}
 
-Alongside the backgrounding of the cause, another inference arises in overt anticausativization. Drawing on Lyons’ (\citeyear[373]{lyons1969introduction}) treatment of the middle voice (“the ‘action’ or ‘state’ affects the subject of the verb or his interests”), I call this affectedness. Whether the context brings to the fore the process (cf. \ref{bentley_example_27}, repeated in \ref{bentley_example_57}) or the result (cf. \ref{bentley_example_25b}, repeated in \ref{bentley_example_56}), \textsc{se} marking highlights the effects of the change on its undergoer. 
+Alongside the backgrounding of the cause, another inference arises in overt anticausativization. Drawing on Lyons’ (\citeyear[373]{lyons1969introduction}) treatment of the middle voice (“the ‘action’ or ‘state’ affects the subject of the verb or his interests”), I call this affectedness. Whether the context brings to the fore the process (cf. \ref{bentley_example_27}, repeated in \ref{bentley_example_55}) or the result (cf. \ref{bentley_example_25b}, repeated in \ref{bentley_example_56}), \textsc{se} marking highlights the effects of the change on its undergoer. 
 
 \ea \label{bentley_example_55}(itTenTen20, 30/08/2022)\\
 \gll {Bisogna riportare il disegno  \ldots{}  e lasciare} che		si		\textit{asciughi}					per		circa	2	giorni. \\
@@ -843,7 +853,15 @@ the inferences that arise from such marking. The evidence was discussed in \sect
 That this example could not be the realization of an inchoative LS is indicated by the selection of the perfect auxiliary \textit{avere} ‘have’, which contrasts with \textit{essere} ‘be’ in \REF{bentley_example_8}, \REF{bentley_example_14} and \REF{bentley_example_49}. The selection of \textit{avere} in \REF{bentley_example_59} must thus be analysed as a constructional device, which signals anticausativization (cf. \figref{fig:bentley_figure_4}) without triggering the causer defocusing and causee responsibility inferences of overt anticausativization. As I mentioned, the implication of this example is that the bed must have been faulty and, therefore, the cause of its breaking, the manufacturer, is more remote than the person who lay on the bed or the frame itself. A simplified version of the semantics-syntax linking in \REF{bentley_example_59} is given in \figref{fig:bentley_figure_4}.
 
 \begin{figure}
-\includegraphics[width=.66\textwidth]{figures/bentley_figure4.png}
+\begin{forest}
+for tree={grow'=north, edge=-{Triangle[]}}
+[(la struttura),name=struttura
+  [undergoer
+    [subject]
+  ]
+]
+\node[left=6pt of struttura.base west, anchor=base east] {[\textbf{do}´ $(\emptyset, [\emptyset])$] CAUSE INGR \textbf{broken}´};
+\end{forest}
 \caption{Semantics-syntax linking in \REF{bentley_example_59}}
 \label{fig:bentley_figure_4}
 \end{figure}    
@@ -893,12 +911,12 @@ A glossary of key terms is provided here, with informal definitions that are com
 \item[Constructional   Schema] Following \citet{vanvalin2023principles}, I   take Constructional Sche\-mas (CSs) to be sets of instructions storing   the defining syntactic, morphological, semantic and discourse-pragmatic   properties of the constructions of a given language. I refer to examples \REF{bentley_example_58}   and \REF{bentley_example_60} for the abridged CSs of overt and labile anticausativization in   Italian.
 \item[Direct   causation] Drawing on \citet{wolff2003direct}, I call direct   a type of causation where the relation between the causer and the causee is   either unmediated or facilitated by optional interveners whose role is to   enable the causer to achieve their goal. Events of ‘breaking’ are normally   directly caused, in that any interveners in such events are optional   enablers.
 \item[Degree   achievement] This is a Dowtyan lexical class   characterised by non\hyp punctual change into a result state which can only be   determined in relation to a term of comparison or a context of use. Relevant   diagnostics are discussed in the article, where Italian \textit{sgonfiare}   ‘deflate’ and \textit{riscaldare} ‘heat’ are analysed as degree achievements.
-\item[Impersonal] In the article the term impersonal   names a structure in which the highest-ranking argument position in Logical   Structure (see below) is suppressed, i.e., filled silently, and remains   unexpressed in syntax. The suppression is marked by the morpheme \textsc{se}. The unexpressed argument of \textsc{se} impersonals is obligatorily human.  An example is \textit{Si cammina} ‘one   walks’, which does not spell out the x argument of the Logical Structure \textbf{do`} (x, \textbf{[walk` (x) ])}.
+\item[Impersonal] In the article the term impersonal   names a structure in which the highest-ranking argument position in Logical   Structure (see below) is suppressed, i.e., filled silently, and remains   unexpressed in syntax. The suppression is marked by the morpheme \textsc{se}. The unexpressed argument of \textsc{se} impersonals is obligatorily human.  An example is \textit{Si cammina} ‘one   walks’, which does not spell out the x argument of the Logical Structure \textbf{do`} (x, [\textbf{walk`} (x) ]).
 \item[Inchoative] The intransitive member of   causative-intransitive pairs is called inchoative in relevant   literature. The Italian example \textit{Il paziente è guarito} ‘the patient has   healed’ exhibits inchoative \textit{guarire} ‘heal’, whose causative   counterpart is found in \textit{La cura ha guarito il paziente} ‘the treatment   healed the patient’. In the article I draw a distinction between inchoative stems,   which are monovalent lexical entries describing change of state, and anticausative   structures, which are the output of anticausativization (see above).
 \item[Internal   causation] Internal causation, a notion introduced   by \citet{levin1995unaccusativity}, is the linguistic encoding of change   that arises from an inherent property of the changing participant. In \citet{bentley2023internally} I argued that the propensity of specific types of participant to   undergo specific types of change is the key facet of the meaning of the   relevant stems (‘blossom’, ‘germinate’, ‘rust’, etc.).
-\item[Logical   Structure] This is Van Valin's (\citeyear{vanvalin2005exploring,vanvalin2023principles}) formal   representation of the meaning of a lexical entry, which elaborates Vendlerian   and Dowtyan principles of lexical decomposition (e.g., the Logical Structure   of ‘walk’ is do` (x, [walk` (x) ]). The meaning of clauses   and larger syntactic units is built compositionally from the Logical   Structure of the predicator(s) contained in them.
+\item[Logical   Structure] This is Van Valin's (\citeyear{vanvalin2005exploring,vanvalin2023principles}) formal   representation of the meaning of a lexical entry, which elaborates Vendlerian   and Dowtyan principles of lexical decomposition (e.g., the Logical Structure   of ‘walk’ is \textbf{do`} (x, [\textbf{walk`} (x) ]). The meaning of clauses   and larger syntactic units is built compositionally from the Logical   Structure of the predicator(s) contained in them.
 \item[Passive] In the article the term passive   mainly refers to an argument realization strategy whereby the highest-ranking   argument in Logical Structure (see above) is \textsc{se}-suppressed   (see above) and the lower argument is realized as the controller of verb   agreement. A relevant Italian example is \textit{Si sono costruite quelle strade}   ‘Those roads were built/ One built those roads’. Unlike the \textsc{se} anticausative, the \textsc{se} passive is not lexically   constrained. In a different passive structure, which is not the focus of this   article, the verb bears passive morphology, and the higher argument is   demoted in a by-phrase rather than being suppressed.
-\item[Reflexive] In the article the term reflexive names a structure whereby the higher of two coreferential arguments is suppressed and the suppression is manifested by the reflexive clitic SE (e.g., Maria si pettina ‘Many combs herself’). Alternatively, the lower of the two coreferential arguments is expressed by the tonic pronoun sé (stess-) (e.g., Maria pettina sé (stessa) ‘Many combs herself’).
+\item[Reflexive] In the article the term reflexive names a structure whereby the higher of two coreferential arguments is suppressed and the suppression is manifested by the reflexive clitic \textsc{se} (e.g., \textit{Maria si pettina} ‘Many combs herself’). Alternatively, the lower of the two coreferential arguments is expressed by the tonic pronoun \textit{sé (stess-)} (e.g., \textit{Maria pettina sé (stessa)} ‘Many combs herself’).
 \item[Resultative] I call resultative a   lexical entry which lexicalizes a result state, i.e., a state that is not an   inherent property but rather the outcome of change. An example is the lexical   entry of \textit{sbocciare} ‘blossom’, which is resultative because it   describes a change of ‘becoming blossomed’. A result state can also be a facet   of the compositional meaning of a construction, in which case the   construction is resultative.
 \end{description}
 
