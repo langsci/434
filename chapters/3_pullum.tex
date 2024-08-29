@@ -1911,10 +1911,28 @@ English structure in Figure~\ref{fig:pullum:1a} -- where I omit determiners to s
 
 \begin{figure}
 \begin{floatrow}
-\ffigbox[.35\textwidth]{\includegraphics[scale=0.6]{figures/pullum_figure1.pdf}}
-        {\caption{PP modifiers of NP in English.}\label{fig:pullum:1a}}
-\ffigbox[.65\textwidth]{\includegraphics[scale=0.6]{figures/pullum_figure2.pdf}}
-        {\caption{\citegen{SandaloEtAl18} Pirahã PP structure.}\label{fig:pullum:1b}}
+\ffigbox[.39\textwidth]{%\includegraphics[scale=0.6]{figures/pullum_figure1.pdf}}
+\resizebox{.39\textwidth}{!}{%
+\begin{forest}
+[NP [N [coin] ] 
+    [PP [P [on] ] 
+        [NP [N [paper] ]
+            [PP [P [on] ] 
+                [NP [N [chair] ]
+                    [PP [P [on] ] 
+                    [NP [N [board] ] ] ] ] ] ] ] ]
+\end{forest}}}
+{\caption{PP modifiers of NP in English.}\label{fig:pullum:1a}}
+\ffigbox[.58\textwidth]{%\includegraphics[scale=0.6]{figures/pullum_figure2.pdf}}
+\resizebox{.58\textwidth}{!}{%
+\begin{forest}
+[NP [PP [NP [PP [NP [PP [NP 
+     [N [tabo\\board] ] ] [P [apo\\on] ] ]
+     [N [tiapapati\\chair] ] ] [P [apo\\on] ] ]
+     [N [kapiiga\\paper] ] ] [P [apo\\on] ] ]
+     [N [gigohoi\\coin] ] ]
+\end{forest}}}
+{\caption{\citegen{SandaloEtAl18} Pirahã PP structure.}\label{fig:pullum:1b}}
 \end{floatrow}
 \end{figure}
 
@@ -1956,7 +1974,16 @@ actually come out as in \figref{fig:pullum:3}, where I correct the transcription
 and word identification as well as the structure.
 
 \begin{figure}
-\includegraphics[width=.9\textwidth]{figures/pullum_figure3.pdf}
+%\includegraphics[width=.9\textwidth]{figures/pullum_figure3.pdf}
+\begin{forest}
+[NP [N [gi{\'\i}goho{\'\i}\\money] ]
+       [PP [NP [N [kapiiga\\paper] ]
+                  [PP [NP [N [t{\'\i}apap\\chair] ]
+                          [PP [NP [N [t{\'a}bo\\board] ] ]
+                         [P [{\textglotstop}apo{\'o}\\on] ] ] ]
+               [P [{\textglotstop}apo{\'o}\\on] ] ] ]
+          [P [{\textglotstop}apo{\'o}\\on] ] ] ]
+\end{forest}
 \caption{Expected structure if Pirahã had nesting of PP modifiers in NPs}
 \label{fig:pullum:2}
 \end{figure}
@@ -1996,7 +2023,25 @@ have parsed this would be as a list of successive PPs and a final NP,
 as in Figure~\ref{fig:pullum:3}.
 
 \begin{figure}
-\includegraphics[scale=0.6]{figures/pullum_figure4.pdf}
+%\includegraphics[scale=0.6]{figures/pullum_figure4.pdf}
+\begin{forest}
+[PP [NP [N [t{\'a}bo\\board] ] ]
+      [P [{\textglotstop}apo{\'o}\\on] ] ] 
+\end{forest}
+    \hfill
+\begin{forest}
+[PP [NP [N [t{\'\i}apap\\chair] ] ]
+      [P [{\textglotstop}apo{\'o}\\on] ] ]
+\end{forest}
+    \hfill
+\begin{forest}
+[PP [NP [N [kapiiga\\paper] ] ]
+      [P [{\textglotstop}apo{\'o}\\on] ] ]
+\end{forest}
+    \hfill
+\begin{forest}
+[NP [N [gi{\'\i}goho{\'\i}\\money] ] ]
+\end{forest}
  \caption{Most likely native-speaker parse of \REF{ex-board-on-chair}}
  \label{fig:pullum:3}
 \end{figure}
@@ -2083,7 +2128,7 @@ imaginable computer, let alone to be of real online use either cognitively
 or computationally. The grammatical complexity of Pirah{\~a} would still
 pose the usual problems for the theory of language acquisition: inducing
 generalizations from exposure to data would have to be involved, not just
-memorizing complete utterances. As Gibson (this volume) argues, what's
+memorizing complete utterances. As \crossrefchaptert{2_gibson} argues, what's
 important is compression of information (Kolmogorov complexity), not
 infinitude.
 
