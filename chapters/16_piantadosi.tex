@@ -8,7 +8,7 @@
 %\title{A Humiliated Linguistics}
 \title{Modern language models refute Chomsky's approach to language} %of\\Chomskyan Linguistics}
 % \title{Modern language models rewrite the science of language, starting with Chomsky}
-\abstract{Modern machine learning has subverted and bypassed the theoretical framework of Chomsky’s generative approach to linguistics, including its core claims to particular insights, principles, structures, and processes. I describe the sense in which modern language models implement genuine theories of language, and I highlight the links between these models and approaches to linguistics that are based on gradient computations and memorized constructions. I also describe why these models undermine strong claims for the innateness of language and respond to several critiques of large language models, including arguments that they can’t answer “why” questions and skepticism that they are informative about real life acquisition. Most notably, large language models have attained remarkable success at discovering grammar without using any of the methods that some in linguistics insisted were necessary for a science of language to progress.}
+\abstract{Modern machine learning has subverted and bypassed the theoretical framework of Chomsky’s generative approach to linguistics, including its core claims to particular insights, principles, structures, and processes. I describe the sense in which modern language models implement genuine theories of language, and I highlight the links between these models and approaches to linguistics that are based on gradient computations and memorized constructions. I also describe why these models undermine strong claims for the innateness of language and respond to several critiques of large language models, including arguments that they can’t answer ``why'' questions and skepticism that they are informative about real life acquisition. Most notably, large language models have attained remarkable success at discovering grammar without using any of the methods that some in linguistics insisted were necessary for a science of language to progress.}
 %The purportedly critical methods, insights, and principles of the generative linguistics will not persist once the implications of deep learning are understood.}
 \IfFileExists{../localcommands.tex}{
    \addbibresource{../localbibliography.bib}
@@ -138,8 +138,11 @@ In discussing GPT-3 with Gary Marcus,\footnote{ \url{https://garymarcus.substack
 
 Part of why some generative linguists dismiss these models is that they are seen as too unconstrained, and thus not explanatory. Writing to Marcus about the models, Chomsky explains, 
 \begin{quote}
-You can’t go to a physics conference and say: I’ve got a great theory.  It accounts for everything and is so simple it can be captured in two words: “Anything goes.”
-    
+You can’t go to a physics conference and say: I’ve got a great theory.  It accounts for everything and is so simple it can be captured in two words: ``Anything goes.''
+% This quote is the original. Dot inside. St. Mü. 03.09.2024
+% Source should be given.
+% https://garymarcus.substack.com/p/noam-chomsky-and-gpt-3    
+
 All known and unknown laws of nature are accommodated, no failures.  Of course, everything impossible is accommodated also.
 \end{quote}
 This critique is a familiar rephrasing of his (and others') comments on language learning -- essentially that one should not study an unconstrained system because it will not explain why languages have the particular form that they do.\footnote{ You have to wonder how a physics conference would react to someone saying, following  \citet{lasnik2002minimalist}, ``I've got a great theory. It accounts for everything: physical laws `might be a computationally perfect solution to the problem' of how objects move.''.}
@@ -484,9 +487,9 @@ Moreover, failures on examples at this point may not mean much since the approac
 %There is simply no good evidence for any of those claims, but modern language models provide evidence that none are necessary. 
 
 %``Piantadosi must understand this, because he himself suggests (pg. 14) that we might
-% improve training of LMs on small datasets by “build[ing] in certain other kinds of architectural
-% biases and principles” or “consider[ing] learning models that have some of the cognitive limitations
-% of human learners.” 
+% improve training of LMs on small datasets by ``build[ing] in certain other kinds of architectural
+% biases and principles'' or ``consider[ing] learning models that have some of the cognitive limitations
+% of human learners''. 
 
 
 
@@ -505,13 +508,13 @@ Several authors also pointed to differences in the amount of data between curren
 
 \citet{kodner2023linguistics} also disputed my claim that language models work over an ``unconstrained space''. A better term might have been ``relatively unconstrained'' because there are constraints and priors in any learning system. The point is that those priors do not seem to be very strong or limiting (which is precisely why others complained about them learning ``impossible'' languages). They also need not be stated symbolically, as they are in Chomskyan theories. \citet{kodner2023linguistics} erroneously connect the lack of constraints to the amount of data, claiming that ``every'' algorithm which learns over a broad (computable) class of languages ``requires infeasible amounts of time and data.'' This is a strange critique because my lab recently showed in \citet{yang2022one} that tiny amounts of data could suffice for learning key computations needed in grammar out of a huge space of possible algorithms -- and Kodner led a reply to the paper,  although he incorrectly summarized the basic framework our model uses \citep{piantadosi2022reply}. It is not true that large hypothesis spaces always require huge amounts of data, in part because data points can be very informative: each single bit of information in the data can cut the space of likely hypotheses in half. 
 
-%\footnote{`` In this regard, it is worth mentioning that, to our knowledge, every learnability result that presents an algorithm which “learns” the class of all computable languages or functions requires in feasible amounts of time and data.''} but in fact there are models
+%\footnote{`` In this regard, it is worth mentioning that, to our knowledge, every learnability result that presents an algorithm which ``learns'' the class of all computable languages or functions requires in feasible amounts of time and data.''} but in fact there are models
 
 
 % 
 Overall, I was disappointed in some aspects of the responses: nobody said much about how this technology \textit{should} affect our linguistic theories. As a result, most of the points that these authors raised cut orthogonally to the key claims in my paper.  Few responded to what I see as the primary failings of Chomskyan linguistics, including aspects like avoidance of probability and constructions, informality, failure to compare to different starting points, incorrect learnability claims, shallowness of ``why'' answers, failures of general predictions about  typology, lack of clearly articulated and justified universals, lack of quantitative comparison to alternative models even on syntactic phenomena of interest, etc. These are issues that linguists who work in that tradition can fix. 
 
-I am optimistic, though, about the future of linguistics because there are other approaches to the field. In particular, I agree with \citet{kodner2023linguistics}'s title, that “linguistics will thrive in the 21st century.” There are now an incredible set of ideas to be integrated into a new, interdisciplinary science of language. It is especially exciting to see language at the center of AI, which it well deserves. But language wasn't put at the center of the world by the theories of generative syntax. The kind of linguistics that will thrive is one that is interdisciplinary, embraces new ideas, rethinks old assumptions, and integrates what we discover about the power of learning. There is no future for a corner of linguistics that slams the door and keeps repeating to itself that it, and it alone, has language figured out. % -- the alternatives now are too easy to see. 
+I am optimistic, though, about the future of linguistics because there are other approaches to the field. In particular, I agree with \citet{kodner2023linguistics}'s title, that ``linguistics will thrive in the 21st century''. There are now an incredible set of ideas to be integrated into a new, interdisciplinary science of language. It is especially exciting to see language at the center of AI, which it well deserves. But language wasn't put at the center of the world by the theories of generative syntax. The kind of linguistics that will thrive is one that is interdisciplinary, embraces new ideas, rethinks old assumptions, and integrates what we discover about the power of learning. There is no future for a corner of linguistics that slams the door and keeps repeating to itself that it, and it alone, has language figured out. % -- the alternatives now are too easy to see. 
 
 
 % It's as if astronomy decided it had nothing to learn from telescopes. 
