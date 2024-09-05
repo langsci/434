@@ -23,9 +23,9 @@ main.bbl:  $(SOURCE) localbibliography.bib
 main.snd: main.bbl
 	touch main.adx main.sdx main.ldx
 	sed -i s/.*\\emph.*// main.adx #remove titles which biblatex puts into the name index
-	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.sdx # ordering of references to footnotes
-	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.adx
-	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.ldx
+# 	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.sdx # ordering of references to footnotes
+# 	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.adx
+# 	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.ldx
 	sed -i 's/.*Office.*//' main.adx
 	sed -i 's/.*Team.*//' main.adx
 	sed -i 's/.*Bureau.*//' main.adx
@@ -37,22 +37,20 @@ main.snd: main.bbl
 	sed -i 's/.*committee.*//' main.adx
 	sed -i 's/.*government.*//' main.adx
 	sed -i 's/\\MakeCapital//' main.adx
-	fixindex
+	python3 fixindex.py
+	mv mainmod.adx main.adx
 	makeindex -o main.and main.adx
-	grep -o  ", [^0-9, \\]*," main.and
 	makeindex -o main.lnd main.ldx
 	makeindex -o main.snd main.sdx 
-# 	echo "check for doublets in name index"
-# 	grep -o  ", [^0-9, \\}]*," main.and|sed "s/, //" | sed "s/,\$//"
 	xelatex main 
  
 
 #create a png of the cover
 cover: FORCE
 	convert main.pdf\[0\] -quality 100 -background white -alpha remove -bordercolor "#999999" -border 2  cover.png
-# 	cp cover.png googlebooks_frontcover.png
-# 	convert -geometry 50x50% cover.png covertwitter.png
-# 	convert main.pdf\[0\] -quality 100 -background white -alpha remove -bordercolor "#999999" -border 2  -resize x495 coveromp.png
+	cp cover.png googlebooks_frontcover.png
+	convert -geometry 50x50% cover.png covertwitter.png
+	convert main.pdf\[0\] -quality 100 -background white -alpha remove -bordercolor "#999999" -border 2  -resize x495 coveromp.png
 	display cover.png
 
 openreview: openreview.pdf
